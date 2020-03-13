@@ -13,7 +13,26 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <include layout="@layout/select_person"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/oaTextView"
+                    android:text="投诉人: *" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/shouye" />
+
+                <EditText
+                    android:id="@+id/etPerson"
+                    style="@style/oaEditText"
+                    android:hint="请填写投诉人姓名" />
+            </LinearLayout>
 
             <View style="@style/line"></View>
 
@@ -123,10 +142,10 @@
                     android:layout_gravity="center_vertical"
                     android:background="@color/shouye" />
 
-                <EditText
-                    android:id="@+id/etPerson1"
+                <TextView
+                    android:id="@+id/tvPerson"
                     style="@style/oaEditText"
-                    android:hint="请填写被投诉人" />
+                    android:hint="请选择被投诉人" />
             </LinearLayout>
 
             <View style="@style/line"></View>

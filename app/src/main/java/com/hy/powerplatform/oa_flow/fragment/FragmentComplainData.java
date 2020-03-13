@@ -67,8 +67,8 @@ public class FragmentComplainData extends Fragment {
     EditText etPhone;
     @BindView(R.id.tvData)
     TextView tvData;
-    @BindView(R.id.etPerson1)
-    EditText etPerson1;
+    @BindView(R.id.tvPerson)
+    TextView tvPerson;
     @BindView(R.id.etCarNo)
     EditText etCarNo;
     @BindView(R.id.spinnerComp)
@@ -91,8 +91,6 @@ public class FragmentComplainData extends Fragment {
     TextView etLeader4;
     @BindView(R.id.btnUp)
     Button btnUp;
-    @BindView(R.id.tvPerson)
-    TextView tvPerson;
     @BindView(R.id.tvLeaderW)
     TextView tvLeaderW;
     @BindView(R.id.tvLeader1W)
@@ -101,8 +99,6 @@ public class FragmentComplainData extends Fragment {
     TextView tvLeader2W;
     @BindView(R.id.tvLeader4W)
     TextView tvLeader4W;
-    @BindView(R.id.tv)
-    TextView tv;
     private CustomDatePickerDay customDatePicker1;
     List<String> namelist = new ArrayList<>();
     List<Name.DataBean> datalist = new ArrayList<>();
@@ -133,7 +129,6 @@ public class FragmentComplainData extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_complain_data, container, false);
         unbinder = ButterKnife.bind(this, view);
-        tv.setText("投诉人");
         initDatePicker();
         userId = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userCode", "");
         userName = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userStatus", "");
@@ -262,7 +257,7 @@ public class FragmentComplainData extends Fragment {
                 final String time = tvTime.getText().toString().trim() + "";
                 final String sex = String.valueOf(spinnerSex.getSelectedItem());
                 final String phone = etPhone.getText().toString().trim() + "";
-                final String person1 = etPerson1.getText().toString().trim() + "";
+                final String person1 = tvPerson.getText().toString().trim() + "";
                 final String carNo = etCarNo.getText().toString().trim() + "";
                 final String department = String.valueOf(spinnerComp.getSelectedItem());
                 final String line = etLine.getText().toString().trim() + "";
@@ -335,17 +330,18 @@ public class FragmentComplainData extends Fragment {
                     uId = selectList.get(0) + "," + uId;
                 }
                 final String person = etPerson.getText().toString() + "";
+                final String personSL = etShouLi.getText().toString() + "";
                 final String time = tvTime.getText().toString() + "";
                 final String sex = String.valueOf(spinnerSex.getSelectedItem());
                 final String phone = etPhone.getText().toString() + "";
-                final String person1 = etPerson1.getText().toString() + "";
+                final String person1 = tvPerson.getText().toString() + "";
                 final String carNo = etCarNo.getText().toString() + "";
                 final String department = String.valueOf(spinnerComp.getSelectedItem());
                 final String line = etLine.getText().toString() + "";
                 final String shouLi = etShouLi.getText().toString() + "";
                 final String data = etData.getText().toString() + "";
                 String res = dbA.OAComplainUp(turl, userDepart, uId, person, time, sex,
-                        phone, person1, carNo, department, line, shouLi, data, userId, userName, LiuShuiCode);
+                        phone, person1, carNo, department, line, shouLi, data, userId, userName, LiuShuiCode, personSL);
                 if (res.equals("")) {
                     handler.sendEmptyMessage(TAG_THERE);
                 } else {
@@ -554,7 +550,7 @@ public class FragmentComplainData extends Fragment {
             if (data != null) {
                 userCode = data.getStringExtra("userCode");
                 userName = data.getStringExtra("userName");
-                etPerson.setText(userName);
+                tvPerson.setText(userName);
             }
         }
     }

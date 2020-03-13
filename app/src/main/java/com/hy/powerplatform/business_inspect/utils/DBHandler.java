@@ -6024,7 +6024,7 @@ public class DBHandler {
     //投诉流程提交
     public String OAComplainUp(String turl, String userDepart, String uId, String person, String time
             , String sex, String phone, String person1, String carNo, String department, String line1
-            , String shouLi, String data, String userId, String userName, String liushuihao) {
+            , String shouLi, String data, String userId, String userName, String liushuihao, String personSL) {
         HttpClient httpClient = new DefaultHttpClient();
         List<NameValuePair> nvs = new ArrayList<NameValuePair>();
         HttpPost httpRequst = new HttpPost(turl);
@@ -6052,7 +6052,7 @@ public class DBHandler {
         nvs.add(new BasicNameValuePair("SuoShuXianLu", line1));
         nvs.add(new BasicNameValuePair("TouSuNeiRong", data));
 //        nvs.add(new BasicNameValuePair("ShouLiRenUId", userId));
-        nvs.add(new BasicNameValuePair("ShouLiRen", person));
+        nvs.add(new BasicNameValuePair("ShouLiRen", personSL));
 
         nvs.add(new BasicNameValuePair("BuMenFuZeRen", ""));
         nvs.add(new BasicNameValuePair("FenGongSiChengBanRen", ""));

@@ -152,14 +152,12 @@ public class NoticeListActivity extends BaseActivity {
             public void onRefresh() {
                 beanList.clear();
                 start = 0;
-                limit = 20;
                 getData(start, limit);
             }
 
             @Override
             public void onLoadMore() {
-                start = limit;
-                limit += 20;
+                start += 20;
                 getData(start, limit);
             }
         });

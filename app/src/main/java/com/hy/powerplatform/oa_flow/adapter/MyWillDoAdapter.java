@@ -40,6 +40,7 @@ public class MyWillDoAdapter extends RecyclerView.Adapter<MyWillDoAdapter.ViewHo
         holder.textTitle.setText(beanList1.get(position).getTaskName());
         holder.textName.setText(beanList1.get(position).getCreator());
         holder.textTime.setText(beanList1.get(position).getCreateTime());
+        holder.tv3.setText("开始时间");
         holder.mPosition = position;
     }
 
@@ -49,7 +50,7 @@ public class MyWillDoAdapter extends RecyclerView.Adapter<MyWillDoAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView textTitle,textName,textTime;
+        public TextView textTitle,textName,textTime,tv3;
         View itemView;
         int mPosition;
         public ViewHolder(View itemView) {
@@ -58,6 +59,7 @@ public class MyWillDoAdapter extends RecyclerView.Adapter<MyWillDoAdapter.ViewHo
             textTitle = (TextView) itemView.findViewById(R.id.tvTitle);
             textName = (TextView) itemView.findViewById(R.id.tvName);
             textTime = (TextView) itemView.findViewById(R.id.tvTime);
+            tv3 = (TextView) itemView.findViewById(R.id.tv3);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

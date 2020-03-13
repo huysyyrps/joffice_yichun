@@ -256,8 +256,8 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
-        listType.add("公司任务");
-        listType.add("部门任务");
+        listType.add("未完成");
+        listType.add("已完成");
         ArrayAdapter adapterType = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listType);
         adapterType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerWCQK.setAdapter(adapterType);

@@ -80,7 +80,7 @@
                 <EditText
                     android:id="@+id/etShiXiang"
                     style="@style/textWrite"
-                    android:hint="请填写需求事项" />
+                    android:hint="请填写请示内容" />
             </LinearLayout>
             <View style="@style/line"></View>
 
