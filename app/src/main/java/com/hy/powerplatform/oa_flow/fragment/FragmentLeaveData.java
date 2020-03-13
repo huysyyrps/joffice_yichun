@@ -578,7 +578,7 @@ public class FragmentLeaveData extends Fragment {
                     }
                     break;
                 case TAG_TWO:
-                    Toast.makeText(getActivity(), "提交失败,请检查网络", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "提交失败", Toast.LENGTH_SHORT).show();
                     ProgressDialogUtil.stopLoad();
                     break;
                 case TAG_THERE:

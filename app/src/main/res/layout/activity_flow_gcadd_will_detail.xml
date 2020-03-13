@@ -16,6 +16,7 @@
         app:header_title_right="@string/nullify"></com.hy.powerplatform.my_utils.myViews.Header>
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -127,7 +128,8 @@
                     style="@style/oaTextView"
                     android:layout_height="45dp"
                     android:layout_gravity="center_vertical"
-                    android:text="附件: *" />
+                    android:text="附件: *"
+                    android:textColor="@color/file_color"/>
 
                 <View
                     android:layout_width="1dp"
@@ -140,7 +142,8 @@
                     style="@style/oaEditText"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:hint="请选择附件" />
+                    android:hint="请选择附件"
+                    android:textColor="@color/file_color"/>
             </LinearLayout>
 
             <LinearLayout
@@ -336,7 +339,7 @@
                     style="@style/oaTextView"
                     android:layout_height="45dp"
                     android:layout_gravity="center_vertical"
-                    android:text="需求部门意见:" />
+                    android:text="部门领导意见:" />
 
                 <View
                     android:layout_width="1dp"
@@ -347,12 +350,12 @@
                 <TextView
                     android:id="@+id/tvLeader"
                     style="@style/textWrite"
-                    android:hint="需求部门意见" />
+                    android:hint="部门领导意见" />
 
                 <EditText
                     android:id="@+id/etLeader"
                     style="@style/textWrite"
-                    android:hint="需求部门意见"
+                    android:hint="部门领导意见"
                     android:visibility="gone" />
             </LinearLayout>
             <View style="@style/line"></View>
@@ -367,7 +370,7 @@
                     style="@style/oaTextView"
                     android:layout_height="45dp"
                     android:layout_gravity="center_vertical"
-                    android:text="需求部门领导意见:" />
+                    android:text="分管领导意见:" />
 
                 <View
                     android:layout_width="1dp"
@@ -378,12 +381,12 @@
                 <TextView
                     android:id="@+id/tvLeader1"
                     style="@style/textWrite"
-                    android:hint="需求部门领导意见" />
+                    android:hint="分管领导意见" />
 
                 <EditText
                     android:id="@+id/etLeader1"
                     style="@style/textWrite"
-                    android:hint="需求部门领导意见"
+                    android:hint="分管领导意见"
                     android:visibility="gone" />
             </LinearLayout>
             <View style="@style/line"></View>

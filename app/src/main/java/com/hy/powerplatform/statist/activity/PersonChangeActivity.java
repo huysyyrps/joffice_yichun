@@ -137,7 +137,8 @@ public class PersonChangeActivity extends BaseActivity {
         String dateString = formatter.format(startDate);
         Date endDate = getSupportEndDayofMonth(tvDate.getText().toString().split("-")[0], tvDate.getText().toString().split("-")[1]);
         String dateString1 = formatter.format(endDate);
-        map.put("sj", dateString + "," + dateString1);
+        map.put("ks", dateString);
+        map.put("sj", dateString1);
         httpUtil.postForm(path_url, map, new OkHttpUtil.ResultCallback() {
             @Override
             public void onError(Request request, Exception e) {
@@ -296,6 +297,7 @@ public class PersonChangeActivity extends BaseActivity {
                             labels.add(bean.getResult().get(i).getProject());
                             dataset = new BarDataSet(entries, getResources().getString(R.string.oaflow_statist_rb2));
                             dataset.setColors(ColorTemplate.COLORFUL_COLORS);
+                            dataset.setValueTextSize(13f);
                             dataSets.add(dataset);
                         }
                         BarData dataNum = new BarData(labels, dataset);

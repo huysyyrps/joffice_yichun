@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -186,6 +187,8 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
     LinearLayout llShenPiRen;
     @BindView(R.id.llShenPiRenList)
     LinearLayout llShenPiRenList;
+    @BindView(R.id.scrollView)
+    ScrollView scrollView;
     private String name, taskId, res, fullnameUId, fullname, fgldyj, zjl = "";
     private String mainId, signaName, destName, destType, checkTask, qianzhiData = "";
     String leader = "";
@@ -764,6 +767,15 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
             case R.id.btnT:
                 btnTTag = "Y";
                 llShenPiRenList.setVisibility(View.VISIBLE);
+                scrollView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        int[] location = new int[2];
+                        llShenPiRen.getLocationOnScreen(location);
+                        int offset = location[1] - scrollView.getMeasuredHeight();
+                        scrollView.smoothScrollTo(0, Math.abs(offset));
+                    }
+                });
                 if (beanList.size() != 0) {
                     if (beanList.size() == 1) {
                         ProgressDialogUtil.startLoad(FlowOutMessageWillDetailActivity.this, "获取数据中");
@@ -1434,7 +1446,7 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                     }
                     break;
                 case TAG_TWO:
-                    Toast.makeText(FlowOutMessageWillDetailActivity.this, "操作数据失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FlowOutMessageWillDetailActivity.this, "操作失败", Toast.LENGTH_SHORT).show();
                     ProgressDialogUtil.stopLoad();
                     break;
                 case TAG_THERE:

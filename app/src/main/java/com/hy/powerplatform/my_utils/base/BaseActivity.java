@@ -2,6 +2,8 @@ package com.hy.powerplatform.my_utils.base;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -25,6 +27,8 @@ import com.hy.powerplatform.my_utils.utils.ProgressDialogUtil;
 
 public abstract  class BaseActivity extends AppCompatActivity implements BaseView,View.OnClickListener,Header.ClickLister {
     private AlertDialogUtil alertDialogUtil;
+    ConnectivityManager mConnectivityManager;
+    NetworkInfo mNetworkInfo  ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,23 @@ public abstract  class BaseActivity extends AppCompatActivity implements BaseVie
             header.setClickLister(this);
         }
         initView();
+        mConnectivityManager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
+        mNetworkInfo  = mConnectivityManager.getActiveNetworkInfo();
+        if(mNetworkInfo == null){
+            Toast.makeText(this, "请检查网络", Toast.LENGTH_SHORT).show();
+            return;
+        }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+//        mConnectivityManager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
+//        mNetworkInfo  = mConnectivityManager.getActiveNetworkInfo();
+//        if(mNetworkInfo == null){
+//            Toast.makeText(this, "请检查网络", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
     }
 
     @Override

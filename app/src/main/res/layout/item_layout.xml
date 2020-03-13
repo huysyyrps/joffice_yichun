@@ -50,13 +50,13 @@
                 tools:text="上月" />
 
             <TextView
-                android:id="@+id/tvTB"
+                android:id="@+id/tvHB"
                 android:layout_width="85dp"
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="12sp"
-                tools:text="同比" />
+                tools:text="环比" />
 
             <TextView
                 android:id="@+id/tvQNTQ"
@@ -68,13 +68,13 @@
                 tools:text="去年同期" />
 
             <TextView
-                android:id="@+id/tvHB"
+                android:id="@+id/tvTB"
                 android:layout_width="85dp"
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="12sp"
-                tools:text="环比" />
+                tools:text="同比" />
 
             <TextView
                 android:id="@+id/tvNDLJ"

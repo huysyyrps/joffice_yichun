@@ -21,7 +21,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:text="任务:"
+                android:text="任\t\t\t\t\t\t务:"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="16dp"/>
@@ -48,7 +48,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:text="批注:"
+                android:text="批\t\t\t\t\t\t注:"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="16dp"/>
@@ -75,13 +75,40 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:text="状态:"
+                android:text="执行状态:"
                 android:gravity="center"
                 android:textColor="@color/red"
                 android:textSize="16dp"/>
 
             <TextView
                 android:id="@+id/tvStaue"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:maxLines="1"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:textColor="@color/red"
+                android:textSize="16dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llstaueSP"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:minHeight="33dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="审批状态:"
+                android:gravity="center"
+                android:textColor="@color/red"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/tvStaueSP"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:maxLines="1"
@@ -102,7 +129,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:text="内容:"
+                android:text="内\t\t\t\t\t\t容:"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="16dp"/>
@@ -129,7 +156,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:text="时间:"
+                android:text="时\t\t\t\t\t\t间:"
                 android:gravity="center"
                 android:textColor="@color/ziti"
                 android:textSize="16dp"/>

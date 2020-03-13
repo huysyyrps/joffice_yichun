@@ -24,6 +24,7 @@ import com.hy.powerplatform.my_utils.myViews.Header;
 import com.hy.powerplatform.my_utils.myViews.MyAlertDialog;
 import com.hy.powerplatform.my_utils.utils.ProgressDialogUtil;
 import com.hy.powerplatform.oa_flow.bean.Filed;
+import com.hy.powerplatform.oa_flow.notice.bean.NoticeDetail;
 import com.hy.powerplatform.oa_flow.notice.bean.NoticeList;
 import com.hy.powerplatform.oa_flow.util.MyStringSpilt;
 
@@ -40,6 +41,7 @@ import okhttp3.Response;
 
 import static com.hy.powerplatform.my_utils.base.Constant.TAG_NINE;
 import static com.hy.powerplatform.my_utils.base.Constant.TAG_ONE;
+import static com.hy.powerplatform.my_utils.base.Constant.TAG_THERE;
 import static com.hy.powerplatform.my_utils.base.Constant.TAG_TWO;
 
 public class NoticeDetailActivity extends BaseActivity {
@@ -90,30 +92,17 @@ public class NoticeDetailActivity extends BaseActivity {
         fileId = bean.fileId;
         newId = bean.newsId;
         String content = bean.getContent();
-        //加载html
-        webView.loadDataWithBaseURL(null, content, "text/html", "UTF-8", null);
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);//允许使用js
-        //不使用缓存，只从网络获取数据.
-        webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
-        //支持屏幕缩放
-        webSettings.setSupportZoom(true);
-        webSettings.setBuiltInZoomControls(true);
-        webSettings.setUseWideViewPort(true);
-        webSettings.setLoadWithOverviewMode(true);
-        webSettings.setDefaultZoom(WebSettings.ZoomDensity.FAR);
-        webSettings.setTextZoom(260);
         httpUtil = OkHttpUtil.getInstance(this);
         String userId= new SharedPreferencesHelper(this,"login").getData(this,"userId","");
-        getData(newId, userId);
+        getDataContent(newId);
+        getDataType(newId, userId);
     }
 
-    private void getData(String newId, String userId) {
+    private void getDataContent(String newId) {
         ProgressDialogUtil.startLoad(this, getResources().getString(R.string.get_data));
-        final String path_url = Constant.BASE_URL2 + Constant.NOTICETYPE ;
+        final String path_url = Constant.BASE_URL2 + Constant.NOTICEDETAIL ;
         map.clear();
         map.put("newsId", newId);
-        map.put("userId", userId);
         httpUtil.postForm(path_url, map, new OkHttpUtil.ResultCallback() {
             @Override
             public void onError(Request request, Exception e) {
@@ -122,7 +111,7 @@ public class NoticeDetailActivity extends BaseActivity {
                 Bundle b = new Bundle();
                 b.putString("error", e.toString());
                 message.setData(b);
-                message.what = TAG_ONE;
+                message.what = TAG_TWO;
                 handler.sendMessage(message);
             }
 
@@ -135,6 +124,37 @@ public class NoticeDetailActivity extends BaseActivity {
                 b.putString("data", data);
                 message.setData(b);
                 message.what = TAG_ONE;
+                handler.sendMessage(message);
+            }
+        });
+    }
+
+    private void getDataType(String newId, String userId) {
+        final String path_url = Constant.BASE_URL2 + Constant.NOTICETYPE ;
+        map.clear();
+        map.put("newsId", newId);
+        map.put("userId", userId);
+        httpUtil.postForm(path_url, map, new OkHttpUtil.ResultCallback() {
+            @Override
+            public void onError(Request request, Exception e) {
+//                Log.i("main", "response:" + e.toString());
+                Message message = new Message();
+                Bundle b = new Bundle();
+                b.putString("error", e.toString());
+                message.setData(b);
+                message.what = TAG_THERE;
+                handler.sendMessage(message);
+            }
+
+            @Override
+            public void onResponse(Response response) throws IOException {
+//                Log.i("main", "response:" + response.body().string());
+                String data = response.body().string();
+                Message message = new Message();
+                Bundle b = new Bundle();
+                b.putString("data", data);
+                message.setData(b);
+                message.what = TAG_THERE;
                 handler.sendMessage(message);
             }
         });
@@ -228,11 +248,34 @@ public class NoticeDetailActivity extends BaseActivity {
             super.handleMessage(msg);
             switch (msg.what) {
                 case TAG_ONE:
+                    Bundle b = msg.getData();
+                    String data = b.getString("data");
+                    Gson gson = new Gson();
+                    NoticeDetail bean = gson.fromJson(data, NoticeDetail.class);
+                    if (bean.isSuccess()){
+                        if (bean.getData().getContent() != null) {
+                            //加载html
+                            webView.loadDataWithBaseURL(null, bean.getData().getContent(), "text/html", "UTF-8", null);
+                            WebSettings webSettings = webView.getSettings();
+                            webSettings.setJavaScriptEnabled(true);//允许使用js
+                            //不使用缓存，只从网络获取数据.
+                            webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+                            //支持屏幕缩放
+                            webSettings.setSupportZoom(true);
+                            webSettings.setBuiltInZoomControls(true);
+                            webSettings.setUseWideViewPort(true);
+                            webSettings.setLoadWithOverviewMode(true);
+                            webSettings.setDefaultZoom(WebSettings.ZoomDensity.FAR);
+                            webSettings.setTextZoom(260);
+                        }
+                    }
                     ProgressDialogUtil.stopLoad();
                     break;
                 case TAG_TWO:
-                    Toast.makeText(NoticeDetailActivity.this, "操作数据失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NoticeDetailActivity.this, "操作失败", Toast.LENGTH_SHORT).show();
                     ProgressDialogUtil.stopLoad();
+                    break;
+                case TAG_THERE:
                     break;
                 case TAG_NINE:
                     Gson gson2 = new Gson();

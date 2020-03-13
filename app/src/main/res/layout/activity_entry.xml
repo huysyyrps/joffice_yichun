@@ -13,6 +13,7 @@
         app:header_title_right="@string/nullify"></com.hy.powerplatform.my_utils.myViews.Header>
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -144,7 +145,8 @@
                     style="@style/oaTextView"
                     android:layout_height="45dp"
                     android:layout_gravity="center"
-                    android:text="附件:" />
+                    android:text="附件:"
+                    android:textColor="@color/file_color"/>
 
                 <View
                     android:layout_width="1dp"
@@ -155,7 +157,8 @@
                 <TextView
                     android:id="@+id/tvData"
                     style="@style/textWrite"
-                    android:hint="点击选择附件" />
+                    android:hint="点击选择附件"
+                    android:textColor="@color/file_color"/>
             </LinearLayout>
 
             <LinearLayout

@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.refreshview.CustomRefreshView;
 import com.hy.powerplatform.R;
 import com.hy.powerplatform.SharedPreferencesHelper;
 import com.hy.powerplatform.my_utils.base.BaseActivity;
@@ -45,11 +45,12 @@ public class NoticeListActivity extends BaseActivity {
     @BindView(R.id.header)
     Header header;
     @BindView(R.id.recyclerView)
-    RecyclerView recyclerView;
+    CustomRefreshView recyclerView;
 
-    int limit = 1000;
+    int limit = 20;
     int start = 0;
     String userId;
+    String tag = "";
     private OkHttpUtil httpUtil;
     BaseRecyclerAdapter baseAdapter;
     final HashMap<String, String> map = new HashMap();
@@ -60,9 +61,9 @@ public class NoticeListActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
         LinearLayoutManager manager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(manager);
+        recyclerView.getRecyclerView().setLayoutManager(manager);
         httpUtil = OkHttpUtil.getInstance(this);
-        userId = new SharedPreferencesHelper(NoticeListActivity.this,"login").getData(NoticeListActivity.this,"userId","");
+        userId = new SharedPreferencesHelper(NoticeListActivity.this, "login").getData(NoticeListActivity.this, "userId", "");
         baseAdapter = new BaseRecyclerAdapter<NoticeList>(this, R.layout.adapter_notice_item, beanList) {
             @Override
             public void convert(BaseViewHolder holder, final NoticeList noticeBean) {
@@ -70,15 +71,17 @@ public class NoticeListActivity extends BaseActivity {
                 holder.setText(R.id.tv_content, noticeBean.getCreatetime());
 //                List<String> imgSrc = new ArrayList<String>();
 //                imgSrc = GetHtmlImageSrcList(noticeBean.getContent());
-                String text = GetHtmlText(noticeBean.getContent());
+                String text = noticeBean.getContent();
 //                String s = noticeBean.getDetails().replaceAll("<p>", "");
 //                s = s.replaceAll("</p>", "");
                 holder.setText(R.id.tvDetail, text);
-                Log.e("XXX",noticeBean.getReadUserids());
-                if (!noticeBean.getReadUserids().contains(userId+",")){
+                Log.e("XXX", noticeBean.getReadUserids());
+                if (!noticeBean.getReadUserids().contains(userId)) {
                     holder.setText(R.id.tvSee, "未查看");
-                }else {
+                    holder.setColor(R.id.tvSee, "1");
+                } else {
                     holder.setText(R.id.tvSee, "已查看");
+                    holder.setColor(R.id.tvSee, "11");
                 }
                 holder.setOnClickListener(R.id.noticeItem, new View.OnClickListener() {
                     @Override
@@ -92,15 +95,19 @@ public class NoticeListActivity extends BaseActivity {
         };
         recyclerView.setAdapter(baseAdapter);
         getData(start, limit);
+        setClient();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
+        limit = 20;
+        start = 0;
+        beanList.clear();
         getData(start, limit);
     }
 
-    private void getData(final int start, final int limit) {
+    private void getData(int start, int limit) {
         ProgressDialogUtil.startLoad(this, getResources().getString(R.string.get_data));
         final String path_url = Constant.BASE_URL2 + Constant.NOTICE + "?start=" + start + "&limit=" + limit;
         map.clear();
@@ -128,10 +135,32 @@ public class NoticeListActivity extends BaseActivity {
                 Message message = new Message();
                 Bundle b = new Bundle();
                 b.putString("data", data);
-                Log.e("XXX",data);
+                Log.e("XXX", data);
                 message.setData(b);
                 message.what = TAG_TWO;
                 handler.sendMessage(message);
+            }
+        });
+    }
+
+    /**
+     * 滑动监听
+     */
+    private void setClient() {
+        recyclerView.setOnLoadListener(new CustomRefreshView.OnLoadListener() {
+            @Override
+            public void onRefresh() {
+                beanList.clear();
+                start = 0;
+                limit = 20;
+                getData(start, limit);
+            }
+
+            @Override
+            public void onLoadMore() {
+                start = limit;
+                limit += 20;
+                getData(start, limit);
             }
         });
     }
@@ -192,10 +221,16 @@ public class NoticeListActivity extends BaseActivity {
                 case TAG_TWO:
                     Bundle b1 = msg.getData();
                     String data = b1.getString("data");
-                    beanList.clear();
+//                    beanList.clear();
                     try {
                         JSONObject jsonObject = new JSONObject(data);
                         JSONArray jsonArray = jsonObject.getJSONArray("result");
+                        if (jsonArray.length() == 0 && beanList.size() != 0) {
+                            if (recyclerView != null) {
+                                recyclerView.complete();
+                                recyclerView.onNoMore();
+                            }
+                        }
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject1 = jsonArray.getJSONObject(i);
                             NoticeList bean = new NoticeList();
@@ -212,7 +247,24 @@ public class NoticeListActivity extends BaseActivity {
                             bean.setReadUserids(jsonObject1.getString("readUserids"));
                             beanList.add(bean);
                         }
-                        baseAdapter.notifyDataSetChanged();
+                        if (jsonArray.length() < 20) {
+                            if (recyclerView != null) {
+                                baseAdapter.notifyDataSetChanged();
+                                recyclerView.complete();
+                            }
+                        } else {
+                            if (recyclerView != null) {
+                                baseAdapter.notifyDataSetChanged();
+                                recyclerView.complete();
+                            }
+                        }
+                        if (start == 0) {
+                            ProgressDialogUtil.stopLoad();
+                            if (recyclerView != null) {
+                                recyclerView.complete();
+                            }
+                        }
+//                        baseAdapter.notifyDataSetChanged();
 //                        if (jsonArray.length() != 0) {
 //                            if (jsonArray.length() == 0 && beanList.size() != 0) {
 //                                if (recyclerView != null) {

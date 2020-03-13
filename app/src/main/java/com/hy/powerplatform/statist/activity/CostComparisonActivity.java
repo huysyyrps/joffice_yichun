@@ -212,6 +212,7 @@ public class CostComparisonActivity extends BaseActivity {
         lineDataSet.setColor(Color.RED);//现实颜色
         lineDataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
         lineDataSet.setHighLightColor(Color.BLACK);//高度线的颜色
+        lineDataSet.setValueTextSize(8);
 
         LineDataSet lineDataSet1 = new LineDataSet(yList1, getResources().getString(R.string.oaflow_statist_rb42));//y轴数据集合
         lineDataSet1.setLineWidth(1f);//线宽
@@ -220,6 +221,7 @@ public class CostComparisonActivity extends BaseActivity {
         lineDataSet1.setColor(Color.GREEN);//现实颜色
         lineDataSet1.setAxisDependency(YAxis.AxisDependency.LEFT);
         lineDataSet1.setHighLightColor(Color.BLACK);//高度线的颜色
+        lineDataSet1.setValueTextSize(8);
         lineDataSets.add(lineDataSet);
         lineDataSets.add(lineDataSet1);
 

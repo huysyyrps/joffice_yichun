@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -184,6 +185,8 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
     Button btnHistory;
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
+    @BindView(R.id.scrollView)
+    ScrollView scrollView;
     private String name, taskId, res, fullnameUId, fullname, bmfzryj, fgldyj, zhglyj, zjlyj, pcryj = "";
     private String mainId, signaName, destName, destType, checkTask, qianzhiData = "";
     String leader = "";
@@ -226,7 +229,7 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
-        LinearLayoutManager manager  = new LinearLayoutManager(this);
+        LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
         Intent intent = getIntent();
         name = intent.getStringExtra("activityName");
@@ -344,14 +347,14 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                String url = Constant.BASE_URL2 + Constant.DETAILWILL + Name + "&taskId=" + taskId+"&piId="+piId;
+                String url = Constant.BASE_URL2 + Constant.DETAILWILL + Name + "&taskId=" + taskId + "&piId=" + piId;
                 //                DBHandler dbA = new DBHandler();
 //                res = dbA.OAQingJiaWillDoDex(url);
                 OkHttpClient okHttpClient = new OkHttpClient();
                 String Session = new SharedPreferencesHelper(MyApplication.getContext(), "login").getData(MyApplication.getContext(), "session", "");
                 final Request request = new Request.Builder()
                         .url(url)
-                        .addHeader("Cookie",Session)
+                        .addHeader("Cookie", Session)
                         .get()//默认就是GET请求，可以不写
                         .build();
                 Call call = okHttpClient.newCall(request);
@@ -642,19 +645,19 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
         ProgressDialogUtil.stopLoad();
     }
 
-    @OnClick({R.id.btnUp, R.id.tvData, R.id.btnT,R.id.btnHistory})
+    @OnClick({R.id.btnUp, R.id.tvData, R.id.btnT, R.id.btnHistory})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btnHistory:
                 recyclerView.setVisibility(View.VISIBLE);
-                ProgressDialogUtil.startLoad(FlowUseCarWillDetailActivity.this,"获取数据中");
+                ProgressDialogUtil.startLoad(FlowUseCarWillDetailActivity.this, "获取数据中");
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
                         //String name =URLDecoder.decode(待转值,"utf-8");
                         String url = Constant.BASE_URL2 + Constant.FLOWMESSAGE;
                         DBHandler dbA = new DBHandler();
-                        flowMessage = dbA.OAFlowMessage(url,runID);
+                        flowMessage = dbA.OAFlowMessage(url, runID);
                         if (flowMessage.equals("获取数据失败") || flowMessage.equals("")) {
                             handler.sendEmptyMessage(TAG_TWO);
                         } else {
@@ -968,95 +971,95 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
                     }
                 }
                 if (!rb6.isChecked()) {
-                    if (resultList.size()>=6){
+                    if (resultList.size() >= 6) {
                         resultList.remove(5);
                     }
                 }
                 if (!rb5.isChecked()) {
-                    if (resultList.size()>=5){
+                    if (resultList.size() >= 5) {
                         resultList.remove(4);
                     }
                 }
                 if (!rb4.isChecked()) {
-                    if (resultList.size()>=4){
+                    if (resultList.size() >= 4) {
                         resultList.remove(3);
                     }
                 }
                 if (!rb3.isChecked()) {
-                    if (resultList.size()>=3){
+                    if (resultList.size() >= 3) {
                         resultList.remove(2);
                     }
                 }
                 if (!rb2.isChecked()) {
-                    if (resultList.size()>=2){
+                    if (resultList.size() >= 2) {
                         resultList.remove(1);
                     }
                 }
                 if (!rb1.isChecked()) {
-                    if (resultList.size()>=1){
+                    if (resultList.size() >= 1) {
                         resultList.remove(0);
                     }
                 }
 
                 if (!cb9.isChecked()) {
-                    if (bigResultList.size()>=9){
+                    if (bigResultList.size() >= 9) {
                         bigResultList.remove(8);
                     }
                 }
                 if (!cb8.isChecked()) {
-                    if (bigResultList.size()>=8){
+                    if (bigResultList.size() >= 8) {
                         bigResultList.remove(7);
                     }
                 }
                 if (!cb7.isChecked()) {
-                    if (bigResultList.size()>=7){
+                    if (bigResultList.size() >= 7) {
                         bigResultList.remove(6);
                     }
                 }
                 if (!cb6.isChecked()) {
-                    if (bigResultList.size()>=6){
+                    if (bigResultList.size() >= 6) {
                         bigResultList.remove(5);
                     }
                 }
                 if (!cb5.isChecked()) {
-                    if (bigResultList.size()>=5){
+                    if (bigResultList.size() >= 5) {
                         bigResultList.remove(4);
                     }
                 }
                 if (!cb4.isChecked()) {
-                    if (bigResultList.size()>=4){
+                    if (bigResultList.size() >= 4) {
                         bigResultList.remove(3);
                     }
                 }
                 if (!cb3.isChecked()) {
-                    if (bigResultList.size()>=3){
+                    if (bigResultList.size() >= 3) {
                         bigResultList.remove(2);
                     }
                 }
                 if (!cb2.isChecked()) {
-                    if (bigResultList.size()>=2){
+                    if (bigResultList.size() >= 2) {
                         bigResultList.remove(1);
                     }
                 }
                 if (!cb1.isChecked()) {
-                    if (bigResultList.size()>=1){
+                    if (bigResultList.size() >= 1) {
                         bigResultList.remove(0);
                     }
                 }
 
 
                 String userCodes = "";
-                if (resultList.size()==0){
+                if (resultList.size() == 0) {
                     userCodes = resultList1.toString();
                     userCodes = userCodes.toString().replace("[", "");
                     userCodes = userCodes.toString().replace("]", "");
-                }else {
+                } else {
                     userCodes = resultList.toString();
                     userCodes = userCodes.toString().replace("[", "");
                     userCodes = userCodes.toString().replace("]", "");
                 }
 
-                if (bigResultList.size()==0&&bigResultList1.size()!=0){
+                if (bigResultList.size() == 0 && bigResultList1.size() != 0) {
 
                     String bigUserCodes = bigResultList1.toString();
                     bigUserCodes = bigUserCodes.toString().replace("[", "");
@@ -1076,7 +1079,7 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
                         flowAssignld = flowAssignld.replace(":|", "|");
                         flowAssignld = flowAssignld.replace(":", "");
                     }
-                }else {
+                } else {
                     String bigUserCodes = bigResultList.toString();
                     bigUserCodes = bigUserCodes.toString().replace("[", "");
                     bigUserCodes = bigUserCodes.toString().replace("]", "");
@@ -1125,20 +1128,20 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
             switch (msg.what) {
                 case 333:
                     ProgressDialogUtil.stopLoad();
-                    Toast.makeText(FlowUseCarWillDetailActivity.this,getResources().getString(R.string.c_success), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FlowUseCarWillDetailActivity.this, getResources().getString(R.string.c_success), Toast.LENGTH_SHORT).show();
                     finish();
                     break;
                 case 444:
                     ProgressDialogUtil.stopLoad();
-                    Toast.makeText(FlowUseCarWillDetailActivity.this,getResources().getString(R.string.c_false), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FlowUseCarWillDetailActivity.this, getResources().getString(R.string.c_false), Toast.LENGTH_SHORT).show();
                     break;
                 case 111:
                     Gson gsonF = new Gson();
                     FlowMessage1 beanF = gsonF.fromJson(flowMessage, FlowMessage1.class);
-                    for (int i = 0;i<beanF.getData().size();i++){
+                    for (int i = 0; i < beanF.getData().size(); i++) {
                         flowList.add(beanF.getData().get(i));
                     }
-                    adapter = new FlowMessageAdapter(FlowUseCarWillDetailActivity.this,flowList);
+                    adapter = new FlowMessageAdapter(FlowUseCarWillDetailActivity.this, flowList);
                     recyclerView.setAdapter(adapter);
                     ProgressDialogUtil.stopLoad();
                     break;
@@ -1247,8 +1250,8 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
                             tvEndTime.setVisibility(View.GONE);
                             tagT = "N";
                         }
-                        if (bmreout.equals("1")&&fgreout.equals("1")&&zjlreout.equals("1")
-                                &&fgcwreout.equals("1")&&pcyreout.equals("1")){
+                        if (bmreout.equals("1") && fgreout.equals("1") && zjlreout.equals("1")
+                                && fgcwreout.equals("1") && pcyreout.equals("1")) {
                             Toast.makeText(FlowUseCarWillDetailActivity.this, "您对当前流程只有读取权限", Toast.LENGTH_SHORT).show();
                         }
                     } catch (JSONException e) {
@@ -1287,10 +1290,10 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
                     if (zhglyj != null && !zhglyj.equals("")) {
                         try {
                             JSONArray jsonArray = new JSONArray(zhglyj);
-                            for (int i = 0;i<jsonArray.length();i++){
+                            for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")){
-                                    word3 = word3+jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c")+ "\n" ;
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word3 = word3 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
                                 }
                             }
                         } catch (JSONException e) {
@@ -1298,7 +1301,7 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader3.getVisibility() == View.VISIBLE) {
                             tvLeader3.setText(word3);
-                        }else {
+                        } else {
                             etLeader3.setHint(word3);
                         }
                     }
@@ -1307,10 +1310,10 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
                     if (zjlyj != null && !zjlyj.equals("")) {
                         try {
                             JSONArray jsonArray = new JSONArray(zjlyj);
-                            for (int i = 0;i<jsonArray.length();i++){
+                            for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")){
-                                    word2 = word2+jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c")+ "\n" ;
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word2 = word2 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
                                 }
                             }
                         } catch (JSONException e) {
@@ -1318,7 +1321,7 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader2.getVisibility() == View.VISIBLE) {
                             tvLeader2.setText(word2);
-                        }else {
+                        } else {
                             etLeader2.setHint(word2);
                         }
                     }
@@ -1326,10 +1329,10 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
                     if (fgldyj != null && !fgldyj.equals("")) {
                         try {
                             JSONArray jsonArray = new JSONArray(fgldyj);
-                            for (int i = 0;i<jsonArray.length();i++){
+                            for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")){
-                                    word1 = word1+jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c")+ "\n" ;
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word1 = word1 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
                                 }
                             }
                         } catch (JSONException e) {
@@ -1337,7 +1340,7 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader1.getVisibility() == View.VISIBLE) {
                             tvLeader1.setText(word1);
-                        }else {
+                        } else {
                             etLeader1.setHint(word1);
                         }
                     }
@@ -1345,10 +1348,10 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
                     if (bmfzryj != null && !bmfzryj.equals("")) {
                         try {
                             JSONArray jsonArray = new JSONArray(bmfzryj);
-                            for (int i = 0;i<jsonArray.length();i++){
+                            for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")){
-                                    word = word+jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c")+ "\n" ;
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word = word + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
                                 }
                             }
                         } catch (JSONException e) {
@@ -1356,16 +1359,16 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader.getVisibility() == View.VISIBLE) {
                             tvLeader.setText(word);
-                        }else {
+                        } else {
                             etLeader.setHint(word);
                         }
                     }
-                    if (bean.isRevoke()){
+                    if (bean.isRevoke()) {
                         Toast.makeText(FlowUseCarWillDetailActivity.this, "当前流程已被追回", Toast.LENGTH_SHORT).show();
                     }
                     break;
                 case TAG_TWO:
-                    Toast.makeText(FlowUseCarWillDetailActivity.this, "操作数据失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FlowUseCarWillDetailActivity.this, "操作失败", Toast.LENGTH_SHORT).show();
                     ProgressDialogUtil.stopLoad();
                     break;
                 case TAG_THERE:

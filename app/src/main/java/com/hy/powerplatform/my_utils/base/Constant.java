@@ -69,6 +69,9 @@ public class Constant {
     //提交数据
     public static final String  PERSONLIST = "hrm/profileByPosEmpProfile.do";
 
+    //员工宿舍人员列表
+    public static final String  DORMPERSONLIST = "hrm/conList1EmpProfile.do";
+
     //获取代办数量
     public static final String  NUMDAIBAN = "flow/mobileGetNoticeTask.do";
 
@@ -238,6 +241,8 @@ public class Constant {
     public static final String  OAFLOWNUM = "flow/getHistoryCountProcessRun.do";
     // 公告状态
     public static final String  NOTICETYPE = "info/addReadCountNews.do";
+    // 公告详情
+    public static final String  NOTICEDETAIL = "info/getNews.do";
     // 个人中心数据
     public static final String  PERSONCENTER = "system/getLogTimeByIpAppUser.do";
     // 获取督办数量

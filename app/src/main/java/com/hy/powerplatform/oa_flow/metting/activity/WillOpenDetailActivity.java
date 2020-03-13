@@ -202,7 +202,7 @@ public class WillOpenDetailActivity extends BaseActivity {
             super.handleMessage(msg);
             switch (msg.what) {
                 case TAG_TWO:
-                    Toast.makeText(WillOpenDetailActivity.this, "操作数据失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(WillOpenDetailActivity.this, "操作失败", Toast.LENGTH_SHORT).show();
                     ProgressDialogUtil.stopLoad();
                     break;
                 case TAG_NINE:

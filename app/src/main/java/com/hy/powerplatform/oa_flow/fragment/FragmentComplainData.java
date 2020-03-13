@@ -76,7 +76,7 @@ public class FragmentComplainData extends Fragment {
     @BindView(R.id.etLine)
     EditText etLine;
     @BindView(R.id.etShouLi)
-    EditText etShouLi;
+    TextView etShouLi;
     @BindView(R.id.etData)
     EditText etData;
     @BindView(R.id.etLeader)
@@ -101,6 +101,8 @@ public class FragmentComplainData extends Fragment {
     TextView tvLeader2W;
     @BindView(R.id.tvLeader4W)
     TextView tvLeader4W;
+    @BindView(R.id.tv)
+    TextView tv;
     private CustomDatePickerDay customDatePicker1;
     List<String> namelist = new ArrayList<>();
     List<Name.DataBean> datalist = new ArrayList<>();
@@ -131,10 +133,11 @@ public class FragmentComplainData extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_complain_data, container, false);
         unbinder = ButterKnife.bind(this, view);
+        tv.setText("投诉人");
         initDatePicker();
         userId = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userCode", "");
         userName = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userStatus", "");
-        etPerson.setText(userName);
+        etShouLi.setText(userName);
 
         listAP.add("男");
         listAP.add("女");

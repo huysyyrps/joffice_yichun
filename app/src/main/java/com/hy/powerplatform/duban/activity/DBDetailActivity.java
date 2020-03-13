@@ -18,7 +18,6 @@ import com.google.gson.Gson;
 import com.hy.powerplatform.R;
 import com.hy.powerplatform.business_inspect.utils.DBHandler;
 import com.hy.powerplatform.duban.bean.DBFile;
-import com.hy.powerplatform.duban.bean.DBList;
 import com.hy.powerplatform.duban.bean.DBList1;
 import com.hy.powerplatform.duban.bean.DBUp;
 import com.hy.powerplatform.duban.bean.DBUp1;
@@ -701,7 +700,7 @@ public class DBDetailActivity extends BaseActivity {
                     ProgressDialogUtil.stopLoad();
                     break;
                 case Constant.TAG_SEVEN:
-                    Toast.makeText(DBDetailActivity.this, "操作数据失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DBDetailActivity.this, "操作失败", Toast.LENGTH_SHORT).show();
                     ProgressDialogUtil.stopLoad();
                     break;
                 case Constant.TAG_EIGHT:

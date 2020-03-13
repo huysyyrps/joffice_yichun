@@ -141,7 +141,7 @@ public class DBZXDetailActivity extends BaseActivity {
         tvJHWCSJ.setText(bean.getPlanFinishTime() + "");
         tvContent.setText(bean.getTaskContext());
         tvDBR.setText(bean.getSupervisorNames());
-        tvZXR.setText(bean.getOperatorNames());
+        tvZXR.setText(bean.getOperatorName());
         tvFBSJ.setText(bean.getApproveTime());
         tvLXR.setText(bean.getApproverName());
         upDateType = bean.getUpdateType();
@@ -706,7 +706,7 @@ public class DBZXDetailActivity extends BaseActivity {
                     ProgressDialogUtil.stopLoad();
                     break;
                 case 111:
-                    Toast.makeText(DBZXDetailActivity.this, "操作数据失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DBZXDetailActivity.this, "操作失败", Toast.LENGTH_SHORT).show();
                     ProgressDialogUtil.stopLoad();
                     break;
                 case 222:

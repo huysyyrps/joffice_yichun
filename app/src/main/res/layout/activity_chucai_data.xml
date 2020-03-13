@@ -337,7 +337,8 @@
                     style="@style/oaTextView"
                     android:text="附件:"
                     android:layout_gravity="center_vertical"
-                    android:layout_height="45dp"/>
+                    android:layout_height="45dp"
+                    android:textColor="@color/file_color"/>
 
                 <View
                     android:layout_width="1dp"
@@ -349,7 +350,8 @@
                     android:id="@+id/tvData"
                     style="@style/textWrite"
                     android:hint="点击选择附件"
-                    android:layout_weight="2.5"/>
+                    android:layout_weight="2.5"
+                    android:textColor="@color/file_color"/>
             </LinearLayout>
 
             <TextView

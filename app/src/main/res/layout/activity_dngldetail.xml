@@ -115,12 +115,14 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
                     style="@style/oaTextView"
-                    android:text="督办人:" />
+                    android:text="督办人:"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"/>
 
                 <View
                     android:layout_width="1dp"
@@ -130,7 +132,11 @@
 
                 <TextView
                     android:id="@+id/tvDBR"
-                    style="@style/oaEditText" />
+                    style="@style/oaEditText"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"/>
             </LinearLayout>
             <View style="@style/line"></View>
 

@@ -182,7 +182,8 @@
                     style="@style/oaTextView"
                     android:text="附件:"
                     android:layout_height="45dp"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical"
+                    android:textColor="@color/file_color"/>
                 <View
                     android:layout_width="1dp"
                     android:layout_height="15dp"
@@ -191,7 +192,8 @@
                 <TextView
                     android:id="@+id/tvData"
                     android:hint="暂无上传附件"
-                    style="@style/textWrite"/>
+                    style="@style/textWrite"
+                    android:textColor="@color/file_color"/>
             </LinearLayout>
 
             <TextView

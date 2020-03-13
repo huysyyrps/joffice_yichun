@@ -104,7 +104,8 @@
                     style="@style/oaTextView"
                     android:text="附件: *"
                     android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/file_color"/>
                 <View
                     android:layout_width="1dp"
                     android:layout_height="15dp"
@@ -115,7 +116,8 @@
                     android:hint="请选择附件"
                     style="@style/oaEditText"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/file_color"/>
             </LinearLayout>
             <!--<View style="@style/line"></View>-->
             <!--<LinearLayout-->

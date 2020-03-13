@@ -107,7 +107,7 @@
                 <TextView
                     android:id="@+id/tvLeaderW"
                     style="@style/oaTextView"
-                    android:text="需求部门:"
+                    android:text="部门领导意见:"
                     android:layout_height="45dp"
                     android:layout_gravity="center_vertical"/>
                 <View
@@ -118,7 +118,7 @@
                 <TextView
                     android:id="@+id/tvLeader"
                     style="@style/textWrite"
-                    android:hint="请填写需求部门意见"/>
+                    android:hint="请填写部门领导意见"/>
             </LinearLayout>
             <View style="@style/line"></View>
 
@@ -129,7 +129,7 @@
                 <TextView
                     android:id="@+id/tvLeader1W"
                     style="@style/oaTextView"
-                    android:text="需求部门领导:"
+                    android:text="分管领导意见:"
                     android:layout_height="45dp"
                     android:layout_gravity="center_vertical"/>
                 <View
@@ -140,7 +140,7 @@
                 <TextView
                     android:id="@+id/tvLeader1"
                     style="@style/textWrite"
-                    android:hint="请填写需求部门领导意见"/>
+                    android:hint="请填写分管领导意见"/>
             </LinearLayout>
             <View style="@style/line"></View>
 

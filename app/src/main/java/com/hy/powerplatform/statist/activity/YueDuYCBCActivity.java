@@ -245,6 +245,7 @@ public class YueDuYCBCActivity extends BaseActivity {
                             labels.add(jsonObject.getString("type"));
                             dataset = new BarDataSet(entries, getResources().getString(R.string.oaflow_statist_rb9));
                             dataset.setColors(ColorTemplate.COLORFUL_COLORS);
+                            dataset.setValueTextSize(12);
                             dataSets.add(dataset);
                         }
                         if (beanList.size() == 1) {

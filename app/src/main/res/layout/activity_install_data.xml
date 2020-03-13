@@ -10,10 +10,11 @@
         android:id="@+id/header"
         style="@style/Heander"
         app:header_is_right_tv_visiable="true"
-        app:header_title="安装改造审批详情"
+        app:header_title="项目申办表"
         app:header_title_right="@string/nullify"></com.hy.powerplatform.my_utils.myViews.Header>
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -127,7 +128,8 @@
                     style="@style/oaTextView"
                     android:layout_height="45dp"
                     android:layout_gravity="center_vertical"
-                    android:text="附件: *" />
+                    android:text="附件: *"
+                    android:textColor="@color/file_color"/>
 
                 <View
                     android:layout_width="1dp"
@@ -138,7 +140,8 @@
                 <TextView
                     android:id="@+id/tvData"
                     style="@style/textWrite"
-                    android:hint="请选择附件" />
+                    android:hint="请选择附件"
+                    android:textColor="@color/file_color"/>
             </LinearLayout>
 
             <LinearLayout
@@ -549,41 +552,55 @@
                     android:visibility="gone" />
             </LinearLayout>
 
+            <View style="@style/line"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
+                android:layout_height="45dp"
+                android:orientation="horizontal">
                 <TextView
+                    android:id="@+id/tvBJRW"
                     style="@style/oaTextView"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"
                     android:text="办结人:" />
-
                 <View
                     android:layout_width="1dp"
                     android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
+                    android:background="@color/shouye"
+                    android:layout_gravity="center_vertical"/>
                 <TextView
-                    android:id="@+id/tvLeader5"
+                    android:id="@+id/tvBJR"
+                    android:hint="办结人"
+                    style="@style/oaEditText"/>
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tvBJRSelect"
                     style="@style/oaEditText"
-                    android:hint="办结人意见" />
-
-                <EditText
-                    android:id="@+id/etLeader5"
-                    style="@style/textWrite"
-                    android:hint="办结人意见"
-                    android:visibility="gone" />
-                <!--<TextView-->
-                <!--android:visibility="gone"-->
-                <!--android:id="@+id/tvDate1"-->
-                <!--style="@style/textWrite" />-->
+                    android:hint="请选择办结人"/>
             </LinearLayout>
+            <View style="@style/line"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tvWCQKW"
+                    style="@style/oaTextView"
+                    android:text="完成情况:" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:background="@color/shouye"
+                    android:layout_gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/tvWCQK"
+                    android:hint="完成情况"
+                    style="@style/oaEditText"/>
+                <Spinner
+                    android:id="@+id/spinnerWCQK"
+                    android:visibility="gone"
+                    style="@style/oaEditText" />
+            </LinearLayout>
+            <View style="@style/line"/>
 
-            <View style="@style/line" />
 
             <LinearLayout
                 android:layout_width="match_parent"

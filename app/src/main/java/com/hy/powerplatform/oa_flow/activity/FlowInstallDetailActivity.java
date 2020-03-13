@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -73,8 +75,6 @@ public class FlowInstallDetailActivity extends BaseActivity {
     TextView tvLeader3;
     @BindView(R.id.tvLeader4)
     TextView tvLeader4;
-    @BindView(R.id.tvLeader5)
-    TextView tvLeader5;
     @BindView(R.id.tvDate1)
     TextView tvDate1;
     @BindView(R.id.tvLeader6)
@@ -131,8 +131,6 @@ public class FlowInstallDetailActivity extends BaseActivity {
     EditText etLeader3;
     @BindView(R.id.etLeader4)
     EditText etLeader4;
-    @BindView(R.id.etLeader5)
-    EditText etLeader5;
     @BindView(R.id.etLeader6)
     EditText etLeader6;
     @BindView(R.id.btnT)
@@ -161,12 +159,32 @@ public class FlowInstallDetailActivity extends BaseActivity {
     TextView tvLeader3W;
     @BindView(R.id.tvLeader4W)
     TextView tvLeader4W;
-    @BindView(R.id.tvLeader5W)
-    TextView tvLeader5W;
     @BindView(R.id.tvLeader6W)
     TextView tvLeader6W;
     @BindView(R.id.tvLeader7W)
     TextView tvLeader7W;
+    @BindView(R.id.tvspr)
+    TextView tvspr;
+    @BindView(R.id.llShenPiRen)
+    LinearLayout llShenPiRen;
+    @BindView(R.id.llShenPiRenList)
+    LinearLayout llShenPiRenList;
+    @BindView(R.id.tvBJR)
+    TextView tvBJR;
+    @BindView(R.id.tvBJRSelect)
+    TextView tvBJRSelect;
+    @BindView(R.id.tvWCQK)
+    TextView tvWCQK;
+    @BindView(R.id.spinnerWCQK)
+    Spinner spinnerWCQK;
+    @BindView(R.id.scrollView)
+    ScrollView scrollView;
+    @BindView(R.id.tvLeader5W)
+    TextView tvLeader5W;
+    @BindView(R.id.tvBJRW)
+    TextView tvBJRW;
+    @BindView(R.id.tvWCQKW)
+    TextView tvWCQKW;
     private String res;
 
     String xiangguanfujian = "";
@@ -187,6 +205,8 @@ public class FlowInstallDetailActivity extends BaseActivity {
         tvLeader3W.setTextColor(getResources().getColor(R.color.order_stop_black));
         tvLeader4W.setTextColor(getResources().getColor(R.color.order_stop_black));
         tvLeader5W.setTextColor(getResources().getColor(R.color.order_stop_black));
+        tvBJRW.setTextColor(getResources().getColor(R.color.order_stop_black));
+        tvWCQKW.setTextColor(getResources().getColor(R.color.order_stop_black));
         tvLeader6W.setTextColor(getResources().getColor(R.color.order_stop_black));
         tvLeader7W.setTextColor(getResources().getColor(R.color.order_stop_black));
         header.setTvRight("追回");
@@ -358,6 +378,7 @@ public class FlowInstallDetailActivity extends BaseActivity {
                     String jbbmyj = bean.getMainform().get(0).getJbbmyj();
                     String bjap = bean.getMainform().get(0).getBjap();
                     String bjr = bean.getMainform().get(0).getBanJieRen();
+                    String wcqk = bean.getMainform().get(0).getWczt();
                     String bjpj = bean.getMainform().get(0).getBjpj();
                     String zjlyj = bean.getMainform().get(0).getZjlyj();
                     xiangguanfujian = bean.getMainform().get(0).getXiangguanfujian();
@@ -393,7 +414,10 @@ public class FlowInstallDetailActivity extends BaseActivity {
                         tvLeader4.setText(getJSONData(bjap));
                     }
                     if (!bjr.equals("")) {
-                        tvLeader5.setText(bjr);
+                        tvBJR.setText(bjr);
+                    }
+                    if (!wcqk.equals("")) {
+                        tvWCQK.setText(wcqk);
                     }
                     if (!bjpj.equals("")) {
                         tvLeader6.setText(getJSONData(bjpj));

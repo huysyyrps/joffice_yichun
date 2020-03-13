@@ -1,10 +1,13 @@
 package com.hy.powerplatform.my_utils.base;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Handler;
 import android.util.Log;
 
 import com.hy.powerplatform.SharedPreferencesHelper;
+import com.hy.powerplatform.my_utils.utils.ProgressDialogUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -57,6 +60,12 @@ public class OkHttpUtil {
      * @param callback
      */
     public void getAsynHttp(String url, final ResultCallback callback){
+        ConnectivityManager mConnectivityManager = (ConnectivityManager) MyApplication.getContextObject().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo mNetworkInfo  = mConnectivityManager.getActiveNetworkInfo();
+        if(mNetworkInfo == null){
+            ProgressDialogUtil.stopLoad();
+            return;
+        }
         String Session = new SharedPreferencesHelper(MyApplication.getContext(), "login").getData(MyApplication.getContext(), "session", "");
         Request request = new Request.Builder()
                 .url(url)
@@ -81,6 +90,12 @@ public class OkHttpUtil {
      * @param callback
      */
     public void postForm(String url, Map<String,String > map, final ResultCallback callback){
+        ConnectivityManager mConnectivityManager = (ConnectivityManager) MyApplication.getContextObject().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo mNetworkInfo  = mConnectivityManager.getActiveNetworkInfo();
+        if(mNetworkInfo == null){
+            ProgressDialogUtil.stopLoad();
+            return;
+        }
         FormBody.Builder form = new FormBody.Builder();//表单对象，包含以input开始的对象,以html表单为主
         if (map != null && !map.isEmpty()){
             //遍历Map集合

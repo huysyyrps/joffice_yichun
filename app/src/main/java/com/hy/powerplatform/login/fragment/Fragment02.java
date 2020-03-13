@@ -25,6 +25,9 @@ import com.hy.powerplatform.my_utils.base.OkHttpUtil;
 import com.hy.powerplatform.my_utils.utils.ProgressDialogUtil;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -141,7 +144,15 @@ public class Fragment02 extends Fragment {
                     PersonContent bean = new Gson().fromJson(data, PersonContent.class);
                     tvLoginNum.setText(bean.getResult().get(0).getNum() + "");
                     tvOldIp.setText(bean.getResult().get(0).getLogIp() + "");
-                    tvOldLogin.setText(bean.getResult().get(0).getLogTime() + "");
+                    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    Date date = null;
+                    try {
+                        date = formatter.parse(bean.getResult().get(0).getLogTime());
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    String dateString = formatter.format(date);
+                    tvOldLogin.setText(dateString);
                     break;
             }
         }

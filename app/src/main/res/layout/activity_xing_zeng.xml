@@ -207,7 +207,7 @@
                             android:layout_gravity="center"/>
                         <TextView
                             style="@style/ycTextView"
-                            android:text="安装改造"/>
+                            android:text="项目申办表"/>
                         <TextView
                             android:id="@+id/tvInstall"
                             style="@style/numTextView"/>

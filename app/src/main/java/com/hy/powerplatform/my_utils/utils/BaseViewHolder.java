@@ -97,6 +97,9 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
         else if (text.equals("10")){
             tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.pinchar12));//通过获得资源文件进行设置。
         }
+        else if (text.equals("11")){
+            tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.black));//通过获得资源文件进行设置。
+        }
         return this;
     }
 
@@ -130,7 +133,7 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
      */
     public BaseViewHolder setVisitiomLL(int viewId) {
         LinearLayout tv = getView(viewId);
-        tv.setVisibility(View.GONE);
+        tv.setVisibility(View.VISIBLE);
         return this;
     }
 
@@ -167,6 +170,12 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
     public BaseViewHolder setGoneLL(int viewId) {
         LinearLayout rb = getView(viewId);
         rb.setVisibility(View.GONE);
+        return this;
+    }
+
+    public BaseViewHolder setVisitionLL(int viewId) {
+        LinearLayout rb = getView(viewId);
+        rb.setVisibility(View.VISIBLE);
         return this;
     }
 

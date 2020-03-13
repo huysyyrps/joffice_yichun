@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -88,7 +87,7 @@ public class FragmentCarVideoData extends Fragment {
     @BindView(R.id.etCard)
     EditText etCard;
     @BindView(R.id.spinnerDiaoQu)
-    Spinner spinnerDiaoQu;
+    TextView spinnerDiaoQu;
     @BindView(R.id.etLeader)
     TextView etLeader;
     @BindView(R.id.etLeader1)
@@ -111,6 +110,8 @@ public class FragmentCarVideoData extends Fragment {
     TextView tvLeader1W;
     @BindView(R.id.tvLeader2W)
     TextView tvLeader2W;
+    @BindView(R.id.tvYN)
+    TextView tvYN;
     private CustomDatePickerDay customDatePicker1, customDatePicker2;
     Unbinder unbinder;
     List<String> namelist = new ArrayList<>();
@@ -142,11 +143,12 @@ public class FragmentCarVideoData extends Fragment {
         //setFilters方式
         etSmallMoney.setFilters(new InputFilter[]{new MoneyValueFilter().setDigits(2)});
         initDatePicker();
+        dataList.add("");
         dataList.add("是");
         dataList.add("否");
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, dataList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerDiaoQu.setAdapter(adapter);
+//        spinnerDiaoQu.setAdapter(adapter);
 
         userId = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userCode", "");
         userName = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userStatus", "");
@@ -178,6 +180,7 @@ public class FragmentCarVideoData extends Fragment {
         tvLeaderW.setTextColor(getResources().getColor(R.color.order_stop_black));
         tvLeader1W.setTextColor(getResources().getColor(R.color.order_stop_black));
         tvLeader2W.setTextColor(getResources().getColor(R.color.order_stop_black));
+        tvYN.setTextColor(getResources().getColor(R.color.order_stop_black));
         return view;
     }
 
@@ -312,7 +315,7 @@ public class FragmentCarVideoData extends Fragment {
                 final String bigMonet = etBigMoney.getText().toString().trim() + "";
                 final String smallMoney = etSmallMoney.getText().toString().trim() + "";
                 final String card = etCard.getText().toString().trim() + "";
-                final String diaoQu = String.valueOf(spinnerDiaoQu.getSelectedItem()) + "";
+//                final String diaoQu = String.valueOf(spinnerDiaoQu.getSelectedItem()) + "";
                 if (department.equals("")) {
                     Toast.makeText(getActivity(), "部门不能为空", Toast.LENGTH_SHORT).show();
                     break;
@@ -389,10 +392,10 @@ public class FragmentCarVideoData extends Fragment {
                 final String bigMonet = etBigMoney.getText().toString() + "";
                 final String smallMoney = etSmallMoney.getText().toString() + "";
                 final String card = etCard.getText().toString() + "";
-                final String diaoQu = String.valueOf(spinnerDiaoQu.getSelectedItem()) + "";
+//                final String diaoQu = String.valueOf(spinnerDiaoQu.getSelectedItem()) + "";
                 String res = dbA.OACarVideoUp(turl, userDepart, uId, zhiDanRen, zhiDanDate, department,
                         person, carNo, line, time, address, xingZhi, staus, bigMonet, smallMoney, userId, userName,
-                        card, diaoQu, liushuihao);
+                        card, "", liushuihao);
                 if (res.equals("")) {
                     handler.sendEmptyMessage(TAG_THERE);
                 } else {

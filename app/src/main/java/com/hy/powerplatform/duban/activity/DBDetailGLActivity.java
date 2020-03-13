@@ -399,7 +399,7 @@ public class DBDetailGLActivity extends BaseActivity {
                     ProgressDialogUtil.stopLoad();
                     break;
                 case Constant.TAG_SEVEN:
-                    Toast.makeText(DBDetailGLActivity.this, "操作数据失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DBDetailGLActivity.this, "操作失败", Toast.LENGTH_SHORT).show();
                     ProgressDialogUtil.stopLoad();
                     break;
                 case Constant.TAG_EIGHT:

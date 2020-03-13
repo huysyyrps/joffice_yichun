@@ -293,6 +293,7 @@ public class YueDuWGCSActivity extends BaseActivity {
                         pieDataSet.setSliceSpace(0f);
                         pieDataSet.setSelectionShift(5f);
                         pieDataSet.setSelectionShift(15f);
+                        pieDataSet.setValueTextSize(13);
                         pieDataSet.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
                         pieDataSet.setXValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
                         DisplayMetrics metrics = getResources().getDisplayMetrics();

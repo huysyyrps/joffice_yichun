@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -179,6 +180,8 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
     LinearLayout llShenPiRenList;
     @BindView(R.id.tvspr)
     TextView tvspr;
+    @BindView(R.id.scrollView)
+    ScrollView scrollView;
     private String name, taskId, res, bxbmyj, wxbmyj, wxryyj, wxqkyj, sbsyryj, wxfkyj = "";
     private String mainId, signaName, destName, destType, checkTask, qianzhiData = "";
     String leader = "";
@@ -757,6 +760,23 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
             case R.id.btnT:
                 btnTTag = "Y";
                 llShenPiRenList.setVisibility(View.VISIBLE);
+                //                final boolean scrollDown = getIntent().getBooleanExtra(SCROLL_DOWN, false);
+//                if (scrollDown) {
+                scrollView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        //To change body of implemented methods use File | Settings | File Templates.
+//                    mRootScrollView.fullScroll(ScrollView.FOCUS_DOWN);
+                        int[] location = new int[2];
+                        llShenPiRen.getLocationOnScreen(location);
+                        int offset = location[1] - scrollView.getMeasuredHeight();
+//                            if (offset < 0) {
+//                                offset = 0;
+//                            }
+                        scrollView.smoothScrollTo(0, Math.abs(offset));
+                    }
+                });
+//                }
                 if (beanList.size() != 0) {
                     if (beanList.size() == 1) {
                         ProgressDialogUtil.startLoad(FlowEMainatinWillDetailActivity.this, "获取数据中");
@@ -1481,12 +1501,12 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                         tvText.setVisibility(View.GONE);
                         ProgressDialogUtil.startLoad(FlowEMainatinWillDetailActivity.this, "获取审核人");
                         getAppRovePerson();
-                    }else {
+                    } else {
                         tvspr.setText("请点击“+”选择路径");
                     }
                     break;
                 case TAG_TWO:
-                    Toast.makeText(FlowEMainatinWillDetailActivity.this, "操作数据失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FlowEMainatinWillDetailActivity.this, "操作失败", Toast.LENGTH_SHORT).show();
                     ProgressDialogUtil.stopLoad();
                     break;
                 case TAG_THERE:

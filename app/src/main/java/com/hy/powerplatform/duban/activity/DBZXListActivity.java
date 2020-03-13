@@ -95,6 +95,16 @@ public class DBZXListActivity extends BaseActivity {
                 holder.setText(R.id.tvContent, resultBean.getTaskContext());
                 holder.setText(R.id.tvTime, resultBean.getCreateTime());
                 String pizhu = resultBean.getAnnotation();
+                String staue = resultBean.getUpdateType();
+                if (staue==null){
+                    holder.setGoneLL(R.id.llstaueSP);
+                }else if (staue.equals("1")){
+                    holder.setVisitiomLL(R.id.llstaueSP);
+                    holder.setText(R.id.tvStaueSP, "审批中");
+                }else if (staue.equals("2")){
+                    holder.setVisitiomLL(R.id.llstaueSP);
+                    holder.setText(R.id.tvStaueSP, "已审批");
+                }
                 if (pizhu==null||pizhu.equals("")){
                     holder.setGoneLL(R.id.llPZ);
                 }else {

@@ -188,6 +188,26 @@ public class FlowGoodsPruchaseDetailActivity extends BaseActivity {
     TextView tvLeader5W;
     @BindView(R.id.ll)
     LinearLayout ll;
+    @BindView(R.id.tvOtherName)
+    TextView tvOtherName;
+    @BindView(R.id.llOtherName)
+    LinearLayout llOtherName;
+    @BindView(R.id.tvOtherMoney)
+    TextView tvOtherMoney;
+    @BindView(R.id.llOtherMoney)
+    LinearLayout llOtherMoney;
+    @BindView(R.id.tvOtherMemo)
+    TextView tvOtherMemo;
+    @BindView(R.id.llOtherMemo)
+    LinearLayout llOtherMemo;
+    @BindView(R.id.tvOtherUser)
+    TextView tvOtherUser;
+    @BindView(R.id.llOtherUser)
+    LinearLayout llOtherUser;
+    @BindView(R.id.etLeaderGYB)
+    EditText etLeaderGYB;
+    @BindView(R.id.tvLeaderGYB)
+    TextView tvLeaderGYB;
     private String res;
     String xiangguanfujian = "";
     String flowMessage = "";
@@ -362,6 +382,10 @@ public class FlowGoodsPruchaseDetailActivity extends BaseActivity {
                     ProgressDialogUtil.stopLoad();
                     break;
                 case TAG_ONE:
+                    llOtherMemo.setVisibility(View.GONE);
+                    llOtherMoney.setVisibility(View.GONE);
+                    llOtherName.setVisibility(View.GONE);
+                    llOtherUser.setVisibility(View.VISIBLE);
                     Gson gson = new Gson();
                     MyGoodsPurchase bean = gson.fromJson(res, MyGoodsPurchase.class);
                     String department = bean.getMainform().get(0).getBm();
@@ -373,6 +397,7 @@ public class FlowGoodsPruchaseDetailActivity extends BaseActivity {
                     String allNum = bean.getMainform().get(0).getHejisl();
                     String iszc = bean.getMainform().get(0).getIszc();
                     String goodsType = bean.getMainform().get(0).getGoodsType();
+                    tvOtherUser.setText(other);
                     xiangguanfujian = bean.getMainform().get(0).getXgfj();
                     if (xiangguanfujian.equals("")) {
                         llData.setVisibility(View.GONE);
@@ -381,7 +406,7 @@ public class FlowGoodsPruchaseDetailActivity extends BaseActivity {
                     }
                     runID = bean.getMainform().get(0).getRunId();
                     tvData.setText(xiangguanfujian);
-                    if (iszc.equals("非资产类")){
+                    if (iszc.equals("非资产类")) {
                         ll.setVisibility(View.GONE);
                     }
                     tvzc.setText(iszc);

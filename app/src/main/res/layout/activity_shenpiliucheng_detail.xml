@@ -217,13 +217,15 @@
                     style="@style/oaTextView"
                     android:text="附件:"
                     android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/file_color"/>
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="15dp"
                     android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
+                    android:background="@color/shouye"
+                    android:textColor="@color/file_color"/>
 
                 <TextView
                     android:id="@+id/tvData"

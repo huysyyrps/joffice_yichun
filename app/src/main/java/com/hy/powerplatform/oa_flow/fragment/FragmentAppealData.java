@@ -214,7 +214,7 @@ public class FragmentAppealData extends Fragment {
                     break;
                 }
                 if (data.equals("")) {
-                    Toast.makeText(getActivity(), "具体事项不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "请示内容不能为空", Toast.LENGTH_SHORT).show();
                     break;
                 }
                 ProgressDialogUtil.startLoad(getActivity(), "数据上传中");

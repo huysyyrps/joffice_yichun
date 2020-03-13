@@ -43,7 +43,7 @@ public class FlowInstallActivity extends BaseActivity implements RadioGroup.OnCh
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
-        header.setTvTitle("安装改造项目申办");
+        header.setTvTitle("项目申办表");
         fragment01 = new FragmentInstallData();
         fragment02 = new FragmentInstallList();
         fragment011 = new FragmentTestList();

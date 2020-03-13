@@ -26,7 +26,7 @@ import com.hy.powerplatform.my_utils.utils.IDCardSession;
 import com.hy.powerplatform.my_utils.utils.PhoneSession;
 import com.hy.powerplatform.my_utils.utils.ProgressDialogUtil;
 import com.hy.powerplatform.my_utils.utils.time_select.CustomDatePickerDay;
-import com.hy.powerplatform.oa_flow.activity.PersonListActivity;
+import com.hy.powerplatform.oa_flow.activity.DormPersonListActivity;
 import com.hy.powerplatform.oa_flow.bean.Name;
 import com.leon.lfilepickerlibrary.LFilePicker;
 import com.leon.lfilepickerlibrary.utils.Constant;
@@ -404,7 +404,18 @@ public class FragmentDormData extends Fragment {
             if (data != null) {
                 userCode = data.getStringExtra("userCode");
                 userName = data.getStringExtra("userName");
+                String sex = data.getStringExtra("sex");
+                String age = data.getStringExtra("age");
+                String iDCard = data.getStringExtra("idCard");
+                String mobile = data.getStringExtra("mobile");
+                String adress = data.getStringExtra("adress");
+
                 etPerson.setText(userName);
+                etSex.setText(sex);
+                etAge.setText(age);
+                etIdCard.setText(iDCard);
+                etPhone.setText(mobile);
+                etAddress.setText(adress);
             }
         }
     }
@@ -565,7 +576,7 @@ public class FragmentDormData extends Fragment {
 
     @OnClick(R.id.tvPerson)
     public void onViewClicked() {
-        Intent intent = new Intent(getActivity(), PersonListActivity.class);
+        Intent intent = new Intent(getActivity(), DormPersonListActivity.class);
         startActivityForResult(intent, com.hy.powerplatform.my_utils.base.Constant.TAG_TWO);
     }
 

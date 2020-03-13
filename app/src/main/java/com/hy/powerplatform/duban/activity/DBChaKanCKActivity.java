@@ -234,7 +234,7 @@ public class DBChaKanCKActivity extends BaseActivity {
                     break;
 
                 case TAG_THERE:
-                    Toast.makeText(DBChaKanCKActivity.this, "操作数据失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DBChaKanCKActivity.this, "操作失败", Toast.LENGTH_SHORT).show();
                     ProgressDialogUtil.stopLoad();
                     break;
                 case TAG_FOUR:

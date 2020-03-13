@@ -292,6 +292,7 @@ public class HuiZongActivity extends BaseActivity {
                         //设置个饼状图之间的距离
                         pieDataSet.setSliceSpace(0f);
                         pieDataSet.setColors(colors);
+                        pieDataSet.setValueTextSize(11f);
                         pieDataSet.setSliceSpace(0f);
                         pieDataSet.setSelectionShift(5f);
                         pieDataSet.setSelectionShift(15f);

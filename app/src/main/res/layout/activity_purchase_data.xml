@@ -555,6 +555,7 @@
             <View style="@style/line"></View>
 
             <LinearLayout
+                android:id="@+id/llOtherName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -578,6 +579,7 @@
             </LinearLayout>
             <View style="@style/line"></View>
             <LinearLayout
+                android:id="@+id/llOtherMoney"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -601,6 +603,7 @@
             </LinearLayout>
             <View style="@style/line"></View>
             <LinearLayout
+                android:id="@+id/llOtherMemo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -619,6 +622,32 @@
 
                 <TextView
                     android:id="@+id/tvOtherMemo"
+                    style="@style/textWrite"
+                    android:layout_weight="2.5" />
+            </LinearLayout>
+            <View style="@style/line"></View>
+
+            <LinearLayout
+                android:id="@+id/llOtherUser"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/oaTextView"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="其他: " />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/shouye" />
+
+                <TextView
+                    android:id="@+id/tvOtherUser"
                     style="@style/textWrite"
                     android:layout_weight="2.5" />
             </LinearLayout>
@@ -658,7 +687,8 @@
                     style="@style/oaTextView"
                     android:layout_height="45dp"
                     android:layout_gravity="center_vertical"
-                    android:text="附件:" />
+                    android:text="附件:"
+                    android:textColor="@color/file_color"/>
 
                 <View
                     android:layout_width="1dp"
@@ -669,7 +699,8 @@
                 <TextView
                     android:id="@+id/tvData"
                     style="@style/textWrite"
-                    android:hint="点击选择附件" />
+                    android:hint="点击选择附件"
+                    android:textColor="@color/file_color"/>
             </LinearLayout>
 
 

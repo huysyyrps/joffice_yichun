@@ -256,15 +256,16 @@
                     android:hint="办结安排"
                     style="@style/oaEditText"/>
             </LinearLayout>
+            <View style="@style/line"/>
 
             <LinearLayout
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:orientation="horizontal">
                 <TextView
                     style="@style/oaTextView"
-                    android:text="办结人:"/>
+                    android:text="办结人:"
+                    android:textColor="@color/order_stop_black"/>
                 <View
                     android:layout_width="1dp"
                     android:layout_height="15dp"
@@ -272,11 +273,32 @@
                     android:layout_gravity="center_vertical"/>
                 <TextView
                     android:id="@+id/tvLeader6"
-                    android:hint="办结人意见"
+                    android:hint="办结人"
                     style="@style/oaEditText"/>
                 <TextView
                     android:visibility="gone"
                     android:id="@+id/tvDate1"
+                    style="@style/oaEditText" />
+            </LinearLayout>
+            <View style="@style/line"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/oaTextView"
+                    android:text="完成情况:"
+                    android:textColor="@color/order_stop_black"/>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:background="@color/shouye"
+                    android:layout_gravity="center_vertical"/>
+                <TextView
+                    android:hint="完成情况"
+                    style="@style/oaEditText"/>
+                <TextView
+                    android:visibility="gone"
                     style="@style/oaEditText" />
             </LinearLayout>
             <View style="@style/line"/>

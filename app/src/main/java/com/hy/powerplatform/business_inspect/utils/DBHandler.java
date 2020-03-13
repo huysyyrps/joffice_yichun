@@ -1,11 +1,14 @@
 package com.hy.powerplatform.business_inspect.utils;
 
+import android.os.Looper;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.hy.powerplatform.SharedPreferencesHelper;
 import com.hy.powerplatform.business_inspect.bean.Matter;
 import com.hy.powerplatform.my_utils.base.Constant;
 import com.hy.powerplatform.my_utils.base.MyApplication;
+import com.hy.powerplatform.my_utils.utils.ProgressDialogUtil;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -1330,6 +1333,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -1367,6 +1377,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -1429,6 +1446,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -1467,6 +1491,13 @@ public class DBHandler {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         } finally {
             if (reader != null) {
                 try {
@@ -1479,71 +1510,6 @@ public class DBHandler {
                 connection.disconnect();
             }
         }
-//
-//
-//
-//        HttpClient httpClient = new DefaultHttpClient();
-//        List<NameValuePair> nvs = new ArrayList<NameValuePair>();
-//        HttpPost httpRequst = new HttpPost(turl);
-//        String Session = new SharedPreferencesHelper(MyApplication.getContext(), "login").getData(MyApplication.getContext(), "session", "");
-//        httpRequst.setHeader("Cookie", Session);
-//        try {
-//            UrlEncodedFormEntity uefEntity = new UrlEncodedFormEntity(nvs, "utf-8");
-//            httpRequst.setEntity(uefEntity);
-//            HttpResponse res = httpClient.execute(httpRequst);
-//            HttpEntity entity = res.getEntity();
-//            BufferedReader reader = new BufferedReader(new InputStreamReader(entity.getContent()));
-//            StringBuffer sb = new StringBuffer();
-//            String line = null;
-//            while ((line = reader.readLine()) != null) {
-//                sb.append(line + "\n");
-//            }
-//            reader.close();
-//            Log.i("sb=", sb.toString());
-//            JSONObject json_ = new JSONObject(sb.toString());
-//            if (json_ != null) {
-//                String msg = json_.get("success").toString();
-//                if (msg.equals("true")) {
-//                    return json_ + "";
-//                } else {
-//                    return msg;
-//                }
-//            }
-//        } catch (Exception e) {
-//            System.out.println(e);
-//            e.printStackTrace();
-//            HttpClient httpClient1 = new DefaultHttpClient();
-//            List<NameValuePair> nvs1 = new ArrayList<NameValuePair>();
-//            HttpPost httpRequst1 = new HttpPost(turl);
-//            String Session1 = new SharedPreferencesHelper(MyApplication.getContext(), "login").getData(MyApplication.getContext(), "session", "");
-//            httpRequst1.setHeader("Cookie", Session1);
-//            try {
-//                UrlEncodedFormEntity uefEntity1 = new UrlEncodedFormEntity(nvs1, "utf-8");
-//                httpRequst1.setEntity(uefEntity1);
-//                HttpResponse res1 = httpClient1.execute(httpRequst);
-//                HttpEntity entity1 = res1.getEntity();
-//                BufferedReader reader1 = new BufferedReader(new InputStreamReader(entity1.getContent()));
-//                StringBuffer sb1 = new StringBuffer();
-//                String line = null;
-//                while ((line = reader1.readLine()) != null) {
-//                    sb1.append(line + "\n");
-//                }
-//                reader1.close();
-//                Log.i("sb=", sb1.toString());
-//                JSONObject json_ = new JSONObject(sb1.toString());
-//                if (json_ != null) {
-//                    String msg = json_.get("success").toString();
-//                    if (msg.equals("true")) {
-//                        return json_ + "";
-//                    } else {
-//                        return msg;
-//                    }
-//                }
-//            } catch (Exception e1) {
-//                System.out.println(e1);
-//                e1.printStackTrace();
-//            }
-//        }
         return "获取数据失败";
     }
 
@@ -1580,6 +1546,12 @@ public class DBHandler {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            Looper.loop();
         } finally {
             if (reader != null) {
                 try {
@@ -1592,127 +1564,12 @@ public class DBHandler {
                 connection.disconnect();
             }
         }
-//
-//
-//
-//        HttpClient httpClient = new DefaultHttpClient();
-//        List<NameValuePair> nvs = new ArrayList<NameValuePair>();
-//        HttpPost httpRequst = new HttpPost(turl);
-//        String Session = new SharedPreferencesHelper(MyApplication.getContext(), "login").getData(MyApplication.getContext(), "session", "");
-//        httpRequst.setHeader("Cookie", Session);
-//        try {
-//            UrlEncodedFormEntity uefEntity = new UrlEncodedFormEntity(nvs, "utf-8");
-//            httpRequst.setEntity(uefEntity);
-//            HttpResponse res = httpClient.execute(httpRequst);
-//            HttpEntity entity = res.getEntity();
-//            BufferedReader reader = new BufferedReader(new InputStreamReader(entity.getContent()));
-//            StringBuffer sb = new StringBuffer();
-//            String line = null;
-//            while ((line = reader.readLine()) != null) {
-//                sb.append(line + "\n");
-//            }
-//            reader.close();
-//            Log.i("sb=", sb.toString());
-//            JSONObject json_ = new JSONObject(sb.toString());
-//            if (json_ != null) {
-//                String msg = json_.get("success").toString();
-//                if (msg.equals("true")) {
-//                    return json_ + "";
-//                } else {
-//                    return msg;
-//                }
-//            }
-//        } catch (Exception e) {
-//            System.out.println(e);
-//            e.printStackTrace();
-//            HttpClient httpClient1 = new DefaultHttpClient();
-//            List<NameValuePair> nvs1 = new ArrayList<NameValuePair>();
-//            HttpPost httpRequst1 = new HttpPost(turl);
-//            String Session1 = new SharedPreferencesHelper(MyApplication.getContext(), "login").getData(MyApplication.getContext(), "session", "");
-//            httpRequst1.setHeader("Cookie", Session1);
-//            try {
-//                UrlEncodedFormEntity uefEntity1 = new UrlEncodedFormEntity(nvs1, "utf-8");
-//                httpRequst1.setEntity(uefEntity1);
-//                HttpResponse res1 = httpClient1.execute(httpRequst);
-//                HttpEntity entity1 = res1.getEntity();
-//                BufferedReader reader1 = new BufferedReader(new InputStreamReader(entity1.getContent()));
-//                StringBuffer sb1 = new StringBuffer();
-//                String line = null;
-//                while ((line = reader1.readLine()) != null) {
-//                    sb1.append(line + "\n");
-//                }
-//                reader1.close();
-//                Log.i("sb=", sb1.toString());
-//                JSONObject json_ = new JSONObject(sb1.toString());
-//                if (json_ != null) {
-//                    String msg = json_.get("success").toString();
-//                    if (msg.equals("true")) {
-//                        return json_ + "";
-//                    } else {
-//                        return msg;
-//                    }
-//                }
-//            } catch (Exception e1) {
-//                System.out.println(e1);
-//                e1.printStackTrace();
-//            }
-//        }
         return "获取数据失败";
     }
 
 
     //追回流程
     public String BackFlowList(final String turl) {
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                HttpURLConnection connection=null;
-//                BufferedReader reader = null;
-//                try {
-//                    URL url=new URL(turl);
-//                    connection= (HttpURLConnection) url.openConnection();
-//                    connection.setRequestMethod("GET");
-//                    connection.setReadTimeout(200000);
-//                    connection.setConnectTimeout(200000);
-//                    InputStream in=connection.getInputStream();
-//                    reader=new BufferedReader(new InputStreamReader(in));
-//                    StringBuilder builder=new StringBuilder();
-//                    String line;
-//                    int responseCode = connection.getResponseCode();
-//                    if (200 == responseCode) {
-//                        while ((line=reader.readLine())!=null){
-//                            builder.append(line);
-//                        }
-//                    }
-//                    JSONObject jsonObject = new JSONObject(builder.toString());
-//                    if (jsonObject != null) {
-//                        String msg = jsonObject.get("success").toString();
-//                        if (msg.equals("true")) {
-//                            return jsonObject + "";
-//                        } else {
-//                            return msg;
-//                        }
-//                    }
-//                } catch (MalformedURLException e) {
-//                    Log.i("XXX",e.toString());
-//                } catch (IOException e) {
-//                    Log.i("XXX",e.toString());
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                } finally {
-//                    if (reader!=null){
-//                        try {
-//                            reader.close();
-//                        } catch (IOException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                    if (connection!=null){
-//                        connection.disconnect();
-//                    }
-//                }
-//            }
-//        }).start();
         HttpClient httpClient = new DefaultHttpClient();
         List<NameValuePair> nvs = new ArrayList<NameValuePair>();
         HttpPost httpRequst = new HttpPost(turl);
@@ -1743,6 +1600,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "获取数据失败";
     }
@@ -1781,6 +1645,13 @@ public class DBHandler {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         } finally {
             if (reader != null) {
                 try {
@@ -1831,6 +1702,13 @@ public class DBHandler {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         } finally {
             if (reader != null) {
                 try {
@@ -1843,39 +1721,6 @@ public class DBHandler {
                 connection.disconnect();
             }
         }
-//
-//
-//        HttpClient httpClient = new DefaultHttpClient();
-//        List<NameValuePair> nvs = new ArrayList<NameValuePair>();
-//        HttpPost httpRequst = new HttpPost(turl);
-//        String Session = new SharedPreferencesHelper(MyApplication.getContext(), "login").getData(MyApplication.getContext(), "session", "");
-//        httpRequst.setHeader("Cookie", Session);
-//        try {
-//            UrlEncodedFormEntity uefEntity = new UrlEncodedFormEntity(nvs, "utf-8");
-//            httpRequst.setEntity(uefEntity);
-//            HttpResponse res = httpClient.execute(httpRequst);
-//            HttpEntity entity = res.getEntity();
-//            BufferedReader reader = new BufferedReader(new InputStreamReader(entity.getContent()));
-//            StringBuffer sb = new StringBuffer();
-//            String line = null;
-//            while ((line = reader.readLine()) != null) {
-//                sb.append(line + "\n");
-//            }
-//            reader.close();
-//            Log.i("sb=", sb.toString());
-//            JSONObject json_ = new JSONObject(sb.toString());
-//            if (json_ != null) {
-//                String msg = json_.get("success").toString();
-//                if (msg.equals("true")) {
-//                    return json_ + "";
-//                } else {
-//                    return msg;
-//                }
-//            }
-//        } catch (Exception e) {
-//            System.out.println(e);
-//            e.printStackTrace();
-//        }
         return "获取数据失败";
     }
 
@@ -1915,6 +1760,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -1953,6 +1805,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -1990,6 +1849,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "获取数据失败";
     }
@@ -2027,6 +1893,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "获取数据失败";
     }
@@ -2064,6 +1937,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "获取数据失败";
     }
@@ -2130,6 +2010,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -2172,6 +2059,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -2236,6 +2130,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -2300,6 +2201,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -2364,6 +2272,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -2423,6 +2338,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -2483,6 +2405,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -2542,6 +2471,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -2601,6 +2537,9 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败";
+            }
         }
         return "保存失败";
     }
@@ -2670,6 +2609,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -2737,6 +2683,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -2803,6 +2756,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -2869,6 +2829,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -2936,6 +2903,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -3001,6 +2975,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -3111,6 +3092,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -3210,6 +3198,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -3310,6 +3305,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -3419,6 +3421,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -3529,6 +3538,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -3628,6 +3644,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -3726,6 +3749,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -3827,6 +3857,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -3928,6 +3965,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -4047,6 +4091,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -4122,6 +4173,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -4187,6 +4245,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -4251,6 +4316,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -4316,6 +4388,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -4384,6 +4463,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -4456,6 +4542,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -4515,6 +4608,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -4581,6 +4681,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -4662,6 +4769,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -4735,6 +4849,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -4795,6 +4916,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -4855,6 +4983,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -4924,6 +5059,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -4990,6 +5132,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -5057,6 +5206,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -5147,6 +5303,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -5244,6 +5407,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -5317,6 +5487,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -5392,6 +5569,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -5442,6 +5626,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -5499,6 +5690,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -5576,6 +5774,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -5655,6 +5860,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -5720,6 +5932,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -5791,6 +6010,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -5859,6 +6085,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -5936,6 +6169,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -5974,6 +6214,7 @@ public class DBHandler {
         nvs.add(new BasicNameValuePair("BanJieRen", ""));
         nvs.add(new BasicNameValuePair("BanJieShiJian", ""));
         nvs.add(new BasicNameValuePair("bjpj", ""));
+        nvs.add(new BasicNameValuePair("zjlyj", ""));
         try {
             UrlEncodedFormEntity uefEntity = new UrlEncodedFormEntity(nvs, "utf-8");
             httpRequst.setEntity(uefEntity);
@@ -5999,6 +6240,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -6008,7 +6256,7 @@ public class DBHandler {
             , String userCode, String destName, String taskId, String flowAssignld
             , String mainId, String bmfzryj, String fgldyj, String jbfgldyj, String jbbmyj
             , String bjap, String bjr, String bjpj, String serialNumber, String comment
-            , String liushuihao,String signaName, String zjlyj,String ys,String data1) {
+            , String liushuihao,String signaName, String zjlyj,String ys,String data1,String wcqk) {
         HttpClient httpClient = new DefaultHttpClient();
         List<NameValuePair> nvs = new ArrayList<NameValuePair>();
         HttpPost httpRequst = new HttpPost(url);
@@ -6041,6 +6289,7 @@ public class DBHandler {
         nvs.add(new BasicNameValuePair("jbbmyj", jbbmyj));
         nvs.add(new BasicNameValuePair("bjap", bjap));
         nvs.add(new BasicNameValuePair("BanJieRen", bjr));
+        nvs.add(new BasicNameValuePair("wczt", wcqk));
         nvs.add(new BasicNameValuePair("BanJieShiJian", data1));
         nvs.add(new BasicNameValuePair("bjpj", bjpj));
         nvs.add(new BasicNameValuePair("comments", comment));
@@ -6071,6 +6320,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -6080,7 +6336,7 @@ public class DBHandler {
             , String userCode, String destName, String taskId, String flowAssignld
             , String mainId, String bmfzryj, String fgldyj, String jbfgldyj, String jbbmyj
             , String bjap, String bjr, String bjpj, String serialNumber, String comment
-            , String date1, String liushuihao, String zjlyj,String ys,String signName) {
+            , String date1, String liushuihao, String zjlyj,String ys,String signName,String wcqk) {
         HttpClient httpClient = new DefaultHttpClient();
         List<NameValuePair> nvs = new ArrayList<NameValuePair>();
         HttpPost httpRequst = new HttpPost(url);
@@ -6115,6 +6371,7 @@ public class DBHandler {
         nvs.add(new BasicNameValuePair("jbbmyj", jbbmyj));
         nvs.add(new BasicNameValuePair("bjap", bjap));
         nvs.add(new BasicNameValuePair("BanJieRen", bjr));
+        nvs.add(new BasicNameValuePair("wczt", wcqk));
         nvs.add(new BasicNameValuePair("LiuShuiHao", liushuihao));
         nvs.add(new BasicNameValuePair("bjpj", bjpj));
         nvs.add(new BasicNameValuePair("comments", comment));
@@ -6145,6 +6402,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -6204,6 +6468,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -6271,6 +6542,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -6331,6 +6609,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -6402,6 +6687,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -6470,6 +6762,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -6536,6 +6835,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -6615,6 +6921,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -6672,6 +6985,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -6751,6 +7071,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -6830,6 +7157,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -6915,6 +7249,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -6979,6 +7320,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -7053,6 +7401,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -7107,6 +7462,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -7170,6 +7532,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -7230,6 +7599,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -7300,6 +7676,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -7336,6 +7719,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -7372,6 +7762,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -7408,6 +7805,9 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "获取数据失败";
+            }
         }
         return "获取数据失败";
     }
@@ -7447,6 +7847,13 @@ public class DBHandler {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "";
     }
@@ -7492,6 +7899,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -7530,6 +7944,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "保存失败";
     }
@@ -7568,6 +7989,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败1";
+            }
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
         }
         return "获取数据失败";
     }
@@ -7610,6 +8038,9 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            if (e.toString().contains("java.net.Connect")){
+                return "保存失败";
+            }
         }
         return "保存失败";
     }
@@ -7654,6 +8085,13 @@ public class DBHandler {
         } catch (Exception e) {
             System.out.println(e);
             e.printStackTrace();
+            Looper.prepare();
+            Toast.makeText(MyApplication.getContextObject(), "请检查网络", Toast.LENGTH_SHORT).show();
+            ProgressDialogUtil.stopLoad();
+            Looper.loop();
+            if (e.toString().contains("java.net.Connect")){
+                return false;
+            }
         }
         return false;
     }

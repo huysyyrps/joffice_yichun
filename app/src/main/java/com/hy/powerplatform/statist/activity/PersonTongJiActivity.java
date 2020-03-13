@@ -306,6 +306,7 @@ public class PersonTongJiActivity extends BaseActivity {
                         PieData pieData = new PieData(xValues, pieDataSet);
                         pieData.setValueFormatter(new CustomerValueFormatter());
                         pieData.setValueFormatter(new PercentFormatter());//是否显示百分号
+                        pieData.setValueTextSize(13f);
                         showChart(spreadLineChart, pieData);
                     } else {
                         recyclerView.setVisibility(View.GONE);

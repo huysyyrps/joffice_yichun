@@ -69,9 +69,9 @@ public class ShengChanYYEXListActivity extends BaseActivity {
         httpUtil = OkHttpUtil.getInstance(this);
         beanListTitle[0] = ("当前");
         beanListTitle[1] = ("上月");
-        beanListTitle[2] = ("同比");
+        beanListTitle[2] = ("环比");
         beanListTitle[3] = ("去年同期");
-        beanListTitle[4] = ("环比");
+        beanListTitle[4] = ("同比");
         beanListTitle[5] = ("年度累计");
         recyclerViewContent.setHeaderListData(beanListTitle);
 

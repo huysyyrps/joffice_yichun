@@ -188,7 +188,7 @@ public class ListActivity1 extends BaseActivity {
                     ProgressDialogUtil.stopLoad();
                     break;
                 case TAG_TWO:
-                    Toast.makeText(ListActivity1.this, "操作数据失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ListActivity1.this, "操作失败", Toast.LENGTH_SHORT).show();
                     ProgressDialogUtil.stopLoad();
                     break;
             }

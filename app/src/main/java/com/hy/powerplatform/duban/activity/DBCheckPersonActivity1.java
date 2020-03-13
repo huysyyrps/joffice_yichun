@@ -52,6 +52,7 @@ public class DBCheckPersonActivity1 extends BaseActivity implements DBCheckPerso
 
     String data;
     String name = "";
+    String text = "1";
     String departName = "";
     String userCode = "";
     private OkHttpUtil httpUtil;
@@ -85,6 +86,7 @@ public class DBCheckPersonActivity1 extends BaseActivity implements DBCheckPerso
 
             @Override
             public void afterTextChanged(Editable s) {
+                text = "2";
                 checkList1.clear();
                 if (s != null) {
                     String text = s.toString();
@@ -169,22 +171,43 @@ public class DBCheckPersonActivity1 extends BaseActivity implements DBCheckPerso
     public void onItemClick(int position, String tag) {
         Person person = new Person();
         if (tag.equals("1")) {
-            if (!datas.contains(checkList.get(position).getFullname())) {
-                person.setUserName(checkList.get(position).getFullname());
-                person.setUserCode(checkList.get(position).getUserId());
-                datas.add(person);
+            if (text.equals("2")){
+                if (!datas.contains(checkList1.get(position).getFullname())) {
+                    person.setUserName(checkList1.get(position).getFullname());
+                    person.setUserCode(checkList1.get(position).getUserId());
+                    datas.add(person);
+                }
+            }else if (text.equals("1")){
+                if (!datas.contains(checkList.get(position).getFullname())) {
+                    person.setUserName(checkList.get(position).getFullname());
+                    person.setUserCode(checkList.get(position).getUserId());
+                    datas.add(person);
+                }
             }
         } else if (tag.equals("2")) {
-            person.setUserName(checkList.get(position).getFullname());
-            person.setUserCode(checkList.get(position).getUserId());
-            Iterator<Person> it = datas.iterator();
-            while (it.hasNext()) {
-                Person str = (Person) it.next();
-                if (checkList.get(position).getFullname().equals(str.getUserName())) {
-                    it.remove();
+            if (text.equals("2")){
+                person.setUserName(checkList1.get(position).getFullname());
+                person.setUserCode(checkList1.get(position).getUserId());
+                Iterator<Person> it = datas.iterator();
+                while (it.hasNext()) {
+                    Person str = (Person) it.next();
+                    if (checkList1.get(position).getFullname().equals(str.getUserName())) {
+                        it.remove();
+                    }
+                }
+            }else if (text.equals("1")){
+                person.setUserName(checkList.get(position).getFullname());
+                person.setUserCode(checkList.get(position).getUserId());
+                Iterator<Person> it = datas.iterator();
+                while (it.hasNext()) {
+                    Person str = (Person) it.next();
+                    if (checkList.get(position).getFullname().equals(str.getUserName())) {
+                        it.remove();
+                    }
                 }
             }
         }
+        text = "1";
     }
 
     @OnClick(R.id.rbPerson)

@@ -43,6 +43,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.hy.powerplatform.my_utils.base.Constant.TAG_FOUR;
+import static com.hy.powerplatform.my_utils.base.Constant.TAG_ONE;
 import static com.hy.powerplatform.my_utils.base.Constant.TAG_TWO;
 
 public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
@@ -153,7 +154,9 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
                 Message message = new Message();
                 if (versiondata.equals("")) {
                     handler.sendEmptyMessage(TAG_TWO);
-                } else {
+                } else if (versiondata.equals("保存失败1")){
+                    handler.sendEmptyMessage(TAG_ONE);
+                }else {
                     handler.sendEmptyMessage(TAG_FOUR);
                 }
 //                message.what = TAG_FOUR;
@@ -204,6 +207,10 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what) {
+                case TAG_ONE:
+                    Toast.makeText(MainActivity.this, "请检查网络", Toast.LENGTH_SHORT).show();
+                    ProgressDialogUtil.stopLoad();
+                    break;
                 case TAG_TWO:
                     Toast.makeText(MainActivity.this, "请求数据失败", Toast.LENGTH_SHORT).show();
                     ProgressDialogUtil.stopLoad();
