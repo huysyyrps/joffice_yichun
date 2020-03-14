@@ -56,7 +56,7 @@ public class AssessDetail implements Serializable {
 
         private String xm;
         private String sfzh;
-        private String bumen;
+        private String fpbm;
         private String runId;
         private String $type$;
         private String zjcx;
@@ -68,9 +68,17 @@ public class AssessDetail implements Serializable {
         private String cwsjbyj;
         private String xmUId;
         private String xb;
-        private String gonghao;
+        private String gh;
         private String jbbmyj;
         private String LiuShuiHao;
+
+        public String getFpbm() {
+            return fpbm;
+        }
+
+        public void setFpbm(String fpbm) {
+            this.fpbm = fpbm;
+        }
 
         public String getXm() {
             return xm;
@@ -86,14 +94,6 @@ public class AssessDetail implements Serializable {
 
         public void setSfzh(String sfzh) {
             this.sfzh = sfzh;
-        }
-
-        public String getBumen() {
-            return bumen;
-        }
-
-        public void setBumen(String bumen) {
-            this.bumen = bumen;
         }
 
         public String getRunId() {
@@ -184,12 +184,12 @@ public class AssessDetail implements Serializable {
             this.xb = xb;
         }
 
-        public String getGonghao() {
-            return gonghao;
+        public String getGh() {
+            return gh;
         }
 
-        public void setGonghao(String gonghao) {
-            this.gonghao = gonghao;
+        public void setGh(String gonghao) {
+            this.gh = gonghao;
         }
 
         public String getJbbmyj() {

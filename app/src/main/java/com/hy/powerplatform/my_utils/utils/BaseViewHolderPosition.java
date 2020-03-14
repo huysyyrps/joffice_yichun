@@ -13,6 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.hy.powerplatform.R;
+import com.hy.powerplatform.my_utils.base.MyApplication;
+
 /**
  * Created by Administrator on 2019/4/12.
  * 通用adapter的viewholder
@@ -91,6 +94,45 @@ public class BaseViewHolderPosition extends RecyclerView.ViewHolder {
     public BaseViewHolderPosition setColor(int viewId) {
         LinearLayout linearLayout = getView(viewId);
         linearLayout.setBackgroundColor(Color.parseColor("#F2F2F2"));
+        return this;
+    }
+    /**
+     * 给TextView设置setText方法
+     */
+    public BaseViewHolderPosition setColor1(int viewId, String text) {
+        TextView tv = getView(viewId);
+        if (text.equals("1")){
+            tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.red));//通过获得资源文件进行设置。
+        }else if (text.equals("2")){
+            tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.pinchar2));//通过获得资源文件进行设置。
+        }
+        else if (text.equals("3")){
+            tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.pinchar3));//通过获得资源文件进行设置。
+        }
+        else if (text.equals("4")){
+            tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.pinchar4));//通过获得资源文件进行设置。
+        }
+        else if (text.equals("5")){
+            tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.pinchar5));//通过获得资源文件进行设置。
+        }
+        else if (text.equals("6")){
+            tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.pinchar6));//通过获得资源文件进行设置。
+        }
+        else if (text.equals("7")){
+            tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.pinchar9));//通过获得资源文件进行设置。
+        }
+        else if (text.equals("8")){
+            tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.pinchar10));//通过获得资源文件进行设置。
+        }
+        else if (text.equals("9")){
+            tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.pinchar11));//通过获得资源文件进行设置。
+        }
+        else if (text.equals("10")){
+            tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.pinchar12));//通过获得资源文件进行设置。
+        }
+        else if (text.equals("11")){
+            tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.black));//通过获得资源文件进行设置。
+        }
         return this;
     }
 

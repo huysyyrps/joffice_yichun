@@ -1095,8 +1095,8 @@ public class FlowAssessWillDetailActivity extends BaseActivity {
                     String phone = bean.getMainform().get(0).getLxdh();
                     String idCard = bean.getMainform().get(0).getSfzh();
                     String sex = bean.getMainform().get(0).getXb();
-                    ygbh = bean.getMainform().get(0).getGonghao();
-                    String department = bean.getMainform().get(0).getBumen();
+                    ygbh = bean.getMainform().get(0).getGh();
+                    String department = bean.getMainform().get(0).getFpbm();
                     String carType = bean.getMainform().get(0).getZjcx();
                     runID = bean.getMainform().get(0).getRunId();
                     xiangguanfujian = bean.getMainform().get(0).getXiangguanfujian();
@@ -1121,7 +1121,7 @@ public class FlowAssessWillDetailActivity extends BaseActivity {
                         JSONObject jsonObject = new JSONObject(formRights);
                         jsbmreout = jsonObject.getString("jbbmyj");
                         cwreout = jsonObject.getString("cwsjbyj");
-                        ygbhreout = jsonObject.getString("gonghao");
+                        ygbhreout = jsonObject.getString("gh");
                         xxreout = jsonObject.getString("xxjsbyj");
                         cctreout = jsonObject.getString("cctkjyxgsyj");
                         if (jsbmreout == null) {

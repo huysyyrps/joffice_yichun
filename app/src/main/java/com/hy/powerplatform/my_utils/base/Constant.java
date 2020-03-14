@@ -305,7 +305,7 @@ public class Constant {
     public static final String  GHCONTRACTSINGLE = "10129";
     public static final String  PUECHASEFLOW = "10103";
     public static final String  ENTRY = "10117";
-    public static final String  WORKENTRY = "10142";
+    public static final String  WORKENTRY = "10135";
     public static final String  OUTMESSAGE = "10076";
     public static final String  WORKPUECHASE = "86";
     public static final String  REPAIR = "10105";

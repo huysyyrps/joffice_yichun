@@ -16,8 +16,8 @@ import com.hy.powerplatform.my_utils.base.BaseActivity;
 import com.hy.powerplatform.my_utils.base.Constant;
 import com.hy.powerplatform.my_utils.base.OkHttpUtil;
 import com.hy.powerplatform.my_utils.myViews.Header;
-import com.hy.powerplatform.my_utils.utils.BaseRecyclerAdapter;
-import com.hy.powerplatform.my_utils.utils.BaseViewHolder;
+import com.hy.powerplatform.my_utils.utils.BaseRecyclerAdapterPosition;
+import com.hy.powerplatform.my_utils.utils.BaseViewHolderPosition;
 import com.hy.powerplatform.my_utils.utils.ProgressDialogUtil;
 import com.hy.powerplatform.oa_flow.notice.bean.NoticeList;
 
@@ -49,10 +49,11 @@ public class NoticeListActivity extends BaseActivity {
 
     int limit = 20;
     int start = 0;
+    int selectPosition;
     String userId;
     String tag = "";
     private OkHttpUtil httpUtil;
-    BaseRecyclerAdapter baseAdapter;
+    BaseRecyclerAdapterPosition baseAdapter;
     final HashMap<String, String> map = new HashMap();
     List<NoticeList> beanList = new ArrayList<>();
 
@@ -64,9 +65,9 @@ public class NoticeListActivity extends BaseActivity {
         recyclerView.getRecyclerView().setLayoutManager(manager);
         httpUtil = OkHttpUtil.getInstance(this);
         userId = new SharedPreferencesHelper(NoticeListActivity.this, "login").getData(NoticeListActivity.this, "userId", "");
-        baseAdapter = new BaseRecyclerAdapter<NoticeList>(this, R.layout.adapter_notice_item, beanList) {
+        baseAdapter = new BaseRecyclerAdapterPosition<NoticeList>(this, R.layout.adapter_notice_item, beanList) {
             @Override
-            public void convert(BaseViewHolder holder, final NoticeList noticeBean) {
+            public void convert(BaseViewHolderPosition holder, final NoticeList noticeBean, final int position) {
                 holder.setText(R.id.tv_title, noticeBean.getTitle());
                 holder.setText(R.id.tv_content, noticeBean.getCreatetime());
 //                List<String> imgSrc = new ArrayList<String>();
@@ -78,16 +79,17 @@ public class NoticeListActivity extends BaseActivity {
                 Log.e("XXX", noticeBean.getReadUserids());
                 if (!noticeBean.getReadUserids().contains(userId)) {
                     holder.setText(R.id.tvSee, "未查看");
-                    holder.setColor(R.id.tvSee, "1");
+                    holder.setColor1(R.id.tvSee, "1");
                 } else {
                     holder.setText(R.id.tvSee, "已查看");
-                    holder.setColor(R.id.tvSee, "11");
+                    holder.setColor1(R.id.tvSee, "11");
                 }
                 holder.setOnClickListener(R.id.noticeItem, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(NoticeListActivity.this, NoticeDetailActivity.class);
                         intent.putExtra("bean", noticeBean);
+                        selectPosition = position;
                         startActivity(intent);
                     }
                 });
@@ -101,9 +103,12 @@ public class NoticeListActivity extends BaseActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        limit = 20;
-        start = 0;
-        beanList.clear();
+        for (int i = 0;i<beanList.size();i++){
+            if (i>selectPosition){
+                beanList.remove(i);
+            }
+        }
+        start = selectPosition;
         getData(start, limit);
     }
 

@@ -265,7 +265,7 @@ public class FlowAssessDetailActivity extends BaseActivity {
                     Gson gson = new Gson();
                     AssessDetail bean = gson.fromJson(res, AssessDetail.class);
                     String person = bean.getMainform().get(0).getXm();
-                    String department = bean.getMainform().get(0).getBumen();
+                    String department = bean.getMainform().get(0).getFpbm();
                     String phone = bean.getMainform().get(0).getLxdh();
                     String idCard = bean.getMainform().get(0).getSfzh();
                     String sex = bean.getMainform().get(0).getXb();
@@ -281,7 +281,7 @@ public class FlowAssessDetailActivity extends BaseActivity {
                     String jbbmyj = bean.getMainform().get(0).getJbbmyj();
                     String cwsjbyj = bean.getMainform().get(0).getCwsjbyj();
                     String xxjsbyj = bean.getMainform().get(0).getXxjsbyj();
-                    String gongHao = bean.getMainform().get(0).getGonghao();
+                    String gongHao = bean.getMainform().get(0).getGh();
                     String cctkjyxgsyj = bean.getMainform().get(0).getCctkjyxgsyj();
                     xiangguanfujian = bean.getMainform().get(0).getXiangguanfujian();
                     tvData.setText(xiangguanfujian);

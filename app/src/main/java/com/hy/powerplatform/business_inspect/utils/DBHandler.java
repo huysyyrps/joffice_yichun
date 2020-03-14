@@ -4212,7 +4212,7 @@ public class DBHandler {
         nvs.add(new BasicNameValuePair("zjcx", carType));
         nvs.add(new BasicNameValuePair("bumen", department));
         nvs.add(new BasicNameValuePair("sex", sex));
-        nvs.add(new BasicNameValuePair("gonghao", ygbh));
+        nvs.add(new BasicNameValuePair("gh", ygbh));
 
         nvs.add(new BasicNameValuePair("jbbmyj", jsbmyj));
         nvs.add(new BasicNameValuePair("cwsjbyj", cwsjbyj));
@@ -4354,8 +4354,8 @@ public class DBHandler {
         nvs.add(new BasicNameValuePair("LiuShuiHao", liushuihao));
 
         nvs.add(new BasicNameValuePair("zjcx", carType));
-        nvs.add(new BasicNameValuePair("bumenDid", bumenDid));
-        nvs.add(new BasicNameValuePair("bumen", bumen));
+        nvs.add(new BasicNameValuePair("fpbmDid", bumenDid));
+        nvs.add(new BasicNameValuePair("fpbm", bumen));
 
         nvs.add(new BasicNameValuePair("jbbmyj", ""));
         nvs.add(new BasicNameValuePair("cwsjbyj", ""));
