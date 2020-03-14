@@ -230,7 +230,7 @@ public class OAFlowListActivity extends BaseActivity {
         int drawableId1 = getResources().getIdentifier("oaflow_rb1", "drawable", getPackageName());
         bean1.setAddress(drawableId1);
         bean1.setName(getResources().getString(R.string.oaflow_rb1));
-        if (rights.contains(",NoticeView")) {
+        if (rights.contains("NoticeView")) {
             itemList.add(bean1);
         }else if (userStatus.equals("超级管理员")){
             itemList.add(bean1);
@@ -240,8 +240,8 @@ public class OAFlowListActivity extends BaseActivity {
         int drawableId2 = getResources().getIdentifier("oaflow_rb2", "drawable", getPackageName());
         bean2.setAddress(drawableId2);
         bean2.setName(getResources().getString(R.string.oaflow_rb2));
-        if (rights.contains(",MyJoinConferenceView")||rights.contains(",MyJoinedConferenceView")||rights.contains(",WaitOpenConferenceView")
-                ||rights.contains(",HaveOpenConferenceView")||rights.contains(",ConfSummaryView")) {
+        if (rights.contains("MyJoinConferenceView")||rights.contains("MyJoinedConferenceView")||rights.contains("WaitOpenConferenceView")
+                ||rights.contains("HaveOpenConferenceView")||rights.contains("ConfSummaryView")) {
             itemList.add(bean2);
         }else if (userStatus.equals("超级管理员")){
             itemList.add(bean2);
@@ -251,8 +251,8 @@ public class OAFlowListActivity extends BaseActivity {
         int drawableId3 = getResources().getIdentifier("oaflow_rb3", "drawable", getPackageName());
         bean3.setAddress(drawableId3);
         bean3.setName(getResources().getString(R.string.oaflow_rb3));
-        if (rights.contains(",NewProcess")||rights.contains(",MyTaskView")||rights.contains(",MyProcessRunView")
-                ||rights.contains(",RelevantProcessRunView")||rights.contains(",RevokeFlowDetailView")) {
+        if (rights.contains("NewProcess")||rights.contains("MyTaskView")||rights.contains("MyProcessRunView")
+                ||rights.contains("RelevantProcessRunView")||rights.contains("RevokeFlowDetailView")) {
             itemList.add(bean3);
         }else if (userStatus.equals("超级管理员")){
             itemList.add(bean3);
@@ -262,7 +262,7 @@ public class OAFlowListActivity extends BaseActivity {
         int drawableId4 = getResources().getIdentifier("oaflow_rb4", "drawable", getPackageName());
         bean4.setAddress(drawableId4);
         bean4.setName(getResources().getString(R.string.oaflow_rb4));
-        if (rights.contains(",FileSendView")) {
+        if (rights.contains("FileSendView")) {
             itemList.add(bean4);
         }else if (userStatus.equals("超级管理员")){
             itemList.add(bean4);
@@ -272,8 +272,8 @@ public class OAFlowListActivity extends BaseActivity {
         int drawableId5 = getResources().getIdentifier("data_analysis", "drawable", getPackageName());
         bean5.setAddress(drawableId5);
         bean5.setName(getResources().getString(R.string.oaflow_rb5));
-        if (rights.contains(",SuperWorkTaskView")||rights.contains(",SuperWorkTaskView")||rights.contains(",SuperTaskOperView")
-                ||rights.contains(",SuperWorkTaskSuperView")) {
+        if (rights.contains("SuperWorkTaskView")||rights.contains("SuperWorkTaskView")||rights.contains("SuperTaskOperView")
+                ||rights.contains("SuperWorkTaskSuperView")) {
             itemList.add(bean5);
         }else if (userStatus.equals("超级管理员")){
             itemList.add(bean5);

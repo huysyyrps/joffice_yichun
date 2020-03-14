@@ -644,12 +644,12 @@ public class Fragment01 extends Fragment {
         int drawableId1 = getResources().getIdentifier("fragment_rb1", "drawable", getActivity().getPackageName());
         bean1.setAddress(drawableId1);
         bean1.setName(getResources().getString(R.string.fragment_rb1));
-        if (rights.contains(",NoticeView") || rights.contains(",MyJoinConferenceView") || rights.contains(",MyJoinedConferenceView")
-                || rights.contains(",WaitOpenConferenceView") || rights.contains(",HaveOpenConferenceView") || rights.contains(",ConfSummaryView")
-                || rights.contains(",NewProcess") || rights.contains(",MyTaskView") || rights.contains(",MyProcessRunView")
-                || rights.contains(",RelevantProcessRunView") || rights.contains(",RevokeFlowDetailView") || rights.contains(",FileSendView")
-                || rights.contains(",SuperWorkTaskView") || rights.contains(",SuperWorkTaskView") || rights.contains(",SuperTaskOperView")
-                || rights.contains(",SuperWorkTaskSuperView")) {
+        if (rights.contains("NoticeView") || rights.contains("MyJoinConferenceView") || rights.contains("MyJoinedConferenceView")
+                || rights.contains("WaitOpenConferenceView") || rights.contains("HaveOpenConferenceView") || rights.contains("ConfSummaryView")
+                || rights.contains("NewProcess") || rights.contains("MyTaskView") || rights.contains("MyProcessRunView")
+                || rights.contains("RelevantProcessRunView") || rights.contains("RevokeFlowDetailView") || rights.contains("FileSendView")
+                || rights.contains("SuperWorkTaskView") || rights.contains("SuperWorkTaskView") || rights.contains("SuperTaskOperView")
+                || rights.contains("SuperWorkTaskSuperView")) {
             itemList.add(bean1);
         } else if (userStatus.equals("超级管理员")) {
             itemList.add(bean1);
@@ -659,7 +659,7 @@ public class Fragment01 extends Fragment {
         int drawableId2 = getResources().getIdentifier("fragment_rb2", "drawable", getActivity().getPackageName());
         bean2.setAddress(drawableId2);
         bean2.setName(getResources().getString(R.string.fragment_rb2));
-        if (rights.contains(",ResumeView") || rights.contains(",DriverPracticeFileView") || rights.contains(",EmpNormalSearchView")) {
+        if (rights.contains("ResumeView") || rights.contains("DriverPracticeFileView") || rights.contains("EmpNormalSearchView")) {
             itemList.add(bean2);
         } else if (userStatus.equals("超级管理员")) {
             itemList.add(bean2);
@@ -669,7 +669,7 @@ public class Fragment01 extends Fragment {
         int drawableId3 = getResources().getIdentifier("fragment_rb3", "drawable", getActivity().getPackageName());
         bean3.setAddress(drawableId3);
         bean3.setName(getResources().getString(R.string.fragment_rb3));
-        if (rights.contains(",CarManeger") || rights.contains(",LineInfoView")) {
+        if (rights.contains("CarManeger") || rights.contains("LineInfoView")) {
             itemList.add(bean3);
         } else if (userStatus.equals("超级管理员")) {
             itemList.add(bean3);
@@ -679,7 +679,7 @@ public class Fragment01 extends Fragment {
         int drawableId6 = getResources().getIdentifier("fragment_rb6", "drawable", getActivity().getPackageName());
         bean6.setAddress(drawableId6);
         bean6.setName(getResources().getString(R.string.fragment_rb6));
-        if (rights.contains(",ViolationRecordView") || rights.contains(",AccidentBasicInformationView")) {
+        if (rights.contains("ViolationRecordView") || rights.contains("AccidentBasicInformationView")) {
             itemList.add(bean6);
         } else if (userStatus.equals("超级管理员")) {
             itemList.add(bean6);
@@ -695,7 +695,7 @@ public class Fragment01 extends Fragment {
         int drawableId8 = getResources().getIdentifier("fragment_rb8", "drawable", getActivity().getPackageName());
         bean8.setAddress(drawableId8);
         bean8.setName(getResources().getString(R.string.fragment_rb8));
-        if (rights.contains(",OperationIndexReportView") || rights.contains(",ProductionOperationAnalysisView")) {
+        if (rights.contains("OperationIndexReportView") || rights.contains("ProductionOperationAnalysisView")) {
             itemList.add(bean8);
         } else if (userStatus.equals("超级管理员")) {
             itemList.add(bean8);

@@ -37,10 +37,10 @@ public class SaferListActivity extends BaseActivity {
         alertDialogUtil = new AlertDialogUtil(this);
         userStatus = new SharedPreferencesHelper(this, "login").getData(this, "userStatus", "");
         rights = new SharedPreferencesHelper(this, "login").getData(this, "rights", "");
-        if (rights.contains(",ViolationRecordView")) {
+        if (!rights.contains("ViolationRecordView")) {
             rb1.setVisibility(View.GONE);
         }
-        if (rights.contains(",AccidentBasicInformationView")) {
+        if (!rights.contains("AccidentBasicInformationView")) {
             rb2.setVisibility(View.GONE);
         }
     }

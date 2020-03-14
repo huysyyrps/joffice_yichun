@@ -40,13 +40,13 @@ public class HuManListActivity extends BaseActivity {
         alertDialogUtil = new AlertDialogUtil(this);
         userStatus = new SharedPreferencesHelper(this, "login").getData(this, "userStatus", "");
         rights = new SharedPreferencesHelper(this, "login").getData(this, "rights", "");
-        if (rights.contains(",ResumeView")) {
+        if (!rights.contains("ResumeView")) {
            rb1.setVisibility(View.GONE);
         }
-        if (rights.contains(",DriverPracticeFileView")) {
+        if (!rights.contains("DriverPracticeFileView")) {
             rb2.setVisibility(View.GONE);
         }
-        if (rights.contains(",EmpNormalSearchView")) {
+        if (!rights.contains("EmpNormalSearchView")) {
             rb3.setVisibility(View.GONE);
         }
     }

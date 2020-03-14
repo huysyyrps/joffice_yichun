@@ -40,11 +40,11 @@ public class ComperListActivity extends BaseActivity {
         alertDialogUtil = new AlertDialogUtil(this);
         userStatus = new SharedPreferencesHelper(this, "login").getData(this, "userStatus", "");
         rights = new SharedPreferencesHelper(this, "login").getData(this, "rights", "");
-        if (rights.contains(",OperationIndexReportView")) {
+        if (!rights.contains("OperationIndexReportView")) {
             rb1.setVisibility(View.GONE);
             rb3.setVisibility(View.GONE);
         }
-        if (rights.contains(",ProductionOperationAnalysisView")) {
+        if (!rights.contains("ProductionOperationAnalysisView")) {
             rb2.setVisibility(View.GONE);
         }
     }
