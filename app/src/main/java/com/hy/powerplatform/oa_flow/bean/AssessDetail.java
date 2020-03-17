@@ -68,9 +68,18 @@ public class AssessDetail implements Serializable {
         private String cwsjbyj;
         private String xmUId;
         private String xb;
-        private String gh;
+        private String ygbh;
         private String jbbmyj;
+        private String rlzybyj;
         private String LiuShuiHao;
+
+        public String getRlzybyj() {
+            return rlzybyj;
+        }
+
+        public void setRlzybyj(String rlzybyj) {
+            this.rlzybyj = rlzybyj;
+        }
 
         public String getFpbm() {
             return fpbm;
@@ -184,12 +193,12 @@ public class AssessDetail implements Serializable {
             this.xb = xb;
         }
 
-        public String getGh() {
-            return gh;
+        public String getYgbh() {
+            return ygbh;
         }
 
-        public void setGh(String gonghao) {
-            this.gh = gonghao;
+        public void setYgbh(String gonghao) {
+            this.ygbh = gonghao;
         }
 
         public String getJbbmyj() {

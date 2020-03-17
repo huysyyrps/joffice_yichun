@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -127,13 +128,15 @@ public class FragmentWorkEntryData extends Fragment {
     TextView tvLeaderNumW;
     @BindView(R.id.tvDepartment)
     TextView tvDepartment;
+    @BindView(R.id.llCarType)
+    LinearLayout llCarType;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_workentry_data, container, false);
         unbinder = ButterKnife.bind(this, view);
-
+        llCarType.setVisibility(View.GONE);
         listCarType.add("A1");
         listCarType.add("A3");
         listCarType.add("B1");
@@ -242,7 +245,7 @@ public class FragmentWorkEntryData extends Fragment {
         unbinder.unbind();
     }
 
-    @OnClick({R.id.tvData, R.id.btnUp, R.id.tvPerson,R.id.tvDepartment})
+    @OnClick({R.id.tvData, R.id.btnUp, R.id.tvPerson, R.id.tvDepartment})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tvPerson:
@@ -367,7 +370,7 @@ public class FragmentWorkEntryData extends Fragment {
                 final String carType = etCarType.getText().toString();
                 final String sex = etSex.getText().toString();
                 String res = dbA.OAWorkEntryUp(turl, userDepart, uId, person, phone, idCard,
-                        sex, carType, liushuihao,departId,departName);
+                        sex, carType, liushuihao, departId, departName);
                 if (res.equals("")) {
                     handler.sendEmptyMessage(TAG_THERE);
                 } else {

@@ -343,8 +343,12 @@ public class FlowDriverAssessDetailActivity extends BaseActivity {
         String yijian = "";
         try {
             JSONArray jsonArray = new JSONArray(data);
-            JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
-            yijian = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                if (!jsonObject.getString("v").toString().equals("")) {
+                    yijian = yijian + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                }
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

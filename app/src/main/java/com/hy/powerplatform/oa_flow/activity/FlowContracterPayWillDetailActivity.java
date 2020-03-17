@@ -1237,6 +1237,8 @@ public class FlowContracterPayWillDetailActivity extends BaseActivity {
                         tvText.setVisibility(View.GONE);
                         ProgressDialogUtil.startLoad(FlowContracterPayWillDetailActivity.this, "获取审核人");
                         getAppRovePerson();
+                    }else {
+                        tvspr.setText("请点击“+”选择路径");
                     }
                     break;
                 case TAG_TWO:

@@ -4188,7 +4188,7 @@ public class DBHandler {
     public String OAWillAssessLeader(String url, String person, String phone, String idCard, String sex,
                                 String department, String userCode, String destName, String taskId, String flowAssignld,
                                 String mainId, String jsbmyj, String cwsjbyj, String xxjsbyj, String cctkjyxgsyj,
-                                String ygbh, String comment, String signaName, String carType) {
+                                String ygbh, String comment, String signaName, String carType, String rlzyyj) {
         HttpClient httpClient = new DefaultHttpClient();
         List<NameValuePair> nvs = new ArrayList<NameValuePair>();
         HttpPost httpRequst = new HttpPost(url);
@@ -4212,12 +4212,13 @@ public class DBHandler {
         nvs.add(new BasicNameValuePair("zjcx", carType));
         nvs.add(new BasicNameValuePair("bumen", department));
         nvs.add(new BasicNameValuePair("sex", sex));
-        nvs.add(new BasicNameValuePair("gh", ygbh));
+        nvs.add(new BasicNameValuePair("ygbh", ygbh));
 
         nvs.add(new BasicNameValuePair("jbbmyj", jsbmyj));
         nvs.add(new BasicNameValuePair("cwsjbyj", cwsjbyj));
         nvs.add(new BasicNameValuePair("xxjsbyj", xxjsbyj));
         nvs.add(new BasicNameValuePair("cctkjyxgsyj", cctkjyxgsyj));
+        nvs.add(new BasicNameValuePair("rlzybyj", rlzyyj));
         try {
             Log.e("XXXXH", nvs.toString());
             UrlEncodedFormEntity uefEntity = new UrlEncodedFormEntity(nvs, "utf-8");

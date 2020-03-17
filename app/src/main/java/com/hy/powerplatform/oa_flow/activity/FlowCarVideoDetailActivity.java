@@ -329,9 +329,12 @@ public class FlowCarVideoDetailActivity extends BaseActivity {
         String yijian = "";
         try {
             JSONArray jsonArray = new JSONArray(data);
-            int size = jsonArray.length();
-            JSONObject jsonObject = jsonArray.getJSONObject(size - 1);
-            yijian = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                if (!jsonObject.getString("v").toString().equals("")) {
+                    yijian = yijian + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                }
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

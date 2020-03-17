@@ -9,17 +9,18 @@ import java.util.List;
 
 public class AssessWillDetail implements Serializable {
 
+
     /**
      * success : true
-     * taskId : 9880154
+     * taskId : 9891747
      * pkValue : 7
-     * formRights : {'lxdh':'1','sfzh':'1','xb':'1','xiangguanfujian':'1','cwsjbyj':'1','xm':'1','xxjsbyj':'1','jbbmyj':'2','gonghao':'1','zjcx':'1','cctkjyxgsyj':'1','LiuShuiHao':'1','bumen':'1'}
-     * mainform : [{"xm":"罗乐军","sfzh":"362201196706180436","bumen":"充电公司","runId":52597,"$type$":"WF_ygrzlcb","zjcx":"A1,A2,D","xxjsbyj":"","cctkjyxgsyj":"","lxdh":"13707958173","xiangguanfujian":"","mainId":7,"cwsjbyj":"","xmUId":"","xb":"男","gonghao":"","jbbmyj":"","LiuShuiHao":"No.20200224009"}]
-     * formDefId : 10142
+     * formRights : {'xm':'1','xxjsbyj':'1','LiuShuiHao':'1','xb':'1','rlzybyj':'1','lxdh':'1','xiangguanfujian':'1','jbbmyj':'2','ygbh':'1','fpbm':'1','cctkjyxgsyj':'1','sfzh':'1','cwsjbyj':'1'}
+     * mainform : [{"ygbh":"","xm":"唐桥光","sfzh":"36220119780218401X","runId":52741,"$type$":"WF_ygrzlc","rlzybyj":"","cctkjyxgsyj":"","xxjsbyj":"","fpbm":"宣传教育部","lxdh":"18162246075","xiangguanfujian":"","mainId":7,"cwsjbyj":"","xb":"男","xmUId":"","jbbmyj":"","LiuShuiHao":"No.20200316022"}]
+     * formDefId : 10135
      * preTaskName :
      * isSignTask : false
-     * trans : [{"destType":"task","destination":"财务部负责人","name":"to 财务部负责人","source":"经办部门"}]
-     * runId : 52597
+     * trans : [{"destType":"task","destination":"财务审计部负责人","name":"to 财务审计部负责人","source":"经办部门"}]
+     * runId : 52741
      * revoke : false
      */
 
@@ -125,49 +126,49 @@ public class AssessWillDetail implements Serializable {
 
     public static class MainformBean implements Serializable {
         /**
-         * xm : 罗乐军
-         * sfzh : 362201196706180436
-         * bumen : 充电公司
-         * runId : 52597
-         * $type$ : WF_ygrzlcb
-         * zjcx : A1,A2,D
-         * xxjsbyj :
+         * ygbh :
+         * xm : 唐桥光
+         * sfzh : 36220119780218401X
+         * runId : 52741
+         * $type$ : WF_ygrzlc
+         * rlzybyj :
          * cctkjyxgsyj :
-         * lxdh : 13707958173
+         * xxjsbyj :
+         * fpbm : 宣传教育部
+         * lxdh : 18162246075
          * xiangguanfujian :
          * mainId : 7
          * cwsjbyj :
-         * xmUId :
          * xb : 男
-         * gonghao :
+         * xmUId :
          * jbbmyj :
-         * LiuShuiHao : No.20200224009
+         * LiuShuiHao : No.20200316022
          */
 
+        private String ygbh;
         private String xm;
         private String sfzh;
-        private String fpbm;
         private String runId;
         private String $type$;
-        private String zjcx;
-        private String xxjsbyj;
+        private String rlzybyj;
         private String cctkjyxgsyj;
+        private String xxjsbyj;
+        private String fpbm;
         private String lxdh;
         private String xiangguanfujian;
         private int mainId;
         private String cwsjbyj;
-        private String xmUId;
         private String xb;
-        private String gh;
+        private String xmUId;
         private String jbbmyj;
         private String LiuShuiHao;
 
-        public String getFpbm() {
-            return fpbm;
+        public String getYgbh() {
+            return ygbh;
         }
 
-        public void setFpbm(String fpbm) {
-            this.fpbm = fpbm;
+        public void setYgbh(String ygbh) {
+            this.ygbh = ygbh;
         }
 
         public String getXm() {
@@ -186,7 +187,6 @@ public class AssessWillDetail implements Serializable {
             this.sfzh = sfzh;
         }
 
-
         public String getRunId() {
             return runId;
         }
@@ -203,12 +203,20 @@ public class AssessWillDetail implements Serializable {
             this.$type$ = $type$;
         }
 
-        public String getZjcx() {
-            return zjcx;
+        public String getRlzybyj() {
+            return rlzybyj;
         }
 
-        public void setZjcx(String zjcx) {
-            this.zjcx = zjcx;
+        public void setRlzybyj(String rlzybyj) {
+            this.rlzybyj = rlzybyj;
+        }
+
+        public String getCctkjyxgsyj() {
+            return cctkjyxgsyj;
+        }
+
+        public void setCctkjyxgsyj(String cctkjyxgsyj) {
+            this.cctkjyxgsyj = cctkjyxgsyj;
         }
 
         public String getXxjsbyj() {
@@ -219,12 +227,12 @@ public class AssessWillDetail implements Serializable {
             this.xxjsbyj = xxjsbyj;
         }
 
-        public String getCctkjyxgsyj() {
-            return cctkjyxgsyj;
+        public String getFpbm() {
+            return fpbm;
         }
 
-        public void setCctkjyxgsyj(String cctkjyxgsyj) {
-            this.cctkjyxgsyj = cctkjyxgsyj;
+        public void setFpbm(String fpbm) {
+            this.fpbm = fpbm;
         }
 
         public String getLxdh() {
@@ -259,14 +267,6 @@ public class AssessWillDetail implements Serializable {
             this.cwsjbyj = cwsjbyj;
         }
 
-        public String getXmUId() {
-            return xmUId;
-        }
-
-        public void setXmUId(String xmUId) {
-            this.xmUId = xmUId;
-        }
-
         public String getXb() {
             return xb;
         }
@@ -275,12 +275,12 @@ public class AssessWillDetail implements Serializable {
             this.xb = xb;
         }
 
-        public String getGh() {
-            return gh;
+        public String getXmUId() {
+            return xmUId;
         }
 
-        public void setGh(String gonghao) {
-            this.gh = gonghao;
+        public void setXmUId(String xmUId) {
+            this.xmUId = xmUId;
         }
 
         public String getJbbmyj() {
@@ -303,8 +303,8 @@ public class AssessWillDetail implements Serializable {
     public static class TransBean implements Serializable {
         /**
          * destType : task
-         * destination : 财务部负责人
-         * name : to 财务部负责人
+         * destination : 财务审计部负责人
+         * name : to 财务审计部负责人
          * source : 经办部门
          */
 

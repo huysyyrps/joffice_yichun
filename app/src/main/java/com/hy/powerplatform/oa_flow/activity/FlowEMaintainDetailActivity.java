@@ -274,10 +274,10 @@ public class FlowEMaintainDetailActivity extends BaseActivity {
                     tvDpartment.setText(department);
                     tvData.setText(xiangguanfujian);
                     if (!bxbm.equals("")) {
-                        tvLeader.setText(getJSONData(bxbm));
+                        tvLeader.setText(getJSONData1(bxbm));
                     }
                     if (!wxbm.equals("")) {
-                        tvLeader1.setText(getJSONData(wxbm));
+                        tvLeader1.setText(getJSONData1(wxbm));
                     }
                     if (!wxry.equals("")) {
                         tvLeader2.setText(wxry);
@@ -289,7 +289,7 @@ public class FlowEMaintainDetailActivity extends BaseActivity {
                         tvLeader4.setText(sbsyr);
                     }
                     if (!fkqk.equals("")) {
-                        tvLeader5.setText(getJSONData(fkqk));
+                        tvLeader5.setText(getJSONData1(fkqk));
                     }
                     if (!data1.equals("")) {
                         tvDate1.setVisibility(View.VISIBLE);

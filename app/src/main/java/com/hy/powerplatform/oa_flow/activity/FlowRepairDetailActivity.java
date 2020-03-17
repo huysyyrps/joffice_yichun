@@ -358,32 +358,11 @@ public class FlowRepairDetailActivity extends BaseActivity {
                     etLeaderW3 = bean.getMainform().get(0).getWeiXiuRenYuanQianZi();
                     etLeaderW4 = bean.getMainform().get(0).getBjap();
                     etLeaderW5 = bean.getMainform().get(0).getBjpj();
-                    if (etLeaderW1 != null && !etLeaderW1.equals("")) {
-                        if (tvLeader.getVisibility() == View.VISIBLE) {
-                            String word3 = "";
-                            try {
-                                JSONArray jsonArray = new JSONArray(etLeaderW1);
-                                JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
-                                word3 = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            tvLeader.setText(word3);
-                        }
+                    if (!etLeaderW1.equals("")) {
+                        tvLeader.setText(getJSONData(etLeaderW1));
                     }
-
-                    if (etLeaderW2 != null && !etLeaderW2.equals("")) {
-                        if (tvLeader1.getVisibility() == View.VISIBLE) {
-                            String word2 = "";
-                            try {
-                                JSONArray jsonArray = new JSONArray(etLeaderW2);
-                                JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
-                                word2 = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            tvLeader1.setText(word2);
-                        }
+                    if (!etLeaderW2.equals("")) {
+                        tvLeader1.setText(getJSONData(etLeaderW2));
                     }
 
                     if (etLeaderW3 != null && !etLeaderW3.equals("")) {
@@ -400,32 +379,12 @@ public class FlowRepairDetailActivity extends BaseActivity {
                         }
                     }
 
-                    if (etLeaderW4 != null && !etLeaderW4.equals("")) {
-                        if (tvLeader3.getVisibility() == View.VISIBLE) {
-                            String word = "";
-                            try {
-                                JSONArray jsonArray = new JSONArray(etLeaderW4);
-                                JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
-                                word = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            tvLeader3.setText(word);
-                        }
+                    if (!etLeaderW4.equals("")) {
+                        tvLeader3.setText(getJSONData(etLeaderW4));
                     }
 
-                    if (etLeaderW5 != null && !etLeaderW5.equals("")) {
-                        if (tvYJ.getVisibility() == View.VISIBLE) {
-                            String word = "";
-                            try {
-                                JSONArray jsonArray = new JSONArray(etLeaderW5);
-                                JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
-                                word = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            tvYJ.setText(word);
-                        }
+                    if (!etLeaderW5.equals("")) {
+                        tvYJ.setText(getJSONData(etLeaderW5));
                     }
                     ProgressDialogUtil.stopLoad();
                     break;
@@ -459,8 +418,12 @@ public class FlowRepairDetailActivity extends BaseActivity {
         String yijian = "";
         try {
             JSONArray jsonArray = new JSONArray(data);
-            JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
-            yijian = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                if (!jsonObject.getString("v").toString().equals("")) {
+                    yijian = yijian + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                }
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

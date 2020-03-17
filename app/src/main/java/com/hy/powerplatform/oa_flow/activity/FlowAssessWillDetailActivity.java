@@ -171,7 +171,13 @@ public class FlowAssessWillDetailActivity extends BaseActivity {
     LinearLayout llShenPiRenList;
     @BindView(R.id.scrollView)
     ScrollView scrollView;
-    private String name, taskId, res, fullnameUId, fullname, jsbmyj, cwsjbyj, xxjsbyj, ygbh, cctkjyxgsyj, flowAssignld;
+    @BindView(R.id.tvLeader4W)
+    TextView tvLeader4W;
+    @BindView(R.id.tvLeader4)
+    TextView tvLeader4;
+    @BindView(R.id.etLeader4)
+    EditText etLeader4;
+    private String name, taskId, res, fullnameUId, fullname, jsbmyj, cwsjbyj, xxjsbyj, ygbh, cctkjyxgsyj, rlzyyj, flowAssignld;
     private String mainId, signaName, destName, destType, checkTask = "", qianzhiData = "";
     String leader = "";
     String leaderCode = "";
@@ -180,7 +186,7 @@ public class FlowAssessWillDetailActivity extends BaseActivity {
     String tag = "noEnd";
     String comment = "";
     String selectName;
-    String jsbmreout, cwreout, xxreout, cctreout, ygbhreout;//,ygbhreout = ""
+    String jsbmreout, cwreout, xxreout, cctreout, ygbhreout, rlzyreout;//,ygbhreout = ""
     String tagData = "";
     String[] bigNametemp = null;
     String[] bigCodetemp = null;
@@ -844,12 +850,30 @@ public class FlowAssessWillDetailActivity extends BaseActivity {
                         cctkjyxgsyj = cctkjyxgsyj.toString().replace("],[", ",");
                     }
                 }
+                if (etLeader4.getVisibility() == View.VISIBLE) {
+                    comment = etLeader4.getText().toString();
+                    try {
+                        jsonObject.put("ui", userCode);
+                        jsonObject.put("un", userName);
+                        jsonObject.put("c", str);
+                        jsonObject.put("v", etLeader4.getText().toString());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    jsonArray.put(jsonObject);
+                    if (rlzyyj.equals("")) {
+                        rlzyyj = jsonArray.toString();
+                    } else {
+                        rlzyyj = rlzyyj + "," + jsonArray.toString();
+                        rlzyyj = rlzyyj.toString().replace("],[", ",");
+                    }
+                }
                 if (comment.equals("")) {
                     if (!jsbmreout.equals("2") && !cwreout.equals("2") && !xxreout.equals("2")
-                            && !cctreout.equals("2")) {
+                            && !cctreout.equals("2")&& !rlzyreout.equals("2")) {
                         comment = "";
                         personSession();
-                    } else if (!cctkjyxgsyj.equals("") && !ygbh.equals("") && !xxjsbyj.equals("")
+                    } else if (!rlzyyj.equals("") &&!cctkjyxgsyj.equals("") && !ygbh.equals("") && !xxjsbyj.equals("")
                             && !cwsjbyj.equals("") && !jsbmyj.equals("")) {
                         comment = "";
                         personSession();
@@ -1052,7 +1076,7 @@ public class FlowAssessWillDetailActivity extends BaseActivity {
                     DBHandler dbA = new DBHandler();
                     upData = dbA.OAWillAssessLeader(url, person, phone, idCard, sex, department
                             , userCode, destName, taskId, flowAssignld, mainId, jsbmyj, cwsjbyj
-                            , xxjsbyj, cctkjyxgsyj, ygbh, comment, signaName, carType);
+                            , xxjsbyj, cctkjyxgsyj, ygbh, comment, signaName, carType,rlzyyj);
                     if (upData.equals("")) {
                         handler.sendEmptyMessage(TAG_THERE);
                     } else {
@@ -1095,9 +1119,8 @@ public class FlowAssessWillDetailActivity extends BaseActivity {
                     String phone = bean.getMainform().get(0).getLxdh();
                     String idCard = bean.getMainform().get(0).getSfzh();
                     String sex = bean.getMainform().get(0).getXb();
-                    ygbh = bean.getMainform().get(0).getGh();
+                    ygbh = bean.getMainform().get(0).getYgbh();
                     String department = bean.getMainform().get(0).getFpbm();
-                    String carType = bean.getMainform().get(0).getZjcx();
                     runID = bean.getMainform().get(0).getRunId();
                     xiangguanfujian = bean.getMainform().get(0).getXiangguanfujian();
                     if (xiangguanfujian.equals("")) {
@@ -1112,6 +1135,7 @@ public class FlowAssessWillDetailActivity extends BaseActivity {
                     cwsjbyj = bean.getMainform().get(0).getCwsjbyj();
                     xxjsbyj = bean.getMainform().get(0).getXxjsbyj();
                     cctkjyxgsyj = bean.getMainform().get(0).getCctkjyxgsyj();
+                    rlzyyj = bean.getMainform().get(0).getRlzybyj();
                     mainId = String.valueOf(bean.getMainform().get(0).getMainId());
                     for (int i = 0; i < bean.getTrans().size(); i++) {
                         beanList.add(bean.getTrans().get(i));
@@ -1121,9 +1145,10 @@ public class FlowAssessWillDetailActivity extends BaseActivity {
                         JSONObject jsonObject = new JSONObject(formRights);
                         jsbmreout = jsonObject.getString("jbbmyj");
                         cwreout = jsonObject.getString("cwsjbyj");
-                        ygbhreout = jsonObject.getString("gh");
+                        ygbhreout = jsonObject.getString("ygbh");
                         xxreout = jsonObject.getString("xxjsbyj");
                         cctreout = jsonObject.getString("cctkjyxgsyj");
+                        rlzyreout = jsonObject.getString("rlzybyj");
                         if (jsbmreout == null) {
                             jsbmreout = "";
                         }
@@ -1138,6 +1163,9 @@ public class FlowAssessWillDetailActivity extends BaseActivity {
                         }
                         if (ygbhreout == null) {
                             ygbhreout = "";
+                        }
+                        if (rlzyreout == null) {
+                            rlzyreout = "";
                         }
                         if (jsbmreout.equals("2")) {
                             tvLeader.setVisibility(View.GONE);
@@ -1201,7 +1229,15 @@ public class FlowAssessWillDetailActivity extends BaseActivity {
                             etLeader3.setVisibility(View.GONE);
                             tvLeader3W.setTextColor(getResources().getColor(R.color.order_stop_black));
                         }
-                        if (jsbmreout.equals("1") && cwreout.equals("1") && xxreout.equals("1") && cctreout.equals("1")) {
+                        if (rlzyreout.equals("2")) {
+                            tvLeader4.setVisibility(View.GONE);
+                            etLeader4.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader4.setVisibility(View.VISIBLE);
+                            etLeader4.setVisibility(View.GONE);
+                            tvLeader4W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (jsbmreout.equals("1") && cwreout.equals("1") && xxreout.equals("1") && cctreout.equals("1")&& rlzyreout.equals("1")) {
                             Toast.makeText(FlowAssessWillDetailActivity.this, "您对当前流程只有读取权限", Toast.LENGTH_SHORT).show();
                         }
                     } catch (JSONException e) {
@@ -1213,7 +1249,6 @@ public class FlowAssessWillDetailActivity extends BaseActivity {
                     tvIdNum.setText(idCard);
                     tvSex.setText(sex);
                     tvData.setText(xiangguanfujian);
-                    tvCarType.setText(carType);
                     tvLeaderNumW.setText(ygbh);
                     tvDepartment.setText(department);
 
@@ -1296,6 +1331,25 @@ public class FlowAssessWillDetailActivity extends BaseActivity {
                             etLeader3.setHint(word3);
                         }
                     }
+                    String word4 = "";
+                    if (rlzyyj != null && !rlzyyj.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(rlzyyj);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word4 = word4 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeader4.getVisibility() == View.VISIBLE) {
+                            tvLeader4.setText(word4);
+                        } else {
+                            etLeader4.setHint(word4);
+                        }
+                    }
                     if (bean.isRevoke()) {
                         Toast.makeText(FlowAssessWillDetailActivity.this, "当前流程已被追回", Toast.LENGTH_SHORT).show();
                     }
@@ -1305,6 +1359,8 @@ public class FlowAssessWillDetailActivity extends BaseActivity {
                         tvText.setVisibility(View.GONE);
                         ProgressDialogUtil.startLoad(FlowAssessWillDetailActivity.this, "获取审核人");
                         getAppRovePerson();
+                    } else {
+                        tvspr.setText("请点击“+”选择路径");
                     }
                     break;
                 case TAG_TWO:

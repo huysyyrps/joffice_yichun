@@ -235,7 +235,7 @@ public class HRecyclerView extends RelativeLayout {
 //        mRightTitleWidthList[5] = 160;
 //        mRightTitleWidthList[6] = 160;
         mLeftTextWidthList = new int[]{(int) (130 * scale + 0.5f)};
-        mLeftTextList = new String[]{"标题"};
+        mLeftTextList = new String[]{"营运指标"};
     }
 
     /**

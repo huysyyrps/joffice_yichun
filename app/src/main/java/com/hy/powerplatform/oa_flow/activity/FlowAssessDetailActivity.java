@@ -91,6 +91,12 @@ public class FlowAssessDetailActivity extends BaseActivity {
     TextView tvLeaderNumW;
     @BindView(R.id.tvDepartment)
     TextView tvDepartment;
+    @BindView(R.id.llCarType)
+    LinearLayout llCarType;
+    @BindView(R.id.tvLeader4W)
+    TextView tvLeader4W;
+    @BindView(R.id.tvLeader4)
+    TextView tvLeader4;
     private String res;
 
     String xiangguanfujian = "";
@@ -104,11 +110,13 @@ public class FlowAssessDetailActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
+        llCarType.setVisibility(View.GONE);
         tvLeaderW.setTextColor(getResources().getColor(R.color.order_stop_black));
         tvLeader1W.setTextColor(getResources().getColor(R.color.order_stop_black));
         tvLeader2W.setTextColor(getResources().getColor(R.color.order_stop_black));
         tvLeaderNum.setTextColor(getResources().getColor(R.color.order_stop_black));
         tvLeader3W.setTextColor(getResources().getColor(R.color.order_stop_black));
+        tvLeader4W.setTextColor(getResources().getColor(R.color.order_stop_black));
         header.setTvRight("追回");
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
@@ -281,8 +289,9 @@ public class FlowAssessDetailActivity extends BaseActivity {
                     String jbbmyj = bean.getMainform().get(0).getJbbmyj();
                     String cwsjbyj = bean.getMainform().get(0).getCwsjbyj();
                     String xxjsbyj = bean.getMainform().get(0).getXxjsbyj();
-                    String gongHao = bean.getMainform().get(0).getGh();
+                    String gongHao = bean.getMainform().get(0).getYgbh();
                     String cctkjyxgsyj = bean.getMainform().get(0).getCctkjyxgsyj();
+                    String rlzybyj = bean.getMainform().get(0).getRlzybyj();
                     xiangguanfujian = bean.getMainform().get(0).getXiangguanfujian();
                     tvData.setText(xiangguanfujian);
                     etPerson.setText(person);
@@ -303,6 +312,9 @@ public class FlowAssessDetailActivity extends BaseActivity {
                     }
                     if (!cctkjyxgsyj.equals("")) {
                         tvLeader3.setText(getJSONData(cctkjyxgsyj));
+                    }
+                    if (!rlzybyj.equals("")) {
+                        tvLeader4.setText(getJSONData(rlzybyj));
                     }
                     ProgressDialogUtil.stopLoad();
                     break;
@@ -336,9 +348,12 @@ public class FlowAssessDetailActivity extends BaseActivity {
         String yijian = "";
         try {
             JSONArray jsonArray = new JSONArray(data);
-            int size = jsonArray.length();
-            JSONObject jsonObject = jsonArray.getJSONObject(size - 1);
-            yijian = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                if (!jsonObject.getString("v").toString().equals("")) {
+                    yijian = yijian + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                }
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

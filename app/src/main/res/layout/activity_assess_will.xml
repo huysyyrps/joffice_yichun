@@ -214,8 +214,7 @@
                 android:id="@+id/llShenPiRenList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -407,7 +406,7 @@
                 <TextView
                     android:id="@+id/tvLeader1"
                     style="@style/textWrite"
-                    android:hint="营运管理部意见"></TextView>
+                    android:hint="财务审计部意见"></TextView>
 
                 <EditText
                     android:id="@+id/etLeader1"
@@ -521,7 +520,39 @@
                     android:hint="录取指纹"
                     android:visibility="gone" />
             </LinearLayout>
+            <View style="@style/line"></View>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvLeader4W"
+                    style="@style/oaTextView"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="人力资源:" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/shouye" />
+
+                <TextView
+                    android:id="@+id/tvLeader4"
+                    style="@style/textWrite"
+                    android:layout_weight="2.5"
+                    android:hint="人力资源意见" />
+
+                <EditText
+                    android:id="@+id/etLeader4"
+                    style="@style/textWrite"
+                    android:layout_weight="2.5"
+                    android:hint="人力资源意见"
+                    android:visibility="gone" />
+            </LinearLayout>
             <View
                 style="@style/line"
                 android:layout_marginBottom="45dp"></View>

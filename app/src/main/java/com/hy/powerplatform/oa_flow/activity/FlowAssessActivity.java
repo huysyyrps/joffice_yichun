@@ -46,7 +46,7 @@ public class FlowAssessActivity extends BaseActivity implements RadioGroup.OnChe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
-        header.setTvTitle("员工入职考核");
+        header.setTvTitle("员工入职申请");
         fragment01 = new FragmentWorkEntryData();
         fragment02 = new FragmentWorkEntryList();
         fragment011 = new FragmentTestList();

@@ -344,7 +344,7 @@ public class Constant {
     public static final String  ZGSFLOWDIFID = "20504";//20513
     public static final String  PUECHASEFLOWDIFID = "20271";
     public static final String  ENTRYDIFID = "10105";
-    public static final String  WORKENTRYDIFID = "20534";
+    public static final String  WORKENTRYDIFID = "20533";
     public static final String  OUTMESSAGEDIFID = "20200";
     public static final String  WORKPUECHASEDIFID = "10092";
     public static final String  REPAIRDIFID = "20307";

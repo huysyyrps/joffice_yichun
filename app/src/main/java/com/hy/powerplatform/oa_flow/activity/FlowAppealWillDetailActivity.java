@@ -179,6 +179,38 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
     LinearLayout llShenPiRenList;
     @BindView(R.id.scrollView)
     ScrollView scrollView;
+    @BindView(R.id.cb10)
+    CheckBox cb10;
+    @BindView(R.id.cb11)
+    CheckBox cb11;
+    @BindView(R.id.cb12)
+    CheckBox cb12;
+    @BindView(R.id.ll6)
+    LinearLayout ll6;
+    @BindView(R.id.cb13)
+    CheckBox cb13;
+    @BindView(R.id.cb14)
+    CheckBox cb14;
+    @BindView(R.id.cb15)
+    CheckBox cb15;
+    @BindView(R.id.ll7)
+    LinearLayout ll7;
+    @BindView(R.id.cb16)
+    CheckBox cb16;
+    @BindView(R.id.cb17)
+    CheckBox cb17;
+    @BindView(R.id.cb18)
+    CheckBox cb18;
+    @BindView(R.id.ll8)
+    LinearLayout ll8;
+    @BindView(R.id.cb19)
+    CheckBox cb19;
+    @BindView(R.id.cb20)
+    CheckBox cb20;
+    @BindView(R.id.cb21)
+    CheckBox cb21;
+    @BindView(R.id.ll9)
+    LinearLayout ll9;
     private String name, taskId, executionId, res, bmfzryj, xqbmyj, xqbmldyj, jsbmyj, jsbmldyj, zjlyj = "", dszyj = "";
     private String mainId, signaName, destName, destType, checkTask, qianzhiData = "";
     String leader = "";
@@ -196,6 +228,7 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
     List<String> resultList1 = new ArrayList<>();
     List<String> bigResultList = new ArrayList<>();
     List<String> bigResultList1 = new ArrayList<>();
+    List<String> bigResultList2 = new ArrayList<>();
     String tag1;
 
     String role = "";
@@ -423,6 +456,18 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
         cb7.setChecked(false);
         cb8.setChecked(false);
         cb9.setChecked(false);
+        cb10.setChecked(false);
+        cb11.setChecked(false);
+        cb12.setChecked(false);
+        cb13.setChecked(false);
+        cb14.setChecked(false);
+        cb15.setChecked(false);
+        cb16.setChecked(false);
+        cb17.setChecked(false);
+        cb18.setChecked(false);
+        cb19.setChecked(false);
+        cb20.setChecked(false);
+        cb21.setChecked(false);
 
         if (nametemp != null) {
             if (nametemp.length == 1) {
@@ -436,8 +481,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
             if (nametemp.length == 2) {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.VISIBLE);
@@ -447,9 +490,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.VISIBLE);
@@ -460,10 +500,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -479,11 +515,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -500,12 +531,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
                 rb6.setText(nametemp[5]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
-                rb6.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -520,8 +545,8 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
 
         if (bigNametemp != null) {
             if (bigNametemp.length == 1) {
-                cb1.setChecked(true);
                 cb1.setText(bigNametemp[0]);
+                cb1.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.INVISIBLE);
@@ -530,8 +555,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
             if (bigNametemp.length == 2) {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -541,9 +564,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -554,10 +574,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -573,11 +589,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -594,12 +605,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -617,13 +622,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -644,14 +642,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
-                cb8.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -664,7 +654,7 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 cb7.setVisibility(View.VISIBLE);
                 cb8.setVisibility(View.VISIBLE);
             }
-            if (bigNametemp.length >= 9) {
+            if (bigNametemp.length == 9) {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
@@ -674,15 +664,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
                 cb9.setText(bigNametemp[8]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
-                cb8.setChecked(true);
-                cb9.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -695,6 +676,468 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 cb7.setVisibility(View.VISIBLE);
                 cb8.setVisibility(View.VISIBLE);
                 cb9.setVisibility(View.VISIBLE);
+            }
+            if (bigNametemp.length == 10) {
+                cb1.setText(bigNametemp[0]);
+                cb2.setText(bigNametemp[1]);
+                cb3.setText(bigNametemp[2]);
+                cb4.setText(bigNametemp[3]);
+                cb5.setText(bigNametemp[4]);
+                cb6.setText(bigNametemp[5]);
+                cb7.setText(bigNametemp[6]);
+                cb8.setText(bigNametemp[7]);
+                cb9.setText(bigNametemp[8]);
+                cb10.setText(bigNametemp[9]);
+                ll1.setVisibility(View.VISIBLE);
+                ll2.setVisibility(View.VISIBLE);
+                ll5.setVisibility(View.VISIBLE);
+                ll6.setVisibility(View.VISIBLE);
+                cb1.setVisibility(View.VISIBLE);
+                cb2.setVisibility(View.VISIBLE);
+                cb3.setVisibility(View.VISIBLE);
+                cb4.setVisibility(View.VISIBLE);
+                cb5.setVisibility(View.VISIBLE);
+                cb6.setVisibility(View.VISIBLE);
+                cb7.setVisibility(View.VISIBLE);
+                cb8.setVisibility(View.VISIBLE);
+                cb9.setVisibility(View.VISIBLE);
+                cb10.setVisibility(View.VISIBLE);
+            }
+            if (bigNametemp.length == 11) {
+                cb1.setText(bigNametemp[0]);
+                cb2.setText(bigNametemp[1]);
+                cb3.setText(bigNametemp[2]);
+                cb4.setText(bigNametemp[3]);
+                cb5.setText(bigNametemp[4]);
+                cb6.setText(bigNametemp[5]);
+                cb7.setText(bigNametemp[6]);
+                cb8.setText(bigNametemp[7]);
+                cb9.setText(bigNametemp[8]);
+                cb10.setText(bigNametemp[9]);
+                cb11.setText(bigNametemp[10]);
+                ll1.setVisibility(View.VISIBLE);
+                ll2.setVisibility(View.VISIBLE);
+                ll5.setVisibility(View.VISIBLE);
+                ll6.setVisibility(View.VISIBLE);
+                cb1.setVisibility(View.VISIBLE);
+                cb2.setVisibility(View.VISIBLE);
+                cb3.setVisibility(View.VISIBLE);
+                cb4.setVisibility(View.VISIBLE);
+                cb5.setVisibility(View.VISIBLE);
+                cb6.setVisibility(View.VISIBLE);
+                cb7.setVisibility(View.VISIBLE);
+                cb8.setVisibility(View.VISIBLE);
+                cb9.setVisibility(View.VISIBLE);
+                cb10.setVisibility(View.VISIBLE);
+                cb11.setVisibility(View.VISIBLE);
+            }
+            if (bigNametemp.length == 12) {
+                cb1.setText(bigNametemp[0]);
+                cb2.setText(bigNametemp[1]);
+                cb3.setText(bigNametemp[2]);
+                cb4.setText(bigNametemp[3]);
+                cb5.setText(bigNametemp[4]);
+                cb6.setText(bigNametemp[5]);
+                cb7.setText(bigNametemp[6]);
+                cb8.setText(bigNametemp[7]);
+                cb9.setText(bigNametemp[8]);
+                cb10.setText(bigNametemp[9]);
+                cb11.setText(bigNametemp[10]);
+                cb12.setText(bigNametemp[11]);
+                ll1.setVisibility(View.VISIBLE);
+                ll2.setVisibility(View.VISIBLE);
+                ll5.setVisibility(View.VISIBLE);
+                ll6.setVisibility(View.VISIBLE);
+                cb1.setVisibility(View.VISIBLE);
+                cb2.setVisibility(View.VISIBLE);
+                cb3.setVisibility(View.VISIBLE);
+                cb4.setVisibility(View.VISIBLE);
+                cb5.setVisibility(View.VISIBLE);
+                cb6.setVisibility(View.VISIBLE);
+                cb7.setVisibility(View.VISIBLE);
+                cb8.setVisibility(View.VISIBLE);
+                cb9.setVisibility(View.VISIBLE);
+                cb10.setVisibility(View.VISIBLE);
+                cb11.setVisibility(View.VISIBLE);
+                cb12.setVisibility(View.VISIBLE);
+            }
+            if (bigNametemp.length == 13) {
+                cb1.setText(bigNametemp[0]);
+                cb2.setText(bigNametemp[1]);
+                cb3.setText(bigNametemp[2]);
+                cb4.setText(bigNametemp[3]);
+                cb5.setText(bigNametemp[4]);
+                cb6.setText(bigNametemp[5]);
+                cb7.setText(bigNametemp[6]);
+                cb8.setText(bigNametemp[7]);
+                cb9.setText(bigNametemp[8]);
+                cb10.setText(bigNametemp[9]);
+                cb11.setText(bigNametemp[10]);
+                cb12.setText(bigNametemp[11]);
+                cb13.setText(bigNametemp[12]);
+                ll1.setVisibility(View.VISIBLE);
+                ll2.setVisibility(View.VISIBLE);
+                ll5.setVisibility(View.VISIBLE);
+                ll6.setVisibility(View.VISIBLE);
+                ll7.setVisibility(View.VISIBLE);
+                cb1.setVisibility(View.VISIBLE);
+                cb2.setVisibility(View.VISIBLE);
+                cb3.setVisibility(View.VISIBLE);
+                cb4.setVisibility(View.VISIBLE);
+                cb5.setVisibility(View.VISIBLE);
+                cb6.setVisibility(View.VISIBLE);
+                cb7.setVisibility(View.VISIBLE);
+                cb8.setVisibility(View.VISIBLE);
+                cb9.setVisibility(View.VISIBLE);
+                cb10.setVisibility(View.VISIBLE);
+                cb11.setVisibility(View.VISIBLE);
+                cb12.setVisibility(View.VISIBLE);
+                cb13.setVisibility(View.VISIBLE);
+            }
+            if (bigNametemp.length == 14) {
+                cb1.setText(bigNametemp[0]);
+                cb2.setText(bigNametemp[1]);
+                cb3.setText(bigNametemp[2]);
+                cb4.setText(bigNametemp[3]);
+                cb5.setText(bigNametemp[4]);
+                cb6.setText(bigNametemp[5]);
+                cb7.setText(bigNametemp[6]);
+                cb8.setText(bigNametemp[7]);
+                cb9.setText(bigNametemp[8]);
+                cb10.setText(bigNametemp[9]);
+                cb11.setText(bigNametemp[10]);
+                cb12.setText(bigNametemp[11]);
+                cb13.setText(bigNametemp[12]);
+                cb14.setText(bigNametemp[13]);
+                ll1.setVisibility(View.VISIBLE);
+                ll2.setVisibility(View.VISIBLE);
+                ll5.setVisibility(View.VISIBLE);
+                ll6.setVisibility(View.VISIBLE);
+                ll7.setVisibility(View.VISIBLE);
+                cb1.setVisibility(View.VISIBLE);
+                cb2.setVisibility(View.VISIBLE);
+                cb3.setVisibility(View.VISIBLE);
+                cb4.setVisibility(View.VISIBLE);
+                cb5.setVisibility(View.VISIBLE);
+                cb6.setVisibility(View.VISIBLE);
+                cb7.setVisibility(View.VISIBLE);
+                cb8.setVisibility(View.VISIBLE);
+                cb9.setVisibility(View.VISIBLE);
+                cb10.setVisibility(View.VISIBLE);
+                cb11.setVisibility(View.VISIBLE);
+                cb12.setVisibility(View.VISIBLE);
+                cb13.setVisibility(View.VISIBLE);
+                cb14.setVisibility(View.VISIBLE);
+            }
+            if (bigNametemp.length == 15) {
+                cb1.setText(bigNametemp[0]);
+                cb2.setText(bigNametemp[1]);
+                cb3.setText(bigNametemp[2]);
+                cb4.setText(bigNametemp[3]);
+                cb5.setText(bigNametemp[4]);
+                cb6.setText(bigNametemp[5]);
+                cb7.setText(bigNametemp[6]);
+                cb8.setText(bigNametemp[7]);
+                cb9.setText(bigNametemp[8]);
+                cb10.setText(bigNametemp[9]);
+                cb11.setText(bigNametemp[10]);
+                cb12.setText(bigNametemp[11]);
+                cb13.setText(bigNametemp[12]);
+                cb14.setText(bigNametemp[13]);
+                cb15.setText(bigNametemp[14]);
+                ll1.setVisibility(View.VISIBLE);
+                ll2.setVisibility(View.VISIBLE);
+                ll5.setVisibility(View.VISIBLE);
+                ll6.setVisibility(View.VISIBLE);
+                ll7.setVisibility(View.VISIBLE);
+                cb1.setVisibility(View.VISIBLE);
+                cb2.setVisibility(View.VISIBLE);
+                cb3.setVisibility(View.VISIBLE);
+                cb4.setVisibility(View.VISIBLE);
+                cb5.setVisibility(View.VISIBLE);
+                cb6.setVisibility(View.VISIBLE);
+                cb7.setVisibility(View.VISIBLE);
+                cb8.setVisibility(View.VISIBLE);
+                cb9.setVisibility(View.VISIBLE);
+                cb10.setVisibility(View.VISIBLE);
+                cb11.setVisibility(View.VISIBLE);
+                cb12.setVisibility(View.VISIBLE);
+                cb13.setVisibility(View.VISIBLE);
+                cb14.setVisibility(View.VISIBLE);
+                cb15.setVisibility(View.VISIBLE);
+            }
+            if (bigNametemp.length == 16) {
+                cb1.setText(bigNametemp[0]);
+                cb2.setText(bigNametemp[1]);
+                cb3.setText(bigNametemp[2]);
+                cb4.setText(bigNametemp[3]);
+                cb5.setText(bigNametemp[4]);
+                cb6.setText(bigNametemp[5]);
+                cb7.setText(bigNametemp[6]);
+                cb8.setText(bigNametemp[7]);
+                cb9.setText(bigNametemp[8]);
+                cb10.setText(bigNametemp[9]);
+                cb11.setText(bigNametemp[10]);
+                cb12.setText(bigNametemp[11]);
+                cb13.setText(bigNametemp[12]);
+                cb14.setText(bigNametemp[13]);
+                cb15.setText(bigNametemp[14]);
+                cb16.setText(bigNametemp[15]);
+                ll1.setVisibility(View.VISIBLE);
+                ll2.setVisibility(View.VISIBLE);
+                ll5.setVisibility(View.VISIBLE);
+                ll6.setVisibility(View.VISIBLE);
+                ll7.setVisibility(View.VISIBLE);
+                ll8.setVisibility(View.VISIBLE);
+                cb1.setVisibility(View.VISIBLE);
+                cb2.setVisibility(View.VISIBLE);
+                cb3.setVisibility(View.VISIBLE);
+                cb4.setVisibility(View.VISIBLE);
+                cb5.setVisibility(View.VISIBLE);
+                cb6.setVisibility(View.VISIBLE);
+                cb7.setVisibility(View.VISIBLE);
+                cb8.setVisibility(View.VISIBLE);
+                cb9.setVisibility(View.VISIBLE);
+                cb10.setVisibility(View.VISIBLE);
+                cb11.setVisibility(View.VISIBLE);
+                cb12.setVisibility(View.VISIBLE);
+                cb13.setVisibility(View.VISIBLE);
+                cb14.setVisibility(View.VISIBLE);
+                cb15.setVisibility(View.VISIBLE);
+                cb16.setVisibility(View.VISIBLE);
+            }
+            if (bigNametemp.length == 17) {
+                cb1.setText(bigNametemp[0]);
+                cb2.setText(bigNametemp[1]);
+                cb3.setText(bigNametemp[2]);
+                cb4.setText(bigNametemp[3]);
+                cb5.setText(bigNametemp[4]);
+                cb6.setText(bigNametemp[5]);
+                cb7.setText(bigNametemp[6]);
+                cb8.setText(bigNametemp[7]);
+                cb9.setText(bigNametemp[8]);
+                cb10.setText(bigNametemp[9]);
+                cb11.setText(bigNametemp[10]);
+                cb12.setText(bigNametemp[11]);
+                cb13.setText(bigNametemp[12]);
+                cb14.setText(bigNametemp[13]);
+                cb15.setText(bigNametemp[14]);
+                cb16.setText(bigNametemp[15]);
+                cb17.setText(bigNametemp[16]);
+                ll1.setVisibility(View.VISIBLE);
+                ll2.setVisibility(View.VISIBLE);
+                ll5.setVisibility(View.VISIBLE);
+                ll6.setVisibility(View.VISIBLE);
+                ll7.setVisibility(View.VISIBLE);
+                ll8.setVisibility(View.VISIBLE);
+                cb1.setVisibility(View.VISIBLE);
+                cb2.setVisibility(View.VISIBLE);
+                cb3.setVisibility(View.VISIBLE);
+                cb4.setVisibility(View.VISIBLE);
+                cb5.setVisibility(View.VISIBLE);
+                cb6.setVisibility(View.VISIBLE);
+                cb7.setVisibility(View.VISIBLE);
+                cb8.setVisibility(View.VISIBLE);
+                cb9.setVisibility(View.VISIBLE);
+                cb10.setVisibility(View.VISIBLE);
+                cb11.setVisibility(View.VISIBLE);
+                cb12.setVisibility(View.VISIBLE);
+                cb13.setVisibility(View.VISIBLE);
+                cb14.setVisibility(View.VISIBLE);
+                cb15.setVisibility(View.VISIBLE);
+                cb16.setVisibility(View.VISIBLE);
+                cb17.setVisibility(View.VISIBLE);
+            }
+            if (bigNametemp.length == 18) {
+                cb1.setText(bigNametemp[0]);
+                cb2.setText(bigNametemp[1]);
+                cb3.setText(bigNametemp[2]);
+                cb4.setText(bigNametemp[3]);
+                cb5.setText(bigNametemp[4]);
+                cb6.setText(bigNametemp[5]);
+                cb7.setText(bigNametemp[6]);
+                cb8.setText(bigNametemp[7]);
+                cb9.setText(bigNametemp[8]);
+                cb10.setText(bigNametemp[9]);
+                cb11.setText(bigNametemp[10]);
+                cb12.setText(bigNametemp[11]);
+                cb13.setText(bigNametemp[12]);
+                cb14.setText(bigNametemp[13]);
+                cb15.setText(bigNametemp[14]);
+                cb16.setText(bigNametemp[15]);
+                cb17.setText(bigNametemp[16]);
+                cb18.setText(bigNametemp[17]);
+                ll1.setVisibility(View.VISIBLE);
+                ll2.setVisibility(View.VISIBLE);
+                ll5.setVisibility(View.VISIBLE);
+                ll6.setVisibility(View.VISIBLE);
+                ll7.setVisibility(View.VISIBLE);
+                ll8.setVisibility(View.VISIBLE);
+                cb1.setVisibility(View.VISIBLE);
+                cb2.setVisibility(View.VISIBLE);
+                cb3.setVisibility(View.VISIBLE);
+                cb4.setVisibility(View.VISIBLE);
+                cb5.setVisibility(View.VISIBLE);
+                cb6.setVisibility(View.VISIBLE);
+                cb7.setVisibility(View.VISIBLE);
+                cb8.setVisibility(View.VISIBLE);
+                cb9.setVisibility(View.VISIBLE);
+                cb10.setVisibility(View.VISIBLE);
+                cb11.setVisibility(View.VISIBLE);
+                cb12.setVisibility(View.VISIBLE);
+                cb13.setVisibility(View.VISIBLE);
+                cb14.setVisibility(View.VISIBLE);
+                cb15.setVisibility(View.VISIBLE);
+                cb16.setVisibility(View.VISIBLE);
+                cb17.setVisibility(View.VISIBLE);
+                cb18.setVisibility(View.VISIBLE);
+            }
+            if (bigNametemp.length == 19) {
+                cb1.setText(bigNametemp[0]);
+                cb2.setText(bigNametemp[1]);
+                cb3.setText(bigNametemp[2]);
+                cb4.setText(bigNametemp[3]);
+                cb5.setText(bigNametemp[4]);
+                cb6.setText(bigNametemp[5]);
+                cb7.setText(bigNametemp[6]);
+                cb8.setText(bigNametemp[7]);
+                cb9.setText(bigNametemp[8]);
+                cb10.setText(bigNametemp[9]);
+                cb11.setText(bigNametemp[10]);
+                cb12.setText(bigNametemp[11]);
+                cb13.setText(bigNametemp[12]);
+                cb14.setText(bigNametemp[13]);
+                cb15.setText(bigNametemp[14]);
+                cb16.setText(bigNametemp[15]);
+                cb17.setText(bigNametemp[16]);
+                cb18.setText(bigNametemp[17]);
+                cb19.setText(bigNametemp[18]);
+                ll1.setVisibility(View.VISIBLE);
+                ll2.setVisibility(View.VISIBLE);
+                ll5.setVisibility(View.VISIBLE);
+                ll6.setVisibility(View.VISIBLE);
+                ll7.setVisibility(View.VISIBLE);
+                ll8.setVisibility(View.VISIBLE);
+                ll9.setVisibility(View.VISIBLE);
+                cb1.setVisibility(View.VISIBLE);
+                cb2.setVisibility(View.VISIBLE);
+                cb3.setVisibility(View.VISIBLE);
+                cb4.setVisibility(View.VISIBLE);
+                cb5.setVisibility(View.VISIBLE);
+                cb6.setVisibility(View.VISIBLE);
+                cb7.setVisibility(View.VISIBLE);
+                cb8.setVisibility(View.VISIBLE);
+                cb9.setVisibility(View.VISIBLE);
+                cb10.setVisibility(View.VISIBLE);
+                cb11.setVisibility(View.VISIBLE);
+                cb12.setVisibility(View.VISIBLE);
+                cb13.setVisibility(View.VISIBLE);
+                cb14.setVisibility(View.VISIBLE);
+                cb15.setVisibility(View.VISIBLE);
+                cb16.setVisibility(View.VISIBLE);
+                cb17.setVisibility(View.VISIBLE);
+                cb18.setVisibility(View.VISIBLE);
+                cb19.setVisibility(View.VISIBLE);
+            }
+            if (bigNametemp.length == 20) {
+                cb1.setText(bigNametemp[0]);
+                cb2.setText(bigNametemp[1]);
+                cb3.setText(bigNametemp[2]);
+                cb4.setText(bigNametemp[3]);
+                cb5.setText(bigNametemp[4]);
+                cb6.setText(bigNametemp[5]);
+                cb7.setText(bigNametemp[6]);
+                cb8.setText(bigNametemp[7]);
+                cb9.setText(bigNametemp[8]);
+                cb10.setText(bigNametemp[9]);
+                cb11.setText(bigNametemp[10]);
+                cb12.setText(bigNametemp[11]);
+                cb13.setText(bigNametemp[12]);
+                cb14.setText(bigNametemp[13]);
+                cb15.setText(bigNametemp[14]);
+                cb16.setText(bigNametemp[15]);
+                cb17.setText(bigNametemp[16]);
+                cb18.setText(bigNametemp[17]);
+                cb19.setText(bigNametemp[18]);
+                cb20.setText(bigNametemp[19]);
+                ll1.setVisibility(View.VISIBLE);
+                ll2.setVisibility(View.VISIBLE);
+                ll5.setVisibility(View.VISIBLE);
+                ll6.setVisibility(View.VISIBLE);
+                ll7.setVisibility(View.VISIBLE);
+                ll8.setVisibility(View.VISIBLE);
+                ll9.setVisibility(View.VISIBLE);
+                cb1.setVisibility(View.VISIBLE);
+                cb2.setVisibility(View.VISIBLE);
+                cb3.setVisibility(View.VISIBLE);
+                cb4.setVisibility(View.VISIBLE);
+                cb5.setVisibility(View.VISIBLE);
+                cb6.setVisibility(View.VISIBLE);
+                cb7.setVisibility(View.VISIBLE);
+                cb8.setVisibility(View.VISIBLE);
+                cb9.setVisibility(View.VISIBLE);
+                cb10.setVisibility(View.VISIBLE);
+                cb11.setVisibility(View.VISIBLE);
+                cb12.setVisibility(View.VISIBLE);
+                cb13.setVisibility(View.VISIBLE);
+                cb14.setVisibility(View.VISIBLE);
+                cb15.setVisibility(View.VISIBLE);
+                cb16.setVisibility(View.VISIBLE);
+                cb17.setVisibility(View.VISIBLE);
+                cb18.setVisibility(View.VISIBLE);
+                cb19.setVisibility(View.VISIBLE);
+                cb20.setVisibility(View.VISIBLE);
+            }
+            if (bigNametemp.length == 21) {
+                cb1.setText(bigNametemp[0]);
+                cb2.setText(bigNametemp[1]);
+                cb3.setText(bigNametemp[2]);
+                cb4.setText(bigNametemp[3]);
+                cb5.setText(bigNametemp[4]);
+                cb6.setText(bigNametemp[5]);
+                cb7.setText(bigNametemp[6]);
+                cb8.setText(bigNametemp[7]);
+                cb9.setText(bigNametemp[8]);
+                cb10.setText(bigNametemp[9]);
+                cb11.setText(bigNametemp[10]);
+                cb12.setText(bigNametemp[11]);
+                cb13.setText(bigNametemp[12]);
+                cb14.setText(bigNametemp[13]);
+                cb15.setText(bigNametemp[14]);
+                cb16.setText(bigNametemp[15]);
+                cb17.setText(bigNametemp[16]);
+                cb18.setText(bigNametemp[17]);
+                cb19.setText(bigNametemp[18]);
+                cb20.setText(bigNametemp[19]);
+                cb21.setText(bigNametemp[20]);
+                ll1.setVisibility(View.VISIBLE);
+                ll2.setVisibility(View.VISIBLE);
+                ll5.setVisibility(View.VISIBLE);
+                ll6.setVisibility(View.VISIBLE);
+                ll7.setVisibility(View.VISIBLE);
+                ll8.setVisibility(View.VISIBLE);
+                ll9.setVisibility(View.VISIBLE);
+                cb1.setVisibility(View.VISIBLE);
+                cb2.setVisibility(View.VISIBLE);
+                cb3.setVisibility(View.VISIBLE);
+                cb4.setVisibility(View.VISIBLE);
+                cb5.setVisibility(View.VISIBLE);
+                cb6.setVisibility(View.VISIBLE);
+                cb7.setVisibility(View.VISIBLE);
+                cb8.setVisibility(View.VISIBLE);
+                cb9.setVisibility(View.VISIBLE);
+                cb10.setVisibility(View.VISIBLE);
+                cb11.setVisibility(View.VISIBLE);
+                cb12.setVisibility(View.VISIBLE);
+                cb13.setVisibility(View.VISIBLE);
+                cb14.setVisibility(View.VISIBLE);
+                cb15.setVisibility(View.VISIBLE);
+                cb16.setVisibility(View.VISIBLE);
+                cb17.setVisibility(View.VISIBLE);
+                cb18.setVisibility(View.VISIBLE);
+                cb19.setVisibility(View.VISIBLE);
+                cb20.setVisibility(View.VISIBLE);
+                cb21.setVisibility(View.VISIBLE);
             }
         }
         ProgressDialogUtil.stopLoad();
@@ -1095,6 +1538,7 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 if (codetemp != null) {
                     for (String s : codetemp) {
                         resultList.add(s);
+                        resultList1.add(s);
                     }
                 }
                 if (bigCodetemp != null) {
@@ -1104,7 +1548,7 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                     }
                 }
 
-                if (!rb6.isChecked()) {
+                if (rb6.isChecked()) {
                     if (resultList.size() >= 6) {
                         resultList.remove(5);
                     }
@@ -1135,49 +1579,109 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                     }
                 }
 
-                if (!cb9.isChecked()) {
+                if (cb21.isChecked()) {
+                    if (bigResultList.size() >= 21) {
+                        bigResultList2.add(bigResultList.get(20));
+                    }
+                }
+                if (cb20.isChecked()) {
+                    if (bigResultList.size() >= 20) {
+                        bigResultList2.add(bigResultList.get(19));
+                    }
+                }
+                if (cb19.isChecked()) {
+                    if (bigResultList.size() >= 19) {
+                        bigResultList2.add(bigResultList.get(18));
+                    }
+                }
+                if (cb18.isChecked()) {
+                    if (bigResultList.size() >= 18) {
+                        bigResultList2.add(bigResultList.get(17));
+                    }
+                }
+                if (cb17.isChecked()) {
+                    if (bigResultList.size() >= 17) {
+                        bigResultList2.add(bigResultList.get(16));
+                    }
+                }
+                if (cb16.isChecked()) {
+                    if (bigResultList.size() >= 16) {
+                        bigResultList2.add(bigResultList.get(15));
+                    }
+                }
+                if (cb15.isChecked()) {
+                    if (bigResultList.size() >= 15) {
+                        bigResultList2.add(bigResultList.get(14));
+                    }
+                }
+                if (cb14.isChecked()) {
+                    if (bigResultList.size() >= 14) {
+                        bigResultList2.add(bigResultList.get(13));
+                    }
+                }
+                if (cb13.isChecked()) {
+                    if (bigResultList.size() >= 13) {
+                        bigResultList2.add(bigResultList.get(12));
+                    }
+                }
+                if (cb12.isChecked()) {
+                    if (bigResultList.size() >= 11) {
+                        bigResultList2.add(bigResultList.get(11));
+                    }
+                }
+                if (cb11.isChecked()) {
+                    if (bigResultList.size() >= 11) {
+                        bigResultList2.add(bigResultList.get(10));
+                    }
+                }
+                if (cb10.isChecked()) {
+                    if (bigResultList.size() >= 10) {
+                        bigResultList2.add(bigResultList.get(9));
+                    }
+                }
+                if (cb9.isChecked()) {
                     if (bigResultList.size() >= 9) {
-                        bigResultList.remove(8);
+                        bigResultList2.add(bigResultList.get(8));
                     }
                 }
-                if (!cb8.isChecked()) {
+                if (cb8.isChecked()) {
                     if (bigResultList.size() >= 8) {
-                        bigResultList.remove(7);
+                        bigResultList2.add(bigResultList.get(7));
                     }
                 }
-                if (!cb7.isChecked()) {
+                if (cb7.isChecked()) {
                     if (bigResultList.size() >= 7) {
-                        bigResultList.remove(6);
+                        bigResultList2.add(bigResultList.get(6));
                     }
                 }
-                if (!cb6.isChecked()) {
+                if (cb6.isChecked()) {
                     if (bigResultList.size() >= 6) {
-                        bigResultList.remove(5);
+                        bigResultList2.add(bigResultList.get(5));
                     }
                 }
-                if (!cb5.isChecked()) {
+                if (cb5.isChecked()) {
                     if (bigResultList.size() >= 5) {
-                        bigResultList.remove(4);
+                        bigResultList2.add(bigResultList.get(4));
                     }
                 }
-                if (!cb4.isChecked()) {
+                if (cb4.isChecked()) {
                     if (bigResultList.size() >= 4) {
-                        bigResultList.remove(3);
+                        bigResultList2.add(bigResultList.get(3));
                     }
                 }
-                if (!cb3.isChecked()) {
+                if (cb3.isChecked()) {
                     if (bigResultList.size() >= 3) {
-                        bigResultList.remove(2);
+                        bigResultList2.add(bigResultList.get(2));
                     }
                 }
-                if (!cb2.isChecked()) {
+                if (cb2.isChecked()) {
                     if (bigResultList.size() >= 2) {
-                        bigResultList.remove(1);
+                        bigResultList2.add(bigResultList.get(1));
                     }
                 }
-                if (!cb1.isChecked()) {
+                if (cb1.isChecked()) {
                     if (bigResultList.size() >= 1) {
-                        bigResultList.remove(0);
+                        bigResultList2.add(bigResultList.get(0));
                     }
                 }
 
@@ -1192,13 +1696,18 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                     userCodes = userCodes.toString().replace("]", "");
                 }
 
-                if (bigResultList.size() == 0 && bigResultList1.size() != 0) {
+                if (bigResultList2.size() == 0 && bigResultList1.size() != 0) {
+                    Looper.prepare();
+                    ProgressDialogUtil.stopLoad();
+                    Toast.makeText(FlowAppealWillDetailActivity.this, "请选择审批人", Toast.LENGTH_SHORT).show();
+                    Looper.loop();
+                } else if (resultList.size() == 0 && resultList1.size() != 0) {
                     Looper.prepare();
                     ProgressDialogUtil.stopLoad();
                     Toast.makeText(FlowAppealWillDetailActivity.this, "请选择审批人", Toast.LENGTH_SHORT).show();
                     Looper.loop();
                 } else {
-                    String bigUserCodes = bigResultList.toString();
+                    String bigUserCodes = bigResultList2.toString();
                     bigUserCodes = bigUserCodes.toString().replace("[", "");
                     bigUserCodes = bigUserCodes.toString().replace("]", "");
 
