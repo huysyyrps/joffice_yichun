@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -136,13 +137,15 @@ public class FragmentEntryData extends Fragment {
     TextView tvLeaderNum;
     @BindView(R.id.tvLeaderNumW)
     TextView tvLeaderNumW;
+    @BindView(R.id.llAll)
+    LinearLayout llAll;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_entry_data, container, false);
         unbinder = ButterKnife.bind(this, view);
-
+        llAll.setVisibility(View.GONE);
         listCarType.add("A1");
         listCarType.add("A3");
         listCarType.add("B1");
@@ -254,12 +257,12 @@ public class FragmentEntryData extends Fragment {
         unbinder.unbind();
     }
 
-    @OnClick({R.id.tvData, R.id.btnUp,R.id.tvPerson})
+    @OnClick({R.id.tvData, R.id.btnUp, R.id.tvPerson})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tvPerson:
                 Intent intent = new Intent(getActivity(), EntryPersonActivity.class);
-                startActivityForResult(intent,TAG_ONE);
+                startActivityForResult(intent, TAG_ONE);
                 break;
             case R.id.tvData:
 //                if (ContextCompat.checkSelfPermission(getActivity(),
@@ -320,9 +323,9 @@ public class FragmentEntryData extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode){
+        switch (requestCode) {
             case TAG_ONE:
-                if (resultCode==TAG_ONE){
+                if (resultCode == TAG_ONE) {
                     tvPerson.setText(data.getStringExtra("fullname"));
                     etPhone.setText(data.getStringExtra("mobile"));
                     etIdNum.setText(data.getStringExtra("idNo"));

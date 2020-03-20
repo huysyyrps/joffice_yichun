@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -112,6 +113,8 @@ public class FragmentCarVideoData extends Fragment {
     TextView tvLeader2W;
     @BindView(R.id.tvYN)
     TextView tvYN;
+    @BindView(R.id.llAll)
+    LinearLayout llAll;
     private CustomDatePickerDay customDatePicker1, customDatePicker2;
     Unbinder unbinder;
     List<String> namelist = new ArrayList<>();
@@ -138,6 +141,7 @@ public class FragmentCarVideoData extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_carvideo_data, container, false);
         ButterKnife.bind(this, view);
+        llAll.setVisibility(View.GONE);
         //TextWatcher方式
         etSmallMoney.addTextChangedListener(new MoneyTextWatcher(etSmallMoney).setDigits(2));
         //setFilters方式

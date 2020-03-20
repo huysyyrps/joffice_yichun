@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -143,6 +144,8 @@ public class FragmentDormData extends Fragment {
     TextView tvLeader4W;
     @BindView(R.id.tvLeader5W)
     TextView tvLeader5W;
+    @BindView(R.id.llAll)
+    LinearLayout llAll;
     private CustomDatePickerDay customDatePicker1, customDatePicker2;
     SharedPreferencesHelper sharedPreferencesHelper;
 
@@ -152,7 +155,7 @@ public class FragmentDormData extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         view = inflater.inflate(R.layout.fragment_dorm_data, container, false);
         unbinder = ButterKnife.bind(this, view);
-
+        llAll.setVisibility(View.GONE);
         listSex.add("男");
         listSex.add("女");
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, listSex);

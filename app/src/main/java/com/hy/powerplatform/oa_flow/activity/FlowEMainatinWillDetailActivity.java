@@ -182,6 +182,18 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
     TextView tvspr;
     @BindView(R.id.scrollView)
     ScrollView scrollView;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
+    @BindView(R.id.llLeader4)
+    LinearLayout llLeader4;
+    @BindView(R.id.llLeader5)
+    LinearLayout llLeader5;
     private String name, taskId, res, bxbmyj, wxbmyj, wxryyj, wxqkyj, sbsyryj, wxfkyj = "";
     private String mainId, signaName, destName, destType, checkTask, qianzhiData = "";
     String leader = "";
@@ -449,8 +461,6 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
             if (nametemp.length == 2) {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.VISIBLE);
@@ -460,9 +470,6 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.VISIBLE);
@@ -473,10 +480,6 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -492,11 +495,6 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -513,12 +511,6 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
                 rb6.setText(nametemp[5]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
-                rb6.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -543,8 +535,6 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
             if (bigNametemp.length == 2) {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -554,9 +544,6 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -567,10 +554,6 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -586,11 +569,6 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -607,12 +585,6 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -630,13 +602,6 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -657,14 +622,6 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
-                cb8.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -687,15 +644,6 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
                 cb9.setText(bigNametemp[8]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
-                cb8.setChecked(true);
-                cb9.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -1311,77 +1259,6 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                         beanList.add(bean.getTrans().get(i));
                     }
                     String formRights = bean.getFormRights();
-                    try {
-                        JSONObject jsonObject = new JSONObject(formRights);
-                        bxbmreout = jsonObject.getString("bmfzryj");
-                        wxbmreout = jsonObject.getString("xxjsbyj");
-                        wxryreout = jsonObject.getString("WeiXiuRenYuanQianZi");
-                        wxqkreout = jsonObject.getString("bjap");
-                        sbsyrreout = jsonObject.getString("SheBeiShiYongRenQianZi");
-                        wxfkreout = jsonObject.getString("bjpj");
-                        if (bxbmreout.equals("2")) {
-                            tvLeader.setVisibility(View.GONE);
-                            etLeader.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader.setVisibility(View.VISIBLE);
-                            etLeader.setVisibility(View.GONE);
-                            tvLeaderW.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (wxbmreout.equals("2")) {
-                            tvLeader1.setVisibility(View.GONE);
-                            etLeader1.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader1.setVisibility(View.VISIBLE);
-                            etLeader1.setVisibility(View.GONE);
-                            tvLeader1W.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (wxryreout.equals("2")) {
-                            tvLeader2.setVisibility(View.GONE);
-                            etLeader2.setVisibility(View.VISIBLE);
-//                            tvDate1.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader2.setVisibility(View.VISIBLE);
-                            etLeader2.setVisibility(View.GONE);
-                            tvLeader2W.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (wxqkreout.equals("2")) {
-                            tvLeader3.setVisibility(View.GONE);
-                            etLeader3.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader3.setVisibility(View.VISIBLE);
-                            etLeader3.setVisibility(View.GONE);
-                            tvLeader3W.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (sbsyrreout.equals("2")) {
-                            tvLeader4.setVisibility(View.GONE);
-                            etLeader4.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader4.setVisibility(View.VISIBLE);
-                            etLeader4.setVisibility(View.GONE);
-                            tvLeader4W.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (wxfkreout.equals("2")) {
-                            tvLeader5.setVisibility(View.GONE);
-                            etLeader5.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader5.setVisibility(View.VISIBLE);
-                            etLeader5.setVisibility(View.GONE);
-                            tvLeader5W.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        bxbmreout = jsonObject.getString("bmfzryj");
-                        wxbmreout = jsonObject.getString("xxjsbyj");
-                        wxryreout = jsonObject.getString("WeiXiuRenYuanQianZi");
-                        wxqkreout = jsonObject.getString("bjap");
-                        sbsyrreout = jsonObject.getString("SheBeiShiYongRenQianZi");
-                        wxfkreout = jsonObject.getString("bjpj");
-                        if (bxbmreout.equals("1") && wxbmreout.equals("1") && wxryreout.equals("1")
-                                && wxqkreout.equals("1") && sbsyrreout.equals("1") && wxfkreout.equals("1")) {
-                            Toast.makeText(FlowEMainatinWillDetailActivity.this, "您对当前流程只有读取权限", Toast.LENGTH_SHORT).show();
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
                     String word3 = "";
                     if (wxfkyj != null && !wxfkyj.equals("")) {
                         try {
@@ -1397,9 +1274,12 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader5.getVisibility() == View.VISIBLE) {
                             tvLeader5.setText(word3);
+                            etLeader5.setHint(word3);
                         } else {
                             etLeader5.setHint(word3);
                         }
+                    }else {
+                        llLeader5.setVisibility(View.GONE);
                     }
 
                     if (sbsyryj != null && !sbsyryj.equals("")) {
@@ -1413,7 +1293,10 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
 //                                e.printStackTrace();
 //                            }
                             tvLeader4.setText(sbsyryj);
+                            etLeader4.setHint(sbsyryj);
                         }
+                    }else {
+                        llLeader4.setVisibility(View.GONE);
                     }
 
                     String word2 = "";
@@ -1431,9 +1314,12 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader3.getVisibility() == View.VISIBLE) {
                             tvLeader3.setText(word2);
+                            etLeader3.setHint(word2);
                         } else {
                             etLeader3.setHint(word2);
                         }
+                    }else {
+                        llLeader3.setVisibility(View.GONE);
                     }
 
                     if (wxryyj != null && !wxryyj.equals("")) {
@@ -1447,11 +1333,14 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
 //                                e.printStackTrace();
 //                            }
                             tvLeader2.setText(wxryyj);
+                            etLeader2.setText(wxryyj);
                             if (!data1.equals("")) {
                                 tvDate1.setText(data1);
 //                                tvDate1.setVisibility(View.VISIBLE);
                             }
                         }
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
 
                     String word1 = "";
@@ -1469,9 +1358,12 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader1.getVisibility() == View.VISIBLE) {
                             tvLeader1.setText(word1);
+                            etLeader1.setHint(word1);
                         } else {
                             etLeader1.setHint(word1);
                         }
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
                     String word = "";
                     if (bxbmyj != null && !bxbmyj.equals("")) {
@@ -1488,9 +1380,88 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader.getVisibility() == View.VISIBLE) {
                             tvLeader.setText(word);
+                            etLeader.setHint(word);
                         } else {
                             etLeader.setHint(word);
                         }
+                    }else {
+                        llLeader.setVisibility(View.GONE);
+                    }
+                    try {
+                        JSONObject jsonObject = new JSONObject(formRights);
+                        bxbmreout = jsonObject.getString("bmfzryj");
+                        wxbmreout = jsonObject.getString("xxjsbyj");
+                        wxryreout = jsonObject.getString("WeiXiuRenYuanQianZi");
+                        wxqkreout = jsonObject.getString("bjap");
+                        sbsyrreout = jsonObject.getString("SheBeiShiYongRenQianZi");
+                        wxfkreout = jsonObject.getString("bjpj");
+                        if (bxbmreout.equals("2")) {
+                            tvLeader.setVisibility(View.GONE);
+                            etLeader.setVisibility(View.VISIBLE);
+                            llLeader.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader.setVisibility(View.VISIBLE);
+                            etLeader.setVisibility(View.GONE);
+                            tvLeaderW.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (wxbmreout.equals("2")) {
+                            tvLeader1.setVisibility(View.GONE);
+                            etLeader1.setVisibility(View.VISIBLE);
+                            llLeader1.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader1.setVisibility(View.VISIBLE);
+                            etLeader1.setVisibility(View.GONE);
+                            tvLeader1W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (wxryreout.equals("2")) {
+                            tvLeader2.setVisibility(View.GONE);
+                            etLeader2.setVisibility(View.VISIBLE);
+                            llLeader2.setVisibility(View.VISIBLE);
+//                            tvDate1.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader2.setVisibility(View.VISIBLE);
+                            etLeader2.setVisibility(View.GONE);
+                            tvLeader2W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (wxqkreout.equals("2")) {
+                            tvLeader3.setVisibility(View.GONE);
+                            etLeader3.setVisibility(View.VISIBLE);
+                            llLeader3.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader3.setVisibility(View.VISIBLE);
+                            etLeader3.setVisibility(View.GONE);
+                            tvLeader3W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (sbsyrreout.equals("2")) {
+                            tvLeader4.setVisibility(View.GONE);
+                            etLeader4.setVisibility(View.VISIBLE);
+                            llLeader4.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader4.setVisibility(View.VISIBLE);
+                            etLeader4.setVisibility(View.GONE);
+                            tvLeader4W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (wxfkreout.equals("2")) {
+                            tvLeader5.setVisibility(View.GONE);
+                            etLeader5.setVisibility(View.VISIBLE);
+                            llLeader5.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader5.setVisibility(View.VISIBLE);
+                            etLeader5.setVisibility(View.GONE);
+                            tvLeader5W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        bxbmreout = jsonObject.getString("bmfzryj");
+                        wxbmreout = jsonObject.getString("xxjsbyj");
+                        wxryreout = jsonObject.getString("WeiXiuRenYuanQianZi");
+                        wxqkreout = jsonObject.getString("bjap");
+                        sbsyrreout = jsonObject.getString("SheBeiShiYongRenQianZi");
+                        wxfkreout = jsonObject.getString("bjpj");
+                        if (bxbmreout.equals("1") && wxbmreout.equals("1") && wxryreout.equals("1")
+                                && wxqkreout.equals("1") && sbsyrreout.equals("1") && wxfkreout.equals("1")) {
+                            Toast.makeText(FlowEMainatinWillDetailActivity.this, "您对当前流程只有读取权限", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                     if (bean.isRevoke()) {
                         Toast.makeText(FlowEMainatinWillDetailActivity.this, "当前流程已被追回", Toast.LENGTH_SHORT).show();

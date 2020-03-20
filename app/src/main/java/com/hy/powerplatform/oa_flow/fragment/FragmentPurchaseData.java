@@ -176,6 +176,8 @@ public class FragmentPurchaseData extends Fragment {
     EditText etOtherMoney;
     @BindView(R.id.etOtherMemo)
     EditText etOtherMemo;
+    @BindView(R.id.llAll)
+    LinearLayout llAll;
 
     private CustomDatePickerDay customDatePicker1;
     List<String> dataList = new ArrayList<>();
@@ -216,6 +218,7 @@ public class FragmentPurchaseData extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_purchase_data, container, false);
         unbinder = ButterKnife.bind(this, view);
+        llAll.setVisibility(View.GONE);
         initDatePicker();
         dataList.add("计划内");
         dataList.add("计划外");
@@ -243,10 +246,10 @@ public class FragmentPurchaseData extends Fragment {
             public void afterTextChanged(Editable s) {
                 if (!s.toString().equals("")) {
                     OtherMoney = (Double.valueOf(s.toString()));
-                    tvAllMoney.setText(new BigDecimal(AllMoney1 + AllMoney2 + AllMoney3 + AllMoney4 + AllMoney5+OtherMoney).setScale(2, BigDecimal.ROUND_HALF_UP).toString());
+                    tvAllMoney.setText(new BigDecimal(AllMoney1 + AllMoney2 + AllMoney3 + AllMoney4 + AllMoney5 + OtherMoney).setScale(2, BigDecimal.ROUND_HALF_UP).toString());
                 } else {
                     OtherMoney = 0.0;
-                    tvAllMoney.setText(new BigDecimal(AllMoney1 + AllMoney2 + AllMoney3 + AllMoney4 + AllMoney5+OtherMoney).setScale(2, BigDecimal.ROUND_HALF_UP).toString());
+                    tvAllMoney.setText(new BigDecimal(AllMoney1 + AllMoney2 + AllMoney3 + AllMoney4 + AllMoney5 + OtherMoney).setScale(2, BigDecimal.ROUND_HALF_UP).toString());
                 }
             }
         });
@@ -971,7 +974,7 @@ public class FragmentPurchaseData extends Fragment {
                         tvAllMoney.getText().toString(), use, other, spinnerzc.getSelectedItem().toString()
                         , type, aboutDep, department1, department2
                         , department3, department4, etBZ1.getText().toString(), etBZ2.getText().toString()
-                        , etBZ3.getText().toString(), etBZ4.getText().toString(),etOtherMoney.getText().toString(),etOtherMemo.getText().toString());
+                        , etBZ3.getText().toString(), etBZ4.getText().toString(), etOtherMoney.getText().toString(), etOtherMemo.getText().toString());
                 if (res.equals("")) {
                     handler.sendEmptyMessage(TAG_THERE);
                 } else {

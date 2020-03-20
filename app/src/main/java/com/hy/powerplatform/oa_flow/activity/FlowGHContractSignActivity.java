@@ -47,6 +47,7 @@ public class FlowGHContractSignActivity extends BaseActivity implements RadioGro
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
+
         header.setTvTitle("工会合同签订审批单");
         fragment01 = new FragmentGHContractSignData();
         fragment02 = new FragmentGHContractSignList();

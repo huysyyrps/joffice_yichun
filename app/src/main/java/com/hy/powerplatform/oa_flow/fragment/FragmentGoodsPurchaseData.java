@@ -195,6 +195,8 @@ public class FragmentGoodsPurchaseData extends Fragment {
     TextView tvLeaderJG;
     @BindView(R.id.ll1)
     LinearLayout ll1;
+    @BindView(R.id.llAll)
+    LinearLayout llAll;
     private CustomDatePickerDay customDatePicker1;
 
     String userId = "";
@@ -222,6 +224,7 @@ public class FragmentGoodsPurchaseData extends Fragment {
         View view = inflater.inflate(R.layout.fragment_goodpurch_data, container, false);
         unbinder = ButterKnife.bind(this, view);
         initDatePicker();
+        llAll.setVisibility(View.GONE);
         userId = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userCode", "");
         userName = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userStatus", "");
         String department = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "depName", "");
@@ -826,7 +829,7 @@ public class FragmentGoodsPurchaseData extends Fragment {
                     ll1.setVisibility(View.GONE);
                     listType.clear();
                     listType.add("");
-                }else {
+                } else {
                     ll1.setVisibility(View.VISIBLE);
                     listType.clear();
                     listType.add("");
@@ -1000,7 +1003,7 @@ public class FragmentGoodsPurchaseData extends Fragment {
                     Toast.makeText(getActivity(), "采购信息不能为空", Toast.LENGTH_SHORT).show();
                     break;
                 }
-                if (spinnerzc.getSelectedItem().toString().equals("资产类")){
+                if (spinnerzc.getSelectedItem().toString().equals("资产类")) {
                     if (spinnertype.getSelectedItem().toString().equals("")) {
                         Toast.makeText(getActivity(), "物品类型不能为空", Toast.LENGTH_SHORT).show();
                         break;
@@ -1103,9 +1106,9 @@ public class FragmentGoodsPurchaseData extends Fragment {
                 department5 = etDepartment5.getText().toString();
 
                 String type = "";
-                if (spinnertype.getSelectedItem()==null){
+                if (spinnertype.getSelectedItem() == null) {
                     type = "";
-                }else {
+                } else {
                     type = spinnertype.getSelectedItem().toString();
                 }
                 final String userCode = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userCode", "");

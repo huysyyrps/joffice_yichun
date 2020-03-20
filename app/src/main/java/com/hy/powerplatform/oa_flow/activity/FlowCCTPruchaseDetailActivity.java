@@ -144,6 +144,10 @@ public class FlowCCTPruchaseDetailActivity extends BaseActivity {
     TextView tvLeaderW;
     @BindView(R.id.tvLeader1W)
     TextView tvLeader1W;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
     private String res;
     String xiangguanfujian = "";
     String flowMessage = "";
@@ -364,9 +368,13 @@ public class FlowCCTPruchaseDetailActivity extends BaseActivity {
 
                     if (!bmfzr.equals("")) {
                         tvLeader.setText(getJSONData(bmfzr));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
                     if (!fgfzr.equals("")) {
                         tvLeader1.setText(getJSONData(fgfzr));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

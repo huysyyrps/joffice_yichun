@@ -7,14 +7,14 @@
     <CheckBox
         android:id="@+id/cb"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="21dp"
         android:gravity="center_vertical"
         android:layout_marginLeft="10dp"/>
     <CheckBox
         android:id="@+id/cb1"
         android:checked="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="21dp"
         android:gravity="center_vertical"
         android:layout_marginLeft="10dp"/>
 

@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -155,6 +156,26 @@ public class FlowEMaintainDetailActivity extends BaseActivity {
     TextView tvLeader4W;
     @BindView(R.id.tvLeader5W)
     TextView tvLeader5W;
+    @BindView(R.id.tvspr)
+    TextView tvspr;
+    @BindView(R.id.llShenPiRen)
+    LinearLayout llShenPiRen;
+    @BindView(R.id.llShenPiRenList)
+    LinearLayout llShenPiRenList;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
+    @BindView(R.id.llLeader4)
+    LinearLayout llLeader4;
+    @BindView(R.id.llLeader5)
+    LinearLayout llLeader5;
+    @BindView(R.id.scrollView)
+    ScrollView scrollView;
     private String res;
 
     String xiangguanfujian;
@@ -275,21 +296,37 @@ public class FlowEMaintainDetailActivity extends BaseActivity {
                     tvData.setText(xiangguanfujian);
                     if (!bxbm.equals("")) {
                         tvLeader.setText(getJSONData1(bxbm));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
                     if (!wxbm.equals("")) {
                         tvLeader1.setText(getJSONData1(wxbm));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
+
                     if (!wxry.equals("")) {
                         tvLeader2.setText(wxry);
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
+
                     if (!wxql.equals("")) {
                         tvLeader3.setText(getJSONData1(wxql));
+                    }else {
+                        llLeader3.setVisibility(View.GONE);
                     }
+
                     if (!sbsyr.equals("")) {
                         tvLeader4.setText(sbsyr);
+                    }else {
+                        llLeader4.setVisibility(View.GONE);
                     }
+
                     if (!fkqk.equals("")) {
                         tvLeader5.setText(getJSONData1(fkqk));
+                    }else {
+                        llLeader5.setVisibility(View.GONE);
                     }
                     if (!data1.equals("")) {
                         tvDate1.setVisibility(View.VISIBLE);

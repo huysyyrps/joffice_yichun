@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -111,6 +112,22 @@ public class FragmentCarData extends Fragment {
     @BindView(R.id.tvLeader3)
     TextView tvLeader3;
     String liushuihao;
+    @BindView(R.id.tvLeaderW)
+    TextView tvLeaderW;
+    @BindView(R.id.tvLeader1W)
+    TextView tvLeader1W;
+    @BindView(R.id.tvLeader2W)
+    TextView tvLeader2W;
+    @BindView(R.id.tvLeader3W)
+    TextView tvLeader3W;
+    @BindView(R.id.tvLeader4W)
+    TextView tvLeader4W;
+    @BindView(R.id.tvLeader5W)
+    TextView tvLeader5W;
+    @BindView(R.id.tvLeader4)
+    TextView tvLeader4;
+    @BindView(R.id.llAll)
+    LinearLayout llAll;
     private CustomDatePickerDay customDatePicker1, customDatePicker2;
 
     @Override
@@ -118,6 +135,7 @@ public class FragmentCarData extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_car_data, container, false);
         unbinder = ButterKnife.bind(this, view);
+        llAll.setVisibility(View.GONE);
         initDatePicker();
         userId = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userCode", "");
         userName = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userStatus", "");
@@ -241,7 +259,7 @@ public class FragmentCarData extends Fragment {
                 final String job = etJob.getText().toString().trim() + "";
                 final String phone = etPhone.getText().toString().trim() + "";
                 final String task = etTask.getText().toString().trim() + "";
-                final String address = etAddress.getText().toString().trim()+ "";
+                final String address = etAddress.getText().toString().trim() + "";
                 final String startMile = etStartMileage.getText().toString();
                 final String endMile = etEndMileage.getText().toString();
                 final String allMile = etAllMileage.getText().toString();
@@ -277,7 +295,7 @@ public class FragmentCarData extends Fragment {
      * 提交数据
      */
     private void UpContractData() {
-        ProgressDialogUtil.startLoad(getActivity(),"提交数据中");
+        ProgressDialogUtil.startLoad(getActivity(), "提交数据中");
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -314,7 +332,7 @@ public class FragmentCarData extends Fragment {
 
                 String res = dbA.OAUserCarUp(turl, userDepart, uId, job, phone, task, address,
                         startMile, endMile, allMile, userId, person, department, startTime,
-                        endTime, time, carNo, carType, liushuihao,"");
+                        endTime, time, carNo, carType, liushuihao, "");
                 if (res.equals("")) {
                     handler.sendEmptyMessage(TAG_THERE);
                 } else {

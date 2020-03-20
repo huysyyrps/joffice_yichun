@@ -91,6 +91,12 @@ public class FlowGHPayDetailActivity extends BaseActivity {
     TextView tvLeader1W;
     @BindView(R.id.tvLeader2W)
     TextView tvLeader2W;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
     private String res;
 
     String xiangguanfujian = "";
@@ -294,12 +300,18 @@ public class FlowGHPayDetailActivity extends BaseActivity {
                     tvYongTu.setText(data);
                     if (!bmfzr.equals("")) {
                         etLeader.setText(getJSONData(bmfzr));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
                     if (!cwzjyj.equals("")) {
                         etLeader1.setText(getJSONData(cwzjyj));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
                     if (!zjl.equals("")) {
                         etLeader2.setText(getJSONData(zjl));
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

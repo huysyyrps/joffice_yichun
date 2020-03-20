@@ -162,6 +162,24 @@ public class FragmentGHPurchaseData extends Fragment {
     TextView tvLeader1W;
     @BindView(R.id.tvLeader2W)
     TextView tvLeader2W;
+    @BindView(R.id.tv)
+    TextView tv;
+    @BindView(R.id.etLeader)
+    EditText etLeader;
+    @BindView(R.id.tvLeader)
+    TextView tvLeader;
+    @BindView(R.id.tvLeader1)
+    TextView tvLeader1;
+    @BindView(R.id.tvLeader2)
+    TextView tvLeader2;
+    @BindView(R.id.tvLeader3)
+    TextView tvLeader3;
+    @BindView(R.id.tvLeader4)
+    TextView tvLeader4;
+    @BindView(R.id.tvLeader5)
+    TextView tvLeader5;
+    @BindView(R.id.llAll)
+    LinearLayout llAll;
     private CustomDatePickerDay customDatePicker1;
 
     String userId = "";
@@ -185,6 +203,7 @@ public class FragmentGHPurchaseData extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ghpurch_data, container, false);
         unbinder = ButterKnife.bind(this, view);
+        llAll.setVisibility(View.GONE);
         initDatePicker();
         userId = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userCode", "");
         userName = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userStatus", "");

@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -120,6 +121,20 @@ public class FlowDriverAssessDetailActivity extends BaseActivity {
     Button btnHistory;
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
+    @BindView(R.id.tvLeaderW)
+    TextView tvLeaderW;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.tvLeader1W)
+    TextView tvLeader1W;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.tvLeader2W)
+    TextView tvLeader2W;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.scrollView)
+    ScrollView scrollView;
     private String res;
     String xiangguanfujian = "";
     String flowMessage = "";
@@ -133,7 +148,7 @@ public class FlowDriverAssessDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
         header.setTvRight("追回");
-        LinearLayoutManager manager  = new LinearLayoutManager(this);
+        LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
         btnT.setVisibility(View.GONE);
         tvText.setVisibility(View.GONE);
@@ -173,7 +188,7 @@ public class FlowDriverAssessDetailActivity extends BaseActivity {
             public void success(Object o) {
                 Message message = new Message();
                 message.what = Constant.TAG_FIVE;
-                Bundle bundle=new Bundle();
+                Bundle bundle = new Bundle();
                 bundle.putString("msg", o.toString());
                 message.setData(bundle);
                 handler.sendMessage(message);
@@ -189,19 +204,19 @@ public class FlowDriverAssessDetailActivity extends BaseActivity {
         });
     }
 
-    @OnClick({R.id.tvData,R.id.btnHistory})
+    @OnClick({R.id.tvData, R.id.btnHistory})
     public void onViewClicked(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btnHistory:
                 recyclerView.setVisibility(View.VISIBLE);
-                ProgressDialogUtil.startLoad(FlowDriverAssessDetailActivity.this,"获取数据中");
+                ProgressDialogUtil.startLoad(FlowDriverAssessDetailActivity.this, "获取数据中");
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
                         //String name =URLDecoder.decode(待转值,"utf-8");
                         String url = Constant.BASE_URL2 + Constant.FLOWMESSAGE;
                         DBHandler dbA = new DBHandler();
-                        flowMessage = dbA.OAFlowMessage(url,runID);
+                        flowMessage = dbA.OAFlowMessage(url, runID);
                         if (flowMessage.equals("获取数据失败") || flowMessage.equals("")) {
                             handler.sendEmptyMessage(TAG_TWO);
                         } else {
@@ -279,10 +294,10 @@ public class FlowDriverAssessDetailActivity extends BaseActivity {
                 case 111:
                     Gson gsonF = new Gson();
                     FlowMessage1 beanF = gsonF.fromJson(flowMessage, FlowMessage1.class);
-                    for (int i = 0;i<beanF.getData().size();i++){
+                    for (int i = 0; i < beanF.getData().size(); i++) {
                         flowList.add(beanF.getData().get(i));
                     }
-                    adapter = new FlowMessageAdapter(FlowDriverAssessDetailActivity.this,flowList);
+                    adapter = new FlowMessageAdapter(FlowDriverAssessDetailActivity.this, flowList);
                     recyclerView.setAdapter(adapter);
                     Toast.makeText(FlowDriverAssessDetailActivity.this, "查询成功", Toast.LENGTH_SHORT).show();
                     ProgressDialogUtil.stopLoad();
@@ -304,12 +319,18 @@ public class FlowDriverAssessDetailActivity extends BaseActivity {
 
                     if (!bmfzryj.equals("")) {
                         tvLeader.setText(getJSONData(bmfzryj));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
                     if (!jbbmyj.equals("")) {
                         tvLeader1.setText(getJSONData(jbbmyj));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
                     if (!rlzybyj.equals("")) {
                         tvLeader2.setText(getJSONData(rlzybyj));
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

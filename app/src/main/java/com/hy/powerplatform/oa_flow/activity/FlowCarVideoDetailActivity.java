@@ -14,6 +14,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -158,6 +159,14 @@ public class FlowCarVideoDetailActivity extends BaseActivity {
     TextView tvYN;
     @BindView(R.id.scrollView)
     ScrollView scrollView;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.spinnerDiaoQu)
+    Spinner spinnerDiaoQu;
     private String res;
     String xiangguanfujian = "";
     String flowMessage = "";
@@ -290,12 +299,18 @@ public class FlowCarVideoDetailActivity extends BaseActivity {
                     tvDiaoQu.setText(diaoQu);
                     if (!bmfzryj.equals("")) {
                         tvLeader.setText(getJSONData(bmfzryj));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
                     if (!xxjsbmyj.equals("")) {
                         tvLeader1.setText(getJSONData(xxjsbmyj));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
                     if (!jkczyyj.equals("")) {
                         tvLeader2.setText(getJSONData(jkczyyj));
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

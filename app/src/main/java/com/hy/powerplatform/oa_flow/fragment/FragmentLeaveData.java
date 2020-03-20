@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -99,6 +100,8 @@ public class FragmentLeaveData extends Fragment {
     TextView tvLeader1W;
     @BindView(R.id.tvLeader2W)
     TextView tvLeader2W;
+    @BindView(R.id.llAll)
+    LinearLayout llAll;
     private byte[] lock = new byte[0];
     // 位数，默认是8位
     private final static long w = 100000000;
@@ -134,6 +137,7 @@ public class FragmentLeaveData extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         view = inflater.inflate(R.layout.fragment_data, container, false);
         unbinder = ButterKnife.bind(this, view);
+        llAll.setVisibility(View.GONE);
         listAP.add("上午");
         listAP.add("下午");
         listPM.add("下午");

@@ -357,304 +357,357 @@
                 <View style="@style/line"></View>
             </LinearLayout>
 
+
+
+
+
+
+
+
+
             <LinearLayout
+                android:id="@+id/llLeader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvLeaderW"
-                    style="@style/oaTextView"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="申办部门:" />
+                    <TextView
+                        android:id="@+id/tvLeaderW"
+                        style="@style/oaTextView"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="申办部门:" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
 
-                <TextView
-                    android:id="@+id/tvLeader"
-                    style="@style/textWrite"
-                    android:hint="申办部门意见" />
+                    <TextView
+                        android:id="@+id/tvLeader"
+                        style="@style/textWrite"
+                        android:hint="申办部门意见" />
 
-                <EditText
-                    android:id="@+id/etLeader"
-                    style="@style/textWrite"
-                    android:hint="申办部门意见"
-                    android:visibility="gone" />
+                    <EditText
+                        android:id="@+id/etLeader"
+                        style="@style/textWrite"
+                        android:hint="申办部门意见"
+                        android:visibility="gone" />
+                </LinearLayout>
+                <View style="@style/line"></View>
             </LinearLayout>
-
-            <View style="@style/line"></View>
-
             <LinearLayout
+                android:id="@+id/llLeader1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvLeader1W"
-                    style="@style/oaTextView"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="申办分管:" />
+                    <TextView
+                        android:id="@+id/tvLeader1W"
+                        style="@style/oaTextView"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="申办分管:" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
 
-                <TextView
-                    android:id="@+id/tvLeader1"
-                    style="@style/textWrite"
-                    android:hint="申办分管领导意见" />
+                    <TextView
+                        android:id="@+id/tvLeader1"
+                        style="@style/textWrite"
+                        android:hint="申办分管领导意见" />
 
-                <EditText
-                    android:id="@+id/etLeader1"
-                    style="@style/textWrite"
-                    android:hint="申办分管领导意见"
-                    android:visibility="gone" />
+                    <EditText
+                        android:id="@+id/etLeader1"
+                        style="@style/textWrite"
+                        android:hint="申办分管领导意见"
+                        android:visibility="gone" />
+                </LinearLayout>
+                <View style="@style/line"></View>
             </LinearLayout>
-
-            <View style="@style/line"></View>
-
             <LinearLayout
+                android:id="@+id/llLeaderzjl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvLeader2W"
-                    style="@style/oaTextView"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="总经理:"
-                    android:textColor="@color/red" />
+                    <TextView
+                        android:id="@+id/tvLeader2W"
+                        style="@style/oaTextView"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="总经理:"
+                        android:textColor="@color/red" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
 
-                <TextView
-                    android:id="@+id/tvLeaderzjl"
-                    style="@style/textWrite"
-                    android:hint="总经理意见"
-                    android:textColorHint="@color/red" />
+                    <TextView
+                        android:id="@+id/tvLeaderzjl"
+                        style="@style/textWrite"
+                        android:hint="总经理意见"
+                        android:textColorHint="@color/red" />
 
-                <EditText
-                    android:id="@+id/etLeaderzjl"
-                    style="@style/textWrite"
-                    android:hint="总经理意见"
-                    android:textColorHint="@color/red"
-                    android:visibility="gone" />
+                    <EditText
+                        android:id="@+id/etLeaderzjl"
+                        style="@style/textWrite"
+                        android:hint="总经理意见"
+                        android:textColorHint="@color/red"
+                        android:visibility="gone" />
+                </LinearLayout>
+                <View style="@style/line"></View>
             </LinearLayout>
-
-            <View style="@style/line"></View>
-
             <LinearLayout
+                android:id="@+id/llLeader2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvLeader3W"
-                    style="@style/oaTextView"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="经办分管:" />
+                    <TextView
+                        android:id="@+id/tvLeader3W"
+                        style="@style/oaTextView"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="经办分管:" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
 
-                <TextView
-                    android:id="@+id/tvLeader2"
-                    style="@style/textWrite"
-                    android:hint="经办分管领导意见" />
+                    <TextView
+                        android:id="@+id/tvLeader2"
+                        style="@style/textWrite"
+                        android:hint="经办分管领导意见" />
 
-                <EditText
-                    android:id="@+id/etLeader2"
-                    style="@style/textWrite"
-                    android:hint="经办分管领导意见"
-                    android:visibility="gone" />
+                    <EditText
+                        android:id="@+id/etLeader2"
+                        style="@style/textWrite"
+                        android:hint="经办分管领导意见"
+                        android:visibility="gone" />
 
+                </LinearLayout>
+                <View style="@style/line"></View>
             </LinearLayout>
-
-            <View style="@style/line"></View>
-
             <LinearLayout
+                android:id="@+id/llLeader3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvLeader4W"
-                    style="@style/oaTextView"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="经办部门:" />
+                    <TextView
+                        android:id="@+id/tvLeader4W"
+                        style="@style/oaTextView"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="经办部门:" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
 
-                <TextView
-                    android:id="@+id/tvLeader3"
-                    style="@style/textWrite"
-                    android:hint="经办部门领导意见" />
+                    <TextView
+                        android:id="@+id/tvLeader3"
+                        style="@style/textWrite"
+                        android:hint="经办部门领导意见" />
 
-                <EditText
-                    android:id="@+id/etLeader3"
-                    style="@style/textWrite"
-                    android:hint="经办部门领导意见"
-                    android:visibility="gone" />
+                    <EditText
+                        android:id="@+id/etLeader3"
+                        style="@style/textWrite"
+                        android:hint="经办部门领导意见"
+                        android:visibility="gone" />
+                </LinearLayout>
+                <View style="@style/line"></View>
             </LinearLayout>
-
-            <View style="@style/line"></View>
-
             <LinearLayout
+                android:id="@+id/llLeader4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvLeader5W"
-                    style="@style/oaTextView"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="办结安排	:" />
+                    <TextView
+                        android:id="@+id/tvLeader5W"
+                        style="@style/oaTextView"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="办结安排	:" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
 
-                <TextView
-                    android:id="@+id/tvLeader4"
-                    style="@style/textWrite"
-                    android:hint="办结安排" />
+                    <TextView
+                        android:id="@+id/tvLeader4"
+                        style="@style/textWrite"
+                        android:hint="办结安排" />
 
-                <EditText
-                    android:id="@+id/etLeader4"
-                    style="@style/textWrite"
-                    android:hint="办结计划"
-                    android:visibility="gone" />
+                    <EditText
+                        android:id="@+id/etLeader4"
+                        style="@style/textWrite"
+                        android:hint="办结计划"
+                        android:visibility="gone" />
+                </LinearLayout>
+                <View style="@style/line"/>
             </LinearLayout>
-
-            <View style="@style/line"/>
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvBJRW"
-                    style="@style/oaTextView"
-                    android:text="办结人:" />
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:background="@color/shouye"
-                    android:layout_gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/tvBJR"
-                    android:hint="办结人"
-                    style="@style/oaEditText"/>
-                <TextView
-                    android:visibility="gone"
-                    android:id="@+id/tvBJRSelect"
-                    style="@style/oaEditText"
-                    android:hint="请选择办结人"/>
-            </LinearLayout>
-            <View style="@style/line"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvWCQKW"
-                    style="@style/oaTextView"
-                    android:text="完成情况:" />
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:background="@color/shouye"
-                    android:layout_gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/tvWCQK"
-                    android:hint="完成情况"
-                    style="@style/oaEditText"/>
-                <Spinner
-                    android:id="@+id/spinnerWCQK"
-                    android:visibility="gone"
-                    style="@style/oaEditText" />
-            </LinearLayout>
-            <View style="@style/line"/>
-
-
-            <LinearLayout
+                android:id="@+id/llLeaderBJR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tvLeader6W"
-                    style="@style/oaTextView"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="办结时间:" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <TextView
-                    android:id="@+id/tvDate1"
-                    style="@style/textWrite"
-                    android:hint="办结时间" />
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvBJRW"
+                        style="@style/oaTextView"
+                        android:text="办结人:" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="@color/shouye"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/tvBJR"
+                        android:hint="办结人"
+                        style="@style/oaEditText"/>
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/tvBJRSelect"
+                        style="@style/oaEditText"
+                        android:hint="请选择办结人"/>
+                </LinearLayout>
+                <View style="@style/line"/>
             </LinearLayout>
-
-            <View style="@style/line" />
-
             <LinearLayout
+                android:id="@+id/llLeaderWCQK"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tvLeader7W"
-                    style="@style/oaTextView"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="办结情况:" />
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvWCQKW"
+                        style="@style/oaTextView"
+                        android:text="完成情况:" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="@color/shouye"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/tvWCQK"
+                        android:hint="完成情况"
+                        style="@style/oaEditText"/>
+                    <Spinner
+                        android:id="@+id/spinnerWCQK"
+                        android:visibility="gone"
+                        style="@style/oaEditText" />
+                </LinearLayout>
+                <View style="@style/line"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llLeaderDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
+                    <TextView
+                        android:id="@+id/tvLeader6W"
+                        style="@style/oaTextView"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="办结时间:" />
 
-                <TextView
-                    android:id="@+id/tvLeader6"
-                    style="@style/textWrite"
-                    android:hint="办结情况" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
 
-                <EditText
-                    android:id="@+id/etLeader6"
-                    style="@style/textWrite"
-                    android:hint="办结情况"
-                    android:visibility="gone" />
+                    <TextView
+                        android:id="@+id/tvDate1"
+                        style="@style/textWrite"
+                        android:hint="办结时间" />
+                </LinearLayout>
+                <View style="@style/line" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llLeader6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLeader7W"
+                        style="@style/oaTextView"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="办结情况:" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
+
+                    <TextView
+                        android:id="@+id/tvLeader6"
+                        style="@style/textWrite"
+                        android:hint="办结情况" />
+
+                    <EditText
+                        android:id="@+id/etLeader6"
+                        style="@style/textWrite"
+                        android:hint="办结情况"
+                        android:visibility="gone" />
+                </LinearLayout>
             </LinearLayout>
 
             <View

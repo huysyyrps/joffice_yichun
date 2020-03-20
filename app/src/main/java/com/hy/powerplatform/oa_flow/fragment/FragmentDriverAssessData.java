@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -72,12 +73,27 @@ public class FragmentDriverAssessData extends Fragment {
     String isShow = "true";
     double AllMoney;
     String tag = "0";
+    @BindView(R.id.tv)
+    TextView tv;
+    @BindView(R.id.tvPerson)
+    TextView tvPerson;
+    @BindView(R.id.textView4)
+    TextView textView4;
+    @BindView(R.id.tvLeader)
+    TextView tvLeader;
+    @BindView(R.id.tvLeader1)
+    TextView tvLeader1;
+    @BindView(R.id.tvLeader2)
+    TextView tvLeader2;
+    @BindView(R.id.llAll)
+    LinearLayout llAll;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_driverassess_data, container, false);
         unbinder = ButterKnife.bind(this, view);
+        llAll.setVisibility(View.GONE);
         userId = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userCode", "");
         userName = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userStatus", "");
         etPerson.setText(userName);
@@ -141,7 +157,7 @@ public class FragmentDriverAssessData extends Fragment {
      * 提交数据
      */
     private void UpContractData() {
-        ProgressDialogUtil.startLoad(getActivity(),"提交数据中");
+        ProgressDialogUtil.startLoad(getActivity(), "提交数据中");
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -164,7 +180,7 @@ public class FragmentDriverAssessData extends Fragment {
                 }
                 String person = etPerson.getText().toString();
 
-                String res = dbA.OADriverAssessUp(turl, person,userDepart,uId);
+                String res = dbA.OADriverAssessUp(turl, person, userDepart, uId);
                 if (res.equals("")) {
                     handler.sendEmptyMessage(TAG_THERE);
                 } else {
@@ -360,8 +376,8 @@ public class FragmentDriverAssessData extends Fragment {
 //                    file = file+s;
             }
         }
-        if (requestCode == com.hy.powerplatform.my_utils.base.Constant.TAG_TWO){
-            if (data!=null){
+        if (requestCode == com.hy.powerplatform.my_utils.base.Constant.TAG_TWO) {
+            if (data != null) {
                 userCode = data.getStringExtra("userCode");
                 userName = data.getStringExtra("userName");
                 etPerson.setText(userName);

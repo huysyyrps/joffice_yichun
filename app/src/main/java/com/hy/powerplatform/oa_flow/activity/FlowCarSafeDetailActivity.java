@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -175,6 +176,20 @@ public class FlowCarSafeDetailActivity extends BaseActivity {
     TextView tvLeader1W;
     @BindView(R.id.tvLeader2W)
     TextView tvLeader2W;
+    @BindView(R.id.tvspr)
+    TextView tvspr;
+    @BindView(R.id.llShenPiRen)
+    LinearLayout llShenPiRen;
+    @BindView(R.id.llShenPiRenList)
+    LinearLayout llShenPiRenList;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.scrollView)
+    ScrollView scrollView;
     private String res;
 
     String xiangguanfujian = "";
@@ -432,12 +447,18 @@ public class FlowCarSafeDetailActivity extends BaseActivity {
 
                     if (!bmfzryj.equals("")) {
                         tvLeader.setText(getJSONData(bmfzryj));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
                     if (!fgldyj.equals("")) {
                         tvLeader1.setText(getJSONData(fgldyj));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
                     if (!zjlyj.equals("")) {
                         tvLeader2.setText(getJSONData(zjlyj));
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

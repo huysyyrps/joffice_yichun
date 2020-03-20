@@ -94,6 +94,16 @@ public class FlowGHContractSignDetailActivity extends BaseActivity {
     TextView tvLeader3W;
     @BindView(R.id.tvLeader4W)
     TextView tvLeader4W;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
+    @BindView(R.id.llLeader4)
+    LinearLayout llLeader4;
     private String res;
     String flowMessage = "";
     String xiangguanfujian = "";
@@ -290,18 +300,28 @@ public class FlowGHContractSignDetailActivity extends BaseActivity {
                     tvSituation.setText(staction);
                     if (!csbmyj.equals("")) {
                         tvLeader.setText(getJSONData(csbmyj));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
                     if (!jgbmyj.equals("")) {
                         tvLeader1.setText(getJSONData(jgbmyj));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
                     if (!flgwyj.equals("")) {
                         tvLeader2.setText(getJSONData(flgwyj));
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
                     if (!fgldyj.equals("")) {
                         tvLeader3.setText(getJSONData(fgldyj));
+                    }else {
+                        llLeader3.setVisibility(View.GONE);
                     }
                     if (!zjlyj.equals("")) {
                         tvLeader4.setText(getJSONData(zjlyj));
+                    }else {
+                        llLeader4.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

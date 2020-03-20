@@ -70,7 +70,7 @@
                     android:layout_height="45dp"
                     android:layout_marginLeft="20dp"
                     android:gravity="center_vertical"
-                    android:text="收入成本"
+                    android:text="月营运统计"
                     android:textColor="@color/black"
                     android:textSize="16dp" />
                 <TextView

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -83,6 +84,10 @@ public class FragmentContractSignData extends Fragment {
     TextView tvLeader5W;
     @BindView(R.id.tvMoney)
     EditText tvMoney;
+    @BindView(R.id.tvData)
+    TextView tvData;
+    @BindView(R.id.llAll)
+    LinearLayout llAll;
     private CustomDatePickerDay customDatePicker1;
 
     List<String> namelist = new ArrayList<>();
@@ -107,6 +112,7 @@ public class FragmentContractSignData extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_contractsign_data, container, false);
         unbinder = ButterKnife.bind(this, view);
+        llAll.setVisibility(View.GONE);
         initDatePicker();
         userId = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userCode", "");
         userName = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userStatus", "");
@@ -250,7 +256,7 @@ public class FragmentContractSignData extends Fragment {
                 final String money = tvMoney.getText().toString();
                 final String situation = etSituation.getText().toString();
                 String res = dbA.OAContractSignUp(turl, userDepart, uId, name, department, userId,
-                        "", time, situation,money);
+                        "", time, situation, money);
                 if (res.equals("")) {
                     handler.sendEmptyMessage(TAG_THERE);
                 } else {

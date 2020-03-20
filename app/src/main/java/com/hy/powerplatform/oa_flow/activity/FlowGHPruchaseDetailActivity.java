@@ -146,6 +146,12 @@ public class FlowGHPruchaseDetailActivity extends BaseActivity {
     TextView tvLeader1W;
     @BindView(R.id.tvLeader2W)
     TextView tvLeader2W;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
     private String res;
     String xiangguanfujian = "";
     String flowMessage = "";
@@ -368,12 +374,18 @@ public class FlowGHPruchaseDetailActivity extends BaseActivity {
 
                     if (!bmfzr.equals("")) {
                         tvLeader.setText(getJSONData(bmfzr));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
                     if (!fgfzr.equals("")) {
                         tvLeader1.setText(getJSONData(fgfzr));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
                     if (!fgfzr.equals("")) {
                         tvLeader2.setText(getJSONData(zxfzr));
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

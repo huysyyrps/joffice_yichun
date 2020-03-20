@@ -162,6 +162,14 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
     LinearLayout llShenPiRenList;
     @BindView(R.id.scrollView)
     ScrollView scrollView;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
     private String name, taskId, res, fullnameUId, fullname, bmfzr, fgcwze, zjl = "";
     private String mainId, signaName, destName, destType, checkTask, qianzhiData = "";
     String leader = "";
@@ -395,8 +403,6 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
             if (nametemp.length == 2) {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.VISIBLE);
@@ -406,9 +412,6 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.VISIBLE);
@@ -419,10 +422,6 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -438,11 +437,6 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -459,12 +453,6 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
                 rb6.setText(nametemp[5]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
-                rb6.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -489,8 +477,6 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
             if (bigNametemp.length == 2) {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -500,9 +486,6 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -513,10 +496,6 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -532,11 +511,6 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -553,12 +527,6 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -1064,6 +1032,75 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
                     for (int i = 0; i < bean.getTrans().size(); i++) {
                         beanList.add(bean.getTrans().get(i));
                     }
+
+                    String word2 = "";
+                    if (zjl != null && !zjl.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(zjl);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word2 = word2 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeader2.getVisibility() == View.VISIBLE) {
+                            tvLeader2.setText(word2);
+                            etLeader2.setHint(word2);
+                        } else {
+                            etLeader2.setHint(word2);
+                        }
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
+                    }
+
+                    String word1 = "";
+                    if (fgcwze != null && !fgcwze.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(fgcwze);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word1 = word1 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeader1.getVisibility() == View.VISIBLE) {
+                            tvLeader1.setText(word1);
+                            etLeader1.setHint(word1);
+                        } else {
+                            etLeader1.setHint(word1);
+                        }
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
+                    }
+
+                    String word = "";
+                    if (bmfzr != null && !bmfzr.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(bmfzr);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word = word + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeader.getVisibility() == View.VISIBLE) {
+                            tvLeader.setText(word);
+                            etLeader.setHint(word);
+                        } else {
+                            etLeader.setHint(word);
+                        }
+                    }else {
+                        llLeader.setVisibility(View.GONE);
+                    }
                     String formRights = bean.getFormRights();
                     try {
                         JSONObject jsonObject = new JSONObject(formRights);
@@ -1073,6 +1110,7 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
                         if (bmreout.equals("2")) {
                             tvLeader.setVisibility(View.GONE);
                             etLeader.setVisibility(View.VISIBLE);
+                            llLeader.setVisibility(View.VISIBLE);
                         } else {
                             tvLeader.setVisibility(View.VISIBLE);
                             etLeader.setVisibility(View.GONE);
@@ -1081,6 +1119,7 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
                         if (fgcwreout.equals("2")) {
                             tvLeader1.setVisibility(View.GONE);
                             etLeader1.setVisibility(View.VISIBLE);
+                            llLeader1.setVisibility(View.VISIBLE);
                         } else {
                             tvLeader1.setVisibility(View.VISIBLE);
                             etLeader1.setVisibility(View.GONE);
@@ -1089,6 +1128,7 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
                         if (zjlreout.equals("2")) {
                             tvLeader2.setVisibility(View.GONE);
                             etLeader2.setVisibility(View.VISIBLE);
+                            llLeader2.setVisibility(View.VISIBLE);
                         } else {
                             tvLeader2.setVisibility(View.VISIBLE);
                             etLeader2.setVisibility(View.GONE);
@@ -1109,65 +1149,7 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
                     tvMoneyS.setText(monetS);
                     tvYongTu.setText(use);
 
-                    String word2 = "";
-                    if (zjl != null && !zjl.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(zjl);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word2 = word2 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeader2.getVisibility() == View.VISIBLE) {
-                            tvLeader2.setText(word2);
-                        } else {
-                            etLeader2.setHint(word2);
-                        }
-                    }
 
-                    String word1 = "";
-                    if (fgcwze != null && !fgcwze.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(fgcwze);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word1 = word1 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeader1.getVisibility() == View.VISIBLE) {
-                            tvLeader1.setText(word1);
-                        } else {
-                            etLeader1.setHint(word1);
-                        }
-                    }
-
-                    String word = "";
-                    if (bmfzr != null && !bmfzr.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(bmfzr);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word = word + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeader.getVisibility() == View.VISIBLE) {
-                            tvLeader.setText(word);
-                        } else {
-                            etLeader.setHint(word);
-                        }
-                    }
                     if (bean.isRevoke()) {
                         Toast.makeText(FlowGHPayWillDetailActivity.this, "当前流程已被追回", Toast.LENGTH_SHORT).show();
                     }
@@ -1177,7 +1159,7 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
                         tvText.setVisibility(View.GONE);
                         ProgressDialogUtil.startLoad(FlowGHPayWillDetailActivity.this, "获取审核人");
                         getAppRovePerson();
-                    }else {
+                    } else {
                         tvspr.setText("请点击“+”选择路径");
                     }
                     break;

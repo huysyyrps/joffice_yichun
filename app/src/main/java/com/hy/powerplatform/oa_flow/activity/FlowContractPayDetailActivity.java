@@ -90,6 +90,14 @@ public class FlowContractPayDetailActivity extends BaseActivity {
     TextView tvLeader2W;
     @BindView(R.id.tvLeader3W)
     TextView tvLeader3W;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
     private String res;
     String flowMessage = "";
     String xiangguanfujian = "";
@@ -287,15 +295,23 @@ public class FlowContractPayDetailActivity extends BaseActivity {
                     tvSituation.setText(staction);
                     if (!bmld.equals("")) {
                         tvLeader.setText(getJSONData(bmld));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
                     if (!fgld.equals("")) {
                         tvLeader1.setText(getJSONData(fgld));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
                     if (!fgcw.equals("")) {
                         tvLeader2.setText(getJSONData(fgcw));
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
                     if (!zjl.equals("")) {
                         tvLeader3.setText(getJSONData(zjl));
+                    }else {
+                        llLeader3.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

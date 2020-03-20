@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -93,6 +94,12 @@ public class FragmentGHPayData extends Fragment {
     TextView tvLeader1W;
     @BindView(R.id.tvLeader2W)
     TextView tvLeader2W;
+    @BindView(R.id.tv)
+    TextView tv;
+    @BindView(R.id.tvPerson)
+    TextView tvPerson;
+    @BindView(R.id.llAll)
+    LinearLayout llAll;
     private CustomDatePickerDay customDatePicker1;
     List<String> namelist = new ArrayList<>();
     List<Name.DataBean> datalist = new ArrayList<>();
@@ -117,7 +124,7 @@ public class FragmentGHPayData extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ghpay_data, container, false);
         unbinder = ButterKnife.bind(this, view);
-
+        llAll.setVisibility(View.GONE);
         String department = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "depName", "");
         etDpartment.setText(department);
         initDatePicker();
@@ -321,42 +328,42 @@ public class FragmentGHPayData extends Fragment {
                                     }
                                 }).start();
                             } else {
-                                        MyAlertDialog.MyListAlertDialog(getActivity(), namelist, new AlertDialogCallBackP() {
+                                MyAlertDialog.MyListAlertDialog(getActivity(), namelist, new AlertDialogCallBackP() {
+                                    @Override
+                                    public void oneselect(final String data) {
+                                        ProgressDialogUtil.startLoad(getActivity(), "获取数据中");
+                                        new Thread(new Runnable() {
                                             @Override
-                                            public void oneselect(final String data) {
-                                                ProgressDialogUtil.startLoad(getActivity(), "获取数据中");
-                                                new Thread(new Runnable() {
-                                                    @Override
-                                                    public void run() {
-                                                        String url = com.hy.powerplatform.my_utils.base.Constant.BASE_URL2 + com.hy.powerplatform.my_utils.base.Constant.NOENDPERSON;
-                                                        DBHandler dbA = new DBHandler();
-                                                        userDepart = data;
-                                                        res = dbA.OAQingJiaMorNext(url, com.hy.powerplatform.my_utils.base.Constant.GHCONTRACTSIGNDIFID, data);
-                                                        if (res.equals("保存失败") || res.equals("")) {
-                                                            handler.sendEmptyMessage(TAG_TWO);
-                                                        } else {
-                                                            handler.sendEmptyMessage(TAG_FOUR);
-                                                        }
-                                                    }
-                                                }).start();
-
+                                            public void run() {
+                                                String url = com.hy.powerplatform.my_utils.base.Constant.BASE_URL2 + com.hy.powerplatform.my_utils.base.Constant.NOENDPERSON;
+                                                DBHandler dbA = new DBHandler();
+                                                userDepart = data;
+                                                res = dbA.OAQingJiaMorNext(url, com.hy.powerplatform.my_utils.base.Constant.GHCONTRACTSIGNDIFID, data);
+                                                if (res.equals("保存失败") || res.equals("")) {
+                                                    handler.sendEmptyMessage(TAG_TWO);
+                                                } else {
+                                                    handler.sendEmptyMessage(TAG_FOUR);
+                                                }
                                             }
+                                        }).start();
 
-                                            @Override
-                                            public void select(List<String> list) {
+                                    }
 
-                                            }
+                                    @Override
+                                    public void select(List<String> list) {
 
-                                            @Override
-                                            public void confirm() {
+                                    }
 
-                                            }
+                                    @Override
+                                    public void confirm() {
 
-                                            @Override
-                                            public void cancel() {
+                                    }
 
-                                            }
-                                        });
+                                    @Override
+                                    public void cancel() {
+
+                                    }
+                                });
 //                                ProgressDialogUtil.startLoad(getActivity(), "获取数据中");
 //                                new Thread(new Runnable() {
 //                                    @Override

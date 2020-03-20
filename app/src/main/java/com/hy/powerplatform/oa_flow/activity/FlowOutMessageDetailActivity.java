@@ -97,6 +97,16 @@ public class FlowOutMessageDetailActivity extends BaseActivity {
     TextView tvLeader5W;
     @BindView(R.id.tvTextNum)
     TextView tvTextNum;
+    @BindView(R.id.llHeGao)
+    LinearLayout llHeGao;
+    @BindView(R.id.llShenHe)
+    LinearLayout llShenHe;
+    @BindView(R.id.llQianFa)
+    LinearLayout llQianFa;
+    @BindView(R.id.llStartTime)
+    LinearLayout llStartTime;
+    @BindView(R.id.lltv1)
+    LinearLayout lltv1;
     private String res;
     String xiangguanfujian = "";
     String flowMessage = "";
@@ -307,9 +317,13 @@ public class FlowOutMessageDetailActivity extends BaseActivity {
 
                     if (!fgldyj.equals("")) {
                         tvShenHe.setText(getJSONData(fgldyj));
+                    }else {
+                        llShenHe.setVisibility(View.GONE);
                     }
                     if (!zjlyj.equals("")) {
                         tvQianFa.setText(getJSONData(zjlyj));
+                    }else {
+                        llQianFa.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

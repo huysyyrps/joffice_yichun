@@ -203,6 +203,26 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
     TextView tvWCQK;
     @BindView(R.id.spinnerWCQK)
     Spinner spinnerWCQK;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeaderzjl)
+    LinearLayout llLeaderzjl;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
+    @BindView(R.id.llLeader4)
+    LinearLayout llLeader4;
+    @BindView(R.id.llLeaderBJR)
+    LinearLayout llLeaderBJR;
+    @BindView(R.id.llLeaderWCQK)
+    LinearLayout llLeaderWCQK;
+    @BindView(R.id.llLeaderDate)
+    LinearLayout llLeaderDate;
+    @BindView(R.id.llLeader6)
+    LinearLayout llLeader6;
     private String name, taskId, res, bmfzryj, fgldyj, jbfgldyj, jbbmyj, zjlyj, bjap, bjr, wcqk, bjpj, liushuihao;
     private String mainId, signaName, destName, destType, checkTask, qianzhiData = "";
     String leader = "";
@@ -485,8 +505,6 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
             if (nametemp.length == 2) {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.VISIBLE);
@@ -496,9 +514,6 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.VISIBLE);
@@ -509,10 +524,6 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -528,11 +539,6 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -549,12 +555,6 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
                 rb6.setText(nametemp[5]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
-                rb6.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -579,8 +579,6 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
             if (bigNametemp.length == 2) {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -590,9 +588,6 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -603,10 +598,6 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -622,11 +613,6 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -643,12 +629,6 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -666,13 +646,6 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -693,14 +666,6 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
-                cb8.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -723,15 +688,6 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
                 cb9.setText(bigNametemp[8]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
-                cb8.setChecked(true);
-                cb9.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -755,7 +711,7 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.tvBJRSelect:
                 Intent intent = new Intent(this, PersonListActivity.class);
-                startActivityForResult(intent, com.hy.powerplatform.my_utils.base.Constant.TAG_TWO);
+                startActivityForResult(intent, Constant.TAG_TWO);
                 break;
             case R.id.llShenPiRen:
                 if (btnT.getVisibility() == View.VISIBLE) {
@@ -1093,24 +1049,24 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                 }
                 if (comment.equals("")) {
                     if (!zjlreout.equals("2") && !bmreout.equals("2") && !fgreout.equals("2") && !jbfgreout.equals("2") && !jbreout.equals("2")
-                            && !bjapreout.equals("2") && !bjrreout.equals("2") && !bjpjreout.equals("2")&& !wcztreout.equals("2")) {
+                            && !bjapreout.equals("2") && !bjrreout.equals("2") && !bjpjreout.equals("2") && !wcztreout.equals("2")) {
                         comment = "";
                         personSession();
                     } else if (!etLeaderzjl.getText().equals("") && !bjpj.equals("") && !bjr.equals("") && !wcqk.equals("") && !bjap.equals("") && !jbbmyj.equals("")
                             && !jbfgldyj.equals("") && !fgldyj.equals("") && !bmfzryj.equals("")) {
                         comment = "";
                         personSession();
-                    } else if(bjrreout.equals("2")&&tvBJRSelect.getText().toString().equals("")){
+                    } else if (bjrreout.equals("2") && tvBJRSelect.getText().toString().equals("")) {
                         Toast.makeText(this, "请选择办结人员", Toast.LENGTH_SHORT).show();
                         break;
                     } else {
                         Toast.makeText(this, "请签字", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    if(bjrreout.equals("2")&&tvBJRSelect.getText().toString().equals("")){
+                    if (bjrreout.equals("2") && tvBJRSelect.getText().toString().equals("")) {
                         Toast.makeText(this, "请选择办结人员", Toast.LENGTH_SHORT).show();
                         break;
-                    }else {
+                    } else {
                         personSession();
                     }
                 }
@@ -1170,7 +1126,7 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == com.hy.powerplatform.my_utils.base.Constant.TAG_TWO) {
+        if (requestCode == Constant.TAG_TWO) {
             if (data != null) {
                 userCode = data.getStringExtra("userCode");
                 userName = data.getStringExtra("userName");
@@ -1319,24 +1275,24 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                 String url = Constant.BASE_URL2 + Constant.EXAMINEDATA;
                 DBHandler dbA = new DBHandler();
                 if (bjrreout.equals("2") && !date1.equals("")) {
-                    if (wcztreout.equals("2")){
+                    if (wcztreout.equals("2")) {
                         upData = dbA.OAInstallder1(url, department, date, data, userCode, destName, taskId, flowAssignld, mainId,
                                 bmfzryj, fgldyj, jbfgldyj, jbbmyj, bjap, bjr, bjpj, serialNumber, comment, date1, liushuihao, zjlyj
-                                , tvys.getText().toString(), signaName,spinnerWCQK.getSelectedItem().toString());
-                    }else {
+                                , tvys.getText().toString(), signaName, spinnerWCQK.getSelectedItem().toString());
+                    } else {
                         upData = dbA.OAInstallder1(url, department, date, data, userCode, destName, taskId, flowAssignld, mainId,
                                 bmfzryj, fgldyj, jbfgldyj, jbbmyj, bjap, bjr, bjpj, serialNumber, comment, date1, liushuihao, zjlyj
-                                , tvys.getText().toString(), signaName,"");
+                                , tvys.getText().toString(), signaName, "");
                     }
                 } else {
-                    if (wcztreout.equals("2")){
+                    if (wcztreout.equals("2")) {
                         upData = dbA.OAInstallder(url, department, date, data, userCode, destName, taskId, flowAssignld, mainId,
                                 bmfzryj, fgldyj, jbfgldyj, jbbmyj, bjap, bjr, bjpj, serialNumber, comment, liushuihao, signaName, zjlyj
-                                , tvys.getText().toString(), date1,spinnerWCQK.getSelectedItem().toString());
-                    }else {
+                                , tvys.getText().toString(), date1, spinnerWCQK.getSelectedItem().toString());
+                    } else {
                         upData = dbA.OAInstallder(url, department, date, data, userCode, destName, taskId, flowAssignld, mainId,
                                 bmfzryj, fgldyj, jbfgldyj, jbbmyj, bjap, bjr, bjpj, serialNumber, comment, liushuihao, signaName, zjlyj
-                                , tvys.getText().toString(), date1,"");
+                                , tvys.getText().toString(), date1, "");
                     }
 
                 }
@@ -1415,98 +1371,6 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                         beanList.add(bean.getTrans().get(i));
                     }
 
-                    String formRights = bean.getFormRights();
-                    try {
-                        JSONObject jsonObject = new JSONObject(formRights);
-                        bmreout = jsonObject.getString("bmfzryj");
-                        fgreout = jsonObject.getString("fgldyj");
-                        jbfgreout = jsonObject.getString("jbfgldyj");
-                        jbreout = jsonObject.getString("jbbmyj");
-                        bjapreout = jsonObject.getString("bjap");
-                        bjrreout = jsonObject.getString("BanJieRen");
-                        wcztreout = jsonObject.getString("wczt");
-                        bjpjreout = jsonObject.getString("bjpj");
-                        zjlreout = jsonObject.getString("zjlyj");
-                        if (bmreout.equals("2")) {
-                            tvLeader.setVisibility(View.GONE);
-                            etLeader.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader.setVisibility(View.VISIBLE);
-                            etLeader.setVisibility(View.GONE);
-                            tvLeaderW.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (fgreout.equals("2")) {
-                            tvLeader1.setVisibility(View.GONE);
-                            etLeader1.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader1.setVisibility(View.VISIBLE);
-                            etLeader1.setVisibility(View.GONE);
-                            tvLeader1W.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (zjlreout.equals("2")) {
-                            tvLeaderzjl.setVisibility(View.GONE);
-                            etLeaderzjl.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeaderzjl.setVisibility(View.VISIBLE);
-                            etLeaderzjl.setVisibility(View.GONE);
-                        }
-                        if (jbfgreout.equals("2")) {
-                            tvLeader2.setVisibility(View.GONE);
-                            etLeader2.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader2.setVisibility(View.VISIBLE);
-                            etLeader2.setVisibility(View.GONE);
-                            tvLeader3W.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (jbreout.equals("2")) {
-                            tvLeader3.setVisibility(View.GONE);
-                            etLeader3.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader3.setVisibility(View.VISIBLE);
-                            etLeader3.setVisibility(View.GONE);
-                            tvLeader4W.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (bjapreout.equals("2")) {
-                            tvLeader4.setVisibility(View.GONE);
-                            etLeader4.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader4.setVisibility(View.VISIBLE);
-                            etLeader4.setVisibility(View.GONE);
-                            tvLeader5W.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (bjrreout.equals("2")) {
-                            tvBJR.setVisibility(View.GONE);
-                            tvBJRSelect.setVisibility(View.VISIBLE);
-                        } else {
-                            tvBJR.setVisibility(View.VISIBLE);
-                            tvBJRSelect.setVisibility(View.GONE);
-                            tvBJRW.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (wcztreout.equals("2")) {
-                            tvWCQK.setVisibility(View.GONE);
-                            spinnerWCQK.setVisibility(View.VISIBLE);
-                        } else {
-                            tvWCQK.setVisibility(View.VISIBLE);
-                            spinnerWCQK.setVisibility(View.GONE);
-                            tvWCQKW.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (bjpjreout.equals("2")) {
-                            tvLeader6.setVisibility(View.GONE);
-                            etLeader6.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader6.setVisibility(View.VISIBLE);
-                            etLeader6.setVisibility(View.GONE);
-                            tvLeader7W.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (bmreout.equals("1") && fgreout.equals("1") && jbfgreout.equals("1")
-                                && jbreout.equals("1") && bjapreout.equals("1") && bjrreout.equals("1")
-                                && bjrreout.equals("1") && wcztreout.equals("1")&& bjpjreout.equals("1")
-                                && zjlreout.equals("1")) {
-                            Toast.makeText(FlowInstallWillDetailActivity.this, "您对当前流程只有读取权限", Toast.LENGTH_SHORT).show();
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
 
                     if (bjr != null && !bjr.equals("")) {
                         if (tvBJR.getVisibility() == View.VISIBLE) {
@@ -1514,12 +1378,16 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                         } else {
                             tvBJRSelect.setHint(bjr);
                         }
+                    }else {
+                        llLeaderBJR.setVisibility(View.GONE);
                     }
 
                     if (wcqk != null && !wcqk.equals("")) {
                         if (tvWCQK.getVisibility() == View.VISIBLE) {
                             tvWCQK.setText(wcqk);
                         }
+                    }else {
+                        llLeaderWCQK.setVisibility(View.GONE);
                     }
 
                     String word7 = "";
@@ -1537,9 +1405,12 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader6.getVisibility() == View.VISIBLE) {
                             tvLeader6.setText(word7);
+                            etLeader6.setHint(word7);
                         } else {
                             etLeader6.setHint(word7);
                         }
+                    }else {
+                        llLeader6.setVisibility(View.GONE);
                     }
 
                     String word6 = "";
@@ -1557,9 +1428,12 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeaderzjl.getVisibility() == View.VISIBLE) {
                             tvLeaderzjl.setText(word6);
+                            tvLeaderzjl.setHint(word6);
                         } else {
                             tvLeaderzjl.setHint(word6);
                         }
+                    }else {
+                        llLeaderzjl.setVisibility(View.GONE);
                     }
 
                     String word5 = "";
@@ -1577,9 +1451,12 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader4.getVisibility() == View.VISIBLE) {
                             tvLeader4.setText(word5);
+                            etLeader4.setHint(word5);
                         } else {
                             etLeader4.setHint(word5);
                         }
+                    }else {
+                        llLeader4.setVisibility(View.GONE);
                     }
 
                     String word4 = "";
@@ -1597,9 +1474,12 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader3.getVisibility() == View.VISIBLE) {
                             tvLeader3.setText(word4);
+                            etLeader3.setHint(word4);
                         } else {
                             etLeader3.setHint(word4);
                         }
+                    }else {
+                        llLeader3.setVisibility(View.GONE);
                     }
 
                     String word3 = "";
@@ -1617,9 +1497,12 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader2.getVisibility() == View.VISIBLE) {
                             tvLeader2.setText(word3);
+                            etLeader2.setHint(word3);
                         } else {
                             etLeader2.setHint(word3);
                         }
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
 
                     String word2 = "";
@@ -1637,9 +1520,12 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader1.getVisibility() == View.VISIBLE) {
                             tvLeader1.setText(word2);
+                            tvLeader1.setHint(word2);
                         } else {
                             tvLeader1.setHint(word2);
                         }
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
 
                     String word1 = "";
@@ -1657,9 +1543,12 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader.getVisibility() == View.VISIBLE) {
                             tvLeader.setText(word1);
+                            tvLeader.setHint(word1);
                         } else {
                             tvLeader.setHint(word1);
                         }
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
                     String word = "";
                     if (zjlyj != null && !zjlyj.equals("")) {
@@ -1676,10 +1565,116 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeaderzjl.getVisibility() == View.VISIBLE) {
                             tvLeaderzjl.setText(word);
+                            tvLeaderzjl.setHint(word);
                         } else {
                             tvLeaderzjl.setHint(word);
                         }
+                    }else {
+                        llLeaderzjl.setVisibility(View.GONE);
                     }
+                    String formRights = bean.getFormRights();
+                    try {
+                        JSONObject jsonObject = new JSONObject(formRights);
+                        bmreout = jsonObject.getString("bmfzryj");
+                        fgreout = jsonObject.getString("fgldyj");
+                        jbfgreout = jsonObject.getString("jbfgldyj");
+                        jbreout = jsonObject.getString("jbbmyj");
+                        bjapreout = jsonObject.getString("bjap");
+                        bjrreout = jsonObject.getString("BanJieRen");
+                        wcztreout = jsonObject.getString("wczt");
+                        bjpjreout = jsonObject.getString("bjpj");
+                        zjlreout = jsonObject.getString("zjlyj");
+                        if (bmreout.equals("2")) {
+                            tvLeader.setVisibility(View.GONE);
+                            etLeader.setVisibility(View.VISIBLE);
+                            llLeader.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader.setVisibility(View.VISIBLE);
+                            etLeader.setVisibility(View.GONE);
+                            tvLeaderW.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (fgreout.equals("2")) {
+                            tvLeader1.setVisibility(View.GONE);
+                            etLeader1.setVisibility(View.VISIBLE);
+                            llLeader1.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader1.setVisibility(View.VISIBLE);
+                            etLeader1.setVisibility(View.GONE);
+                            tvLeader1W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (zjlreout.equals("2")) {
+                            tvLeaderzjl.setVisibility(View.GONE);
+                            etLeaderzjl.setVisibility(View.VISIBLE);
+                            llLeaderzjl.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeaderzjl.setVisibility(View.VISIBLE);
+                            etLeaderzjl.setVisibility(View.GONE);
+                        }
+                        if (jbfgreout.equals("2")) {
+                            tvLeader2.setVisibility(View.GONE);
+                            etLeader2.setVisibility(View.VISIBLE);
+                            llLeader2.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader2.setVisibility(View.VISIBLE);
+                            etLeader2.setVisibility(View.GONE);
+                            tvLeader3W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (jbreout.equals("2")) {
+                            tvLeader3.setVisibility(View.GONE);
+                            etLeader3.setVisibility(View.VISIBLE);
+                            llLeader3.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader3.setVisibility(View.VISIBLE);
+                            etLeader3.setVisibility(View.GONE);
+                            tvLeader4W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (bjapreout.equals("2")) {
+                            tvLeader4.setVisibility(View.GONE);
+                            etLeader4.setVisibility(View.VISIBLE);
+                            llLeader4.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader4.setVisibility(View.VISIBLE);
+                            etLeader4.setVisibility(View.GONE);
+                            tvLeader5W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (bjrreout.equals("2")) {
+                            tvBJR.setVisibility(View.GONE);
+                            tvBJRSelect.setVisibility(View.VISIBLE);
+                            llLeaderBJR.setVisibility(View.VISIBLE);
+                        } else {
+                            tvBJR.setVisibility(View.VISIBLE);
+                            tvBJRSelect.setVisibility(View.GONE);
+                            tvBJRW.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (wcztreout.equals("2")) {
+                            tvWCQK.setVisibility(View.GONE);
+                            spinnerWCQK.setVisibility(View.VISIBLE);
+                            llLeaderWCQK.setVisibility(View.VISIBLE);
+                        } else {
+                            tvWCQK.setVisibility(View.VISIBLE);
+                            spinnerWCQK.setVisibility(View.GONE);
+                            tvWCQKW.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (bjpjreout.equals("2")) {
+                            tvLeader6.setVisibility(View.GONE);
+                            etLeader6.setVisibility(View.VISIBLE);
+                            llLeader6.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader6.setVisibility(View.VISIBLE);
+                            etLeader6.setVisibility(View.GONE);
+                            tvLeader7W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (bmreout.equals("1") && fgreout.equals("1") && jbfgreout.equals("1")
+                                && jbreout.equals("1") && bjapreout.equals("1") && bjrreout.equals("1")
+                                && bjrreout.equals("1") && wcztreout.equals("1") && bjpjreout.equals("1")
+                                && zjlreout.equals("1")) {
+                            Toast.makeText(FlowInstallWillDetailActivity.this, "您对当前流程只有读取权限", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+
                     if (bean.isRevoke()) {
                         Toast.makeText(FlowInstallWillDetailActivity.this, "当前流程已被追回", Toast.LENGTH_SHORT).show();
                     }
@@ -1689,7 +1684,7 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                         tvText.setVisibility(View.GONE);
                         ProgressDialogUtil.startLoad(FlowInstallWillDetailActivity.this, "获取审核人");
                         getAppRovePerson();
-                    }else {
+                    } else {
                         tvspr.setText("请点击“+”选择路径");
                     }
                     break;

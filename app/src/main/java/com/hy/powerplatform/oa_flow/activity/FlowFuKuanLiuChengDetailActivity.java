@@ -93,6 +93,14 @@ public class FlowFuKuanLiuChengDetailActivity extends BaseActivity {
     TextView tvLeader2W;
     @BindView(R.id.tvLeader3W)
     TextView tvLeader3W;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
     private String res;
 
     String xiangguanfujian = "";
@@ -298,15 +306,23 @@ public class FlowFuKuanLiuChengDetailActivity extends BaseActivity {
                     tvYongTu.setText(data);
                     if (!bmfzr.equals("")) {
                         etLeader.setText(getJSONData(bmfzr));
+                    }else {
+                        etLeader.setVisibility(View.GONE);
                     }
                     if (!fgfzr.equals("")) {
                         etLeader1.setText(getJSONData(fgfzr));
+                    }else {
+                        etLeader1.setVisibility(View.GONE);
                     }
                     if (!cwzjyj.equals("")) {
                         etLeader2.setText(getJSONData(cwzjyj));
+                    }else {
+                        etLeader2.setVisibility(View.GONE);
                     }
                     if (!zjl.equals("")) {
                         etLeader3.setText(getJSONData(zjl));
+                    }else {
+                        etLeader3.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

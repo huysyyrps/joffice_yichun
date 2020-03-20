@@ -168,6 +168,16 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
     LinearLayout llShenPiRenList;
     @BindView(R.id.scrollView)
     ScrollView scrollView;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
+    @BindView(R.id.llLeaderYJ)
+    LinearLayout llLeaderYJ;
     private String name, taskId, res, fgldyj = "";
     private String mainId, signaName, destName, destType, checkTask, qianzhiData = "";
     String leader = "";
@@ -409,8 +419,6 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
             if (nametemp.length == 2) {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.VISIBLE);
@@ -420,9 +428,6 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.VISIBLE);
@@ -433,10 +438,6 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -452,11 +453,6 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -473,12 +469,6 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
                 rb6.setText(nametemp[5]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
-                rb6.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -503,8 +493,6 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
             if (bigNametemp.length == 2) {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -514,9 +502,6 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -527,10 +512,6 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -546,11 +527,6 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -567,12 +543,6 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -590,13 +560,6 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -617,14 +580,6 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
-                cb8.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -647,15 +602,6 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
                 cb9.setText(bigNametemp[8]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
-                cb8.setChecked(true);
-                cb9.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -1234,6 +1180,86 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                             beanList.add(bean.getTrans().get(i));
                         }
 
+
+                        if (etLeaderW1 != null && !etLeaderW1.equals("")) {
+                            if (tvLeader.getVisibility() == View.VISIBLE) {
+                                String word3 = "";
+                                try {
+                                    JSONArray jsonArray = new JSONArray(etLeaderW1);
+                                    JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
+                                    word3 = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                tvLeader.setText(word3);
+                            }
+                        }else {
+                            llLeader.setVisibility(View.GONE);
+                        }
+
+                        if (etLeaderW2 != null && !etLeaderW2.equals("")) {
+                            if (tvLeader1.getVisibility() == View.VISIBLE) {
+                                String word2 = "";
+                                try {
+                                    JSONArray jsonArray = new JSONArray(etLeaderW2);
+                                    JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
+                                    word2 = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                tvLeader1.setText(word2);
+                            }
+                        }else {
+                            llLeader1.setVisibility(View.GONE);
+                        }
+
+                        if (etLeaderW3 != null && !etLeaderW3.equals("")) {
+                            if (tvLeader2.getVisibility() == View.VISIBLE) {
+//                            String word1 = "";
+//                            try {
+//                                JSONArray jsonArray = new JSONArray(etLeaderW3);
+//                                JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
+//                                word1 = jsonObject.getString("v");
+//                            } catch (JSONException e) {
+//                                e.printStackTrace();
+//                            }
+                                tvLeader2.setText(etLeaderW3);
+                            }
+                        }else {
+                            llLeader2.setVisibility(View.GONE);
+                        }
+
+                        if (etLeaderW4 != null && !etLeaderW4.equals("")) {
+                            if (tvLeader3.getVisibility() == View.VISIBLE) {
+                                String word = "";
+                                try {
+                                    JSONArray jsonArray = new JSONArray(etLeaderW4);
+                                    JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
+                                    word = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                tvLeader3.setText(word);
+                            }
+                        }else {
+                            llLeader3.setVisibility(View.GONE);
+                        }
+
+                        if (etLeaderW5 != null && !etLeaderW5.equals("")) {
+                            if (tvYJ.getVisibility() == View.VISIBLE) {
+                                String word = "";
+                                try {
+                                    JSONArray jsonArray = new JSONArray(etLeaderW5);
+                                    JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
+                                    word = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                tvYJ.setText(word);
+                            }
+                        }else {
+                            llLeaderYJ.setVisibility(View.GONE);
+                        }
                         String formRights = bean.getFormRights();
                         try {
                             JSONObject jsonObject = new JSONObject(formRights);
@@ -1245,6 +1271,7 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                             if (etRout1.equals("2")) {
                                 tvLeader.setVisibility(View.GONE);
                                 etLeader.setVisibility(View.VISIBLE);
+                                llLeader.setVisibility(View.VISIBLE);
                             } else {
                                 tvLeader.setVisibility(View.VISIBLE);
                                 etLeader.setVisibility(View.GONE);
@@ -1253,6 +1280,7 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                             if (etRout2.equals("2")) {
                                 tvLeader1.setVisibility(View.GONE);
                                 etLeader1.setVisibility(View.VISIBLE);
+                                llLeader1.setVisibility(View.VISIBLE);
                             } else {
                                 tvLeader1.setVisibility(View.VISIBLE);
                                 etLeader1.setVisibility(View.GONE);
@@ -1261,6 +1289,7 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                             if (etRout3.equals("2")) {
                                 tvLeader2.setVisibility(View.GONE);
                                 etLeader2.setVisibility(View.VISIBLE);
+                                llLeader2.setVisibility(View.VISIBLE);
                             } else {
                                 tvLeader2.setVisibility(View.VISIBLE);
                                 etLeader2.setVisibility(View.GONE);
@@ -1268,6 +1297,7 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                             if (etRout4.equals("2")) {
                                 tvLeader3.setVisibility(View.GONE);
                                 etLeader3.setVisibility(View.VISIBLE);
+                                llLeader3.setVisibility(View.VISIBLE);
                             } else {
                                 tvLeader3.setVisibility(View.VISIBLE);
                                 etLeader3.setVisibility(View.GONE);
@@ -1276,6 +1306,7 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                             if (etRout5.equals("2")) {
                                 tvYJ.setVisibility(View.GONE);
                                 etYJ.setVisibility(View.VISIBLE);
+                                llLeaderYJ.setVisibility(View.VISIBLE);
                             } else {
                                 tvYJ.setVisibility(View.VISIBLE);
                                 etYJ.setVisibility(View.GONE);
@@ -1297,75 +1328,7 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                         }
 
 
-                        if (etLeaderW1 != null && !etLeaderW1.equals("")) {
-                            if (tvLeader.getVisibility() == View.VISIBLE) {
-                                String word3 = "";
-                                try {
-                                    JSONArray jsonArray = new JSONArray(etLeaderW1);
-                                    JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
-                                    word3 = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                                tvLeader.setText(word3);
-                            }
-                        }
 
-                        if (etLeaderW2 != null && !etLeaderW2.equals("")) {
-                            if (tvLeader1.getVisibility() == View.VISIBLE) {
-                                String word2 = "";
-                                try {
-                                    JSONArray jsonArray = new JSONArray(etLeaderW2);
-                                    JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
-                                    word2 = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                                tvLeader1.setText(word2);
-                            }
-                        }
-
-                        if (etLeaderW3 != null && !etLeaderW3.equals("")) {
-                            if (tvLeader2.getVisibility() == View.VISIBLE) {
-//                            String word1 = "";
-//                            try {
-//                                JSONArray jsonArray = new JSONArray(etLeaderW3);
-//                                JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
-//                                word1 = jsonObject.getString("v");
-//                            } catch (JSONException e) {
-//                                e.printStackTrace();
-//                            }
-                                tvLeader2.setText(etLeaderW3);
-                            }
-                        }
-
-                        if (etLeaderW4 != null && !etLeaderW4.equals("")) {
-                            if (tvLeader3.getVisibility() == View.VISIBLE) {
-                                String word = "";
-                                try {
-                                    JSONArray jsonArray = new JSONArray(etLeaderW4);
-                                    JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
-                                    word = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                                tvLeader3.setText(word);
-                            }
-                        }
-
-                        if (etLeaderW5 != null && !etLeaderW5.equals("")) {
-                            if (tvYJ.getVisibility() == View.VISIBLE) {
-                                String word = "";
-                                try {
-                                    JSONArray jsonArray = new JSONArray(etLeaderW5);
-                                    JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
-                                    word = jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c");
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                                tvYJ.setText(word);
-                            }
-                        }
                         if (bean.isRevoke()) {
                             Toast.makeText(FlowRepairWillDetailActivity.this, "当前流程已被追回", Toast.LENGTH_SHORT).show();
                         }
@@ -1375,7 +1338,7 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                             tvText.setVisibility(View.GONE);
                             ProgressDialogUtil.startLoad(FlowRepairWillDetailActivity.this, "获取审核人");
                             getAppRovePerson();
-                        }else {
+                        } else {
                             tvspr.setText("请点击“+”选择路径");
                         }
                     } else {

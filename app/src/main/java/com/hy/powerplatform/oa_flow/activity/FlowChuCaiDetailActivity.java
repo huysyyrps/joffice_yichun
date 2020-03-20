@@ -100,6 +100,14 @@ public class FlowChuCaiDetailActivity extends BaseActivity {
     TextView tvLeader2W;
     @BindView(R.id.tvLeaderCWZJ)
     TextView tvLeaderCWZJ;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeaderCWZJ)
+    LinearLayout llLeaderCWZJ;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
     private String res;
     String flowMessage = "";
     String xiangguanfujian = "";
@@ -327,15 +335,23 @@ public class FlowChuCaiDetailActivity extends BaseActivity {
                     tvCar.setText(carType);
                     if (!bmfzryj.equals("")) {
                         tvLeader.setText(getJSONData(bmfzryj));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
                     if (!fgldyj.equals("")) {
                         tvLeader1.setText(getJSONData(fgldyj));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
                     if (!cwzjyi.equals("")) {
                         tvLeaderCWZJ.setText(getJSONData(cwzjyi));
+                    }else {
+                        llLeaderCWZJ.setVisibility(View.GONE);
                     }
                     if (!zjlyj.equals("")) {
                         tvLeader2.setText(getJSONData(zjlyj));
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

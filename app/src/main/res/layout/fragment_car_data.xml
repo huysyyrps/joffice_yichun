@@ -209,275 +209,281 @@
                 android:background="@color/shouye" />
 
             <LinearLayout
+                android:id="@+id/llAll"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvLeaderW"
-                    style="@style/oaTextView"
-                    android:text="部门领导:" />
+                    <TextView
+                        android:id="@+id/tvLeaderW"
+                        style="@style/oaTextView"
+                        android:text="部门领导:" />
 
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
+
+                    <TextView
+                        android:id="@+id/tvLeader"
+                        style="@style/oaEditText"
+                        android:hint="部门领导意见" />
+                </LinearLayout>
+                <View style="@style/line"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLeader1W"
+                        style="@style/oaTextView"
+                        android:text="分管领导:" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
+
+                    <TextView
+                        android:id="@+id/tvLeader1"
+                        style="@style/oaEditText"
+                        android:hint="分管领导意见" />
+                </LinearLayout>
+                <View style="@style/line"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLeader2W"
+                        style="@style/oaTextView"
+                        android:text="总经理:" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
+
+                    <TextView
+                        android:id="@+id/tvLeader2"
+                        style="@style/oaEditText"
+                        android:hint="总经理意见" />
+                </LinearLayout>
+                <View style="@style/line"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLeader3W"
+                        style="@style/oaTextView"
+                        android:text="综合管理部:" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
+
+                    <TextView
+                        android:id="@+id/tvLeader3"
+                        style="@style/oaEditText"
+                        android:hint="综合管理部意见" />
+                </LinearLayout>
+                <View style="@style/line"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLeader4W"
+                        style="@style/oaTextView"
+                        android:text="车号: *" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
+
+                    <EditText
+                        android:id="@+id/etCarNo"
+                        style="@style/oaEditText"
+                        android:hint="请填写车号" />
+                </LinearLayout>
+                <View style="@style/line"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLeader5W"
+                        style="@style/oaTextView"
+                        android:text="车型: *" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
+
+                    <EditText
+                        android:id="@+id/etCarType"
+                        style="@style/oaEditText"
+                        android:hint="请填写车型" />
+                </LinearLayout>
+                <View style="@style/line"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/oaTextView"
+                        android:text="开始时间: *" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
+
+                    <TextView
+                        android:id="@+id/tvStartTime"
+                        style="@style/oaEditText"
+                        android:hint="请选择用车开始时间"/>
+                </LinearLayout>
+                <View style="@style/line"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/oaTextView"
+                        android:text="结束时间: *" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
+
+                    <TextView
+                        android:id="@+id/tvEndTime"
+                        style="@style/oaEditText"
+                        android:hint="请选择用车结束时间"/>
+                </LinearLayout>
+                <View style="@style/line"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/oaTextView"
+                        android:text="开始里程: *" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
+
+                    <EditText
+                        android:id="@+id/etStartMileage"
+                        style="@style/oaEditText"
+                        android:hint="请填写用车前里程" />
+                </LinearLayout>
+                <View style="@style/line"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/oaTextView"
+                        android:text="结束里程: *" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
+
+                    <EditText
+                        android:id="@+id/etEndMileage"
+                        style="@style/oaEditText"
+                        android:hint="请填写用车后里程" />
+                </LinearLayout>
+                <View style="@style/line"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/oaTextView"
+                        android:text="行驶里程: *" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
+
+                    <EditText
+                        android:id="@+id/etAllMileage"
+                        style="@style/oaEditText"
+                        android:hint="请填写行驶里程" />
+                </LinearLayout>
+                <View style="@style/line"></View>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/oaTextView"
+                        android:text="派车员: *" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
+
+                    <TextView
+                        android:id="@+id/tvLeader4"
+                        style="@style/oaEditText"
+                        android:hint="请填写派车员" />
+                </LinearLayout>
                 <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <TextView
-                    android:id="@+id/tvLeader"
-                    style="@style/oaEditText"
-                    android:hint="部门领导意见" />
+                    style="@style/line"
+                    android:layout_marginBottom="45dp"></View>
             </LinearLayout>
-            <View style="@style/line"></View>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tvLeader1W"
-                    style="@style/oaTextView"
-                    android:text="分管领导:" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <TextView
-                    android:id="@+id/tvLeader1"
-                    style="@style/oaEditText"
-                    android:hint="分管领导意见" />
-            </LinearLayout>
-            <View style="@style/line"></View>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tvLeader2W"
-                    style="@style/oaTextView"
-                    android:text="总经理:" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <TextView
-                    android:id="@+id/tvLeader2"
-                    style="@style/oaEditText"
-                    android:hint="总经理意见" />
-            </LinearLayout>
-            <View style="@style/line"></View>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tvLeader3W"
-                    style="@style/oaTextView"
-                    android:text="综合管理部:" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <TextView
-                    android:id="@+id/tvLeader3"
-                    style="@style/oaEditText"
-                    android:hint="综合管理部意见" />
-            </LinearLayout>
-            <View style="@style/line"></View>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tvLeader4W"
-                    style="@style/oaTextView"
-                    android:text="车号: *" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <EditText
-                    android:id="@+id/etCarNo"
-                    style="@style/oaEditText"
-                    android:hint="请填写车号" />
-            </LinearLayout>
-            <View style="@style/line"></View>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tvLeader5W"
-                    style="@style/oaTextView"
-                    android:text="车型: *" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <EditText
-                    android:id="@+id/etCarType"
-                    style="@style/oaEditText"
-                    android:hint="请填写车型" />
-            </LinearLayout>
-            <View style="@style/line"></View>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/oaTextView"
-                    android:text="开始时间: *" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <TextView
-                    android:id="@+id/tvStartTime"
-                    style="@style/oaEditText"
-                    android:hint="请选择用车开始时间"/>
-            </LinearLayout>
-            <View style="@style/line"></View>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/oaTextView"
-                    android:text="结束时间: *" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <TextView
-                    android:id="@+id/tvEndTime"
-                    style="@style/oaEditText"
-                    android:hint="请选择用车结束时间"/>
-            </LinearLayout>
-            <View style="@style/line"></View>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/oaTextView"
-                    android:text="开始里程: *" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <EditText
-                    android:id="@+id/etStartMileage"
-                    style="@style/oaEditText"
-                    android:hint="请填写用车前里程" />
-            </LinearLayout>
-            <View style="@style/line"></View>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/oaTextView"
-                    android:text="结束里程: *" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <EditText
-                    android:id="@+id/etEndMileage"
-                    style="@style/oaEditText"
-                    android:hint="请填写用车后里程" />
-            </LinearLayout>
-            <View style="@style/line"></View>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/oaTextView"
-                    android:text="行驶里程: *" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <EditText
-                    android:id="@+id/etAllMileage"
-                    style="@style/oaEditText"
-                    android:hint="请填写行驶里程" />
-            </LinearLayout>
-            <View style="@style/line"></View>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/oaTextView"
-                    android:text="派车员: *" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <TextView
-                    android:id="@+id/tvLeader4"
-                    style="@style/oaEditText"
-                    android:hint="请填写派车员" />
-            </LinearLayout>
-            <View
-                style="@style/line"
-                android:layout_marginBottom="45dp"></View>
 
             <Button
                 android:id="@+id/btnUp"

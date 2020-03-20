@@ -232,6 +232,14 @@ public class FlowGHPuechaseWillDetailActivity extends BaseActivity {
     LinearLayout llShenPiRenList;
     @BindView(R.id.scrollView)
     ScrollView scrollView;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
     private String name, taskId, res, bmfzryj, zcgkbmyj = "", fgldyj, ghzx = "", zjl = "";
     private String mainId, signaName, destName, destType, checkTask, qianzhiData = "";
     String leader = "";
@@ -825,6 +833,7 @@ public class FlowGHPuechaseWillDetailActivity extends BaseActivity {
         if (nametemp != null) {
             if (nametemp.length == 1) {
                 rb1.setText(nametemp[0]);
+                rb1.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.INVISIBLE);
@@ -898,6 +907,7 @@ public class FlowGHPuechaseWillDetailActivity extends BaseActivity {
         if (bigNametemp != null) {
             if (bigNametemp.length == 1) {
                 cb1.setText(bigNametemp[0]);
+                cb1.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.INVISIBLE);
@@ -1609,6 +1619,76 @@ public class FlowGHPuechaseWillDetailActivity extends BaseActivity {
                         }
                         ProgressDialogUtil.stopLoad();
 
+                        String word2 = "";
+                        if (ghzx != null && !ghzx.equals("")) {
+                            try {
+                                JSONArray jsonArray = new JSONArray(ghzx);
+                                for (int i = 0; i < jsonArray.length(); i++) {
+                                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                    if (!jsonObject.getString("v").toString().equals("")) {
+                                        word2 = word2 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                    }
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            if (tvLeader2.getVisibility() == View.VISIBLE) {
+                                if (!word2.equals("")) {
+                                    tvLeader2.setText(word2);
+                                    etLeader2.setHint(word2);
+                                }
+                            } else {
+                                etLeader2.setHint(word2);
+                            }
+                        }else {
+                            llLeader2.setVisibility(View.GONE);
+                        }
+
+                        String word1 = "";
+                        if (fgldyj != null && !fgldyj.equals("")) {
+                            try {
+                                JSONArray jsonArray = new JSONArray(fgldyj);
+                                for (int i = 0; i < jsonArray.length(); i++) {
+                                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                    if (!jsonObject.getString("v").toString().equals("")) {
+                                        word1 = word1 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                    }
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            if (tvLeader1.getVisibility() == View.VISIBLE) {
+                                tvLeader1.setText(word1);
+                                etLeader1.setHint(word1);
+                            } else {
+                                etLeader1.setHint(word1);
+                            }
+                        }else {
+                            llLeader1.setVisibility(View.GONE);
+                        }
+
+                        String word = "";
+                        if (bmfzryj != null && !bmfzryj.equals("")) {
+                            try {
+                                JSONArray jsonArray = new JSONArray(bmfzryj);
+                                for (int i = 0; i < jsonArray.length(); i++) {
+                                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                    if (!jsonObject.getString("v").toString().equals("")) {
+                                        word = word + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                    }
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            if (tvLeader.getVisibility() == View.VISIBLE) {
+                                tvLeader.setText(word);
+                                etLeader.setHint(word);
+                            } else {
+                                etLeader.setHint(word);
+                            }
+                        }else {
+                            llLeader.setVisibility(View.GONE);
+                        }
                         String formRights = bean.getFormRights();
                         try {
                             JSONObject jsonObject = new JSONObject(formRights);
@@ -1618,6 +1698,7 @@ public class FlowGHPuechaseWillDetailActivity extends BaseActivity {
                             if (bmreout.equals("2")) {
                                 tvLeader.setVisibility(View.GONE);
                                 etLeader.setVisibility(View.VISIBLE);
+                                llLeader.setVisibility(View.VISIBLE);
                             } else {
                                 tvLeader.setVisibility(View.VISIBLE);
                                 etLeader.setVisibility(View.GONE);
@@ -1626,6 +1707,7 @@ public class FlowGHPuechaseWillDetailActivity extends BaseActivity {
                             if (fgreout.equals("2")) {
                                 tvLeader1.setVisibility(View.GONE);
                                 etLeader1.setVisibility(View.VISIBLE);
+                                llLeader1.setVisibility(View.VISIBLE);
                             } else {
                                 tvLeader1.setVisibility(View.VISIBLE);
                                 etLeader1.setVisibility(View.GONE);
@@ -1634,6 +1716,7 @@ public class FlowGHPuechaseWillDetailActivity extends BaseActivity {
                             if (zxreout.equals("2")) {
                                 tvLeader2.setVisibility(View.GONE);
                                 etLeader2.setVisibility(View.VISIBLE);
+                                llLeader2.setVisibility(View.VISIBLE);
                             } else {
                                 tvLeader2.setVisibility(View.VISIBLE);
                                 tvLeader2.setVisibility(View.GONE);
@@ -1686,67 +1769,7 @@ public class FlowGHPuechaseWillDetailActivity extends BaseActivity {
                         tvAllMoney4.setText(allMoney4);
                         tvAllMoney5.setText(allMoney5);
 
-                        String word2 = "";
-                        if (ghzx != null && !ghzx.equals("")) {
-                            try {
-                                JSONArray jsonArray = new JSONArray(ghzx);
-                                for (int i = 0; i < jsonArray.length(); i++) {
-                                    JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                    if (!jsonObject.getString("v").toString().equals("")) {
-                                        word2 = word2 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                    }
-                                }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            if (tvLeader2.getVisibility() == View.VISIBLE) {
-                                if (!word2.equals("")) {
-                                    tvLeader2.setText(word2);
-                                }
-                            } else {
-                                etLeader2.setHint(word2);
-                            }
-                        }
 
-                        String word1 = "";
-                        if (fgldyj != null && !fgldyj.equals("")) {
-                            try {
-                                JSONArray jsonArray = new JSONArray(fgldyj);
-                                for (int i = 0; i < jsonArray.length(); i++) {
-                                    JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                    if (!jsonObject.getString("v").toString().equals("")) {
-                                        word1 = word1 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                    }
-                                }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            if (tvLeader1.getVisibility() == View.VISIBLE) {
-                                tvLeader1.setText(word1);
-                            } else {
-                                etLeader1.setHint(word1);
-                            }
-                        }
-
-                        String word = "";
-                        if (bmfzryj != null && !bmfzryj.equals("")) {
-                            try {
-                                JSONArray jsonArray = new JSONArray(bmfzryj);
-                                for (int i = 0; i < jsonArray.length(); i++) {
-                                    JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                    if (!jsonObject.getString("v").toString().equals("")) {
-                                        word = word + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                    }
-                                }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            if (tvLeader.getVisibility() == View.VISIBLE) {
-                                tvLeader.setText(word);
-                            } else {
-                                etLeader.setHint(word);
-                            }
-                        }
                         if (bean.isRevoke()) {
                             Toast.makeText(FlowGHPuechaseWillDetailActivity.this, "当前流程已被追回", Toast.LENGTH_SHORT).show();
                         }
@@ -1756,7 +1779,7 @@ public class FlowGHPuechaseWillDetailActivity extends BaseActivity {
                             tvText.setVisibility(View.GONE);
                             ProgressDialogUtil.startLoad(FlowGHPuechaseWillDetailActivity.this, "获取审核人");
                             getAppRovePerson();
-                        }else {
+                        } else {
                             tvspr.setText("请点击“+”选择路径");
                         }
                     }

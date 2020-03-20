@@ -95,133 +95,141 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@color/shouye"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvLeaderW"
-                    style="@style/oaTextView"
-                    android:text="报修部门:"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:background="@color/shouye"
-                    android:layout_gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/tvLeader"
-                    style="@style/oaEditText"
-                    android:hint="请填写报修部门负责人意见"/>
-            </LinearLayout>
-            <View style="@style/line"></View>
 
             <LinearLayout
+                android:id="@+id/llAll"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvLeader1W"
-                    style="@style/oaTextView"
-                    android:text="维修部门:"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:background="@color/shouye"
-                    android:layout_gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/tvLeader1"
-                    style="@style/oaEditText"
-                    android:hint="请填写维修部门负责人意见"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvLeaderW"
+                        style="@style/oaTextView"
+                        android:text="报修部门:"/>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="@color/shouye"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/tvLeader"
+                        style="@style/oaEditText"
+                        android:hint="请填写报修部门负责人意见"/>
+                </LinearLayout>
+                <View style="@style/line"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvLeader1W"
+                        style="@style/oaTextView"
+                        android:text="维修部门:"/>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="@color/shouye"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/tvLeader1"
+                        style="@style/oaEditText"
+                        android:hint="请填写维修部门负责人意见"/>
+                </LinearLayout>
+                <View style="@style/line"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvLeader2W"
+                        style="@style/oaTextView"
+                        android:text="维修人员:"/>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="@color/shouye"
+                        android:layout_gravity="center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/tvLeader2"
+                        style="@style/oaEditText"
+                        android:hint="请维修人员签字" />
+
+
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/tvDate1"
+                        style="@style/oaEditText"
+                        android:hint="请维修人员签字"/>
+                </LinearLayout>
+                <View style="@style/line"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvLeader3W"
+                        style="@style/oaTextView"
+                        android:text="维修情况:"/>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="@color/shouye"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/tvLeader3"
+                        style="@style/oaEditText"
+                        android:hint="请填写维修情况"/>
+                </LinearLayout>
+                <View style="@style/line"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvLeader4W"
+                        style="@style/oaTextView"
+                        android:text="设备使用人:"/>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="@color/shouye"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/tvLeader4"
+                        android:hint="设备使用人意见"
+                        style="@style/oaEditText"/>
+                </LinearLayout>
+                <View style="@style/line"></View>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvLeader5W"
+                        style="@style/oaTextView"
+                        android:text="维修情况反馈:"/>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="@color/shouye"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/tvLeader5"
+                        android:hint="维修情况反馈"
+                        style="@style/oaEditText"/>
+                </LinearLayout>
+                <View style="@style/line"
+                    android:layout_marginBottom="45dp"></View>
             </LinearLayout>
-            <View style="@style/line"></View>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvLeader2W"
-                    style="@style/oaTextView"
-                    android:text="维修人员:"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:background="@color/shouye"
-                    android:layout_gravity="center_vertical"/>
-
-                <TextView
-                    android:id="@+id/tvLeader2"
-                    style="@style/oaEditText"
-                    android:hint="请维修人员签字" />
-
-
-                <TextView
-                    android:visibility="gone"
-                    android:id="@+id/tvDate1"
-                    style="@style/oaEditText"
-                    android:hint="请维修人员签字"/>
-            </LinearLayout>
-            <View style="@style/line"></View>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvLeader3W"
-                    style="@style/oaTextView"
-                    android:text="维修情况:"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:background="@color/shouye"
-                    android:layout_gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/tvLeader3"
-                    style="@style/oaEditText"
-                    android:hint="请填写维修情况"/>
-            </LinearLayout>
-            <View style="@style/line"></View>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvLeader4W"
-                    style="@style/oaTextView"
-                    android:text="设备使用人:"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:background="@color/shouye"
-                    android:layout_gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/tvLeader4"
-                    android:hint="设备使用人意见"
-                    style="@style/oaEditText"/>
-            </LinearLayout>
-            <View style="@style/line"></View>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvLeader5W"
-                    style="@style/oaTextView"
-                    android:text="维修情况反馈:"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:background="@color/shouye"
-                    android:layout_gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/tvLeader5"
-                    android:hint="维修情况反馈"
-                    style="@style/oaEditText"/>
-            </LinearLayout>
-            <View style="@style/line"
-                android:layout_marginBottom="45dp"></View>
             <Button
                 android:id="@+id/btnUp"
                 android:layout_width="match_parent"

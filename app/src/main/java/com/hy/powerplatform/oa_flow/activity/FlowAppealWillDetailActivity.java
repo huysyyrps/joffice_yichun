@@ -211,6 +211,18 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
     CheckBox cb21;
     @BindView(R.id.ll9)
     LinearLayout ll9;
+    @BindView(R.id.llLeaderBM)
+    LinearLayout llLeaderBM;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
+    @BindView(R.id.llLeader4)
+    LinearLayout llLeader4;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
     private String name, taskId, executionId, res, bmfzryj, xqbmyj, xqbmldyj, jsbmyj, jsbmldyj, zjlyj = "", dszyj = "";
     private String mainId, signaName, destName, destType, checkTask, qianzhiData = "";
     String leader = "";
@@ -1798,69 +1810,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                         beanList.add(bean.getTrans().get(i));
                     }
 
-                    String formRights = bean.getFormRights();
-                    try {
-                        JSONObject jsonObject = new JSONObject(formRights);
-                        xqreout = jsonObject.getString("fgldyj");
-                        xqldreout = jsonObject.getString("jbfgldyj");
-                        jsreout = jsonObject.getString("bjap");
-                        jsldreout = jsonObject.getString("zjlyj");
-                        bmreout = jsonObject.getString("bmfzryj");
-                        dszreout = jsonObject.getString("dszyj");
-                        if (bmreout.equals("2")) {
-                            tvBM.setVisibility(View.GONE);
-                            etBM.setVisibility(View.VISIBLE);
-                        } else {
-                            tvBM.setVisibility(View.VISIBLE);
-                            etBM.setVisibility(View.GONE);
-                            tvLeaderW.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (xqreout.equals("2")) {
-                            tvLeader.setVisibility(View.GONE);
-                            etLeader.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader.setVisibility(View.VISIBLE);
-                            etLeader.setVisibility(View.GONE);
-                            tvLeader1W.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (xqldreout.equals("2")) {
-                            tvLeader1.setVisibility(View.GONE);
-                            etLeader1.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader1.setVisibility(View.VISIBLE);
-                            etLeader1.setVisibility(View.GONE);
-                            tvLeader2W.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (jsreout.equals("2")) {
-                            tvLeader2.setVisibility(View.GONE);
-                            etLeader2.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader2.setVisibility(View.VISIBLE);
-                            etLeader2.setVisibility(View.GONE);
-                            tvLeader3W.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (jsldreout.equals("2")) {
-                            tvLeader3.setVisibility(View.GONE);
-                            etLeader3.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader3.setVisibility(View.VISIBLE);
-                            etLeader3.setVisibility(View.GONE);
-                        }
-
-                        if (dszreout.equals("2")) {
-                            tvLeader4.setVisibility(View.GONE);
-                            etLeader4.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader4.setVisibility(View.VISIBLE);
-                            etLeader4.setVisibility(View.GONE);
-                        }
-                        if (dszreout.equals("1") && bmreout.equals("1") && xqreout.equals("1") && xqldreout.equals("1") && jsreout.equals("1") && jsldreout.equals("1")) {
-                            Toast.makeText(FlowAppealWillDetailActivity.this, "您对当前流程只有读取权限", Toast.LENGTH_SHORT).show();
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
                     String wordbm = "";
                     if (bmfzryj != null && !bmfzryj.equals("")) {
                         try {
@@ -1876,9 +1825,12 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                         }
                         if (tvBM.getVisibility() == View.VISIBLE) {
                             tvBM.setText(wordbm);
+                            etBM.setHint(wordbm);
                         } else {
                             etBM.setHint(wordbm);
                         }
+                    }else {
+                        llLeaderBM.setVisibility(View.GONE);
                     }
 
                     String word4 = "";
@@ -1896,9 +1848,12 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader3.getVisibility() == View.VISIBLE) {
                             tvLeader3.setText(word4);
+                            etLeader3.setHint(word4);
                         } else {
                             etLeader3.setHint(word4);
                         }
+                    }else {
+                        llLeader3.setVisibility(View.GONE);
                     }
                     String word3 = "";
                     if (jsbmyj != null && !jsbmyj.equals("")) {
@@ -1915,9 +1870,12 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader2.getVisibility() == View.VISIBLE) {
                             tvLeader2.setText(word3);
+                            etLeader2.setHint(word3);
                         } else {
                             etLeader2.setHint(word3);
                         }
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
                     String word2 = "";
                     if (xqbmldyj != null && !xqbmldyj.equals("")) {
@@ -1934,9 +1892,12 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader1.getVisibility() == View.VISIBLE) {
                             tvLeader1.setText(word2);
+                            etLeader1.setHint(word2);
                         } else {
                             etLeader1.setHint(word2);
                         }
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
                     String word1 = "";
                     if (xqbmyj != null && !xqbmyj.equals("")) {
@@ -1953,9 +1914,12 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader.getVisibility() == View.VISIBLE) {
                             tvLeader.setText(word1);
+                            etLeader.setHint(word1);
                         } else {
                             etLeader.setHint(word1);
                         }
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
 
                     String word = "";
@@ -1973,9 +1937,80 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader4.getVisibility() == View.VISIBLE) {
                             tvLeader4.setText(word);
+                            etLeader4.setHint(word);
                         } else {
                             etLeader4.setHint(word);
                         }
+                    }else {
+                        llLeader4.setVisibility(View.GONE);
+                    }
+                    String formRights = bean.getFormRights();
+                    try {
+                        JSONObject jsonObject = new JSONObject(formRights);
+                        xqreout = jsonObject.getString("fgldyj");
+                        xqldreout = jsonObject.getString("jbfgldyj");
+                        jsreout = jsonObject.getString("bjap");
+                        jsldreout = jsonObject.getString("zjlyj");
+                        bmreout = jsonObject.getString("bmfzryj");
+                        dszreout = jsonObject.getString("dszyj");
+                        if (bmreout.equals("2")) {
+                            tvBM.setVisibility(View.GONE);
+                            etBM.setVisibility(View.VISIBLE);
+                            llLeaderBM.setVisibility(View.VISIBLE);
+                        } else {
+                            tvBM.setVisibility(View.VISIBLE);
+                            etBM.setVisibility(View.GONE);
+                            tvLeaderW.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (xqreout.equals("2")) {
+                            tvLeader.setVisibility(View.GONE);
+                            etLeader.setVisibility(View.VISIBLE);
+                            llLeader.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader.setVisibility(View.VISIBLE);
+                            etLeader.setVisibility(View.GONE);
+                            tvLeader1W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (xqldreout.equals("2")) {
+                            tvLeader1.setVisibility(View.GONE);
+                            etLeader1.setVisibility(View.VISIBLE);
+                            llLeader1.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader1.setVisibility(View.VISIBLE);
+                            etLeader1.setVisibility(View.GONE);
+                            tvLeader2W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (jsreout.equals("2")) {
+                            tvLeader2.setVisibility(View.GONE);
+                            etLeader2.setVisibility(View.VISIBLE);
+                            llLeader2.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader2.setVisibility(View.VISIBLE);
+                            etLeader2.setVisibility(View.GONE);
+                            tvLeader3W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (jsldreout.equals("2")) {
+                            tvLeader3.setVisibility(View.GONE);
+                            etLeader3.setVisibility(View.VISIBLE);
+                            llLeader3.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader3.setVisibility(View.VISIBLE);
+                            etLeader3.setVisibility(View.GONE);
+                        }
+
+                        if (dszreout.equals("2")) {
+                            tvLeader4.setVisibility(View.GONE);
+                            etLeader4.setVisibility(View.VISIBLE);
+                            llLeader4.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader4.setVisibility(View.VISIBLE);
+                            etLeader4.setVisibility(View.GONE);
+                        }
+                        if (dszreout.equals("1") && bmreout.equals("1") && xqreout.equals("1") && xqldreout.equals("1") && jsreout.equals("1") && jsldreout.equals("1")) {
+                            Toast.makeText(FlowAppealWillDetailActivity.this, "您对当前流程只有读取权限", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
 
                     if (bean.isRevoke()) {

@@ -126,6 +126,18 @@ public class FlowOverTimeDetailActivity extends BaseActivity {
     Button btnHistory;
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
+    @BindView(R.id.tvLeaderW)
+    TextView tvLeaderW;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.tvLeader1W)
+    TextView tvLeader1W;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.tvLeader2W)
+    TextView tvLeader2W;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
     private String res;
 
     String xiangguanfujian = "";
@@ -139,7 +151,7 @@ public class FlowOverTimeDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
         header.setTvRight("追回");
-        LinearLayoutManager manager  = new LinearLayoutManager(this);
+        LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
         btnT.setVisibility(View.GONE);
         tvText.setVisibility(View.GONE);
@@ -179,7 +191,7 @@ public class FlowOverTimeDetailActivity extends BaseActivity {
             public void success(Object o) {
                 Message message = new Message();
                 message.what = TAG_FIVE;
-                Bundle bundle=new Bundle();
+                Bundle bundle = new Bundle();
                 bundle.putString("msg", o.toString());
                 message.setData(bundle);
                 handler.sendMessage(message);
@@ -195,19 +207,19 @@ public class FlowOverTimeDetailActivity extends BaseActivity {
         });
     }
 
-    @OnClick({R.id.tvData,R.id.btnHistory})
+    @OnClick({R.id.tvData, R.id.btnHistory})
     public void onViewClicked(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btnHistory:
                 recyclerView.setVisibility(View.VISIBLE);
-                ProgressDialogUtil.startLoad(FlowOverTimeDetailActivity.this,"获取数据中");
+                ProgressDialogUtil.startLoad(FlowOverTimeDetailActivity.this, "获取数据中");
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
                         //String name =URLDecoder.decode(待转值,"utf-8");
                         String url = Constant.BASE_URL2 + Constant.FLOWMESSAGE;
                         DBHandler dbA = new DBHandler();
-                        flowMessage = dbA.OAFlowMessage(url,runID);
+                        flowMessage = dbA.OAFlowMessage(url, runID);
                         if (flowMessage.equals("获取数据失败") || flowMessage.equals("")) {
                             handler.sendEmptyMessage(TAG_TWO);
                         } else {
@@ -285,10 +297,10 @@ public class FlowOverTimeDetailActivity extends BaseActivity {
                 case 111:
                     Gson gsonF = new Gson();
                     FlowMessage1 beanF = gsonF.fromJson(flowMessage, FlowMessage1.class);
-                    for (int i = 0;i<beanF.getData().size();i++){
+                    for (int i = 0; i < beanF.getData().size(); i++) {
                         flowList.add(beanF.getData().get(i));
                     }
-                    adapter = new FlowMessageAdapter(FlowOverTimeDetailActivity.this,flowList);
+                    adapter = new FlowMessageAdapter(FlowOverTimeDetailActivity.this, flowList);
                     recyclerView.setAdapter(adapter);
                     Toast.makeText(FlowOverTimeDetailActivity.this, "查询成功", Toast.LENGTH_SHORT).show();
                     ProgressDialogUtil.stopLoad();
@@ -321,12 +333,18 @@ public class FlowOverTimeDetailActivity extends BaseActivity {
                     tvTask.setText(task);
                     if (!bmfzr.equals("")) {
                         tvLeader.setText(getJSONData(bmfzr));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
                     if (!fgfzr.equals("")) {
                         tvLeader1.setText(getJSONData(fgfzr));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
                     if (!zjl.equals("")) {
                         tvLeader2.setText(getJSONData(zjl));
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

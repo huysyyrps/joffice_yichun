@@ -298,6 +298,22 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
     LinearLayout llShenPiRenList;
     @BindView(R.id.scrollView)
     ScrollView scrollView;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeaderGYB)
+    LinearLayout llLeaderGYB;
+    @BindView(R.id.llLeaderJG)
+    LinearLayout llLeaderJG;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
+    @BindView(R.id.llLeader4)
+    LinearLayout llLeader4;
+    @BindView(R.id.llLeader5)
+    LinearLayout llLeader5;
     private String name, taskId, res, bmfzryj, gybmyj, jcbmyj, zcgkbmyj, fgldyj, cgfgyj, cwzjyj, zjl = "";
     private String mainId, signaName, destName = "", destType, checkTask, qianzhiData = "";
     String leader = "";
@@ -956,9 +972,6 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.VISIBLE);
@@ -969,10 +982,6 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -988,11 +997,6 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -1009,12 +1013,6 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
                 rb6.setText(nametemp[5]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
-                rb6.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -1050,9 +1048,6 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -1063,10 +1058,6 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -1082,11 +1073,6 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -1103,12 +1089,6 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -1126,13 +1106,6 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -1153,14 +1126,6 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
-                cb8.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -1183,15 +1148,6 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
                 cb9.setText(bigNametemp[8]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
-                cb8.setChecked(true);
-                cb9.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -1281,20 +1237,20 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 llShenPiRenList.setVisibility(View.VISIBLE);
 //                final boolean scrollDown = getIntent().getBooleanExtra(SCROLL_DOWN, false);
 //                if (scrollDown) {
-                    scrollView.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            //To change body of implemented methods use File | Settings | File Templates.
+                scrollView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        //To change body of implemented methods use File | Settings | File Templates.
 //                    mRootScrollView.fullScroll(ScrollView.FOCUS_DOWN);
-                            int[] location = new int[2];
-                            llShenPiRen.getLocationOnScreen(location);
-                            int offset = location[1] - scrollView.getMeasuredHeight();
+                        int[] location = new int[2];
+                        llShenPiRen.getLocationOnScreen(location);
+                        int offset = location[1] - scrollView.getMeasuredHeight();
 //                            if (offset < 0) {
 //                                offset = 0;
 //                            }
-                            scrollView.smoothScrollTo(0, Math.abs(offset));
-                        }
-                    });
+                        scrollView.smoothScrollTo(0, Math.abs(offset));
+                    }
+                });
 //                }
                 if (beanList.size() != 0) {
                     if (beanList.size() == 1) {
@@ -1939,10 +1895,184 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                     for (int i = 0; i < bean.getTrans().size(); i++) {
                         beanList.add(bean.getTrans().get(i));
                     }
-//                    signaName = bean.getTrans().get(0).getName();
-//                    destName = bean.getTrans().get(0).getDestination();
-//                    destType = bean.getTrans().get(0).getDestType();
 
+
+                    String word6 = "";
+                    if (zjl != null && !zjl.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(zjl);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word6 = word6 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeader5.getVisibility() == View.VISIBLE) {
+                            tvLeader5.setText(word6);
+                            etLeader5.setHint(word6);
+                        } else {
+                            etLeader5.setHint(word6);
+                        }
+                    }else {
+                        llLeader5.setVisibility(View.GONE);
+                    }
+
+                    String word5 = "";
+                    if (cwzjyj != null && !cwzjyj.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(cwzjyj);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word5 = word5 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeader4.getVisibility() == View.VISIBLE) {
+                            tvLeader4.setText(word5);
+                        } else {
+                            etLeader4.setHint(word5);
+                        }
+                    }else {
+                        llLeader4.setVisibility(View.GONE);
+                    }
+
+                    String word4 = "";
+                    if (cgfgyj != null && !cgfgyj.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(cgfgyj);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word4 = word4 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeader3.getVisibility() == View.VISIBLE) {
+                            tvLeader3.setText(word4);
+                        } else {
+                            etLeader3.setHint(word4);
+                        }
+                    }else {
+                        llLeader3.setVisibility(View.GONE);
+                    }
+
+                    String word3 = "";
+                    if (fgldyj != null && !fgldyj.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(fgldyj);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word3 = word3 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeader2.getVisibility() == View.VISIBLE) {
+                            tvLeader2.setText(word3);
+                        } else {
+                            etLeader2.setHint(word3);
+                        }
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
+                    }
+
+                    String word2 = "";
+                    if (zcgkbmyj != null && !zcgkbmyj.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(zcgkbmyj);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word2 = word2 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeader1.getVisibility() == View.VISIBLE) {
+                            tvLeader1.setText(word2);
+                        } else {
+                            etLeader1.setHint(word2);
+                        }
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
+                    }
+
+                    String word1 = "";
+                    if (jcbmyj != null && !jcbmyj.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(jcbmyj);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word1 = word1 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeaderJG.getVisibility() == View.VISIBLE) {
+                            tvLeaderJG.setText(word1);
+                        } else {
+                            etLeaderJG.setHint(word1);
+                        }
+                    }else {
+                        llLeaderJG.setVisibility(View.GONE);
+                    }
+
+                    String wordgyb = "";
+                    if (gybmyj != null && !gybmyj.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(gybmyj);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    wordgyb = wordgyb + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeaderGYB.getVisibility() == View.VISIBLE) {
+                            tvLeaderGYB.setText(wordgyb);
+                        } else {
+                            etLeaderGYB.setHint(wordgyb);
+                        }
+                    }else {
+                        llLeaderGYB.setVisibility(View.GONE);
+                    }
+
+                    String word = "";
+                    if (bmfzryj != null && !bmfzryj.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(bmfzryj);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word = word + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeader.getVisibility() == View.VISIBLE) {
+                            tvLeader.setText(word);
+                        } else {
+                            etLeader.setHint(word);
+                        }
+                    }else {
+                        llLeader.setVisibility(View.GONE);
+                    }
                     String formRights = bean.getFormRights();
                     try {
                         JSONObject jsonObject = new JSONObject(formRights);
@@ -1957,6 +2087,7 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                         if (bmreout.equals("2")) {
                             tvLeader.setVisibility(View.GONE);
                             etLeader.setVisibility(View.VISIBLE);
+                            llLeader.setVisibility(View.VISIBLE);
                         } else {
                             tvLeader.setVisibility(View.VISIBLE);
                             etLeader.setVisibility(View.GONE);
@@ -1965,6 +2096,7 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                         if (gybmreout.equals("2")) {
                             tvLeaderGYB.setVisibility(View.GONE);
                             etLeaderGYB.setVisibility(View.VISIBLE);
+                            llLeaderGYB.setVisibility(View.VISIBLE);
                         } else {
                             tvLeaderGYB.setVisibility(View.VISIBLE);
                             etLeaderGYB.setVisibility(View.GONE);
@@ -1973,6 +2105,7 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                         if (jcreout.equals("2")) {
                             tvLeaderJG.setVisibility(View.GONE);
                             etLeaderJG.setVisibility(View.VISIBLE);
+                            llLeaderJG.setVisibility(View.VISIBLE);
                         } else {
                             tvLeaderJG.setVisibility(View.VISIBLE);
                             etLeaderJG.setVisibility(View.GONE);
@@ -1981,6 +2114,7 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                         if (zcreout.equals("2")) {
                             tvLeader1.setVisibility(View.GONE);
                             etLeader1.setVisibility(View.VISIBLE);
+                            llLeader1.setVisibility(View.VISIBLE);
                             tvNum1.setVisibility(View.GONE);
                             tvNum2.setVisibility(View.GONE);
                             tvNum3.setVisibility(View.GONE);
@@ -2029,6 +2163,7 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                         if (fgreout.equals("2")) {
                             tvLeader2.setVisibility(View.GONE);
                             etLeader2.setVisibility(View.VISIBLE);
+                            llLeader2.setVisibility(View.VISIBLE);
                         } else {
                             tvLeader2.setVisibility(View.VISIBLE);
                             etLeader2.setVisibility(View.GONE);
@@ -2037,6 +2172,7 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                         if (cwfgreout.equals("2")) {
                             tvLeader3.setVisibility(View.GONE);
                             etLeader3.setVisibility(View.VISIBLE);
+                            llLeader3.setVisibility(View.VISIBLE);
                         } else {
                             tvLeader3.setVisibility(View.VISIBLE);
                             etLeader3.setVisibility(View.GONE);
@@ -2045,6 +2181,7 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                         if (cwreout.equals("2")) {
                             tvLeader4.setVisibility(View.GONE);
                             etLeader4.setVisibility(View.VISIBLE);
+                            llLeader4.setVisibility(View.VISIBLE);
                         } else {
                             tvLeader4.setVisibility(View.VISIBLE);
                             etLeader4.setVisibility(View.GONE);
@@ -2053,6 +2190,7 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                         if (zjlreout.equals("2")) {
                             tvLeader5.setVisibility(View.GONE);
                             etLeader5.setVisibility(View.VISIBLE);
+                            llLeader5.setVisibility(View.VISIBLE);
                         } else {
                             tvLeader5.setVisibility(View.VISIBLE);
                             etLeader5.setVisibility(View.GONE);
@@ -2107,165 +2245,7 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                     tvAllMoney4.setText(allMoney4);
                     tvAllMoney5.setText(allMoney5);
 
-                    String word6 = "";
-                    if (zjl != null && !zjl.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(zjl);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word6 = word6 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeader5.getVisibility() == View.VISIBLE) {
-                            tvLeader5.setText(word6);
-                        } else {
-                            etLeader5.setHint(word6);
-                        }
-                    }
 
-                    String word5 = "";
-                    if (cwzjyj != null && !cwzjyj.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(cwzjyj);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word5 = word5 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeader4.getVisibility() == View.VISIBLE) {
-                            tvLeader4.setText(word5);
-                        } else {
-                            etLeader4.setHint(word5);
-                        }
-                    }
-
-                    String word4 = "";
-                    if (cgfgyj != null && !cgfgyj.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(cgfgyj);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word4 = word4 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeader3.getVisibility() == View.VISIBLE) {
-                            tvLeader3.setText(word4);
-                        } else {
-                            etLeader3.setHint(word4);
-                        }
-                    }
-
-                    String word3 = "";
-                    if (fgldyj != null && !fgldyj.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(fgldyj);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word3 = word3 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeader2.getVisibility() == View.VISIBLE) {
-                            tvLeader2.setText(word3);
-                        } else {
-                            etLeader2.setHint(word3);
-                        }
-                    }
-
-                    String word2 = "";
-                    if (zcgkbmyj != null && !zcgkbmyj.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(zcgkbmyj);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word2 = word2 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeader1.getVisibility() == View.VISIBLE) {
-                            tvLeader1.setText(word2);
-                        } else {
-                            etLeader1.setHint(word2);
-                        }
-                    }
-
-                    String word1 = "";
-                    if (jcbmyj != null && !jcbmyj.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(jcbmyj);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word1 = word1 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeaderJG.getVisibility() == View.VISIBLE) {
-                            tvLeaderJG.setText(word1);
-                        } else {
-                            etLeaderJG.setHint(word1);
-                        }
-                    }
-
-                    String wordgyb = "";
-                    if (gybmyj != null && !gybmyj.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(gybmyj);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    wordgyb = wordgyb + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeaderGYB.getVisibility() == View.VISIBLE) {
-                            tvLeaderGYB.setText(wordgyb);
-                        } else {
-                            etLeaderGYB.setHint(wordgyb);
-                        }
-                    }
-
-                    String word = "";
-                    if (bmfzryj != null && !bmfzryj.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(bmfzryj);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word = word + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeader.getVisibility() == View.VISIBLE) {
-                            tvLeader.setText(word);
-                        } else {
-                            etLeader.setHint(word);
-                        }
-                    }
                     if (bean.isRevoke()) {
                         Toast.makeText(FlowPuechaseWillDetailActivity.this, "当前流程已被追回", Toast.LENGTH_SHORT).show();
                     }

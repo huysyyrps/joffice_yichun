@@ -70,4 +70,3 @@ public class AlertDialogAdapter extends BaseAdapter {
         CheckBox cb1;
     }
 }
-

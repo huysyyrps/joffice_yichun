@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -156,6 +157,66 @@ public class FlowComplainDetailActivity extends BaseActivity {
     TextView tvLeader2W;
     @BindView(R.id.tvLeader3W)
     TextView tvLeader3W;
+    @BindView(R.id.tvspr)
+    TextView tvspr;
+    @BindView(R.id.llShenPiRen)
+    LinearLayout llShenPiRen;
+    @BindView(R.id.cb10)
+    CheckBox cb10;
+    @BindView(R.id.cb11)
+    CheckBox cb11;
+    @BindView(R.id.cb12)
+    CheckBox cb12;
+    @BindView(R.id.ll6)
+    LinearLayout ll6;
+    @BindView(R.id.cb13)
+    CheckBox cb13;
+    @BindView(R.id.cb14)
+    CheckBox cb14;
+    @BindView(R.id.cb15)
+    CheckBox cb15;
+    @BindView(R.id.ll7)
+    LinearLayout ll7;
+    @BindView(R.id.cb16)
+    CheckBox cb16;
+    @BindView(R.id.cb17)
+    CheckBox cb17;
+    @BindView(R.id.cb18)
+    CheckBox cb18;
+    @BindView(R.id.ll8)
+    LinearLayout ll8;
+    @BindView(R.id.cb19)
+    CheckBox cb19;
+    @BindView(R.id.cb20)
+    CheckBox cb20;
+    @BindView(R.id.cb21)
+    CheckBox cb21;
+    @BindView(R.id.ll9)
+    LinearLayout ll9;
+    @BindView(R.id.cb22)
+    CheckBox cb22;
+    @BindView(R.id.cb23)
+    CheckBox cb23;
+    @BindView(R.id.cb24)
+    CheckBox cb24;
+    @BindView(R.id.ll10)
+    LinearLayout ll10;
+    @BindView(R.id.llShenPiRenList)
+    LinearLayout llShenPiRenList;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
+    @BindView(R.id.tvLeader4W)
+    TextView tvLeader4W;
+    @BindView(R.id.llLeader4)
+    LinearLayout llLeader4;
+    @BindView(R.id.scrollView)
+    ScrollView scrollView;
     private String res;
     String flowMessage = "";
     String xiangguanfujian = "";
@@ -367,19 +428,34 @@ public class FlowComplainDetailActivity extends BaseActivity {
                     tvData.setText(data);
                     if (!bmfzryj.equals("")) {
                         tvLeader.setText(getJSONData(bmfzryj));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
+
                     if (!fgsjbr.equals("")) {
                         tvLeader1.setText(fgsjbr);
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
+
                     if (!yygs.equals("")) {
                         tvLeader2.setText(getJSONData(yygs));
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
+
                     if (!aqfw.equals("")) {
                         tvLeader3.setText(getJSONData(aqfw));
+                    }else {
+                        llLeader3.setVisibility(View.GONE);
                     }
+
                     if (!fkyj.equals("")) {
                         tvLeader4.setText(getJSONData(fkyj));
+                    }else {
+                        llLeader4.setVisibility(View.GONE);
                     }
+
                     ProgressDialogUtil.stopLoad();
                     break;
                 case TAG_TWO:

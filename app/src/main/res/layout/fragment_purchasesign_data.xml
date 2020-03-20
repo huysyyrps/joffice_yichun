@@ -535,29 +535,12 @@
 
             <View style="@style/line"></View>
 
-            <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="45dp"-->
-            <!--android:orientation="horizontal">-->
 
-            <!--<TextView-->
-            <!--style="@style/oaTextView"-->
-            <!--android:text="合计金额: *" />-->
-
-            <!--<View-->
-            <!--android:layout_width="1dp"-->
-            <!--android:layout_height="15dp"-->
-            <!--android:layout_gravity="center_vertical"-->
-            <!--android:background="@color/shouye" />-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/tvAllMoney"-->
-            <!--style="@style/oaEditText"-->
-            <!--android:layout_height="match_parent" />-->
-            <!--</LinearLayout>-->
-            <!--<View style="@style/line"></View>-->
-
-
+        <LinearLayout
+            android:id="@id/llAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
@@ -579,9 +562,7 @@
                     style="@style/oaEditText"
                     android:hint="部门领导意见" />
             </LinearLayout>
-
             <View style="@style/line"></View>
-
             <LinearLayout
                 android:visibility="gone"
                 android:layout_width="match_parent"
@@ -603,7 +584,6 @@
                     style="@style/oaEditText"
                     android:hint="资产归口部门领导意见" />
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
@@ -625,9 +605,7 @@
                     style="@style/oaEditText"
                     android:hint="分管领导意见" />
             </LinearLayout>
-
             <View style="@style/line"></View>
-
             <LinearLayout
                 android:id="@+id/ll"
                 android:layout_width="match_parent"
@@ -650,8 +628,6 @@
                     style="@style/oaEditText"
                     android:hint="采购分管领导意见" />
             </LinearLayout>
-
-
             <LinearLayout
                 android:visibility="gone"
                 android:layout_width="match_parent"
@@ -673,7 +649,6 @@
                     style="@style/oaEditText"
                     android:hint="财务领导意见" />
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
@@ -695,10 +670,10 @@
                     style="@style/oaEditText"
                     android:hint="总经理意见" />
             </LinearLayout>
-
             <View
                 style="@style/line"
                 android:layout_marginBottom="45dp"></View>
+        </LinearLayout>
 
             <Button
                 android:id="@+id/btnUp"

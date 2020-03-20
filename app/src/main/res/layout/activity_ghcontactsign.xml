@@ -344,163 +344,197 @@
             </LinearLayout>
             <View style="@style/line"></View>
         </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvLeaderW"
-                    style="@style/oaTextView"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="部门意见:" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <EditText
-                    android:id="@+id/etLeader"
-                    style="@style/textWrite"
-                    android:hint="请填写部门意见"
-                    android:visibility="gone" />
-
-                <TextView
-                    android:id="@+id/tvLeader"
-                    style="@style/textWrite"
-                    android:hint="请填写部门意见" />
-            </LinearLayout>
-
-            <View style="@style/line"></View>
 
             <LinearLayout
+                android:id="@id/llLeader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvLeader1W"
-                    style="@style/oaTextView"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="财审部门意见:" />
+                    <TextView
+                        android:id="@+id/tvLeaderW"
+                        style="@style/oaTextView"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="部门意见:" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
 
-                <EditText
-                    android:id="@+id/etLeader1"
-                    style="@style/textWrite"
-                    android:hint="请填写财审部门意见"
-                    android:visibility="gone" />
+                    <EditText
+                        android:id="@+id/etLeader"
+                        style="@style/textWrite"
+                        android:hint="请填写部门意见"
+                        android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/tvLeader1"
-                    style="@style/textWrite"
-                    android:hint="请填写财审部门意见" />
+                    <TextView
+                        android:id="@+id/tvLeader"
+                        style="@style/textWrite"
+                        android:hint="请填写部门意见" />
+                </LinearLayout>
+                <View style="@style/line"></View>
             </LinearLayout>
-
-            <View style="@style/line"></View>
-
             <LinearLayout
+                android:id="@+id/llLeader1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvLeader2W"
-                    style="@style/oaTextView"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="监管部门意见:" />
+                    <TextView
+                        android:id="@+id/tvLeader1W"
+                        style="@style/oaTextView"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="财审部门意见:" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
 
-                <EditText
-                    android:id="@+id/etLeader2"
-                    style="@style/textWrite"
-                    android:hint="请填写监管部门意见"
-                    android:visibility="gone" />
+                    <EditText
+                        android:id="@+id/etLeader1"
+                        style="@style/textWrite"
+                        android:hint="请填写财审部门意见"
+                        android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/tvLeader2"
-                    style="@style/textWrite"
-                    android:hint="请填写监管部门意见" />
+                    <TextView
+                        android:id="@+id/tvLeader1"
+                        style="@style/textWrite"
+                        android:hint="请填写财审部门意见" />
+                </LinearLayout>
+                <View style="@style/line"></View>
             </LinearLayout>
-
-            <View style="@style/line"></View>
-
             <LinearLayout
+                android:id="@+id/llLeader2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvLeader3W"
-                    style="@style/oaTextView"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="法律顾问意见:" />
+                    <TextView
+                        android:id="@+id/tvLeader2W"
+                        style="@style/oaTextView"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="监管部门意见:" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
 
-                <EditText
-                    android:id="@+id/etLeader3"
-                    style="@style/textWrite"
-                    android:hint="请填写法律顾问意见"
-                    android:visibility="gone" />
+                    <EditText
+                        android:id="@+id/etLeader2"
+                        style="@style/textWrite"
+                        android:hint="请填写监管部门意见"
+                        android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/tvLeader3"
-                    style="@style/textWrite"
-                    android:hint="请填写法律顾问意见" />
+                    <TextView
+                        android:id="@+id/tvLeader2"
+                        style="@style/textWrite"
+                        android:hint="请填写监管部门意见" />
+                </LinearLayout>
+                <View style="@style/line"></View>
             </LinearLayout>
-
-            <View style="@style/line"></View>
-
             <LinearLayout
+                android:id="@+id/llLeader3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvLeader4W"
-                    style="@style/oaTextView"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="工会主席意见:" />
+                    <TextView
+                        android:id="@+id/tvLeader3W"
+                        style="@style/oaTextView"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="法律顾问意见:" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
 
-                <EditText
-                    android:id="@+id/etLeader4"
-                    style="@style/textWrite"
-                    android:hint="请填写工会主席意见"
-                    android:visibility="gone" />
+                    <EditText
+                        android:id="@+id/etLeader3"
+                        style="@style/textWrite"
+                        android:hint="请填写法律顾问意见"
+                        android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/tvLeader4"
-                    style="@style/textWrite"
-                    android:hint="请填写工会主席意见" />
+                    <TextView
+                        android:id="@+id/tvLeader3"
+                        style="@style/textWrite"
+                        android:hint="请填写法律顾问意见" />
+                </LinearLayout>
+                <View style="@style/line"></View>
             </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llLeader4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLeader4W"
+                        style="@style/oaTextView"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="工会主席意见:" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye" />
+
+                    <EditText
+                        android:id="@+id/etLeader4"
+                        style="@style/textWrite"
+                        android:hint="请填写工会主席意见"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvLeader4"
+                        style="@style/textWrite"
+                        android:hint="请填写工会主席意见" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
 
             <View
                 style="@style/line"

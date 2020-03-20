@@ -44,8 +44,21 @@ public class CoinAdapter extends CommonAdapter<ShengChanYYList.ResultBean> {
                     .setColor(R.id.tvNDLJ);
         }
         //                .setCommonClickListener(commonClickListener);
-        holder.setText(R.id.id_name, data.getName())
-                .setText(R.id.tvDQ, data.getBqnum())
+//        String heard = data.getName();
+//        if (heard.contains("（")){
+//            heard = heard.split("（")[0]+"\t"+heard.split("）");
+//        }
+//        addListHeaderTextView(heard, mRightTitleWidthList[i], mRightTitleLayout, i+1);
+//        holder.setText(R.id.id_name, data.getName());
+        if (data.getName().contains("（")){
+            holder.setText(R.id.id_name, data.getName().replace("（","\n （"));
+        }else if (data.getName().contains("(")){
+            holder.setText(R.id.id_name, data.getName().replace("(","\n ("));
+        }else {
+            holder.setText(R.id.id_name, data.getName());
+        }
+
+        holder.setText(R.id.tvDQ, data.getBqnum())
                 .setText(R.id.tvSY, data.getSqnum())
                 .setText(R.id.tvTB, data.getTb())
                 .setText(R.id.tvQNTQ, data.getTqnum())

@@ -937,7 +937,7 @@ public class Fragment01 extends Fragment {
                             departNameList.add(depBean.getData().getText());
                             Department.DataBean.ChildrenBeanX.ChildrenBean resultBean1 = new Department.DataBean.ChildrenBeanX.ChildrenBean();
                             resultBean1.setId(depBean.getData().getChildren().get(0).getId());
-                            resultBean1.setId(depBean.getData().getChildren().get(0).getText());
+                            resultBean1.setText(depBean.getData().getChildren().get(0).getText());
                             departmentList.add(resultBean1);
                             departNameList.add(depBean.getData().getChildren().get(0).getText());
                             for (int i = 0; i < depBean.getData().getChildren().get(0).getChildren().size(); i++) {

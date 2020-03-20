@@ -115,6 +115,22 @@ public class FlowEntryDetailActivity extends BaseActivity {
     TextView tvLeaderNum;
     @BindView(R.id.tvLeaderNumW)
     TextView tvLeaderNumW;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeaderNum)
+    LinearLayout llLeaderNum;
+    @BindView(R.id.llLeader5)
+    LinearLayout llLeader5;
+    @BindView(R.id.llLeader4)
+    LinearLayout llLeader4;
+    @BindView(R.id.llLeader6)
+    LinearLayout llLeader6;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
     private String res;
 
     String xiangguanfujian = "";
@@ -342,26 +358,45 @@ public class FlowEntryDetailActivity extends BaseActivity {
                     if (!rlzyb3.equals("")) {
                         cb3.setChecked(true);
                     }
+                    if (ygbh!=null&&!ygbh.equals("")) {
+                        tvLeaderNumW.setText(getJSONData(ygbh));
+                    }else {
+                        llLeaderNum.setVisibility(View.GONE);
+                    }
                     if (!yyglbyj.equals("")) {
                         tvLeader.setText(getJSONData(yyglbyj));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
                     if (!rlzybyj.equals("")) {
                         tvLeader1.setText(getJSONData(rlzybyj));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
                     if (!xxjsbyj.equals("")) {
                         tvLeader2.setText(getJSONData(xxjsbyj));
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
                     if (!cwsjbyj.equals("")) {
                         tvLeader3.setText(getJSONData(cwsjbyj));
+                    }else {
+                        llLeader3.setVisibility(View.GONE);
                     }
                     if (!cctkjyxgsyj.equals("")) {
                         tvLeader4.setText(getJSONData(cctkjyxgsyj));
+                    }else {
+                        llLeader4.setVisibility(View.GONE);
                     }
                     if (!zhglbyj.equals("")) {
                         tvLeader5.setText(getJSONData(zhglbyj));
+                    }else {
+                        llLeader5.setVisibility(View.GONE);
                     }
                     if (!jbbmyj.equals("")) {
                         tvLeader6.setText(getJSONData(jbbmyj));
+                    }else {
+                        llLeader6.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

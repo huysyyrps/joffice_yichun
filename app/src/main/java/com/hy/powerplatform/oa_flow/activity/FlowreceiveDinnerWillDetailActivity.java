@@ -169,6 +169,12 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
     LinearLayout llShenPiRenList;
     @BindView(R.id.scrollView)
     ScrollView scrollView;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
     private String name, taskId, res, fullnameUId, fullname, bmfzr, fgfze, zjl = "";
     private String mainId, signaName, destName, destType, checkTask, qianzhiData = "";
     String leader = "";
@@ -420,8 +426,6 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
             if (nametemp.length == 2) {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.VISIBLE);
@@ -431,9 +435,6 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.VISIBLE);
@@ -444,10 +445,6 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -463,11 +460,6 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -484,12 +476,6 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
                 rb6.setText(nametemp[5]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
-                rb6.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -514,8 +500,6 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
             if (bigNametemp.length == 2) {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -525,9 +509,6 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -538,10 +519,6 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -557,11 +534,6 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -578,12 +550,6 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -601,13 +567,6 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -628,14 +587,6 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
-                cb8.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -658,15 +609,6 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
                 cb9.setText(bigNametemp[8]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
-                cb8.setChecked(true);
-                cb9.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -1205,42 +1147,6 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                         beanList.add(bean.getTrans().get(i));
                     }
 
-                    String formRights = bean.getFormRights();
-                    try {
-                        JSONObject jsonObject = new JSONObject(formRights);
-                        bmreout = jsonObject.getString("bmfzryj");
-                        fgreout = jsonObject.getString("fgldyj");
-                        zjlreout = jsonObject.getString("zjlyj");
-                        if (bmreout.equals("2")) {
-                            tvLeader.setVisibility(View.GONE);
-                            etLeader.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader.setVisibility(View.VISIBLE);
-                            etLeader.setVisibility(View.GONE);
-                            tvLeaderW.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (fgreout.equals("2")) {
-                            tvLeader1.setVisibility(View.GONE);
-                            etLeader1.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader1.setVisibility(View.VISIBLE);
-                            etLeader1.setVisibility(View.GONE);
-                            tvLeader1W.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (zjlreout.equals("2")) {
-                            tvLeader2.setVisibility(View.GONE);
-                            etLeader2.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader2.setVisibility(View.VISIBLE);
-                            etLeader2.setVisibility(View.GONE);
-                            tvLeader2W.setTextColor(getResources().getColor(R.color.order_stop_black));
-                        }
-                        if (bmreout.equals("1") && fgreout.equals("1") && zjlreout.equals("1")) {
-                            Toast.makeText(FlowreceiveDinnerWillDetailActivity.this, "您对当前流程只有读取权限", Toast.LENGTH_SHORT).show();
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
                     String word3 = "";
                     if (zjl != null && !zjl.equals("")) {
                         try {
@@ -1256,9 +1162,12 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader2.getVisibility() == View.VISIBLE) {
                             tvLeader2.setText(word3);
+                            etLeader2.setHint(word3);
                         } else {
                             etLeader2.setHint(word3);
                         }
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
                     String word2 = "";
                     if (fgfze != null && !fgfze.equals("")) {
@@ -1275,9 +1184,12 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader1.getVisibility() == View.VISIBLE) {
                             tvLeader1.setText(word2);
+                            etLeader1.setHint(word2);
                         } else {
                             etLeader1.setHint(word2);
                         }
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
                     String word1 = "";
                     if (bmfzr != null && !bmfzr.equals("")) {
@@ -1294,10 +1206,53 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                         }
                         if (tvLeader.getVisibility() == View.VISIBLE) {
                             tvLeader.setText(word1);
+                            etLeader.setHint(word1);
                         } else {
                             etLeader.setHint(word1);
                         }
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
+                    String formRights = bean.getFormRights();
+                    try {
+                        JSONObject jsonObject = new JSONObject(formRights);
+                        bmreout = jsonObject.getString("bmfzryj");
+                        fgreout = jsonObject.getString("fgldyj");
+                        zjlreout = jsonObject.getString("zjlyj");
+                        if (bmreout.equals("2")) {
+                            tvLeader.setVisibility(View.GONE);
+                            etLeader.setVisibility(View.VISIBLE);
+                            llLeader.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader.setVisibility(View.VISIBLE);
+                            etLeader.setVisibility(View.GONE);
+                            tvLeaderW.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (fgreout.equals("2")) {
+                            tvLeader1.setVisibility(View.GONE);
+                            etLeader1.setVisibility(View.VISIBLE);
+                            llLeader1.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader1.setVisibility(View.VISIBLE);
+                            etLeader1.setVisibility(View.GONE);
+                            tvLeader1W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (zjlreout.equals("2")) {
+                            tvLeader2.setVisibility(View.GONE);
+                            etLeader2.setVisibility(View.VISIBLE);
+                            llLeader2.setVisibility(View.VISIBLE);
+                        } else {
+                            tvLeader2.setVisibility(View.VISIBLE);
+                            etLeader2.setVisibility(View.GONE);
+                            tvLeader2W.setTextColor(getResources().getColor(R.color.order_stop_black));
+                        }
+                        if (bmreout.equals("1") && fgreout.equals("1") && zjlreout.equals("1")) {
+                            Toast.makeText(FlowreceiveDinnerWillDetailActivity.this, "您对当前流程只有读取权限", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
                     if (bean.isRevoke()) {
                         Toast.makeText(FlowreceiveDinnerWillDetailActivity.this, "当前流程已被追回", Toast.LENGTH_SHORT).show();
                     }
@@ -1307,7 +1262,7 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                         tvText.setVisibility(View.GONE);
                         ProgressDialogUtil.startLoad(FlowreceiveDinnerWillDetailActivity.this, "获取审核人");
                         getAppRovePerson();
-                    }else {
+                    } else {
                         tvspr.setText("请点击“+”选择路径");
                     }
                     break;

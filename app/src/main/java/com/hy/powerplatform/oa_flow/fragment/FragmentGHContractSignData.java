@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -81,6 +82,14 @@ public class FragmentGHContractSignData extends Fragment {
     TextView tvLeader3W;
     @BindView(R.id.tvLeader4W)
     TextView tvLeader4W;
+    @BindView(R.id.tv)
+    TextView tv;
+    @BindView(R.id.tvPerson)
+    TextView tvPerson;
+    @BindView(R.id.tvData)
+    TextView tvData;
+    @BindView(R.id.llAll)
+    LinearLayout llAll;
     private CustomDatePickerDay customDatePicker1;
 
     List<String> namelist = new ArrayList<>();
@@ -106,6 +115,7 @@ public class FragmentGHContractSignData extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ghcontractsign_data, container, false);
         unbinder = ButterKnife.bind(this, view);
+        llAll.setVisibility(View.GONE);
         initDatePicker();
         userId = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userCode", "");
         userName = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userStatus", "");

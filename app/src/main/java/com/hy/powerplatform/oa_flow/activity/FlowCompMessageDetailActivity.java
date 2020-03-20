@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -151,6 +152,24 @@ public class FlowCompMessageDetailActivity extends BaseActivity {
     TextView tvLeader3W;
     @BindView(R.id.tvLeader4W)
     TextView tvLeader4W;
+    @BindView(R.id.tvspr)
+    TextView tvspr;
+    @BindView(R.id.llShenPiRen)
+    LinearLayout llShenPiRen;
+    @BindView(R.id.llShenPiRenList)
+    LinearLayout llShenPiRenList;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
+    @BindView(R.id.llLeader4)
+    LinearLayout llLeader4;
+    @BindView(R.id.scrollView)
+    ScrollView scrollView;
     private String res;
     String xiangguanfujian = "";
     String runID = "";
@@ -359,18 +378,28 @@ public class FlowCompMessageDetailActivity extends BaseActivity {
                     }
                     if (!bmfzryj.equals("")) {
                         tvLeader.setText(getJSONData(bmfzryj));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
                     if (!fgldyj.equals("")) {
                         tvLeader1.setText(getJSONData(fgldyj));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
                     if (!zhglbyj.equals("")) {
                         tvLeader2.setText(getJSONData(zhglbyj));
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
                     if (!jbbmyj.equals("")) {
                         tvLeader3.setText(getJSONData(jbbmyj));
+                    }else {
+                        llLeader3.setVisibility(View.GONE);
                     }
                     if (!zjlyj.equals("")) {
                         tvLeader4.setText(getJSONData(zjlyj));
+                    }else {
+                        llLeader4.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

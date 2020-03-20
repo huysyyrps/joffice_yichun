@@ -98,6 +98,20 @@ public class FlowGCAddDetailActivity extends BaseActivity {
     TextView tvLeader5W;
     @BindView(R.id.tvLeader6W)
     TextView tvLeader6W;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
+    @BindView(R.id.llLeader4)
+    LinearLayout llLeader4;
+    @BindView(R.id.llLeader5)
+    LinearLayout llLeader5;
+    @BindView(R.id.llLeader6)
+    LinearLayout llLeader6;
     private String res;
 
     String xiangguanfujian = "";
@@ -295,26 +309,47 @@ public class FlowGCAddDetailActivity extends BaseActivity {
                     } else {
                         tvData1.setText(xiangguanfujian);
                     }
+
                     if (!xqbmyj.equals("")) {
                         tvLeader.setText(getJSONData(xqbmyj));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
+
                     if (!xqbmldyj.equals("")) {
                         tvLeader1.setText(getJSONData(xqbmldyj));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
+
                     if (!jsbmyj.equals("")) {
                         tvLeader2.setText(getJSONData(jsbmyj));
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
+
                     if (!jsbmldyj.equals("")) {
                         tvLeader3.setText(getJSONData(jsbmldyj));
+                    }else {
+                        llLeader3.setVisibility(View.GONE);
                     }
+
                     if (!csbmyj.equals("")) {
                         tvLeader4.setText(getJSONData(csbmyj));
+                    }else {
+                        llLeader4.setVisibility(View.GONE);
                     }
+
                     if (!jgbmyj.equals("")) {
                         tvLeader5.setText(getJSONData(jgbmyj));
+                    }else {
+                        llLeader5.setVisibility(View.GONE);
                     }
+
                     if (!zjlyj.equals("")) {
                         tvLeader6.setText(getJSONData(zjlyj));
+                    }else {
+                        llLeader6.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

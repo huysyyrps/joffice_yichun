@@ -130,12 +130,15 @@ public class FragmentWorkEntryData extends Fragment {
     TextView tvDepartment;
     @BindView(R.id.llCarType)
     LinearLayout llCarType;
+    @BindView(R.id.llAll)
+    LinearLayout llAll;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_workentry_data, container, false);
         unbinder = ButterKnife.bind(this, view);
+        llAll.setVisibility(View.GONE);
         llCarType.setVisibility(View.GONE);
         listCarType.add("A1");
         listCarType.add("A3");
@@ -291,10 +294,6 @@ public class FragmentWorkEntryData extends Fragment {
                 }
                 if (!PhoneSession.isPhoneNumber(phone)) {
                     Toast.makeText(getActivity(), "手机号的格式错误", Toast.LENGTH_SHORT).show();
-                    break;
-                }
-                if (carType.equals("")) {
-                    Toast.makeText(getActivity(), "准驾车型不能为空", Toast.LENGTH_SHORT).show();
                     break;
                 }
                 if (department.equals("")) {

@@ -178,6 +178,8 @@ public class FragmentCCTPurchaseData extends Fragment {
     TextView tvLeader4;
     @BindView(R.id.tvLeader5)
     TextView tvLeader5;
+    @BindView(R.id.llAll)
+    LinearLayout llAll;
     private CustomDatePickerDay customDatePicker1;
 
     String userId = "";
@@ -201,6 +203,7 @@ public class FragmentCCTPurchaseData extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cctpurch_data, container, false);
         unbinder = ButterKnife.bind(this, view);
+        llAll.setVisibility(View.GONE);
         initDatePicker();
         userId = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userCode", "");
         userName = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "userStatus", "");

@@ -277,124 +277,123 @@
                 android:layout_height="45dp"
                 android:background="@color/shouye" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
+           <LinearLayout
+               android:id="@+id/llAll"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="45dp"
+                   android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvLeaderW"
-                    style="@style/oaTextView"
-                    android:text="部门领导:" />
+                   <TextView
+                       android:id="@+id/tvLeaderW"
+                       style="@style/oaTextView"
+                       android:text="部门领导:" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
+                   <View
+                       android:layout_width="1dp"
+                       android:layout_height="15dp"
+                       android:layout_gravity="center_vertical"
+                       android:background="@color/shouye" />
 
-                <TextView
-                    android:id="@+id/etLeader"
-                    style="@style/oaEditText"
-                    android:hint="部门领导意见" />
-            </LinearLayout>
+                   <TextView
+                       android:id="@+id/etLeader"
+                       style="@style/oaEditText"
+                       android:hint="部门领导意见" />
+               </LinearLayout>
+               <View style="@style/line"></View>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="45dp"
+                   android:orientation="horizontal">
 
-            <View style="@style/line"></View>
+                   <TextView
+                       android:id="@+id/tvLeader1W"
+                       style="@style/oaTextView"
+                       android:text="分公司接办人:" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
+                   <View
+                       android:layout_width="1dp"
+                       android:layout_height="15dp"
+                       android:layout_gravity="center_vertical"
+                       android:background="@color/shouye" />
 
-                <TextView
-                    android:id="@+id/tvLeader1W"
-                    style="@style/oaTextView"
-                    android:text="分公司接办人:" />
+                   <TextView
+                       android:id="@+id/etLeader1"
+                       style="@style/oaEditText"
+                       android:hint="分公司接办人意见意见" />
+               </LinearLayout>
+               <View style="@style/line"></View>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="45dp"
+                   android:orientation="horizontal">
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
+                   <TextView
+                       android:id="@+id/tvLeader2W"
+                       style="@style/oaTextView"
+                       android:text="营运公司:" />
 
-                <TextView
-                    android:id="@+id/etLeader1"
-                    style="@style/oaEditText"
-                    android:hint="分公司接办人意见意见" />
-            </LinearLayout>
+                   <View
+                       android:layout_width="1dp"
+                       android:layout_height="15dp"
+                       android:layout_gravity="center_vertical"
+                       android:background="@color/shouye" />
 
-            <View style="@style/line"></View>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
+                   <TextView
+                       android:id="@+id/etLeader2"
+                       style="@style/oaEditText"
+                       android:hint="营运公司意见" />
+               </LinearLayout>
+               <View style="@style/line"></View>
+               <LinearLayout
+                   android:visibility="gone"
+                   android:layout_width="match_parent"
+                   android:layout_height="45dp"
+                   android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvLeader2W"
-                    style="@style/oaTextView"
-                    android:text="营运公司:" />
+                   <TextView
+                       style="@style/oaTextView"
+                       android:text="安全服务部:" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
+                   <View
+                       android:layout_width="1dp"
+                       android:layout_height="15dp"
+                       android:layout_gravity="center_vertical"
+                       android:background="@color/shouye" />
 
-                <TextView
-                    android:id="@+id/etLeader2"
-                    style="@style/oaEditText"
-                    android:hint="营运公司意见" />
-            </LinearLayout>
+                   <TextView
+                       android:id="@+id/etLeader3"
+                       style="@style/oaEditText"
+                       android:hint="安全服务部意见" />
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="45dp"
+                   android:orientation="horizontal">
 
-            <View style="@style/line"></View>
+                   <TextView
+                       android:id="@+id/tvLeader4W"
+                       style="@style/oaTextView"
+                       android:text="反馈投诉人:" />
 
-            <LinearLayout
-                android:visibility="gone"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
+                   <View
+                       android:layout_width="1dp"
+                       android:layout_height="15dp"
+                       android:layout_gravity="center_vertical"
+                       android:background="@color/shouye" />
 
-                <TextView
-                    style="@style/oaTextView"
-                    android:text="安全服务部:" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <TextView
-                    android:id="@+id/etLeader3"
-                    style="@style/oaEditText"
-                    android:hint="安全服务部意见" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tvLeader4W"
-                    style="@style/oaTextView"
-                    android:text="反馈投诉人:" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/shouye" />
-
-                <TextView
-                    android:id="@+id/etLeader4"
-                    style="@style/oaEditText"
-                    android:hint="反馈投诉人意见" />
-            </LinearLayout>
-
-            <View
-                style="@style/line"
-                android:layout_marginBottom="45dp"></View>
+                   <TextView
+                       android:id="@+id/etLeader4"
+                       style="@style/oaEditText"
+                       android:hint="反馈投诉人意见" />
+               </LinearLayout>
+               <View
+                   style="@style/line"
+                   android:layout_marginBottom="45dp"></View>
+           </LinearLayout>
 
             <Button
                 android:id="@+id/btnUp"

@@ -352,6 +352,7 @@ public class FlowDriverAssessWillDetailActivity extends BaseActivity {
         if (nametemp != null) {
             if (nametemp.length == 1) {
                 rb1.setText(nametemp[0]);
+                rb1.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.INVISIBLE);
@@ -425,6 +426,7 @@ public class FlowDriverAssessWillDetailActivity extends BaseActivity {
         if (bigNametemp != null) {
             if (bigNametemp.length == 1) {
                 cb1.setText(bigNametemp[0]);
+                cb1.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.INVISIBLE);

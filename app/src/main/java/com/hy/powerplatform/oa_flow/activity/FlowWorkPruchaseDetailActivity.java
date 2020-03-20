@@ -166,6 +166,18 @@ public class FlowWorkPruchaseDetailActivity extends BaseActivity {
     TextView tvLeader4W;
     @BindView(R.id.tvLeader5W)
     TextView tvLeader5W;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
+    @BindView(R.id.llLeader4)
+    LinearLayout llLeader4;
+    @BindView(R.id.llLeader5)
+    LinearLayout llLeader5;
+    @BindView(R.id.llLeader6)
+    LinearLayout llLeader6;
     private String res;
     String xiangguanfujian = "";
     String runID = "";
@@ -415,15 +427,21 @@ public class FlowWorkPruchaseDetailActivity extends BaseActivity {
                     tvTime.setText(time);
                     if (!bmfzr.equals("")) {
                         etLeader1.setText(getJSONData(bmfzr));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
 //                    if (!zcgkbmyj.equals("")) {
 //                        etLeader2.setText(getJSONData(fgfzr));
 //                    }
                     if (!fgfzr.equals("")) {
                         etLeader3.setText(getJSONData(fgfzr));
+                    }else {
+                        llLeader3.setVisibility(View.GONE);
                     }
                     if (!zjl.equals("")) {
                         etLeader6.setText(getJSONData(zjl));
+                    }else {
+                        llLeader6.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;

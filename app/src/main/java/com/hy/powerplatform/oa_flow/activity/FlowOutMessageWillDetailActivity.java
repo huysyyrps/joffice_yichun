@@ -189,6 +189,14 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
     LinearLayout llShenPiRenList;
     @BindView(R.id.scrollView)
     ScrollView scrollView;
+    @BindView(R.id.llHeGao)
+    LinearLayout llHeGao;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeadertv)
+    LinearLayout llLeadertv;
     private String name, taskId, res, fullnameUId, fullname, fgldyj, zjl = "";
     private String mainId, signaName, destName, destType, checkTask, qianzhiData = "";
     String leader = "";
@@ -458,8 +466,6 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
             if (nametemp.length == 2) {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.VISIBLE);
@@ -469,9 +475,6 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
                 rb2.setVisibility(View.VISIBLE);
@@ -482,10 +485,6 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -501,11 +500,6 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                 rb3.setText(nametemp[2]);
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -522,12 +516,6 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                 rb4.setText(nametemp[3]);
                 rb5.setText(nametemp[4]);
                 rb6.setText(nametemp[5]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                rb3.setChecked(true);
-                rb4.setChecked(true);
-                rb5.setChecked(true);
-                rb6.setChecked(true);
                 ll3.setVisibility(View.VISIBLE);
                 ll4.setVisibility(View.VISIBLE);
                 rb1.setVisibility(View.VISIBLE);
@@ -552,8 +540,6 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
             if (bigNametemp.length == 2) {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -563,9 +549,6 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -576,10 +559,6 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -595,11 +574,6 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -616,12 +590,6 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -639,13 +607,6 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -666,14 +627,6 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
-                cb8.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -696,15 +649,6 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
                 cb9.setText(bigNametemp[8]);
-                cb1.setChecked(true);
-                cb2.setChecked(true);
-                cb3.setChecked(true);
-                cb4.setChecked(true);
-                cb5.setChecked(true);
-                cb6.setChecked(true);
-                cb7.setChecked(true);
-                cb8.setChecked(true);
-                cb9.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -1266,6 +1210,85 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                     for (int i = 0; i < bean.getTrans().size(); i++) {
                         beanList.add(bean.getTrans().get(i));
                     }
+
+
+                    String word6 = "";
+                    if (zjl != null && !zjl.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(zjl);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word6 = word6 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeader1.getVisibility() == View.VISIBLE) {
+                            tvLeader1.setText(word6);
+                            etLeader1.setHint(word6);
+                        } else {
+                            etLeader1.setHint(word6);
+                        }
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
+                    }
+                    String word5 = "";
+                    if (fgldyj != null && !fgldyj.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(fgldyj);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word5 = word5 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeader.getVisibility() == View.VISIBLE) {
+                            tvLeader.setText(word5);
+                            etLeader.setHint(word5);
+                        } else {
+                            etLeader.setHint(word5);
+                        }
+                    }else {
+                        llLeader.setVisibility(View.GONE);
+                    }
+
+                    if (heGao != null && !heGao.equals("")) {
+                        if (tvHeGao.getVisibility() == View.VISIBLE) {
+                            tvHeGao.setText(heGao);
+                        }
+                    }else {
+                        llHeGao.setVisibility(View.GONE);
+                    }
+
+                    if (num != null && !num.equals("")) {
+                        if (tvNum.getVisibility() == View.VISIBLE) {
+                            tvNum.setText(num);
+                        }
+                    }
+
+                    if (wenHao != null && !wenHao.equals("")) {
+                        if (tv1.getVisibility() == View.VISIBLE) {
+                            tv1.setText(wenHao);
+                        }
+                    }else {
+                        llLeadertv.setVisibility(View.VISIBLE);
+                    }
+
+                    if (xuHao != null && !xuHao.equals("")) {
+                        if (tv2.getVisibility() == View.VISIBLE) {
+                            tv2.setText(xuHao);
+                        }
+                    }
+                    if (date != null && !date.equals("")) {
+                        if (tv3.getVisibility() == View.VISIBLE) {
+                            tv3.setText(date);
+                        }
+                    }
                     String formRights = bean.getFormRights();
                     try {
                         JSONObject jsonObject = new JSONObject(formRights);
@@ -1288,6 +1311,7 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                             tvStartTime.setText(date1);
                             tvStartTime.setVisibility(View.VISIBLE);
                             tvStartTime1.setVisibility(View.GONE);
+                            llLeader1.setVisibility(View.VISIBLE);
                         }
                         tvTextNum.setText(wenHao);
                         tv2.setText(xuHao);
@@ -1300,6 +1324,7 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                         if (whrqreout.equals("2")) {
                             tv3.setVisibility(View.GONE);
                             tv31.setVisibility(View.GONE);
+                            llLeader1.setVisibility(View.VISIBLE);
                         } else {
 //                            tv3.setVisibility(View.VISIBLE);
 //                            et3.setVisibility(View.GONE);
@@ -1308,6 +1333,7 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                         if (fwxhreout.equals("2")) {
                             tv2.setVisibility(View.GONE);
                             et2.setVisibility(View.VISIBLE);
+                            llLeader1.setVisibility(View.VISIBLE);
                         } else {
                             tv2.setVisibility(View.VISIBLE);
                             et2.setVisibility(View.GONE);
@@ -1349,6 +1375,7 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                         if (fgreout.equals("2")) {
                             tvLeader.setVisibility(View.GONE);
                             etLeader.setVisibility(View.VISIBLE);
+                            llLeader.setVisibility(View.VISIBLE);
                         } else {
                             tvLeader.setVisibility(View.VISIBLE);
                             etLeader.setVisibility(View.GONE);
@@ -1357,6 +1384,7 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                         if (zjlreout.equals("2")) {
                             tvLeader1.setVisibility(View.GONE);
                             etLeader1.setVisibility(View.VISIBLE);
+                            llLeader1.setVisibility(View.VISIBLE);
                         } else {
                             tvLeader1.setVisibility(View.VISIBLE);
                             etLeader1.setVisibility(View.GONE);
@@ -1371,69 +1399,7 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                         e.printStackTrace();
                     }
 
-                    String word6 = "";
-                    if (zjl != null && !zjl.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(zjl);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word6 = word6 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeader1.getVisibility() == View.VISIBLE) {
-                            tvLeader1.setText(word6);
-                        } else {
-                            etLeader1.setHint(word6);
-                        }
-                    }
-                    String word5 = "";
-                    if (fgldyj != null && !fgldyj.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(fgldyj);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word5 = word5 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeader.getVisibility() == View.VISIBLE) {
-                            tvLeader.setText(word5);
-                        } else {
-                            etLeader.setHint(word5);
-                        }
-                    }
-                    if (heGao != null && !heGao.equals("")) {
-                        if (tvHeGao.getVisibility() == View.VISIBLE) {
-                            tvHeGao.setText(heGao);
-                        }
-                    }
-                    if (num != null && !num.equals("")) {
-                        if (tvNum.getVisibility() == View.VISIBLE) {
-                            tvNum.setText(num);
-                        }
-                    }
-                    if (wenHao != null && !wenHao.equals("")) {
-                        if (tv1.getVisibility() == View.VISIBLE) {
-                            tv1.setText(wenHao);
-                        }
-                    }
-                    if (xuHao != null && !xuHao.equals("")) {
-                        if (tv2.getVisibility() == View.VISIBLE) {
-                            tv2.setText(xuHao);
-                        }
-                    }
-                    if (date != null && !date.equals("")) {
-                        if (tv3.getVisibility() == View.VISIBLE) {
-                            tv3.setText(date);
-                        }
-                    }
+
                     if (bean.isRevoke()) {
                         Toast.makeText(FlowOutMessageWillDetailActivity.this, "当前流程已被追回", Toast.LENGTH_SHORT).show();
                     }
@@ -1443,7 +1409,7 @@ public class FlowOutMessageWillDetailActivity extends BaseActivity {
                         tvText.setVisibility(View.GONE);
                         ProgressDialogUtil.startLoad(FlowOutMessageWillDetailActivity.this, "获取审核人");
                         getAppRovePerson();
-                    }else {
+                    } else {
                         tvspr.setText("请点击“+”选择路径");
                     }
                     break;

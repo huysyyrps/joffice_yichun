@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -86,6 +87,22 @@ public class FragmentRepairData extends Fragment {
     TextView tvLeader2W;
     @BindView(R.id.tvLeader3W)
     TextView tvLeader3W;
+    @BindView(R.id.etLeader)
+    EditText etLeader;
+    @BindView(R.id.tvLeader)
+    TextView tvLeader;
+    @BindView(R.id.etLeader2)
+    EditText etLeader2;
+    @BindView(R.id.tvLeader2)
+    TextView tvLeader2;
+    @BindView(R.id.etLeader3)
+    EditText etLeader3;
+    @BindView(R.id.tvLeader3)
+    TextView tvLeader3;
+    @BindView(R.id.tvData1)
+    TextView tvData1;
+    @BindView(R.id.llAll)
+    LinearLayout llAll;
     private byte[] lock = new byte[0];
     // 位数，默认是8位
     private final static long w = 100000000;
@@ -120,6 +137,7 @@ public class FragmentRepairData extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         view = inflater.inflate(R.layout.fragment_myrepaie, container, false);
         unbinder = ButterKnife.bind(this, view);
+        llAll.setVisibility(View.GONE);
         String department = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "depName", "");
         initDatePicker();
         etDepartment.setText(department);

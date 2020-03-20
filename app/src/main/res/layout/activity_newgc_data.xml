@@ -119,181 +119,214 @@
                     android:layout_gravity="center_vertical"
                     android:textColor="@color/file_color"/>
             </LinearLayout>
-            <!--<View style="@style/line"></View>-->
-            <!--<LinearLayout-->
-                <!--android:visibility="gone"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="45dp"-->
-                <!--android:orientation="horizontal">-->
-                <!--<TextView-->
-                    <!--style="@style/oaTextView"-->
-                    <!--android:text="附件:"/>-->
-                <!--<View-->
-                    <!--android:layout_width="1dp"-->
-                    <!--android:layout_height="15dp"-->
-                    <!--android:background="@color/shouye"-->
-                    <!--android:layout_gravity="center_vertical"/>-->
-                <!--<TextView-->
-                    <!--android:id="@+id/tvData"-->
-                    <!--android:hint="点击选择附件"-->
-                    <!--style="@style/oaEditText"/>-->
-            <!--</LinearLayout>-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@color/shouye"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvLeaderW"
-                    style="@style/oaTextView"
-                    android:text="需求部门意见:"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:background="@color/shouye"
-                    android:layout_gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/tvLeader"
-                    style="@style/textWrite"
-                    android:hint="需求部门意见"/>
-            </LinearLayout>
-            <View style="@style/line"></View>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvLeader1W"
-                    style="@style/oaTextView"
-                    android:text="需求部门领导意见:"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:background="@color/shouye"
-                    android:layout_gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/tvLeader1"
-                    style="@style/textWrite"
-                    android:hint="需求部门领导意见"/>
-            </LinearLayout>
-            <View style="@style/line"></View>
+
+
+
+
 
             <LinearLayout
+                android:id="@+id/llLeader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvLeader2W"
-                    style="@style/oaTextView"
-                    android:text="建设部门意见:"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"/>
-
-                <TextView
-                    android:id="@+id/tvLeader2"
-                    style="@style/textWrite"
-                    android:hint="建设部门意见" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:background="@color/shouye"
-                    android:layout_gravity="center_vertical"/>
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvLeaderW"
+                        style="@style/oaTextView"
+                        android:text="需求部门意见:"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"/>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="@color/shouye"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/tvLeader"
+                        style="@style/textWrite"
+                        android:hint="需求部门意见"/>
+                </LinearLayout>
+                <View style="@style/line"></View>
             </LinearLayout>
-            <View style="@style/line"></View>
+
             <LinearLayout
+                android:id="@+id/llLeader1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvLeader3W"
-                    style="@style/oaTextView"
-                    android:text="建设分管领导意见:"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:background="@color/shouye"
-                    android:layout_gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/tvLeader3"
-                    style="@style/textWrite"
-                    android:hint="建设部门领导意见"/>
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvLeader1W"
+                        style="@style/oaTextView"
+                        android:text="需求部门领导意见:"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"/>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="@color/shouye"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/tvLeader1"
+                        style="@style/textWrite"
+                        android:hint="需求部门领导意见"/>
+                </LinearLayout>
+                <View style="@style/line"></View>
             </LinearLayout>
-            <View style="@style/line"></View>
 
             <LinearLayout
+                android:id="@+id/llLeader2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvLeader4W"
-                    style="@style/oaTextView"
-                    android:text="财审部门意见	:"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:background="@color/shouye"
-                    android:layout_gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/tvLeader4"
-                    android:hint="财审部门意见"
-                    style="@style/textWrite"/>
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvLeader2W"
+                        style="@style/oaTextView"
+                        android:text="建设部门意见:"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/tvLeader2"
+                        style="@style/textWrite"
+                        android:hint="建设部门意见" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="@color/shouye"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+                <View style="@style/line"></View>
             </LinearLayout>
-            <View style="@style/line"/>
+
             <LinearLayout
+                android:id="@+id/llLeader3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tvLeader5W"
-                    style="@style/oaTextView"
-                    android:text="监察部门意见:"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_vertical"/>
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:background="@color/shouye"
-                    android:layout_gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/tvLeader5"
-                    android:hint="监察部门意见"
-                    style="@style/textWrite"/>
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvLeader3W"
+                        style="@style/oaTextView"
+                        android:text="建设分管领导意见:"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"/>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="@color/shouye"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/tvLeader3"
+                        style="@style/textWrite"
+                        android:hint="建设部门领导意见"/>
+                </LinearLayout>
+                <View style="@style/line"></View>
             </LinearLayout>
-            <View style="@style/line"/>
+
             <LinearLayout
+                android:id="@+id/llLeader4"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvLeader6W"
-                    style="@style/oaTextView2"
-                    android:text="总经理意见:"
-                    android:layout_gravity="center_vertical"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:background="@color/shouye"
-                    android:layout_gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/tvLeader6"
-                    android:hint="总经理意见"
-                    style="@style/textWrite2"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvLeader4W"
+                        style="@style/oaTextView"
+                        android:text="财审部门意见	:"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"/>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="@color/shouye"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/tvLeader4"
+                        android:hint="财审部门意见"
+                        style="@style/textWrite"/>
+                </LinearLayout>
+                <View style="@style/line"/>
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llLeader5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLeader5W"
+                        style="@style/oaTextView"
+                        android:text="监察部门意见:"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="@color/shouye"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/tvLeader5"
+                        android:hint="监察部门意见"
+                        style="@style/textWrite"/>
+                </LinearLayout>
+                <View style="@style/line"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llLeader6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvLeader6W"
+                        style="@style/oaTextView2"
+                        android:text="总经理意见:"
+                        android:layout_gravity="center_vertical"/>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="@color/shouye"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/tvLeader6"
+                        android:hint="总经理意见"
+                        style="@style/textWrite2"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
             <View style="@style/line"
                 android:layout_marginBottom="45dp"></View>
             <Button

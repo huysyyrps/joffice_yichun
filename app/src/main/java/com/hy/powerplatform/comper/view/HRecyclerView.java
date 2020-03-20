@@ -141,7 +141,7 @@ public class HRecyclerView extends RelativeLayout {
         textView.setBackgroundColor(getResources().getColor(R.color.list_header));
         final float scale = context.getResources().getDisplayMetrics().density;
         if (tag == 0){
-            leftLayout.addView(textView, (int) (130 * scale + 0.5f), dip2px(context, 50));
+            leftLayout.addView(textView, (int) (90 * scale + 0.5f), dip2px(context, 50));
         }else {
             leftLayout.addView(textView, (int) (85 * scale + 0.5f), dip2px(context, 50));
         }
@@ -234,7 +234,7 @@ public class HRecyclerView extends RelativeLayout {
 //        mRightTitleWidthList[4] = 160;
 //        mRightTitleWidthList[5] = 160;
 //        mRightTitleWidthList[6] = 160;
-        mLeftTextWidthList = new int[]{(int) (130 * scale + 0.5f)};
+        mLeftTextWidthList = new int[]{(int) (50 * scale + 0.5f)};
         mLeftTextList = new String[]{"营运指标"};
     }
 

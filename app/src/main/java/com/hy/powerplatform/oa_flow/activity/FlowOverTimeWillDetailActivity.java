@@ -193,6 +193,12 @@ public class FlowOverTimeWillDetailActivity extends BaseActivity {
     TextView tvLeader1W;
     @BindView(R.id.tvLeader2W)
     TextView tvLeader2W;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -241,7 +247,7 @@ public class FlowOverTimeWillDetailActivity extends BaseActivity {
                 String Session = new SharedPreferencesHelper(MyApplication.getContext(), "login").getData(MyApplication.getContext(), "session", "");
                 final Request request = new Request.Builder()
                         .url(url)
-                        .addHeader("Cookie",Session)
+                        .addHeader("Cookie", Session)
                         .get()//默认就是GET请求，可以不写
                         .build();
                 Call call = okHttpClient.newCall(request);
@@ -921,7 +927,74 @@ public class FlowOverTimeWillDetailActivity extends BaseActivity {
                     }
                     ProgressDialogUtil.stopLoad();
 
+                    String word2 = "";
+                    if (zjl != null && !zjl.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(zjl);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word2 = word2 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeader2.getVisibility() == View.VISIBLE) {
+                            tvLeader2.setText(word2);
+                            etLeader2.setHint(word2);
+                        } else {
+                            etLeader2.setHint(word2);
+                        }
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
+                    }
 
+                    String word1 = "";
+                    if (fgfze != null && !fgfze.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(fgfze);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word1 = word1 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeader1.getVisibility() == View.VISIBLE) {
+                            tvLeader1.setText(word1);
+                            etLeader1.setHint(word1);
+                        } else {
+                            etLeader1.setHint(word1);
+                        }
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
+                    }
+
+                    String word = "";
+                    if (bmfzr != null && !bmfzr.equals("")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(bmfzr);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if (!jsonObject.getString("v").toString().equals("")) {
+                                    word = word + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (tvLeader.getVisibility() == View.VISIBLE) {
+                            tvLeader.setText(word);
+                            etLeader.setHint(word);
+                        } else {
+                            etLeader.setHint(word);
+                        }
+                    }else {
+                        llLeader.setVisibility(View.GONE);
+                    }
                     String formRights = bean.getFormRights();
                     try {
                         JSONObject jsonObject = new JSONObject(formRights);
@@ -931,6 +1004,7 @@ public class FlowOverTimeWillDetailActivity extends BaseActivity {
                         if (bmreout.equals("2")) {
                             tvLeader.setVisibility(View.GONE);
                             etLeader.setVisibility(View.VISIBLE);
+                            llLeader.setVisibility(View.VISIBLE);
                         } else {
                             tvLeader.setVisibility(View.VISIBLE);
                             etLeader.setVisibility(View.GONE);
@@ -939,6 +1013,7 @@ public class FlowOverTimeWillDetailActivity extends BaseActivity {
                         if (fgreout.equals("2")) {
                             tvLeader1.setVisibility(View.GONE);
                             etLeader1.setVisibility(View.VISIBLE);
+                            llLeader1.setVisibility(View.VISIBLE);
                         } else {
                             tvLeader1.setVisibility(View.VISIBLE);
                             etLeader1.setVisibility(View.GONE);
@@ -947,6 +1022,7 @@ public class FlowOverTimeWillDetailActivity extends BaseActivity {
                         if (zjlreout.equals("2")) {
                             tvLeader2.setVisibility(View.GONE);
                             etLeader2.setVisibility(View.VISIBLE);
+                            llLeader2.setVisibility(View.VISIBLE);
                         } else {
                             tvLeader2.setVisibility(View.VISIBLE);
                             etLeader2.setVisibility(View.GONE);
@@ -967,65 +1043,6 @@ public class FlowOverTimeWillDetailActivity extends BaseActivity {
                     tvDays.setText(days);
                     tvTask.setText(task);
 
-                    String word2 = "";
-                    if (zjl != null && !zjl.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(zjl);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word2 = word2 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeader2.getVisibility() == View.VISIBLE) {
-                            tvLeader2.setText(word2);
-                        } else {
-                            etLeader2.setHint(word2);
-                        }
-                    }
-
-                    String word1 = "";
-                    if (fgfze != null && !fgfze.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(fgfze);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word1 = word1 + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeader1.getVisibility() == View.VISIBLE) {
-                            tvLeader1.setText(word1);
-                        } else {
-                            etLeader1.setHint(word1);
-                        }
-                    }
-
-                    String word = "";
-                    if (bmfzr != null && !bmfzr.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(bmfzr);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word = word + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeader.getVisibility() == View.VISIBLE) {
-                            tvLeader.setText(word);
-                        } else {
-                            etLeader.setHint(word);
-                        }
-                    }
                     if (bean.isRevoke()) {
                         Toast.makeText(FlowOverTimeWillDetailActivity.this, "当前流程已被追回", Toast.LENGTH_SHORT).show();
                     }

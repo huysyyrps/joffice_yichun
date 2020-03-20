@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -145,6 +146,24 @@ public class FlowRepairDetailActivity extends BaseActivity {
     TextView tvLeader2W;
     @BindView(R.id.tvLeader3W)
     TextView tvLeader3W;
+    @BindView(R.id.tvspr)
+    TextView tvspr;
+    @BindView(R.id.llShenPiRen)
+    LinearLayout llShenPiRen;
+    @BindView(R.id.llShenPiRenList)
+    LinearLayout llShenPiRenList;
+    @BindView(R.id.llLeader)
+    LinearLayout llLeader;
+    @BindView(R.id.llLeader1)
+    LinearLayout llLeader1;
+    @BindView(R.id.llLeader2)
+    LinearLayout llLeader2;
+    @BindView(R.id.llLeader3)
+    LinearLayout llLeader3;
+    @BindView(R.id.llLeaderYJ)
+    LinearLayout llLeaderYJ;
+    @BindView(R.id.scrollView)
+    ScrollView scrollView;
     private String res;
 
     String xiangguanfujian = "";
@@ -360,9 +379,13 @@ public class FlowRepairDetailActivity extends BaseActivity {
                     etLeaderW5 = bean.getMainform().get(0).getBjpj();
                     if (!etLeaderW1.equals("")) {
                         tvLeader.setText(getJSONData(etLeaderW1));
+                    }else {
+                        llLeader.setVisibility(View.GONE);
                     }
                     if (!etLeaderW2.equals("")) {
                         tvLeader1.setText(getJSONData(etLeaderW2));
+                    }else {
+                        llLeader1.setVisibility(View.GONE);
                     }
 
                     if (etLeaderW3 != null && !etLeaderW3.equals("")) {
@@ -377,14 +400,20 @@ public class FlowRepairDetailActivity extends BaseActivity {
 //                            }
                             tvLeader2.setText(etLeaderW3);
                         }
+                    }else {
+                        llLeader2.setVisibility(View.GONE);
                     }
 
                     if (!etLeaderW4.equals("")) {
                         tvLeader3.setText(getJSONData(etLeaderW4));
+                    }else {
+                        llLeader3.setVisibility(View.GONE);
                     }
 
                     if (!etLeaderW5.equals("")) {
                         tvYJ.setText(getJSONData(etLeaderW5));
+                    }else {
+                        llLeaderYJ.setVisibility(View.GONE);
                     }
                     ProgressDialogUtil.stopLoad();
                     break;
