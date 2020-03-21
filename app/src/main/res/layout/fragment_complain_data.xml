@@ -88,30 +88,6 @@
 
                 <TextView
                     style="@style/oaTextView"
-                    android:text="所属公司: *" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="15dp"
-                    android:background="@color/shouye" />
-
-                <Spinner
-                    android:id="@+id/spinnerComp"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2.5" />
-            </LinearLayout>
-            <View style="@style/line"></View>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/oaTextView"
                     android:text="联系电话: *" />
 
                 <View
@@ -147,7 +123,29 @@
                     style="@style/oaEditText"
                     android:hint="请选择被投诉人" />
             </LinearLayout>
+            <View style="@style/line"></View>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
 
+                <TextView
+                    style="@style/oaTextView"
+                    android:text="所属公司: *" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/shouye" />
+
+                <Spinner
+                    android:id="@+id/spinnerComp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5" />
+            </LinearLayout>
             <View style="@style/line"></View>
 
             <LinearLayout

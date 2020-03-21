@@ -157,7 +157,7 @@ public class FragmentBillData extends Fragment {
         String department = new SharedPreferencesHelper(getActivity(), "login").getData(getActivity(), "depName", "");
         etZDPerson.setText(userName);
         etJKPerson.setText(userName);
-        etDriver.setText(userName);
+//        etDriver.setText(userName);
         etDepartment.setText(department);
         etSmallMoney.addTextChangedListener(new TextWatcher() {
             @Override

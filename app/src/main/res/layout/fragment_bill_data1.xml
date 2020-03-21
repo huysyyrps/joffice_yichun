@@ -353,7 +353,7 @@
                     android:background="@color/lightgray"/>
                 <TextView
                     style="@style/oaTextView"
-                    android:text="借款，已借" />
+                    android:text="次借款，已借" />
                 <EditText
                     android:id="@+id/etMoney"
                     android:layout_width="60dp"

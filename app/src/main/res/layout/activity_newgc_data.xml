@@ -237,7 +237,7 @@
                     <TextView
                         android:id="@+id/tvLeader3"
                         style="@style/textWrite"
-                        android:hint="建设部门领导意见"/>
+                        android:hint="建设分管领导意见"/>
                 </LinearLayout>
                 <View style="@style/line"></View>
             </LinearLayout>

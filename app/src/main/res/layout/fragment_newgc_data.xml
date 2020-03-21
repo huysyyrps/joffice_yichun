@@ -171,7 +171,7 @@
                     <TextView
                         android:id="@+id/etLeader3"
                         style="@style/oaEditText"
-                        android:hint="请填写建设部门领导意见"/>
+                        android:hint="请填写建设分管领导意见"/>
                 </LinearLayout>
                 <View style="@style/line"></View>
                 <LinearLayout

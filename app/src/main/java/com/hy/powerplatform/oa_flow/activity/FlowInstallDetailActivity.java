@@ -201,8 +201,6 @@ public class FlowInstallDetailActivity extends BaseActivity {
     LinearLayout llLeaderBJR;
     @BindView(R.id.llLeaderWCQK)
     LinearLayout llLeaderWCQK;
-    @BindView(R.id.llLeaderDate)
-    LinearLayout llLeaderDate;
     @BindView(R.id.llLeader6)
     LinearLayout llLeader6;
     private String res;

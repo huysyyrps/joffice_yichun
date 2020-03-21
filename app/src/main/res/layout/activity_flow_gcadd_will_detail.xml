@@ -177,7 +177,8 @@
                 android:id="@+id/llShenPiRenList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -460,12 +461,12 @@
                     <TextView
                         android:id="@+id/tvLeader3"
                         style="@style/textWrite"
-                        android:hint="建设部门领导意见" />
+                        android:hint="建设分管领导意见" />
 
                     <EditText
                         android:id="@+id/etLeader3"
                         style="@style/textWrite"
-                        android:hint="建设部门领导意见"
+                        android:hint="建设分管领导意见"
                         android:visibility="gone" />
                 </LinearLayout>
                 <View style="@style/line"></View>

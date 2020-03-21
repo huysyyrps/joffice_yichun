@@ -33,7 +33,7 @@
 
             <TextView
                 style="@style/ycTextView"
-                android:text="借款单" />
+                android:text="交通事故费用借款单" />
 
             <TextView
                 android:id="@+id/tvBill"
