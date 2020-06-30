@@ -915,7 +915,7 @@ public class FlowDormWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowDormWillDetailActivity.this,
                         "login").getData(FlowDormWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowDormWillDetailActivity.this,
-                        "login").getData(FlowDormWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowDormWillDetailActivity.this, "userId", "");
                 JSONArray jsonArray = new JSONArray();
                 JSONObject jsonObject = new JSONObject();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

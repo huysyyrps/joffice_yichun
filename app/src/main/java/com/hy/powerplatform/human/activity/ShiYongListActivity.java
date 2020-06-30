@@ -90,10 +90,10 @@ public class ShiYongListActivity extends BaseActivity {
 
     private void getData(final int start, final int limit) {
         ProgressDialogUtil.startLoad(this, getResources().getString(R.string.get_data));
-        final String path_url = Constant.BASE_URL2 + Constant.SHIXI + "?start=" + start + "&limit=" + limit;
-        map.clear();
-        map.put("profileId", profileId);
-        httpUtil.postForm(path_url, map, new OkHttpUtil.ResultCallback() {
+        final String path_url = Constant.BASE_URL2 + Constant.SHIXI + "?start=" + start + "&limit=" + limit+"&profileId="+profileId;
+//        map.clear();
+//        map.put("profileId", profileId);
+        httpUtil.getAsynHttp(path_url, new OkHttpUtil.ResultCallback() {
             @Override
             public void onError(Request request, Exception e) {
 //                Log.i("main", "response:" + e.toString());

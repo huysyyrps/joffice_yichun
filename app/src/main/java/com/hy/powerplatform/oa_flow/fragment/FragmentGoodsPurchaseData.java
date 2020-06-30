@@ -820,6 +820,7 @@ public class FragmentGoodsPurchaseData extends Fragment {
         listType.add("材料配件");
         listType.add("投币机、零钞兑换机");
         listType.add("消防、安防设备");
+        listType.add("充电桩");
         ArrayAdapter adapterZC = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, listZC);
         adapterZC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerzc.setAdapter(adapterZC);

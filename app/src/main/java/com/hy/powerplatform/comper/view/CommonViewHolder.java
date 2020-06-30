@@ -64,6 +64,12 @@ public class CommonViewHolder extends RecyclerView.ViewHolder implements View.On
         return this;
     }
 
+    public CommonViewHolder setColorTag(int viewId) {
+        TextView tv = getView(viewId);
+        tv.setBackgroundColor(MyApplication.getContext().getResources().getColor(R.color.button_select));
+        return this;
+    }
+
     public CommonViewHolder setColorWhite(int viewId) {
         TextView tv = getView(viewId);
         tv.setBackgroundColor(MyApplication.getContext().getResources().getColor(R.color.white));

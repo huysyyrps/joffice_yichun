@@ -794,7 +794,7 @@ public class FlowSaferWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowSaferWillDetailActivity.this,
                         "login").getData(FlowSaferWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowSaferWillDetailActivity.this,
-                        "login").getData(FlowSaferWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowSaferWillDetailActivity.this, "userId", "");
                 JSONArray jsonArray = new JSONArray();
                 JSONObject jsonObject = new JSONObject();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

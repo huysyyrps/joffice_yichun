@@ -745,7 +745,7 @@ public class FlowPayLiuChengWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowPayLiuChengWillDetailActivity.this,
                         "login").getData(FlowPayLiuChengWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowPayLiuChengWillDetailActivity.this,
-                        "login").getData(FlowPayLiuChengWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowPayLiuChengWillDetailActivity.this, "userId", "");
                 jsonArray = new JSONArray();
                 jsonObject = new JSONObject();
                 formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

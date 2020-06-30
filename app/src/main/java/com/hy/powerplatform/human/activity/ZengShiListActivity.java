@@ -92,7 +92,7 @@ public class ZengShiListActivity extends BaseActivity {
         ProgressDialogUtil.startLoad(this, getResources().getString(R.string.get_data));
         final String path_url = Constant.BASE_URL2 + Constant.ZENGSHI + "?start=" + start + "&limit=" + limit;
         map.clear();
-        map.put("code", userCode);
+        map.put("name", userName);
         httpUtil.postForm(path_url, map, new OkHttpUtil.ResultCallback() {
             @Override
             public void onError(Request request, Exception e) {

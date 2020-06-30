@@ -839,7 +839,7 @@ public class FlowBillWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowBillWillDetailActivity.this,
                         "login").getData(FlowBillWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowBillWillDetailActivity.this,
-                        "login").getData(FlowBillWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowBillWillDetailActivity.this, "userId", "");
                 JSONArray jsonArray = new JSONArray();
                 JSONObject jsonObject = new JSONObject();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

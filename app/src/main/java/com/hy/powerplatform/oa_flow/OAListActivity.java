@@ -15,7 +15,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.hy.powerplatform.ApiAddress;
 import com.hy.powerplatform.R;
 import com.hy.powerplatform.SharedPreferencesHelper;
 import com.hy.powerplatform.business_inspect.utils.DBHandler;
@@ -125,8 +124,8 @@ public class OAListActivity extends BaseActivity {
         SharedPreferencesHelper sharedPreferencesHelper = new SharedPreferencesHelper(this, "login");
         String userName = sharedPreferencesHelper.getData(this, "userName", "");
         String found = sharedPreferencesHelper.getData(MyApplication.getContextObject(), "Found", "");
-        String BASE_URL = ApiAddress.api;
-        final String Url = BASE_URL + "system/getStatusModuleManagement.do" + "?userName=" + userName;
+//        Constant.BASE_URL2
+        final String Url = com.hy.powerplatform.my_utils.base.Constant.BASE_URL2 + "system/getStatusModuleManagement.do" + "?userName=" + userName;
         final Message message = new Message();
         ProgressDialogUtil.startLoad(this,"获取数据中");
         OkHttpClient okHttpClient = new OkHttpClient();
@@ -292,7 +291,6 @@ public class OAListActivity extends BaseActivity {
             ActivityCompat.requestPermissions(OAListActivity.this, new String[]{Manifest.permission.CAMERA}, Constant.REQ_PERM_CAMERA);
             return;
         }
-        // 申请文件读写权限（部分朋友遇到相册选图需要读写权限的情况，这里一并写一下）
         if (ActivityCompat.checkSelfPermission(OAListActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             // 申请权限
             ActivityCompat.requestPermissions(OAListActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, Constant.REQ_PERM_EXTERNAL_STORAGE);

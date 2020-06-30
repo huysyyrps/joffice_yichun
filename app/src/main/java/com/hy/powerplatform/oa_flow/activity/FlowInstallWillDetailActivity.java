@@ -899,7 +899,7 @@ public class FlowInstallWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowInstallWillDetailActivity.this,
                         "login").getData(FlowInstallWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowInstallWillDetailActivity.this,
-                        "login").getData(FlowInstallWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowInstallWillDetailActivity.this, "userId", "");
                 jsonArray = new JSONArray();
                 jsonObject = new JSONObject();
                 formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

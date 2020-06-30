@@ -40,10 +40,14 @@ public class OperationListActivity extends BaseActivity {
         alertDialogUtil = new AlertDialogUtil(this);
         userStatus = new SharedPreferencesHelper(this, "login").getData(this, "userStatus", "");
         rights = new SharedPreferencesHelper(this, "login").getData(this, "rights", "");
-        if (!rights.contains("CarManeger")) {
+        if (userStatus.equals("超级管理员")) {
+            rb1.setVisibility(View.VISIBLE);
+        }else if (!rights.contains("CarManeger")) {
             rb1.setVisibility(View.GONE);
         }
-        if (!rights.contains("LineInfoView")) {
+        if (userStatus.equals("超级管理员")) {
+            rb2.setVisibility(View.VISIBLE);
+        }else if (!rights.contains("LineInfoView")) {
             rb2.setVisibility(View.GONE);
         }
     }

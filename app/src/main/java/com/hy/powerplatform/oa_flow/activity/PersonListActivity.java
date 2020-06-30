@@ -253,9 +253,9 @@ public class PersonListActivity extends BaseActivity implements PersonListAdapte
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     ContentValues values = new ContentValues();
                     values.put(com.hy.powerplatform.database.Constant.FULL_NAME, jsonObject.getString("fullname"));
-                    values.put(com.hy.powerplatform.database.Constant.ECARD, jsonObject.getString("profileId"));
+                    values.put(com.hy.powerplatform.database.Constant.ECARD, jsonObject.getString("eCard"));
                     try {
-                        values.put(com.hy.powerplatform.database.Constant.PROFILEID, jsonObject.getString("eCard"));
+                        values.put(com.hy.powerplatform.database.Constant.PROFILEID, jsonObject.getString("profileId"));
                     }catch(Exception e) {
                         Log.e("XXX",jsonObject.getString("fullname"));
                     }

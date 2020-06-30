@@ -711,7 +711,7 @@ public class FlowZGSPayWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowZGSPayWillDetailActivity.this,
                         "login").getData(FlowZGSPayWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowZGSPayWillDetailActivity.this,
-                        "login").getData(FlowZGSPayWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowZGSPayWillDetailActivity.this, "userId", "");
                 JSONArray jsonArray = new JSONArray();
                 JSONObject jsonObject = new JSONObject();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

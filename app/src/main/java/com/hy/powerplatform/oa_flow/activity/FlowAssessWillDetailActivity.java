@@ -764,7 +764,7 @@ public class FlowAssessWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowAssessWillDetailActivity.this,
                         "login").getData(FlowAssessWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowAssessWillDetailActivity.this,
-                        "login").getData(FlowAssessWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowAssessWillDetailActivity.this, "userId", "");
                 JSONArray jsonArray = new JSONArray();
                 JSONObject jsonObject = new JSONObject();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

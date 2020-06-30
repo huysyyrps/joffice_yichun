@@ -832,7 +832,7 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowCompMessageWillDetailActivity.this,
                         "login").getData(FlowCompMessageWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowCompMessageWillDetailActivity.this,
-                        "login").getData(FlowCompMessageWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowCompMessageWillDetailActivity.this, "userId", "");
                 jsonArray = new JSONArray();
                 jsonObject = new JSONObject();
                 formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

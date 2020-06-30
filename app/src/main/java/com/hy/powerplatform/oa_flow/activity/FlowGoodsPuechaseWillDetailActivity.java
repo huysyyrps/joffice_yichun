@@ -2079,14 +2079,14 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                     Gson gson1 = new Gson();
                     FlowContractPerson bean1 = gson1.fromJson(qianzhiData, FlowContractPerson.class);
                     if (bean1.getData() != null) {
-                        if (bean1.getData().size() > 1) {
+                        if (bean1.getData().size() == 2) {
                             role = bean1.getData().get(1).getRole();
                             userCode = bean1.getData().get(1).getUserNames();
                             userName = bean1.getData().get(1).getUserCodes();
                             nametemp = userName.split(",");
                             codetemp = userCode.split(",");
                         }
-                        if (bean1.getData().size() > 2) {
+                        if (bean1.getData().size() == 3) {
                             role = bean1.getData().get(1).getRole() + ":" + bean1.getData().get(2).getRole();
                             userCode = bean1.getData().get(1).getUserNames() + ":" + bean1.getData().get(2).getUserNames();
                             userName = bean1.getData().get(1).getUserCodes() + "," + bean1.getData().get(2).getUserCodes();

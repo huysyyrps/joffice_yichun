@@ -828,7 +828,7 @@ public class FlowJSGCWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowJSGCWillDetailActivity.this,
                         "login").getData(FlowJSGCWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowJSGCWillDetailActivity.this,
-                        "login").getData(FlowJSGCWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowJSGCWillDetailActivity.this, "userId", "");
                 jsonArray = new JSONArray();
                 jsonObject = new JSONObject();
                 formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

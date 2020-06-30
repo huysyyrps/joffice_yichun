@@ -8,11 +8,13 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.hy.powerplatform.R;
+import com.hy.powerplatform.my_utils.base.MyApplication;
 
 import java.util.ArrayList;
 
@@ -140,10 +142,17 @@ public class HRecyclerView extends RelativeLayout {
         textView.setGravity(Gravity.CENTER);
         textView.setBackgroundColor(getResources().getColor(R.color.list_header));
         final float scale = context.getResources().getDisplayMetrics().density;
+        WindowManager wm = (WindowManager) MyApplication.getContext()
+                .getSystemService(Context.WINDOW_SERVICE);
+        int width1 = wm.getDefaultDisplay().getWidth();
+        int modol = (int) (90 * scale + 0.5f);
+//        for (int i = 0; i < headerListData.length; i++) {
+//            mRightTitleWidthList[i] = (int) ((width-modol)/3);
+//        }
         if (tag == 0){
             leftLayout.addView(textView, (int) (90 * scale + 0.5f), dip2px(context, 50));
         }else {
-            leftLayout.addView(textView, (int) (85 * scale + 0.5f), dip2px(context, 50));
+            leftLayout.addView(textView, (int) (width1-modol)/3, dip2px(context, 50));
         }
 
         return textView;
@@ -224,8 +233,12 @@ public class HRecyclerView extends RelativeLayout {
         mRightTitleWidthList = new int[headerListData.length];
         final float scale = context.getResources().getDisplayMetrics().density;
 //        leftLayout.addView(textView, (int) (85 * scale + 0.5f), dip2px(context, 50));
+        WindowManager wm = (WindowManager) MyApplication.getContext()
+                .getSystemService(Context.WINDOW_SERVICE);
+        int width = wm.getDefaultDisplay().getWidth();
+        int modol = (int) (90 * scale + 0.5f);
         for (int i = 0; i < headerListData.length; i++) {
-            mRightTitleWidthList[i] = (int) (85 * scale + 0.5f);
+            mRightTitleWidthList[i] = (int) ((width-modol)/3);
         }
 //        mRightTitleWidthList[0] = 200;
 //        mRightTitleWidthList[1] = 160;
@@ -234,8 +247,8 @@ public class HRecyclerView extends RelativeLayout {
 //        mRightTitleWidthList[4] = 160;
 //        mRightTitleWidthList[5] = 160;
 //        mRightTitleWidthList[6] = 160;
-        mLeftTextWidthList = new int[]{(int) (50 * scale + 0.5f)};
-        mLeftTextList = new String[]{"营运指标"};
+        mLeftTextWidthList = new int[]{(int) (90 * scale + 0.5f)};
+        mLeftTextList = new String[]{"职工人数"};
     }
 
     /**

@@ -236,6 +236,7 @@ public class FlowGoodsPruchaseDetailActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
+        llLeaderGYB.setVisibility(View.GONE);
         ll11.setVisibility(View.GONE);
         llcg.setVisibility(View.GONE);
         tvLeaderW.setTextColor(getResources().getColor(R.color.order_stop_black));
@@ -492,7 +493,7 @@ public class FlowGoodsPruchaseDetailActivity extends BaseActivity {
                     if (!zjl.equals("")) {
                         tvLeader4.setText(getJSONData(zjl));
                     }else {
-                        llLeader.setVisibility(View.GONE);
+                        llLeader4.setVisibility(View.GONE);
                     }
                     if (!jcbmyj.equals("")) {
                         tvLeaderJG.setText(getJSONData(jcbmyj));

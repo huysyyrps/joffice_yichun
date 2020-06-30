@@ -50,7 +50,7 @@
 
                 <TextView
                     style="@style/oaTextView"
-                    android:text="线路: *" />
+                    android:text="线路名称: *" />
 
                 <View
                     android:layout_width="1dp"

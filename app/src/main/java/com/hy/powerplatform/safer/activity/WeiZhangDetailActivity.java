@@ -43,7 +43,7 @@ public class WeiZhangDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
         WeiZhangList.ResultBean bean = (WeiZhangList.ResultBean) getIntent().getSerializableExtra("bean");
-        tvLine.setText(bean.getLineCode());
+        tvLine.setText(bean.getLineInfo().getLineName());
         tvBusCode.setText(bean.getBusCode());
         tvCarNo.setText(bean.getCarNo());
         tvvnMark.setText(bean.getVnMark());

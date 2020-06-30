@@ -695,9 +695,9 @@ public class Fragment01 extends Fragment {
         int drawableId8 = getResources().getIdentifier("fragment_rb8", "drawable", getActivity().getPackageName());
         bean8.setAddress(drawableId8);
         bean8.setName(getResources().getString(R.string.fragment_rb8));
-        if (rights.contains("OperationIndexReportView") || rights.contains("ProductionOperationAnalysisView")) {
+        if (userStatus.equals("超级管理员")) {
             itemList.add(bean8);
-        } else if (userStatus.equals("超级管理员")) {
+        }else if (rights.contains("OperationIndexReportView") || rights.contains("ProductionOperationAnalysisView")) {
             itemList.add(bean8);
         }
 

@@ -743,7 +743,7 @@ public class FlowContracterPayWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowContracterPayWillDetailActivity.this,
                         "login").getData(FlowContracterPayWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowContracterPayWillDetailActivity.this,
-                        "login").getData(FlowContracterPayWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowContracterPayWillDetailActivity.this, "userId", "");
                 jsonArray = new JSONArray();
                 jsonObject = new JSONObject();
                 formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

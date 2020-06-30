@@ -852,7 +852,7 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowEMainatinWillDetailActivity.this,
                         "login").getData(FlowEMainatinWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowEMainatinWillDetailActivity.this,
-                        "login").getData(FlowEMainatinWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowEMainatinWillDetailActivity.this, "userId", "");
                 JSONArray jsonArray = new JSONArray();
                 JSONObject jsonObject = new JSONObject();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
@@ -1161,6 +1161,7 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                     ProgressDialogUtil.stopLoad();
                     Toast.makeText(FlowEMainatinWillDetailActivity.this, "请选择审批人", Toast.LENGTH_SHORT).show();
                     Looper.loop();
+                    return;
                 } else {
                     String bigUserCodes = bigResultList.toString();
                     bigUserCodes = bigUserCodes.toString().replace("[", "");
@@ -1180,21 +1181,20 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                         flowAssignld = flowAssignld.replace(":|", "|");
                         flowAssignld = flowAssignld.replace(":", "");
                     }
-                }
-
-                String url = Constant.BASE_URL2 + Constant.EXAMINEDATA;
-                DBHandler dbA = new DBHandler();
-                if (wxryreout.equals("2") && !date.equals("")) {
-                    upData = dbA.OAEMaintainder1(url, department, time, data, userCode, destName, taskId, flowAssignld, mainId,
-                            bxbmyj, wxbmyj, wxryyj, wxqkyj, sbsyryj, wxfkyj, serialNumber, comment, date, signaName);
-                } else {
-                    upData = dbA.OAEMaintainder(url, department, time, data, userCode, destName, taskId, flowAssignld, mainId,
-                            bxbmyj, wxbmyj, wxryyj, wxqkyj, sbsyryj, wxfkyj, serialNumber, comment, signaName);
-                }
-                if (upData.equals("")) {
-                    handler.sendEmptyMessage(TAG_THERE);
-                } else {
-                    handler.sendEmptyMessage(TAG_FOUR);
+                    String url = Constant.BASE_URL2 + Constant.EXAMINEDATA;
+                    DBHandler dbA = new DBHandler();
+                    if (wxryreout.equals("2") && !date.equals("")) {
+                        upData = dbA.OAEMaintainder1(url, department, time, data, userCode, destName, taskId, flowAssignld, mainId,
+                                bxbmyj, wxbmyj, wxryyj, wxqkyj, sbsyryj, wxfkyj, serialNumber, comment, date, signaName);
+                    } else {
+                        upData = dbA.OAEMaintainder(url, department, time, data, userCode, destName, taskId, flowAssignld, mainId,
+                                bxbmyj, wxbmyj, wxryyj, wxqkyj, sbsyryj, wxfkyj, serialNumber, comment, signaName);
+                    }
+                    if (upData.equals("")) {
+                        handler.sendEmptyMessage(TAG_THERE);
+                    } else {
+                        handler.sendEmptyMessage(TAG_FOUR);
+                    }
                 }
             }
         }).start();

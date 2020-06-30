@@ -796,7 +796,7 @@ public class FlowEntryWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowEntryWillDetailActivity.this,
                         "login").getData(FlowEntryWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowEntryWillDetailActivity.this,
-                        "login").getData(FlowEntryWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowEntryWillDetailActivity.this, "userId", "");
                 JSONArray jsonArray = new JSONArray();
                 JSONObject jsonObject = new JSONObject();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

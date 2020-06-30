@@ -795,7 +795,7 @@ public class FlowUseCarWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowUseCarWillDetailActivity.this,
                         "login").getData(FlowUseCarWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowUseCarWillDetailActivity.this,
-                        "login").getData(FlowUseCarWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowUseCarWillDetailActivity.this, "userId", "");
                 JSONArray jsonArray = new JSONArray();
                 JSONObject jsonObject = new JSONObject();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

@@ -725,7 +725,7 @@ public class FlowGHPayWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowGHPayWillDetailActivity.this,
                         "login").getData(FlowGHPayWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowGHPayWillDetailActivity.this,
-                        "login").getData(FlowGHPayWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowGHPayWillDetailActivity.this, "userId", "");
                 JSONArray jsonArray = new JSONArray();
                 JSONObject jsonObject = new JSONObject();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

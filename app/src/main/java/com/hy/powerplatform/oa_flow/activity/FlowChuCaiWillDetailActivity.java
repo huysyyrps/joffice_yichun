@@ -754,7 +754,7 @@ public class FlowChuCaiWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowChuCaiWillDetailActivity.this,
                         "login").getData(FlowChuCaiWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowChuCaiWillDetailActivity.this,
-                        "login").getData(FlowChuCaiWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowChuCaiWillDetailActivity.this, "userId", "");
                 jsonArray = new JSONArray();
                 jsonObject = new JSONObject();
                 formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

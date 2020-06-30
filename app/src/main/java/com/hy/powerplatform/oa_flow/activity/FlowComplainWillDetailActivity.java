@@ -1449,7 +1449,7 @@ public class FlowComplainWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowComplainWillDetailActivity.this,
                         "login").getData(FlowComplainWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowComplainWillDetailActivity.this,
-                        "login").getData(FlowComplainWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowComplainWillDetailActivity.this, "userId", "");
                 JSONObject jsonObject = new JSONObject();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
                 Date curDate = new Date(System.currentTimeMillis());

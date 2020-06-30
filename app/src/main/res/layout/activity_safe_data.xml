@@ -76,7 +76,7 @@
 
                 <TextView
                     style="@style/oaTextView"
-                    android:text="宜春市公交集团总公司购置团体意外险等" />
+                    android:text="宜春市公交集团总公司购置团体保险等" />
             </LinearLayout>
 
             <LinearLayout
@@ -94,7 +94,7 @@
 
                 <TextView
                     style="@style/oaTextView"
-                    android:text="名，意外险小写" />
+                    android:text="名，金额小写" />
 
                 <TextView
                     android:id="@+id/tvSmallMoney"

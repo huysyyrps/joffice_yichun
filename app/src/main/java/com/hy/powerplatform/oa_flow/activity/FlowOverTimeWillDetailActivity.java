@@ -422,7 +422,7 @@ public class FlowOverTimeWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowOverTimeWillDetailActivity.this,
                         "login").getData(FlowOverTimeWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowOverTimeWillDetailActivity.this,
-                        "login").getData(FlowOverTimeWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowOverTimeWillDetailActivity.this, "userId", "");
                 JSONArray jsonArray = new JSONArray();
                 JSONObject jsonObject = new JSONObject();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

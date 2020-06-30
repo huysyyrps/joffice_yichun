@@ -768,7 +768,7 @@ public class FlowGCAddWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowGCAddWillDetailActivity.this,
                         "login").getData(FlowGCAddWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowGCAddWillDetailActivity.this,
-                        "login").getData(FlowGCAddWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowGCAddWillDetailActivity.this, "userId", "");
                 jsonArray = new JSONArray();
                 jsonObject = new JSONObject();
                 formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

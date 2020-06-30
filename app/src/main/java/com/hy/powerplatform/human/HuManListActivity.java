@@ -40,13 +40,19 @@ public class HuManListActivity extends BaseActivity {
         alertDialogUtil = new AlertDialogUtil(this);
         userStatus = new SharedPreferencesHelper(this, "login").getData(this, "userStatus", "");
         rights = new SharedPreferencesHelper(this, "login").getData(this, "rights", "");
-        if (!rights.contains("ResumeView")) {
+       if (userStatus.equals("超级管理员")) {
+            rb1.setVisibility(View.VISIBLE);
+       }else if (!rights.contains("ResumeView")) {
            rb1.setVisibility(View.GONE);
-        }
-        if (!rights.contains("DriverPracticeFileView")) {
+       }
+        if (userStatus.equals("超级管理员")) {
+            rb2.setVisibility(View.VISIBLE);
+        }else if (!rights.contains("DriverPracticeFileView")) {
             rb2.setVisibility(View.GONE);
         }
-        if (!rights.contains("EmpNormalSearchView")) {
+        if (userStatus.equals("超级管理员")) {
+            rb3.setVisibility(View.VISIBLE);
+        }else if (!rights.contains("EmpNormalSearchView")) {
             rb3.setVisibility(View.GONE);
         }
     }

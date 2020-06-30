@@ -138,10 +138,6 @@ public class FlowAppealDetailActivity extends BaseActivity {
     EditText etBM;
     @BindView(R.id.llData)
     LinearLayout llData;
-    @BindView(R.id.tvLeader4)
-    TextView tvLeader4;
-    @BindView(R.id.etLeader4)
-    EditText etLeader4;
     @BindView(R.id.tvLeaderW)
     TextView tvLeaderW;
     @BindView(R.id.tvLeader1W)
@@ -150,10 +146,6 @@ public class FlowAppealDetailActivity extends BaseActivity {
     TextView tvLeader2W;
     @BindView(R.id.tvLeader3W)
     TextView tvLeader3W;
-    @BindView(R.id.tvLeader4W)
-    TextView tvLeader4W;
-    @BindView(R.id.tvLeader5W)
-    TextView tvLeader5W;
     @BindView(R.id.tvspr)
     TextView tvspr;
     @BindView(R.id.llShenPiRen)
@@ -198,8 +190,6 @@ public class FlowAppealDetailActivity extends BaseActivity {
     LinearLayout llLeader;
     @BindView(R.id.llLeader3)
     LinearLayout llLeader3;
-    @BindView(R.id.llLeader4)
-    LinearLayout llLeader4;
     @BindView(R.id.llLeader1)
     LinearLayout llLeader1;
     @BindView(R.id.llLeader2)
@@ -223,8 +213,6 @@ public class FlowAppealDetailActivity extends BaseActivity {
         tvLeader1W.setTextColor(getResources().getColor(R.color.order_stop_black));
         tvLeader2W.setTextColor(getResources().getColor(R.color.order_stop_black));
         tvLeader3W.setTextColor(getResources().getColor(R.color.order_stop_black));
-        tvLeader4W.setTextColor(getResources().getColor(R.color.order_stop_black));
-        tvLeader5W.setTextColor(getResources().getColor(R.color.order_stop_black));
         header.setTvRight("追回");
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
@@ -391,7 +379,6 @@ public class FlowAppealDetailActivity extends BaseActivity {
                     final String jbfgyj = bean.getMainform().get(0).getJbfgldyj();
                     final String jbbmyj = bean.getMainform().get(0).getBjap();
                     final String zjlyj = bean.getMainform().get(0).getZjlyj();
-                    final String dszyj = bean.getMainform().get(0).getDszyj();
                     String data = bean.getMainform().get(0).getQingshishangbaoneirong();
                     xiangguanfujian = bean.getMainform().get(0).getXiangGuanFuJian();
                     if (xiangguanfujian.equals("")) {
@@ -433,12 +420,6 @@ public class FlowAppealDetailActivity extends BaseActivity {
                         tvLeader3.setText(getJSONData(zjlyj));
                     }else {
                         llLeader3.setVisibility(View.GONE);
-                    }
-
-                    if (!dszyj.equals("")) {
-                        tvLeader4.setText(getJSONData(dszyj));
-                    }else {
-                        llLeader4.setVisibility(View.GONE);
                     }
 
                     ProgressDialogUtil.stopLoad();

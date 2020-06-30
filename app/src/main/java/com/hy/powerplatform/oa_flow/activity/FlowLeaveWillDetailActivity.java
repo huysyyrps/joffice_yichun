@@ -525,7 +525,7 @@ public class FlowLeaveWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowLeaveWillDetailActivity.this,
                         "login").getData(FlowLeaveWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowLeaveWillDetailActivity.this,
-                        "login").getData(FlowLeaveWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowLeaveWillDetailActivity.this, "userId", "");
                 jsonArray = new JSONArray();
                 jsonObject = new JSONObject();
                 formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

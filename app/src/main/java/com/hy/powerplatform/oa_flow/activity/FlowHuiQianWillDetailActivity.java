@@ -806,7 +806,7 @@ public class FlowHuiQianWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowHuiQianWillDetailActivity.this,
                         "login").getData(FlowHuiQianWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowHuiQianWillDetailActivity.this,
-                        "login").getData(FlowHuiQianWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowHuiQianWillDetailActivity.this, "userId", "");
                 jsonArray = new JSONArray();
                 jsonObject = new JSONObject();
                 formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

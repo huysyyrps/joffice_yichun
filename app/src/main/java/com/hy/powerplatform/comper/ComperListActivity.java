@@ -9,6 +9,7 @@ import com.hy.powerplatform.R;
 import com.hy.powerplatform.SharedPreferencesHelper;
 import com.hy.powerplatform.comper.activity.ShengChanYYEXListActivity;
 import com.hy.powerplatform.comper.activity.ShengChanYYListActivity;
+import com.hy.powerplatform.comper.activity.ShengChanYYNewEXListActivity;
 import com.hy.powerplatform.comper.activity.YingYunZBActivity;
 import com.hy.powerplatform.my_utils.base.BaseActivity;
 import com.hy.powerplatform.my_utils.myViews.Header;
@@ -32,6 +33,8 @@ public class ComperListActivity extends BaseActivity {
     AlertDialogUtil alertDialogUtil;
     @BindView(R.id.rb3)
     RadioButton rb3;
+    @BindView(R.id.rb4)
+    RadioButton rb4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +43,16 @@ public class ComperListActivity extends BaseActivity {
         alertDialogUtil = new AlertDialogUtil(this);
         userStatus = new SharedPreferencesHelper(this, "login").getData(this, "userStatus", "");
         rights = new SharedPreferencesHelper(this, "login").getData(this, "rights", "");
-        if (!rights.contains("OperationIndexReportView")) {
+        if (userStatus.equals("超级管理员")) {
+            rb1.setVisibility(View.VISIBLE);
+            rb3.setVisibility(View.VISIBLE);
+        } else if (!rights.contains("OperationIndexReportView")) {
             rb1.setVisibility(View.GONE);
             rb3.setVisibility(View.GONE);
         }
-        if (!rights.contains("ProductionOperationAnalysisView")) {
+        if (userStatus.equals("超级管理员")) {
+            rb2.setVisibility(View.VISIBLE);
+        } else if (!rights.contains("ProductionOperationAnalysisView")) {
             rb2.setVisibility(View.GONE);
         }
     }
@@ -64,7 +72,7 @@ public class ComperListActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.rb1, R.id.rb2,R.id.rb3})
+    @OnClick({R.id.rb1, R.id.rb2, R.id.rb3, R.id.rb4})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.rb1:
@@ -79,6 +87,14 @@ public class ComperListActivity extends BaseActivity {
                 intent = new Intent(this, ShengChanYYEXListActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.rb4:
+                intent = new Intent(this, ShengChanYYNewEXListActivity.class);
+                startActivity(intent);
+                break;
         }
+    }
+
+    @OnClick(R.id.rb4)
+    public void onViewClicked() {
     }
 }

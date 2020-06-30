@@ -811,7 +811,7 @@ public class FlowreceiveDinnerWillDetailActivity extends BaseActivity {
                 userName = new SharedPreferencesHelper(FlowreceiveDinnerWillDetailActivity.this,
                         "login").getData(FlowreceiveDinnerWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowreceiveDinnerWillDetailActivity.this,
-                        "login").getData(FlowreceiveDinnerWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowreceiveDinnerWillDetailActivity.this, "userId", "");
                 jsonArray = new JSONArray();
                 jsonObject = new JSONObject();
                 formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");

@@ -9,7 +9,7 @@ package com.hy.powerplatform;
 public class ApiAddress {
 
     //生成环境
-    public final static String api = "http://58.17.74.135:6775/joffice/";
+//    public final static String api = "http://58.17.74.135:6770/joffice/";
 
     /**************************************************************************************/
     //登录

@@ -153,10 +153,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
     TextView tvBM;
     @BindView(R.id.etBM)
     EditText etBM;
-    @BindView(R.id.tvLeader4)
-    TextView tvLeader4;
-    @BindView(R.id.etLeader4)
-    EditText etLeader4;
     @BindView(R.id.llData)
     LinearLayout llData;
     @BindView(R.id.tvLeaderW)
@@ -167,10 +163,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
     TextView tvLeader2W;
     @BindView(R.id.tvLeader3W)
     TextView tvLeader3W;
-    @BindView(R.id.tvLeader4W)
-    TextView tvLeader4W;
-    @BindView(R.id.tvLeader5W)
-    TextView tvLeader5W;
     @BindView(R.id.tvspr)
     TextView tvspr;
     @BindView(R.id.llShenPiRen)
@@ -217,13 +209,11 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
     LinearLayout llLeader;
     @BindView(R.id.llLeader3)
     LinearLayout llLeader3;
-    @BindView(R.id.llLeader4)
-    LinearLayout llLeader4;
     @BindView(R.id.llLeader1)
     LinearLayout llLeader1;
     @BindView(R.id.llLeader2)
     LinearLayout llLeader2;
-    private String name, taskId, executionId, res, bmfzryj, xqbmyj, xqbmldyj, jsbmyj, jsbmldyj, zjlyj = "", dszyj = "";
+    private String name, taskId, executionId, res, bmfzryj, xqbmyj, xqbmldyj, jsbmyj, jsbmldyj, zjlyj = "";
     private String mainId, signaName, destName, destType, checkTask, qianzhiData = "";
     String leader = "";
     String leaderCode = "";
@@ -232,7 +222,7 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
     String tag = "noEnd";
     String comment = "";
     String downloadData = "";
-    String bmreout, xqreout, xqldreout, jsreout, jsldreout, csreout, jcreout, zjlreout, dszreout, flowAssignld, serialNumber = "";
+    String bmreout, xqreout, xqldreout, jsreout, jsldreout, csreout, jcreout, zjlreout, flowAssignld, serialNumber = "";
 
     String[] bigNametemp = null;
     String[] bigCodetemp = null;
@@ -1363,11 +1353,10 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 xqbmldyj = bean.getMainform().get(0).getJbfgldyj();
                 jsbmyj = bean.getMainform().get(0).getBjap();
                 jsbmldyj = bean.getMainform().get(0).getZjlyj();
-                dszyj = bean.getMainform().get(0).getDszyj();
                 userName = new SharedPreferencesHelper(FlowAppealWillDetailActivity.this,
                         "login").getData(FlowAppealWillDetailActivity.this, "userStatus", "");
                 userCode = new SharedPreferencesHelper(FlowAppealWillDetailActivity.this,
-                        "login").getData(FlowAppealWillDetailActivity.this, "userCode", "");
+                        "login").getData(FlowAppealWillDetailActivity.this, "userId", "");
                 jsonArray = new JSONArray();
                 jsonObject = new JSONObject();
                 formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
@@ -1470,32 +1459,12 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                     }
                 }
 
-                if (etLeader4.getVisibility() == View.VISIBLE) {
-                    comment = "";
-                    comment = etLeader4.getText().toString();
-                    try {
-                        jsonObject.put("ui", userCode);
-                        jsonObject.put("un", userName);
-                        jsonObject.put("c", str);
-                        jsonObject.put("v", etLeader4.getText().toString());
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    jsonArray.put(jsonObject);
-                    if (dszyj.equals("")) {
-                        dszyj = jsonArray.toString();
-                    } else {
-                        dszyj = dszyj + "," + jsonArray.toString();
-                        dszyj = dszyj.toString().replace("],[", ",");
-                    }
-                }
-
                 if (comment.equals("")) {
-                    if (!dszreout.equals("2") && !bmreout.equals("2") && !xqreout.equals("2") && !xqldreout.equals("2")
+                    if (!bmreout.equals("2") && !xqreout.equals("2") && !xqldreout.equals("2")
                             && !jsreout.equals("2") && !jsldreout.equals("2")) {
                         comment = "";
                         personSession();
-                    } else if (!etLeader4.getText().toString().equals("") && !bmfzryj.equals("") && !jsbmldyj.equals("") && !jsbmyj.equals("")
+                    } else if (!bmfzryj.equals("") && !jsbmldyj.equals("") && !jsbmyj.equals("")
                             && !xqbmldyj.equals("") && !jsbmyj.equals("")) {
                         comment = "";
                         personSession();
@@ -1523,7 +1492,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                     xqbmldyj = bean.getMainform().get(0).getJbfgldyj();
                     jsbmyj = bean.getMainform().get(0).getBjap();
                     jsbmldyj = bean.getMainform().get(0).getZjlyj();
-                    dszyj = bean.getMainform().get(0).getDszyj();
                     Toast.makeText(this, "请点击加号选择路径", Toast.LENGTH_SHORT).show();
                 } else {
                     sendData();
@@ -1742,7 +1710,7 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                 DBHandler dbA = new DBHandler();
                 upData = dbA.OAAppealLeader(url, department, person, time, userCode, data,
                         destName, taskId, flowAssignld, mainId, xqbmyj, xqbmldyj, jsbmyj, jsbmldyj,
-                        serialNumber, comment, liushuihao, bmfzryj, dszyj, signaName);
+                        serialNumber, comment, liushuihao, bmfzryj, "", signaName);
                 Log.e("soso", "这里走了吗" + upData);
                 if (upData.equals("")) {
                     handler.sendEmptyMessage(TAG_THERE);
@@ -1804,7 +1772,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                     xqbmldyj = bean.getMainform().get(0).getJbfgldyj();
                     jsbmyj = bean.getMainform().get(0).getBjap();
                     jsbmldyj = bean.getMainform().get(0).getZjlyj();
-                    dszyj = bean.getMainform().get(0).getDszyj();
                     mainId = String.valueOf(bean.getMainform().get(0).getMainId());
                     for (int i = 0; i < bean.getTrans().size(); i++) {
                         beanList.add(bean.getTrans().get(i));
@@ -1922,28 +1889,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                         llLeader.setVisibility(View.GONE);
                     }
 
-                    String word = "";
-                    if (dszyj != null && !dszyj.equals("")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(dszyj);
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                if (!jsonObject.getString("v").toString().equals("")) {
-                                    word = word + jsonObject.getString("v") + "\u3000" + jsonObject.getString("un") + ":" + jsonObject.getString("c") + "\n";
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (tvLeader4.getVisibility() == View.VISIBLE) {
-                            tvLeader4.setText(word);
-                            etLeader4.setHint(word);
-                        } else {
-                            etLeader4.setHint(word);
-                        }
-                    }else {
-                        llLeader4.setVisibility(View.GONE);
-                    }
                     String formRights = bean.getFormRights();
                     try {
                         JSONObject jsonObject = new JSONObject(formRights);
@@ -1952,7 +1897,6 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                         jsreout = jsonObject.getString("bjap");
                         jsldreout = jsonObject.getString("zjlyj");
                         bmreout = jsonObject.getString("bmfzryj");
-                        dszreout = jsonObject.getString("dszyj");
                         if (bmreout.equals("2")) {
                             tvBM.setVisibility(View.GONE);
                             etBM.setVisibility(View.VISIBLE);
@@ -1998,15 +1942,7 @@ public class FlowAppealWillDetailActivity extends BaseActivity {
                             etLeader3.setVisibility(View.GONE);
                         }
 
-                        if (dszreout.equals("2")) {
-                            tvLeader4.setVisibility(View.GONE);
-                            etLeader4.setVisibility(View.VISIBLE);
-                            llLeader4.setVisibility(View.VISIBLE);
-                        } else {
-                            tvLeader4.setVisibility(View.VISIBLE);
-                            etLeader4.setVisibility(View.GONE);
-                        }
-                        if (dszreout.equals("1") && bmreout.equals("1") && xqreout.equals("1") && xqldreout.equals("1") && jsreout.equals("1") && jsldreout.equals("1")) {
+                        if (bmreout.equals("1") && xqreout.equals("1") && xqldreout.equals("1") && jsreout.equals("1") && jsldreout.equals("1")) {
                             Toast.makeText(FlowAppealWillDetailActivity.this, "您对当前流程只有读取权限", Toast.LENGTH_SHORT).show();
                         }
                     } catch (JSONException e) {
