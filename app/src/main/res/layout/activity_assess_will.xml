@@ -10,7 +10,8 @@
         style="@style/Heander"
         app:header_is_right_tv_visiable="true"
         app:header_title="员工入职流程表"
-        app:header_title_right="@string/nullify"></com.hy.powerplatform.my_utils.myViews.Header>
+        app:header_title_right="@string/nullify">
+    </com.hy.powerplatform.my_utils.myViews.Header>
 
     <ScrollView
         android:id="@+id/scrollView"

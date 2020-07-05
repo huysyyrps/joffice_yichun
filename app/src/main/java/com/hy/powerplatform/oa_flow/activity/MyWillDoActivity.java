@@ -20,6 +20,7 @@ import com.hy.powerplatform.my_utils.base.MyApplication;
 import com.hy.powerplatform.my_utils.myViews.Header;
 import com.hy.powerplatform.my_utils.utils.ProgressDialogUtil;
 import com.hy.powerplatform.my_utils.utils.time_select.CustomDatePickerDay;
+import com.hy.powerplatform.oa_flow.activity.newgoodpurchase.NewGoodPurchaseWillDetailActivity;
 import com.hy.powerplatform.oa_flow.adapter.MyWillDoAdapter;
 import com.hy.powerplatform.oa_flow.bean.MyWillDo;
 
@@ -195,6 +196,13 @@ public class MyWillDoActivity extends BaseActivity implements MyWillDoAdapter.On
         Intent intent = null;
         if (beanList.get(position).getFormDefId().equals(Constant.EMAINTAIN)) {
             intent = new Intent(this, FlowEMainatinWillDetailActivity.class);
+            intent.putExtra("activityName", beanList.get(position).getActivityName());
+            intent.putExtra("taskId", beanList.get(position).getTaskId());
+            intent.putExtra("piId", beanList.get(position).getPiId());
+            intent.putExtra("executionId", beanList.get(position).getExecutionId());
+            startActivity(intent);
+        }else if (beanList.get(position).getFormDefId().equals(Constant.NEWGOODPUECHASE)) {
+            intent = new Intent(this, NewGoodPurchaseWillDetailActivity.class);
             intent.putExtra("activityName", beanList.get(position).getActivityName());
             intent.putExtra("taskId", beanList.get(position).getTaskId());
             intent.putExtra("piId", beanList.get(position).getPiId());

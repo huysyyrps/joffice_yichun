@@ -7,6 +7,7 @@ import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +25,7 @@ import com.hy.powerplatform.my_utils.utils.BaseRecyclerAdapter;
 import com.hy.powerplatform.my_utils.utils.BaseViewHolder;
 import com.hy.powerplatform.my_utils.utils.ProgressDialogUtil;
 import com.hy.powerplatform.my_utils.utils.time_select.CustomDatePickerDay;
+import com.hy.powerplatform.oa_flow.MainWorkActivity;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -94,6 +96,25 @@ public class DBZXListActivity extends BaseActivity {
                 holder.setText(R.id.tvTaskName, resultBean.getTaskName());
                 holder.setText(R.id.tvContent, resultBean.getTaskContext());
                 holder.setText(R.id.tvTime, resultBean.getCreateTime());
+
+                if (resultBean.getOperStatus()==3&&resultBean.getLowerWorkId()==0){
+                    LinearLayout linearLayout = holder.getView(R.id.task_add);
+                    linearLayout.setVisibility(View.VISIBLE);
+                }else {
+//                    holder.setVisitiom(R.id.task_add);
+                    LinearLayout linearLayout = holder.getView(R.id.task_add);
+                    linearLayout.setVisibility(View.GONE);
+                }
+                holder.setOnClickListener(R.id.task_add_button, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent  intent = new Intent(DBZXListActivity.this, MainWorkActivity.class);
+                        String workId = resultBean.getWorkId()+"";
+                        intent.putExtra("tag","3");
+                        intent.putExtra("workId",workId);
+                        startActivity(intent);
+                    }
+                });
                 String pizhu = resultBean.getAnnotation();
                 String staue = resultBean.getUpdateType();
                 if (staue==null){

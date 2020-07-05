@@ -146,29 +146,66 @@
         </LinearLayout>
 
         <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:minHeight="33dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="时\t\t\t\t\t\t间:"
+            android:gravity="center"
+            android:textColor="@color/ziti"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            android:textColor="@color/ziti"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/task_add"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:minHeight="33dp"
             android:layout_weight="1"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/tv3"
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:id="@+id/tv4"
+                android:layout_width="100dp"
+
                 android:layout_height="match_parent"
-                android:text="时\t\t\t\t\t\t间:"
+                android:text="操\t\t\t\t\t\t作:"
                 android:gravity="center"
                 android:textColor="@color/ziti"
                 android:textSize="16dp"/>
+            <Button
+                android:id="@+id/task_add_button"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="下发任务"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                android:background="@drawable/shape_border_blue"
 
-            <TextView
-                android:id="@+id/tvTime"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center_vertical"
-                android:textColor="@color/ziti"
-                android:textSize="16dp" />
+                android:layout_marginBottom="10dp"/>
+
+            <!--<TextView-->
+                <!--android:id="@+id/tvTime"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="3"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:textColor="@color/ziti"-->
+                <!--android:textSize="16dp" />-->
         </LinearLayout>
     </LinearLayout>
 

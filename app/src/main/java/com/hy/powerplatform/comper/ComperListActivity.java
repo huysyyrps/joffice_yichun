@@ -7,8 +7,7 @@ import android.widget.RadioButton;
 
 import com.hy.powerplatform.R;
 import com.hy.powerplatform.SharedPreferencesHelper;
-import com.hy.powerplatform.comper.activity.ShengChanYYEXListActivity;
-import com.hy.powerplatform.comper.activity.ShengChanYYListActivity;
+import com.hy.powerplatform.comper.activity.ShengChanYYEXListActivity1;
 import com.hy.powerplatform.comper.activity.ShengChanYYNewEXListActivity;
 import com.hy.powerplatform.comper.activity.YingYunZBActivity;
 import com.hy.powerplatform.my_utils.base.BaseActivity;
@@ -76,25 +75,32 @@ public class ComperListActivity extends BaseActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.rb1:
-                intent = new Intent(this, ShengChanYYListActivity.class);
+                intent = new Intent(this, ShengChanYYEXListActivity1.class);
                 startActivity(intent);
                 break;
             case R.id.rb2:
                 intent = new Intent(this, YingYunZBActivity.class);
                 startActivity(intent);
                 break;
+//            case R.id.rb3:
+//                intent = new Intent(this, ShengChanYYEXListActivity.class);
+//                startActivity(intent);
+//                break;
+//            case R.id.rb4:
+//                intent = new Intent(this, ShengChanYYNewEXListActivity.class);
+//                intent.putExtra("tag", "1");
+//                startActivity(intent);
+//                break;
             case R.id.rb3:
-                intent = new Intent(this, ShengChanYYEXListActivity.class);
+                intent = new Intent(this, ShengChanYYNewEXListActivity.class);
+                intent.putExtra("tag", "2");
                 startActivity(intent);
                 break;
             case R.id.rb4:
                 intent = new Intent(this, ShengChanYYNewEXListActivity.class);
+                intent.putExtra("tag", "3");
                 startActivity(intent);
                 break;
         }
-    }
-
-    @OnClick(R.id.rb4)
-    public void onViewClicked() {
     }
 }

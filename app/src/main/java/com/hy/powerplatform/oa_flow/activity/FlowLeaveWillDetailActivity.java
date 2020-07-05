@@ -986,6 +986,7 @@ public class FlowLeaveWillDetailActivity extends BaseActivity {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
                 cb1.setChecked(true);
+                cb2.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -996,6 +997,8 @@ public class FlowLeaveWillDetailActivity extends BaseActivity {
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
                 cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -1007,6 +1010,9 @@ public class FlowLeaveWillDetailActivity extends BaseActivity {
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
                 cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -1023,6 +1029,10 @@ public class FlowLeaveWillDetailActivity extends BaseActivity {
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
                 cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -1040,6 +1050,11 @@ public class FlowLeaveWillDetailActivity extends BaseActivity {
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
                 cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);

@@ -8,6 +8,7 @@
         android:id="@+id/btnT"
         android:layout_width="45dp"
         android:layout_height="45dp"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center_horizontal"
         android:background="@color/color_bg_selected"
         android:src="@drawable/add"

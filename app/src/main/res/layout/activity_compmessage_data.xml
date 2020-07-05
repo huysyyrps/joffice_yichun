@@ -374,6 +374,38 @@
                             android:checked="true"
                             android:visibility="gone" />
                     </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll6"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/rb7"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/rb8"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/rb9"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:visibility="gone" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <View style="@style/line"></View>

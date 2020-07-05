@@ -106,7 +106,8 @@ public class ListActivity extends BaseActivity {
                     && !dataList.contains(Constant.WORKPUECHASENAME)
                     && !dataList.contains(Constant.CCTPUECHASENAME)
                     && !dataList.contains(Constant.GHPUECHASENAME)
-                    && !dataList.contains(Constant.ZGSPAYNAME)) {
+                    && !dataList.contains(Constant.ZGSPAYNAME)
+                    && !dataList.contains(Constant.NEWGOODPUECHASENAME)) {
                 roluesList.remove(3);
                 numList.remove(3);
             }

@@ -495,6 +495,8 @@ public class FlowHuiQianWillDetailActivity extends BaseActivity {
             if (bigNametemp.length == 2) {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -504,6 +506,9 @@ public class FlowHuiQianWillDetailActivity extends BaseActivity {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -514,6 +519,10 @@ public class FlowHuiQianWillDetailActivity extends BaseActivity {
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -529,6 +538,11 @@ public class FlowHuiQianWillDetailActivity extends BaseActivity {
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -545,6 +559,12 @@ public class FlowHuiQianWillDetailActivity extends BaseActivity {
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -562,6 +582,13 @@ public class FlowHuiQianWillDetailActivity extends BaseActivity {
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
+                cb7.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -582,6 +609,14 @@ public class FlowHuiQianWillDetailActivity extends BaseActivity {
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
+                cb7.setChecked(true);
+                cb8.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -604,6 +639,15 @@ public class FlowHuiQianWillDetailActivity extends BaseActivity {
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
                 cb9.setText(bigNametemp[8]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
+                cb7.setChecked(true);
+                cb8.setChecked(true);
+                cb9.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -1278,12 +1322,21 @@ public class FlowHuiQianWillDetailActivity extends BaseActivity {
                             userName = bean1.getData().get(1).getUserCodes();
                             nametemp = userName.split(",");
                             codetemp = userCode.split(",");
+                        } else if (bean1.getData().size() == 1) {
+                            if (bean1.getData().get(0).getRole().equals("办结安排")) {
+                                role = bean1.getData().get(0).getRole();
+                                userCode = bean1.getData().get(0).getUserNames();
+                                userName = bean1.getData().get(0).getUserCodes();
+                                nametemp = userName.split(",");
+                                codetemp = userCode.split(",");
+                            } else {
+                                leader = bean1.getData().get(0).getRole();
+                                leaderCode = bean1.getData().get(0).getUserNames();
+                                leaderName = bean1.getData().get(0).getUserCodes();
+                                bigNametemp = leaderName.split(",");
+                                bigCodetemp = leaderCode.split(",");
+                            }
                         }
-                        leader = bean1.getData().get(0).getRole();
-                        leaderCode = bean1.getData().get(0).getUserNames();
-                        leaderName = bean1.getData().get(0).getUserCodes();
-                        bigNametemp = leaderName.split(",");
-                        bigCodetemp = leaderCode.split(",");
                     }
                     setCbRbVer();
                     break;

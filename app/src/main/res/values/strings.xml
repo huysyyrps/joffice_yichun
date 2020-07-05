@@ -289,6 +289,8 @@
     <string name="oaflow_rb3">流程审批</string>
     <string name="oaflow_rb4">通讯录</string>
     <string name="oaflow_rb5">督办</string>
+    <string name="oaflow_rb6">下发任务</string>
+    <string name="oaflow_rb7">执行任务</string>
 
     <string name="oaflow_metting_rb1">待我参加</string>
     <string name="oaflow_metting_rb2">我已参加</string>
@@ -308,6 +310,8 @@
 
     <string name="oaflow_comper_rb1">营运指标</string>
     <string name="oaflow_comper_rb2">生产营运</string>
+    <string name="oaflow_comper_rb3">时间表</string>
+    <string name="oaflow_comper_rb4">运行表</string>
     <string name="department">部门</string>
 
     <string name="oaflow_statist_rb1">人员统计</string>

@@ -293,6 +293,8 @@ public class LoginActivity extends BaseActivity implements LoginView {
                                         Looper.loop();
                                     }
                                     String cookieString = connection.getHeaderField("Set-Cookie");
+                                    new SharedPreferencesHelper(MyApplication.getContextObject(), "login").saveData(MyApplication.getContextObject(),
+                                            "cookiess", cookieString);
                                     cookieString = cookieString.substring(0, cookieString.indexOf(";"));
                                     new SharedPreferencesHelper(MyApplication.getContextObject(), "login").saveData(MyApplication.getContextObject(),
                                             "session", cookieString);

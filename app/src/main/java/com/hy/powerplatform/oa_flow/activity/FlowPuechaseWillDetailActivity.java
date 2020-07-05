@@ -326,6 +326,7 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
     String hejidj, hejije, hejisl = "";
     String[] bigNametemp = null;
     String[] bigCodetemp = null;
+    int lineNum = 0;
     String name1, name2, name3, name4, name5 = "";
     String num1, num2, num3, num4, num5 = "";
     String money1, money2, money3, money4, money5 = "";
@@ -959,23 +960,47 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 rb3.setVisibility(View.INVISIBLE);
             }
             if (nametemp.length == 2) {
-                rb1.setText(nametemp[0]);
-                rb2.setText(nametemp[1]);
-                rb1.setChecked(true);
-                rb2.setChecked(true);
-                ll3.setVisibility(View.VISIBLE);
-                rb1.setVisibility(View.VISIBLE);
-                rb2.setVisibility(View.VISIBLE);
-                rb3.setVisibility(View.INVISIBLE);
+                if (lineNum==3){
+                    rb1.setText(nametemp[0]);
+                    rb2.setText(nametemp[1]);
+                    rb1.setChecked(true);
+                    rb2.setChecked(true);
+                    ll3.setVisibility(View.VISIBLE);
+                    rb1.setVisibility(View.VISIBLE);
+                    rb2.setVisibility(View.VISIBLE);
+                    rb3.setVisibility(View.INVISIBLE);
+                }else {
+                    rb1.setText(nametemp[0]);
+                    rb2.setText(nametemp[1]);
+                    ll3.setVisibility(View.VISIBLE);
+                    rb1.setVisibility(View.VISIBLE);
+                    rb2.setVisibility(View.VISIBLE);
+                    rb3.setVisibility(View.INVISIBLE);
+                }
+
             }
             if (nametemp.length == 3) {
-                rb1.setText(nametemp[0]);
-                rb2.setText(nametemp[1]);
-                rb3.setText(nametemp[2]);
-                ll3.setVisibility(View.VISIBLE);
-                rb1.setVisibility(View.VISIBLE);
-                rb2.setVisibility(View.VISIBLE);
-                rb3.setVisibility(View.VISIBLE);
+                if (lineNum==3){
+                    rb1.setText(nametemp[0]);
+                    rb2.setText(nametemp[1]);
+                    rb3.setText(nametemp[2]);
+                    rb1.setChecked(true);
+                    rb2.setChecked(true);
+                    rb3.setChecked(true);
+                    ll3.setVisibility(View.VISIBLE);
+                    rb1.setVisibility(View.VISIBLE);
+                    rb2.setVisibility(View.VISIBLE);
+                    rb3.setVisibility(View.VISIBLE);
+                }else {
+                    rb1.setText(nametemp[0]);
+                    rb2.setText(nametemp[1]);
+                    rb3.setText(nametemp[2]);
+                    ll3.setVisibility(View.VISIBLE);
+                    rb1.setVisibility(View.VISIBLE);
+                    rb2.setVisibility(View.VISIBLE);
+                    rb3.setVisibility(View.VISIBLE);
+                }
+
             }
             if (nametemp.length == 4) {
                 rb1.setText(nametemp[0]);
@@ -1048,6 +1073,9 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -1058,6 +1086,10 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -1073,6 +1105,11 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -1089,6 +1126,12 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -1106,6 +1149,13 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
+                cb7.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -1126,6 +1176,14 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
+                cb7.setChecked(true);
+                cb8.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -1148,6 +1206,15 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
                 cb9.setText(bigNametemp[8]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
+                cb7.setChecked(true);
+                cb8.setChecked(true);
+                cb9.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -2284,25 +2351,31 @@ public class FlowPuechaseWillDetailActivity extends BaseActivity {
                     Gson gson1 = new Gson();
                     FlowContractPerson bean1 = gson1.fromJson(qianzhiData, FlowContractPerson.class);
                     if (bean1.getData() != null) {
-                        if (bean1.getData().size() > 1) {
+                        if (bean1.getData().size() == 2) {
                             role = bean1.getData().get(1).getRole();
                             userCode = bean1.getData().get(1).getUserNames();
                             userName = bean1.getData().get(1).getUserCodes();
                             nametemp = userName.split(",");
                             codetemp = userCode.split(",");
+                        } else if (bean1.getData().size() == 3) {
+//                            lineNum = 3;
+//                            role = bean1.getData().get(0).getRole() + ":" + bean1.getData().get(1).getRole() + ":" + bean1.getData().get(2).getRole();
+//                            userCode = bean1.getData().get(0).getUserNames() + ":" + bean1.getData().get(1).getUserNames() + ":" + bean1.getData().get(2).getUserNames();
+//                            userName = bean1.getData().get(0).getUserCodes() + "," + bean1.getData().get(1).getUserCodes() + "," + bean1.getData().get(2).getUserCodes();
+//                            nametemp = userName.split(",");
+//                            codetemp = userCode.split(",");
+                            leader = bean1.getData().get(0).getRole() + ":" + bean1.getData().get(1).getRole() + ":" + bean1.getData().get(2).getRole();
+                            leaderCode = bean1.getData().get(0).getUserNames() + ":" + bean1.getData().get(1).getUserNames() + ":" + bean1.getData().get(2).getUserNames();
+                            leaderName = bean1.getData().get(0).getUserCodes() + "," + bean1.getData().get(1).getUserCodes() + "," + bean1.getData().get(2).getUserCodes();
+                            bigNametemp = leaderName.split(",");
+                            bigCodetemp = leaderCode.split(",");
+                        } else {
+                            leader = bean1.getData().get(0).getRole();
+                            leaderCode = bean1.getData().get(0).getUserNames();
+                            leaderName = bean1.getData().get(0).getUserCodes();
+                            bigNametemp = leaderName.split(",");
+                            bigCodetemp = leaderCode.split(",");
                         }
-                        if (bean1.getData().size() > 2) {
-                            role = bean1.getData().get(1).getRole() + ":" + bean1.getData().get(2).getRole();
-                            userCode = bean1.getData().get(1).getUserNames() + ":" + bean1.getData().get(2).getUserNames();
-                            userName = bean1.getData().get(1).getUserCodes() + "," + bean1.getData().get(2).getUserCodes();
-                            nametemp = userName.split(",");
-                            codetemp = userCode.split(",");
-                        }
-                        leader = bean1.getData().get(0).getRole();
-                        leaderCode = bean1.getData().get(0).getUserNames();
-                        leaderName = bean1.getData().get(0).getUserCodes();
-                        bigNametemp = leaderName.split(",");
-                        bigCodetemp = leaderCode.split(",");
                     }
                     setCbRbVer();
                     break;

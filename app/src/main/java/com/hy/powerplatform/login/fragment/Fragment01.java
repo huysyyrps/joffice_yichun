@@ -43,6 +43,7 @@ import com.hy.powerplatform.login.bean.GgNum;
 import com.hy.powerplatform.login.bean.HyNum;
 import com.hy.powerplatform.login.bean.LoginPerson;
 import com.hy.powerplatform.login.bean.OAFlowNum;
+import com.hy.powerplatform.login.bean.RWSend;
 import com.hy.powerplatform.login.bean.YingYunData;
 import com.hy.powerplatform.login.bean.ZB;
 import com.hy.powerplatform.my_utils.base.Constant;
@@ -492,6 +493,49 @@ public class Fragment01 extends Fragment {
     }
 
     /**
+     */
+    public static String getMonthAgo(Date date) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.MONTH, -1);
+        String monthAgo = simpleDateFormat.format(calendar.getTime());
+        return monthAgo;
+    }
+
+    private void getRwSendNum() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");// HH:mm:ss
+        Date date = new Date(System.currentTimeMillis());
+        simpleDateFormat.format(date);
+        final String path_url = Constant.BASE_URL2 + "task/getNumLowerHairWorkTask.do"
+                +"?begin="+getMonthAgo(date)+"&end="+simpleDateFormat.format(date);
+        httpUtil.getAsynHttp(path_url, new OkHttpUtil.ResultCallback() {
+            @Override
+            public void onError(Request request, Exception e) {
+//                Log.i("main", "response:" + e.toString());
+                Message message = new Message();
+                Bundle b = new Bundle();
+                b.putString("error", e.toString());
+                message.setData(b);
+                message.what = TAG_SIX;
+                handler.sendMessage(message);
+            }
+
+            @Override
+            public void onResponse(Response response) throws IOException {
+//                Log.i("main", "response:" + response.body().string());
+                String data = response.body().string();
+                Message message = new Message();
+                Bundle b = new Bundle();
+                b.putString("data", data);
+                message.setData(b);
+                message.what = 33;
+                handler.sendMessage(message);
+            }
+        });
+    }
+
+    /**
      * 选择时间
      */
     private void initDatePicker() {
@@ -912,12 +956,27 @@ public class Fragment01 extends Fragment {
                     getHyNum();
                     break;
                 case TAG_NINE:
+
                     Bundle hyNum = msg.getData();
                     String hyNumData = hyNum.getString("data");
                     HyNum beanHyNum = new Gson().fromJson(hyNumData, HyNum.class);
                     num = num + Integer.parseInt(beanHyNum.getResult().get(0).getDcjnum());
 //                    num = num+Integer.parseInt(beanHyNum.getResult().get(0).getYcjnum());
                     num = num + Integer.parseInt(beanHyNum.getResult().get(0).getDknum());
+//                    num = num+Integer.parseInt(beanHyNum.getResult().get(0).getYknum());
+                    getRwSendNum();
+//                    //添加模块
+//                    addItem();
+//                    setItemAdapter();
+//                    ProgressDialogUtil.stopLoad();
+                    break;
+                case 33:
+                    Bundle reSendNum = msg.getData();
+                    String reSendNumData = reSendNum.getString("data");
+                    RWSend rWSendBean = new Gson().fromJson(reSendNumData, RWSend.class);
+                    num = num + Integer.parseInt(rWSendBean.getIsCheck());
+//                    num = num+Integer.parseInt(beanHyNum.getResult().get(0).getYcjnum());
+                    num = num + Integer.parseInt(rWSendBean.getIsImplement());
 //                    num = num+Integer.parseInt(beanHyNum.getResult().get(0).getYknum());
                     //添加模块
                     addItem();

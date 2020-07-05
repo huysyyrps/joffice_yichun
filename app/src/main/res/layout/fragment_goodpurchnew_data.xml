@@ -1,0 +1,2921 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hy.powerplatform.oa_flow.fragment.FragmentCarData">
+
+    <com.hy.powerplatform.my_utils.myViews.Header
+        android:id="@id/header"
+        style="@style/Heander"
+        android:visibility="gone">
+    </com.hy.powerplatform.my_utils.myViews.Header>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/oaTextView"
+                    android:text="部门: *" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/shouye" />
+
+                <EditText
+                    android:id="@+id/etClass"
+                    style="@style/oaEditText"
+                    android:hint="请填写部门" />
+            </LinearLayout>
+
+            <View style="@style/line"></View>
+
+            <include layout="@layout/select_person" />
+
+            <View style="@style/line"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/oaTextView"
+                    android:text="时间: *" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/shouye" />
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    style="@style/oaEditText"
+                    android:layout_weight="2.5" />
+            </LinearLayout>
+
+            <View style="@style/line"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/oaTextView"
+                    android:text="资产类型: *" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/shouye" />
+
+                <Spinner
+                    android:id="@+id/spinnerzc"
+                    style="@style/oaEditText"
+                    android:layout_weight="2.5" />
+
+                <TextView
+                    android:id="@+id/tvZc"
+                    style="@style/oaEditText"
+                    android:layout_weight="2.5"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <View style="@style/line"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/oaTextView"
+                    android:text="物品类型: *" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/shouye" />
+
+                <Spinner
+                    android:id="@+id/spinnertype"
+                    style="@style/oaEditText"
+                    android:layout_weight="2.5" />
+
+                <TextView
+                    android:id="@+id/tvtype"
+                    style="@style/oaEditText"
+                    android:layout_weight="2.5"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <View style="@style/line"></View>
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="名称" />
+
+                        <TextView
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="规格" />
+
+                        <TextView
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text="预算" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text="数量" />
+
+                        <TextView
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text="单价" />
+
+                        <TextView
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text="金额" />
+
+                        <TextView
+                            style="@style/TextView"
+                            android:layout_width="80dp"
+                            android:gravity="center"
+                            android:text="操作" />
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll1"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/etName1"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvName1"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etGG1"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvGG1"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etYS1"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvYS1"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etNum1"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvNum1"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etMoney1"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvMoney1"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etAllMoney1"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvAllMoney1"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvAdd1"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="+" />
+
+                            <TextView
+                                android:id="@+id/tvCut1"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="-" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll2"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etName2"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvName2"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etGG2"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvGG2"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etYS2"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvYS2"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etNum2"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvNum2"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etMoney2"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvMoney2"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etAllMoney2"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvAllMoney2"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvAdd2"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="+" />
+
+                            <TextView
+                                android:id="@+id/tvCut2"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="-" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll3"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etName3"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvName3"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etGG3"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvGG3"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etYS3"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvYS3"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etNum3"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvNum3"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etMoney3"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvMoney3"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etAllMoney3"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvAllMoney3"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvAdd3"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="+" />
+
+                            <TextView
+                                android:id="@+id/tvCut3"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="-" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll4"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etName4"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvName4"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etGG4"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvGG4"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etYS4"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvYS4"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etNum4"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvNum4"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etMoney4"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvMoney4"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etAllMoney4"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvAllMoney4"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvAdd4"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="+" />
+
+                            <TextView
+                                android:id="@+id/tvCut4"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="-" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll5"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etName5"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvName5"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etGG5"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvGG5"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etYS5"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvYS5"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etNum5"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvNum5"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etMoney5"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvMoney5"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etAllMoney5"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvAllMoney5"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvAdd5"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="+" />
+
+                            <TextView
+                                android:id="@+id/tvCut5"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="-" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll6"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etName6"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvName6"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etGG6"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvGG6"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etYS6"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvYS6"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etNum6"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvNum6"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etMoney6"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvMoney6"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etAllMoney6"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvAllMoney6"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvAdd6"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="+" />
+
+                            <TextView
+                                android:id="@+id/tvCut6"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="-" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll7"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etName7"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvName7"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etGG7"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvGG7"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etYS7"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvYS7"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etNum7"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvNum7"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etMoney7"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvMoney7"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etAllMoney7"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvAllMoney7"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvAdd7"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="+" />
+
+                            <TextView
+                                android:id="@+id/tvCut7"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="-" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll8"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etName8"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvName8"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etGG8"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvGG8"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etYS8"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvYS8"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etNum8"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvNum8"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etMoney8"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvMoney8"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etAllMoney8"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvAllMoney8"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvAdd8"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="+" />
+
+                            <TextView
+                                android:id="@+id/tvCut8"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="-" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll9"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etName9"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvName9"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etGG9"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvGG9"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etYS9"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvYS9"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etNum9"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvNum9"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etMoney9"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvMoney9"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etAllMoney9"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvAllMoney9"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvAdd9"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="+" />
+
+                            <TextView
+                                android:id="@+id/tvCut9"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="-" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll10"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etName10"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvName10"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etGG10"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvGG10"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etYS10"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvYS10"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etNum10"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvNum10"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etMoney10"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:inputType="number|numberDecimal"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvMoney10"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/etAllMoney10"
+                            style="@style/EditText1"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/tvAllMoney10"
+                            style="@style/TextView"
+                            android:layout_width="60dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvAdd10"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="+" />
+
+                            <TextView
+                                android:id="@+id/tvCut10"
+                                style="@style/TextView"
+                                android:layout_width="60dp"
+                                android:gravity="center"
+                                android:text="-" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/oaTextView"
+                    android:text="数量合计: *" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/shouye" />
+
+                <TextView
+                    android:id="@+id/tvAllNum"
+                    style="@style/oaEditText"
+                    android:layout_weight="2.5" />
+            </LinearLayout>
+
+            <View style="@style/line"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/oaTextView"
+                    android:text="金额合计: *" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/shouye" />
+
+                <TextView
+                    android:id="@+id/tvHeJi"
+                    style="@style/oaEditText"
+                    android:layout_weight="2.5" />
+            </LinearLayout>
+
+            <View style="@style/line"></View>
+
+            <HorizontalScrollView
+                android:id="@+id/HSView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="批复名称" />
+
+                        <TextView
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="批复数量" />
+
+                        <TextView
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="批复单价" />
+
+                        <TextView
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="批复金额" />
+
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll11"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/etPFName1"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFName1"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFNum1"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFNum1"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                             />
+
+                        <EditText
+                            android:id="@+id/etPFMoney1"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFMoney1"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""/>
+
+                        <EditText
+                            android:id="@+id/etPFAllMoney1"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFAllMoney1"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""/>
+
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll122"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etPFName2"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFName2"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFNum2"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFNum2"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""/>
+
+                        <EditText
+                            android:id="@+id/etPFMoney2"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFMoney2"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""/>
+
+                        <EditText
+                            android:id="@+id/etPFAllMoney2"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFAllMoney2"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll33"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etPFName3"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFName3"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFNum3"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFNum3"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""/>
+
+                        <EditText
+                            android:id="@+id/etPFMoney3"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFMoney3"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFAllMoney3"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFAllMoney3"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""/>
+
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll144"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etPFName4"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFName4"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFNum4"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFNum4"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFMoney4"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFMoney4"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""/>
+
+                        <EditText
+                            android:id="@+id/etPFAllMoney4"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFAllMoney4"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""/>
+
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll55"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etPFName5"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFName5"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFNum5"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFNum5"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFMoney5"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFMoney5"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFAllMoney5"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFAllMoney5"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""/>
+
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll66"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etPFName6"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFName6"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFNum6"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFNum6"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFMoney6"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFMoney6"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""/>
+
+                        <EditText
+                            android:id="@+id/etPFAllMoney6"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFAllMoney6"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll77"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etPFName7"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFName7"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFNum7"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFNum7"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""/>
+
+                        <EditText
+                            android:id="@+id/etPFMoney7"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFMoney7"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFAllMoney7"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFAllMoney7"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""/>
+
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll88"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etPFName8"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFName8"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""/>
+
+                        <EditText
+                            android:id="@+id/etPFNum8"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFNum8"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFMoney8"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFMoney8"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""/>
+
+                        <EditText
+                            android:id="@+id/etPFAllMoney8"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFAllMoney8"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll99"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etPFName9"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFName9"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""/>
+
+                        <EditText
+                            android:id="@+id/etPFNum9"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFNum9"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFMoney9"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFMoney9"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFAllMoney9"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFAllMoney9"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ll1010"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/shouye"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etPFName10"
+                            style="@style/EditText1"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFName10"
+                            style="@style/TextView"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFNum10"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFNum10"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFMoney10"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFMoney10"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                        <EditText
+                            android:id="@+id/etPFAllMoney10"
+                            style="@style/EditText1"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text=""
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvPFAllMoney10"
+                            style="@style/TextView"
+                            android:layout_width="100dp"
+                            android:gravity="center"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:id="@+id/llPFNum"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/oaTextView"
+                    android:text="批复数量合计: *" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/shouye" />
+
+                <TextView
+                    android:id="@+id/tvPFAllNum"
+                    style="@style/oaEditText"
+                    android:hint="合计数量" />
+            </LinearLayout>
+
+            <View style="@style/line"></View>
+
+            <LinearLayout
+                android:id="@+id/llPFMoney"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/oaTextView"
+                    android:text="批复金额合计: *" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/shouye" />
+
+                <TextView
+                    android:id="@+id/tvPFAllMoney"
+                    style="@style/oaEditText"
+                    android:hint="合计金额" />
+            </LinearLayout>
+
+            <View style="@style/line"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/oaTextView"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="用途: *" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/shouye" />
+
+                <EditText
+                    android:id="@+id/etUse"
+                    style="@style/textWrite"
+                    android:layout_weight="2.5"
+                    android:hint="请填写用途" />
+            </LinearLayout>
+
+            <View style="@style/line"></View>
+
+            <LinearLayout
+                android:id="@+id/llDown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/llShenPiRen"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvspr"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:background="@color/shouye"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="审批人"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/shouye"
+                        android:padding="15dp"
+                        android:src="@drawable/go" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/llShenPiRenList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:id="@+id/llspr1"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <CheckBox
+                                android:id="@+id/cb1"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+
+                            <CheckBox
+                                android:id="@+id/cb2"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+
+                            <CheckBox
+                                android:id="@+id/cb3"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/llspr2"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <CheckBox
+                                android:id="@+id/cb4"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+
+                            <CheckBox
+                                android:id="@+id/cb5"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+
+                            <CheckBox
+                                android:id="@+id/cb6"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/llspr5"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <CheckBox
+                                android:id="@+id/cb7"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+
+                            <CheckBox
+                                android:id="@+id/cb8"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+
+                            <CheckBox
+                                android:id="@+id/cb9"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/llspr6"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <CheckBox
+                                android:id="@+id/cb10"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+
+                            <CheckBox
+                                android:id="@+id/cb11"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+
+                            <CheckBox
+                                android:id="@+id/cb12"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/llspr3"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <CheckBox
+                                android:id="@+id/rb1"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+
+                            <CheckBox
+                                android:id="@+id/rb2"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+
+                            <CheckBox
+                                android:id="@+id/rb3"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llspr4"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <CheckBox
+                                android:id="@+id/rb4"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+
+                            <CheckBox
+                                android:id="@+id/rb5"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+
+                            <CheckBox
+                                android:id="@+id/rb6"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llLeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/oaTextView"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="部门意见:" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/shouye" />
+
+                        <EditText
+                            android:id="@+id/etLeader"
+                            style="@style/textWrite"
+                            android:hint="部门意见"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvLeader"
+                            style="@style/textWrite"
+                            android:hint="部门意见" />
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llLeader1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/oaTextView"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="财务部意见:" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/shouye" />
+
+                        <EditText
+                            android:id="@+id/etLeader1"
+                            style="@style/textWrite"
+                            android:hint="财务部意见"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvLeader1"
+                            style="@style/textWrite"
+                            android:hint="财务部意见" />
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llLeader2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/oaTextView"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="资产归口:" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/shouye" />
+
+                        <EditText
+                            android:id="@+id/etLeader2"
+                            style="@style/textWrite"
+                            android:hint="资产归口"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvLeader2"
+                            style="@style/textWrite"
+                            android:hint="资产归口" />
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llLeader3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/oaTextView"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="采购部意见:" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/shouye" />
+
+                        <EditText
+                            android:id="@+id/etLeader3"
+                            style="@style/textWrite"
+                            android:hint="采购部意见"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvLeader3"
+                            style="@style/textWrite"
+                            android:hint="采购部意见" />
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llLeader4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/oaTextView"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="部门分管:" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/shouye" />
+
+                        <EditText
+                            android:id="@+id/etLeader4"
+                            style="@style/textWrite"
+                            android:hint="部门分管意见"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvLeader4"
+                            style="@style/textWrite"
+                            android:hint="部门分管意见" />
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llLeader5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/oaTextView"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="采购分管:" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/shouye" />
+
+                        <EditText
+                            android:id="@+id/etLeader5"
+                            style="@style/textWrite"
+                            android:hint="采购分管意见"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvLeader5"
+                            style="@style/textWrite"
+                            android:hint="采购分管意见" />
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llLeader6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/oaTextView"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="财务总监:" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/shouye" />
+
+                        <EditText
+                            android:id="@+id/etLeader6"
+                            style="@style/textWrite"
+                            android:hint="财务总监意见"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvLeader6"
+                            style="@style/textWrite"
+                            android:hint="采购分管意见" />
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llLeader7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/oaTextView"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="总经理:" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/shouye" />
+
+                        <EditText
+                            android:id="@+id/etLeader7"
+                            style="@style/textWrite"
+                            android:hint="总经理意见"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvLeader7"
+                            style="@style/textWrite"
+                            android:hint="总经理意见" />
+                    </LinearLayout>
+
+                    <View style="@style/line"></View>
+                </LinearLayout>
+
+                <View
+                    style="@style/line"
+                    android:layout_marginBottom="45dp"></View>
+
+                <include layout="@layout/get_person"></include>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnUp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="45dp"
+                android:background="@drawable/linearlayout_colore_radius"
+                android:gravity="center"
+                android:text="提交"
+                android:textColor="@color/whith" />
+
+            <Button
+                android:id="@+id/btnHistory"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="45dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="45dp"
+                android:background="@drawable/linearlayout_colore_radius"
+                android:gravity="center"
+                android:text="流程审批信息"
+                android:textColor="@color/whith" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"></android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

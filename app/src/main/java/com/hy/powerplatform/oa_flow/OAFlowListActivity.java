@@ -17,6 +17,7 @@ import com.hy.powerplatform.duban.bean.ItemBean;
 import com.hy.powerplatform.login.bean.DbNum;
 import com.hy.powerplatform.login.bean.GgNum;
 import com.hy.powerplatform.login.bean.HyNum;
+import com.hy.powerplatform.login.bean.RWSend;
 import com.hy.powerplatform.my_utils.base.BaseActivity;
 import com.hy.powerplatform.my_utils.base.Constant;
 import com.hy.powerplatform.my_utils.base.OkHttpUtil;
@@ -31,7 +32,10 @@ import com.hy.powerplatform.oa_flow.notice.NoticeListActivity;
 import com.hy.powerplatform.oa_flow.phone.PhoneActivity;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
@@ -42,6 +46,7 @@ import okhttp3.Response;
 import static com.hy.powerplatform.my_utils.base.Constant.TAG_FIVE;
 import static com.hy.powerplatform.my_utils.base.Constant.TAG_FOUR;
 import static com.hy.powerplatform.my_utils.base.Constant.TAG_ONE;
+import static com.hy.powerplatform.my_utils.base.Constant.TAG_SIX;
 import static com.hy.powerplatform.my_utils.base.Constant.TAG_THERE;
 import static com.hy.powerplatform.my_utils.base.Constant.TAG_TWO;
 
@@ -56,6 +61,8 @@ public class OAFlowListActivity extends BaseActivity {
     int numhy =0;
     int numgg =0;
     int numdb =0;
+    int rwXF =0;
+    int rwZX =0;
     String rights;
     String userStatus;
     Intent intent;
@@ -209,6 +216,49 @@ public class OAFlowListActivity extends BaseActivity {
             }
         });
     }
+    /**
+     * 任务下发相关
+     */
+    public static String getMonthAgo(Date date) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.MONTH, -1);
+        String monthAgo = simpleDateFormat.format(calendar.getTime());
+        return monthAgo;
+    }
+
+    private void getRwSendNum() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");// HH:mm:ss
+        Date date = new Date(System.currentTimeMillis());
+        simpleDateFormat.format(date);
+        final String path_url = Constant.BASE_URL2 + "task/getNumLowerHairWorkTask.do"
+                +"?begin="+getMonthAgo(date)+"&end="+simpleDateFormat.format(date);
+        httpUtil.getAsynHttp(path_url, new OkHttpUtil.ResultCallback() {
+            @Override
+            public void onError(Request request, Exception e) {
+//                Log.i("main", "response:" + e.toString());
+                Message message = new Message();
+                Bundle b = new Bundle();
+                b.putString("error", e.toString());
+                message.setData(b);
+                message.what = TAG_ONE;
+                handler.sendMessage(message);
+            }
+
+            @Override
+            public void onResponse(Response response) throws IOException {
+//                Log.i("main", "response:" + response.body().string());
+                String data = response.body().string();
+                Message message = new Message();
+                Bundle b = new Bundle();
+                b.putString("data", data);
+                message.setData(b);
+                message.what = Constant.TAG_SIX;
+                handler.sendMessage(message);
+            }
+        });
+    }
 
     @Override
     protected int provideContentViewId() {
@@ -278,6 +328,30 @@ public class OAFlowListActivity extends BaseActivity {
         }else if (userStatus.equals("超级管理员")){
             itemList.add(bean5);
         }
+
+        ItemBean bean6 = new ItemBean();
+        int drawableId6 = getResources().getIdentifier("ic_workxf", "drawable", getPackageName());
+        bean6.setAddress(drawableId6);
+        bean6.setName(getResources().getString(R.string.oaflow_rb6));
+//        if
+        if (rights.contains("LowerHairWorkTaskView")) {
+            itemList.add(bean6);
+        }else if (userStatus.equals("超级管理员")){
+            itemList.add(bean6);
+        }
+
+
+        ItemBean bean7 = new ItemBean();
+        int drawableId7 = getResources().getIdentifier("ic_workzx", "drawable", getPackageName());
+        bean7.setAddress(drawableId7);
+        bean7.setName(getResources().getString(R.string.oaflow_rb7));
+
+
+        if (rights.contains("LowerHairTaskOperView")) {
+            itemList.add(bean7);
+        }else if (userStatus.equals("超级管理员")){
+            itemList.add(bean7);
+        }
     }
 
     private void setItemAdapter() {
@@ -302,6 +376,14 @@ public class OAFlowListActivity extends BaseActivity {
                     holder.setVisitiomV(R.id.tvRolese);
                     holder.setText(R.id.tvRolese, String.valueOf(numdb));
                 }
+                if (itemBean.getName().equals(getResources().getString(R.string.oaflow_rb6)) &&Integer.valueOf(numdb)!=0){
+                    holder.setVisitiomV(R.id.tvRolese);
+                    holder.setText(R.id.tvRolese, String.valueOf(rwXF));
+                }
+                if (itemBean.getName().equals(getResources().getString(R.string.oaflow_rb7)) &&Integer.valueOf(numdb)!=0){
+                    holder.setVisitiomV(R.id.tvRolese);
+                    holder.setText(R.id.tvRolese, String.valueOf(rwZX));
+                }
                 holder.setText(R.id.textView, itemBean.getName());
                 holder.setImageResource(R.id.imageView, itemBean.getAddress());
                 holder.setOnClickListener(R.id.linearLayout, new View.OnClickListener() {
@@ -321,6 +403,14 @@ public class OAFlowListActivity extends BaseActivity {
                             startActivity(intent);
                         }else if (itemBean.getName().equals(getResources().getString(R.string.oaflow_rb5))){
                             intent = new Intent(OAFlowListActivity.this, DBActivity.class);
+                            startActivity(intent);
+                        }else if (itemBean.getName().equals(getResources().getString(R.string.oaflow_rb6))){
+                            intent = new Intent(OAFlowListActivity.this, MainWorkActivity.class);
+                            intent.putExtra("tag","1");
+                            startActivity(intent);
+                        }else if (itemBean.getName().equals(getResources().getString(R.string.oaflow_rb7))){
+                            intent = new Intent(OAFlowListActivity.this, MainWorkActivity.class);
+                            intent.putExtra("tag","2");
                             startActivity(intent);
                         }
                     }
@@ -387,6 +477,21 @@ public class OAFlowListActivity extends BaseActivity {
                     numhy = numhy+Integer.parseInt(beanHyNum.getResult().get(0).getDknum());
 //                    numhy = numhy+Integer.parseInt(beanHyNum.getResult().get(0).getYknum());
                     //添加模块
+                    getRwSendNum();
+                    itemList.clear();
+                    addItem();
+                    setItemAdapter();
+                    ProgressDialogUtil.stopLoad();
+                    break;
+                case TAG_SIX:
+                    rwXF = 0;
+                    rwZX = 0;
+                    Bundle reSendNum = msg.getData();
+                    String reSendNumData = reSendNum.getString("data");
+                    RWSend rWSendBean = new Gson().fromJson(reSendNumData, RWSend.class);
+                    rwXF = rwXF + Integer.parseInt(rWSendBean.getIsCheck());
+//                    num = num+Integer.parseInt(beanHyNum.getResult().get(0).getYcjnum());
+                    rwZX = rwZX + Integer.parseInt(rWSendBean.getIsImplement());
                     itemList.clear();
                     addItem();
                     setItemAdapter();

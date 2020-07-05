@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.hy.powerplatform.operation.activity.CarDANListActivity">
 
@@ -12,137 +12,14 @@
         style="@style/Heander"
         app:header_title="@string/oaflow_comper_rb1">
     </com.hy.powerplatform.my_utils.myViews.Header>
-
-    <LinearLayout
+    <ProgressBar
+        android:id="@+id/progressBar"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:orientation="horizontal">
-
-        <TextView
-            style="@style/oaTextView"
-            android:text="日期: *" />
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="15dp"
-            android:layout_gravity="center_vertical"
-            android:background="@color/shouye" />
-
-        <TextView
-            android:id="@+id/tvDate"
-            style="@style/oaEditText"
-            android:hint="请选择日期" />
-    </LinearLayout>
-    <View style="@style/line"></View>
-
-    <include
-        android:id="@+id/llNoContent"
-        layout="@layout/no_content"
-        android:visibility="gone" />
-
-    <ScrollView
+        android:layout_height="3dp"
+        style="@style/crowd_item_progressBar"
+        android:background="@drawable/crowd_progressbar_unselect"/>
+    <WebView
+        android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <LinearLayout
-                android:id="@+id/ll1"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@color/shouye"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="15dp"
-                    android:text="人资档案"
-                    android:textColor="@color/black" />
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/go" />
-            </LinearLayout>
-            <com.hy.powerplatform.comper.view.HRecyclerView
-                android:id="@+id/recyclerView1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </com.hy.powerplatform.comper.view.HRecyclerView>
-            <View
-                style="@style/HourLine"
-                android:background="@color/black" />
-
-            <LinearLayout
-                android:id="@+id/ll2"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@color/shouye"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="15dp"
-                    android:text="车辆情况"
-                    android:textColor="@color/black" />
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/go" />
-            </LinearLayout>
-            <com.hy.powerplatform.comper.view.HRecyclerView
-                android:id="@+id/recyclerView2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </com.hy.powerplatform.comper.view.HRecyclerView>
-            <View
-                style="@style/HourLine"
-                android:background="@color/black" />
-
-            <LinearLayout
-                android:id="@+id/ll3"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@color/shouye"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="15dp"
-                    android:text="经营情况"
-                    android:textColor="@color/black" />
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/go" />
-            </LinearLayout>
-            <com.hy.powerplatform.comper.view.HRecyclerView1
-                android:id="@+id/recyclerView3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </com.hy.powerplatform.comper.view.HRecyclerView1>
-            <View
-                style="@style/HourLine"
-                android:background="@color/shouye"
-                android:layout_marginBottom="40dp"/>
-        </LinearLayout>
-    </ScrollView>
+        android:layout_height="match_parent"/>
 </LinearLayout>

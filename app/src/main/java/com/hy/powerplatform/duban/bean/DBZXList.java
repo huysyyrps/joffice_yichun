@@ -97,6 +97,7 @@ public class DBZXList implements Serializable {
         private String approverName;
         private Object submitFileIds;
         private int operStatus;
+        private int lowerWorkId;
         private String publishTime;
         private int approver;
         private int operator;
@@ -107,6 +108,14 @@ public class DBZXList implements Serializable {
         private String taskContext;
         private String contactsId;
         private String approveTime;
+
+        public int getLowerWorkId() {
+            return lowerWorkId;
+        }
+
+        public void setLowerWorkId(int lowerWorkId) {
+            this.lowerWorkId = lowerWorkId;
+        }
 
         public Object getIdentUrge() {
             return identUrge;

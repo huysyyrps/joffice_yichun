@@ -106,8 +106,8 @@
 
         <service
             android:name="com.baidu.location.f"
-            android:enabled="true"/>
-            <!--android:process=":remote" />-->
+            android:enabled="true" />
+        <!-- android:process=":remote" /> -->
         <!-- 程序自启动 -->
         <receiver
             android:name=".MyReceiver"
@@ -612,12 +612,14 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".TestActivity"
-            android:screenOrientation="portrait" >
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
+            android:screenOrientation="portrait">
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".oa_flow.activity.FlowGCAddWillDetailActivity"
@@ -986,18 +988,31 @@
         <activity android:name=".statist.activity.YingYunShouRuActivity" />
         <activity android:name=".statist.activity.PersonChangeActivity" />
         <activity android:name=".oa_flow.activity.EntryPersonActivity" />
-        <activity android:name=".login.activity.AppUpHistoryActivity"/>
-        <activity android:name=".oa_flow.activity.FlowAssessActivity"
+        <activity android:name=".login.activity.AppUpHistoryActivity" />
+        <activity android:name=".oa_flow.activity.newgoodpurchase.NewGoodPurchaseWillDetailActivity" />
+        <activity android:name=".oa_flow.activity.newgoodpurchase.FlowPurchaseDetailActivity" />
+        <activity android:name=".comper.activity.ShengChanYYEXListActivity1" />
+        <activity
+            android:name=".oa_flow.activity.FlowAssessActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
-        <activity android:name=".oa_flow.activity.FlowAssessDetailActivity"/>
-        <activity android:name=".oa_flow.activity.FlowAssessWillDetailActivity"
+        <activity android:name=".oa_flow.activity.FlowAssessDetailActivity" />
+        <activity
+            android:name=".oa_flow.activity.FlowAssessWillDetailActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
-        <activity android:name=".comper.activity.ShengChanYYEXListActivity"
+        <activity
+            android:name=".comper.activity.ShengChanYYEXListActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
-        <activity android:name=".oa_flow.activity.DormPersonListActivity"
+        <activity
+            android:name=".oa_flow.activity.DormPersonListActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
-        <activity android:name=".comper.activity.ShengChanYYNewEXListActivity"
+        <activity
+            android:name=".comper.activity.ShengChanYYNewEXListActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity android:name=".oa_flow.activity.newgoodpurchase.FlowPurchaseNewActivity" />
+        <activity android:name=".oa_flow.activity.newgoodpurchase.NewGoodPurchaseWillDetailActivity" />
+        <activity android:name=".comper.activity.ShengChanYYDetailActivity" />
+        <activity android:name=".comper.activity.ShengChanYYDetailActivity1" />
+        <activity android:name=".oa_flow.MainWorkActivity"></activity>
     </application>
 
 </manifest>

@@ -18,6 +18,7 @@ import com.hy.powerplatform.my_utils.base.BaseActivity;
 import com.hy.powerplatform.my_utils.base.Constant;
 import com.hy.powerplatform.my_utils.myViews.Header;
 import com.hy.powerplatform.my_utils.utils.ProgressDialogUtil;
+import com.hy.powerplatform.oa_flow.activity.newgoodpurchase.FlowPurchaseNewActivity;
 import com.hy.powerplatform.oa_flow.bean.MyNum;
 
 import org.json.JSONArray;
@@ -71,6 +72,8 @@ public class CaiGouActivity extends BaseActivity {
     LinearLayout llGHPurchase;
     @BindView(R.id.flGHPurchase)
     FrameLayout flGHPurchase;
+    @BindView(R.id.llGoodsPurchaseNew)
+    LinearLayout llGoodsPurchaseNew;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,7 +119,8 @@ public class CaiGouActivity extends BaseActivity {
                     && !dataList.contains(Constant.GOODSPUECHASENAME)
                     && !dataList.contains(Constant.WORKPUECHASENAME)
                     && !dataList.contains(Constant.CCTPUECHASENAME)
-                    && !dataList.contains(Constant.GHPUECHASENAME)) {
+                    && !dataList.contains(Constant.GHPUECHASENAME)
+                    && !dataList.contains(Constant.NEWGOODPUECHASENAME)) {
                 llNoContent.setVisibility(View.VISIBLE);
             } else {
                 if (!dataList.contains(Constant.PUECHASEFLOWNAME)) {
@@ -132,6 +136,9 @@ public class CaiGouActivity extends BaseActivity {
                     flCCTPurchase.setVisibility(View.GONE);
                 }
                 if (!dataList.contains(Constant.GHPUECHASENAME)) {
+                    flGHPurchase.setVisibility(View.GONE);
+                }
+                if (!dataList.contains(Constant.NEWGOODPUECHASENAME)) {
                     flGHPurchase.setVisibility(View.GONE);
                 }
 //                getData();
@@ -163,9 +170,13 @@ public class CaiGouActivity extends BaseActivity {
     }
 
     @OnClick({R.id.llPurchase, R.id.llGoodsPurchase, R.id.llWorkPurchase
-            , R.id.llflCCTPurchase, R.id.llGHPurchase})
+            , R.id.llflCCTPurchase, R.id.llGHPurchase, R.id.llGoodsPurchaseNew})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.llGoodsPurchaseNew:
+                intent = new Intent(this, FlowPurchaseNewActivity.class);
+                startActivity(intent);
+                break;
             case R.id.llPurchase:
                 intent = new Intent(this, FlowPurchaseActivity.class);
                 startActivity(intent);

@@ -256,6 +256,7 @@ public class Constant {
     public static final String  YYZB = "starkh/listOperationIndexDataAudit.do";
 
 
+    public static String  NEWGOODPUECHASENAME = "物品采购计划表新";
     public static String  LEAVERNAME = "请假流程";
     public static String  PAYFLOWNAME = "付款程序审批单";
     public static String  CONTRACEPAYNAME = "合同付款审批单";
@@ -295,6 +296,7 @@ public class Constant {
     public static String  COMPMESSAGENAME = "公司信息发布审批单";
 
 //    formdifid
+    public static String  NEWGOODPUECHASE = "10137";
     public static String  LEAVER = "83";
     public static String  PAYFLOW = "10078";
     public static String  CONTRACEPAY = "85";
@@ -334,6 +336,7 @@ public class Constant {
     public static String  GHSINGLE = "10129";
 
 //defid
+    public static String  NEWGOODPUECHASEDIFID = "20536";
     public static String  LEAVERDIFID = "10135";
     public static String  PAYFLOWDIFID = "10151";
     public static String  CONTRACEPAYDIFID = "10093";

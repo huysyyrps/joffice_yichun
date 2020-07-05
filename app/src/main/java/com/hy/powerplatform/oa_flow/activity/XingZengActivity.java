@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.hy.powerplatform.R;
 import com.hy.powerplatform.SharedPreferencesHelper;
-import com.hy.powerplatform.TestActivity;
 import com.hy.powerplatform.business_inspect.utils.DBHandler;
 import com.hy.powerplatform.my_utils.base.BaseActivity;
 import com.hy.powerplatform.my_utils.base.Constant;
@@ -314,8 +313,8 @@ public class XingZengActivity extends BaseActivity {
                 startActivity(intent);
                 break;
             case R.id.llEMaintain:
-//                intent = new Intent(this, FlowEMainTainActivity.class);
-                intent = new Intent(this, TestActivity.class);
+                intent = new Intent(this, FlowEMainTainActivity.class);
+//                intent = new Intent(this, TestActivity.class);
                 startActivity(intent);
                 break;
             case R.id.llCompMessage:

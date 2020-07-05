@@ -295,7 +295,7 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
     List<String> resultList1 = new ArrayList<>();
     List<String> bigResultList = new ArrayList<>();
     List<String> bigResultList1 = new ArrayList<>();
-
+    int lineNum = 0;
     String role = "";
     String url;
     String uId = "";
@@ -898,21 +898,47 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                 rb3.setVisibility(View.INVISIBLE);
             }
             if (nametemp.length == 2) {
-                rb1.setText(nametemp[0]);
-                rb2.setText(nametemp[1]);
-                ll3.setVisibility(View.VISIBLE);
-                rb1.setVisibility(View.VISIBLE);
-                rb2.setVisibility(View.VISIBLE);
-                rb3.setVisibility(View.INVISIBLE);
+                if (lineNum==3){
+                    rb1.setText(nametemp[0]);
+                    rb2.setText(nametemp[1]);
+                    rb1.setChecked(true);
+                    rb2.setChecked(true);
+                    ll3.setVisibility(View.VISIBLE);
+                    rb1.setVisibility(View.VISIBLE);
+                    rb2.setVisibility(View.VISIBLE);
+                    rb3.setVisibility(View.INVISIBLE);
+                }else {
+                    rb1.setText(nametemp[0]);
+                    rb2.setText(nametemp[1]);
+                    ll3.setVisibility(View.VISIBLE);
+                    rb1.setVisibility(View.VISIBLE);
+                    rb2.setVisibility(View.VISIBLE);
+                    rb3.setVisibility(View.INVISIBLE);
+                }
+
             }
             if (nametemp.length == 3) {
-                rb1.setText(nametemp[0]);
-                rb2.setText(nametemp[1]);
-                rb3.setText(nametemp[2]);
-                ll3.setVisibility(View.VISIBLE);
-                rb1.setVisibility(View.VISIBLE);
-                rb2.setVisibility(View.VISIBLE);
-                rb3.setVisibility(View.VISIBLE);
+                if (lineNum==3){
+                    rb1.setText(nametemp[0]);
+                    rb2.setText(nametemp[1]);
+                    rb3.setText(nametemp[2]);
+                    rb1.setChecked(true);
+                    rb2.setChecked(true);
+                    rb3.setChecked(true);
+                    ll3.setVisibility(View.VISIBLE);
+                    rb1.setVisibility(View.VISIBLE);
+                    rb2.setVisibility(View.VISIBLE);
+                    rb3.setVisibility(View.VISIBLE);
+                }else {
+                    rb1.setText(nametemp[0]);
+                    rb2.setText(nametemp[1]);
+                    rb3.setText(nametemp[2]);
+                    ll3.setVisibility(View.VISIBLE);
+                    rb1.setVisibility(View.VISIBLE);
+                    rb2.setVisibility(View.VISIBLE);
+                    rb3.setVisibility(View.VISIBLE);
+                }
+
             }
             if (nametemp.length == 4) {
                 rb1.setText(nametemp[0]);
@@ -974,6 +1000,8 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
             if (bigNametemp.length == 2) {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -983,6 +1011,9 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -993,6 +1024,10 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -1008,6 +1043,10 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -1024,6 +1063,12 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -1041,6 +1086,13 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
+                cb7.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -1061,6 +1113,14 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
+                cb7.setChecked(true);
+                cb8.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -1083,6 +1143,15 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
                 cb9.setText(bigNametemp[8]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
+                cb7.setChecked(true);
+                cb8.setChecked(true);
+                cb9.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -1763,7 +1832,7 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                             } else {
                                 etLeader4.setHint(word5);
                             }
-                        }else {
+                        } else {
                             llLeader4.setVisibility(View.GONE);
                         }
 
@@ -1786,7 +1855,7 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                             } else {
                                 etLeader3.setHint(word14);
                             }
-                        }else {
+                        } else {
                             llLeader3.setVisibility(View.GONE);
                         }
 
@@ -1809,7 +1878,7 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                             } else {
                                 etLeader2.setHint(word13);
                             }
-                        }else {
+                        } else {
                             llLeader2.setVisibility(View.GONE);
                         }
 
@@ -1832,7 +1901,7 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                             } else {
                                 etLeader1.setHint(word2);
                             }
-                        }else {
+                        } else {
                             llLeader1.setVisibility(View.GONE);
                         }
 
@@ -1855,7 +1924,7 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                             } else {
                                 etLeaderJG.setHint(word);
                             }
-                        }else {
+                        } else {
                             llLeaderJG.setVisibility(View.GONE);
                         }
 
@@ -1878,7 +1947,7 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                             } else {
                                 etLeader.setHint(word11);
                             }
-                        }else {
+                        } else {
                             llLeader.setVisibility(View.GONE);
                         }
                         String formRights = bean.getFormRights();
@@ -2085,19 +2154,25 @@ public class FlowGoodsPuechaseWillDetailActivity extends BaseActivity {
                             userName = bean1.getData().get(1).getUserCodes();
                             nametemp = userName.split(",");
                             codetemp = userCode.split(",");
+                        } else if (bean1.getData().size() == 3) {
+//                            lineNum = 3;
+//                            role = bean1.getData().get(0).getRole() + ":" + bean1.getData().get(1).getRole() + ":" + bean1.getData().get(2).getRole();
+//                            userCode = bean1.getData().get(0).getUserNames() + ":" + bean1.getData().get(1).getUserNames() + ":" + bean1.getData().get(2).getUserNames();
+//                            userName = bean1.getData().get(0).getUserCodes() + "," + bean1.getData().get(1).getUserCodes() + "," + bean1.getData().get(2).getUserCodes();
+//                            nametemp = userName.split(",");
+//                            codetemp = userCode.split(",");
+                            leader = bean1.getData().get(0).getRole() + ":" + bean1.getData().get(1).getRole() + ":" + bean1.getData().get(2).getRole();
+                            leaderCode = bean1.getData().get(0).getUserNames() + ":" + bean1.getData().get(1).getUserNames() + ":" + bean1.getData().get(2).getUserNames();
+                            leaderName = bean1.getData().get(0).getUserCodes() + "," + bean1.getData().get(1).getUserCodes() + "," + bean1.getData().get(2).getUserCodes();
+                            bigNametemp = leaderName.split(",");
+                            bigCodetemp = leaderCode.split(",");
+                        } else {
+                            leader = bean1.getData().get(0).getRole();
+                            leaderCode = bean1.getData().get(0).getUserNames();
+                            leaderName = bean1.getData().get(0).getUserCodes();
+                            bigNametemp = leaderName.split(",");
+                            bigCodetemp = leaderCode.split(",");
                         }
-                        if (bean1.getData().size() == 3) {
-                            role = bean1.getData().get(1).getRole() + ":" + bean1.getData().get(2).getRole();
-                            userCode = bean1.getData().get(1).getUserNames() + ":" + bean1.getData().get(2).getUserNames();
-                            userName = bean1.getData().get(1).getUserCodes() + "," + bean1.getData().get(2).getUserCodes();
-                            nametemp = userName.split(",");
-                            codetemp = userCode.split(",");
-                        }
-                        leader = bean1.getData().get(0).getRole();
-                        leaderCode = bean1.getData().get(0).getUserNames();
-                        leaderName = bean1.getData().get(0).getUserCodes();
-                        bigNametemp = leaderName.split(",");
-                        bigCodetemp = leaderCode.split(",");
                     }
                     setCbRbVer();
 //                    setDialog();

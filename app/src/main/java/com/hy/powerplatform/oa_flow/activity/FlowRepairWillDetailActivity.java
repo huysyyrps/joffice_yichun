@@ -493,6 +493,8 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
             if (bigNametemp.length == 2) {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -502,6 +504,9 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -512,6 +517,10 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -527,6 +536,11 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -543,6 +557,12 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -560,6 +580,13 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
+                cb7.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -580,6 +607,14 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
+                cb7.setChecked(true);
+                cb8.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -602,6 +637,15 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
                 cb9.setText(bigNametemp[8]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
+                cb7.setChecked(true);
+                cb8.setChecked(true);
+                cb9.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -1193,7 +1237,7 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                                 }
                                 tvLeader.setText(word3);
                             }
-                        }else {
+                        } else {
                             llLeader.setVisibility(View.GONE);
                         }
 
@@ -1209,7 +1253,7 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                                 }
                                 tvLeader1.setText(word2);
                             }
-                        }else {
+                        } else {
                             llLeader1.setVisibility(View.GONE);
                         }
 
@@ -1225,7 +1269,7 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
 //                            }
                                 tvLeader2.setText(etLeaderW3);
                             }
-                        }else {
+                        } else {
                             llLeader2.setVisibility(View.GONE);
                         }
 
@@ -1241,7 +1285,7 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                                 }
                                 tvLeader3.setText(word);
                             }
-                        }else {
+                        } else {
                             llLeader3.setVisibility(View.GONE);
                         }
 
@@ -1257,7 +1301,7 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                                 }
                                 tvYJ.setText(word);
                             }
-                        }else {
+                        } else {
                             llLeaderYJ.setVisibility(View.GONE);
                         }
                         String formRights = bean.getFormRights();
@@ -1328,7 +1372,6 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                         }
 
 
-
                         if (bean.isRevoke()) {
                             Toast.makeText(FlowRepairWillDetailActivity.this, "当前流程已被追回", Toast.LENGTH_SHORT).show();
                         }
@@ -1379,6 +1422,21 @@ public class FlowRepairWillDetailActivity extends BaseActivity {
                             nametemp = userName.split(",");
                             codetemp = userCode.split(",");
                         }
+//                        } else if (bean1.getData().size() == 1) {
+//                            if (bean1.getData().get(0).getRole().equals("办结安排")) {
+//                                role = bean1.getData().get(0).getRole();
+//                                userCode = bean1.getData().get(0).getUserNames();
+//                                userName = bean1.getData().get(0).getUserCodes();
+//                                nametemp = userName.split(",");
+//                                codetemp = userCode.split(",");
+//                            } else {
+//                                leader = bean1.getData().get(0).getRole();
+//                                leaderCode = bean1.getData().get(0).getUserNames();
+//                                leaderName = bean1.getData().get(0).getUserCodes();
+//                                bigNametemp = leaderName.split(",");
+//                                bigCodetemp = leaderCode.split(",");
+//                            }
+//                        }
                         leader = bean1.getData().get(0).getRole();
                         leaderCode = bean1.getData().get(0).getUserNames();
                         leaderName = bean1.getData().get(0).getUserCodes();

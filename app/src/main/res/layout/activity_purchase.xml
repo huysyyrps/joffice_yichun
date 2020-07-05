@@ -1004,9 +1004,6 @@
             </LinearLayout>
             <View style="@style/line"></View>
         </LinearLayout>
-
-
-
             <LinearLayout
                 android:id="@+id/llLeader"
                 android:layout_width="match_parent"

@@ -184,6 +184,14 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
     LinearLayout llLeader3;
     @BindView(R.id.llLeader4)
     LinearLayout llLeader4;
+    @BindView(R.id.rb7)
+    CheckBox rb7;
+    @BindView(R.id.rb8)
+    CheckBox rb8;
+    @BindView(R.id.rb9)
+    CheckBox rb9;
+    @BindView(R.id.ll6)
+    LinearLayout ll6;
     private String name, taskId, res, xqbmyj, xqbmldyj, jsbmyj, jsbmldyj, zjlyj = "";
     private String mainId, signaName, destName, destType, checkTask, qianzhiData = "";
     String leader = "";
@@ -416,12 +424,16 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
         ll3.setVisibility(View.GONE);
         ll4.setVisibility(View.GONE);
         ll5.setVisibility(View.GONE);
+        ll6.setVisibility(View.GONE);
         rb1.setChecked(false);
         rb2.setChecked(false);
         rb3.setChecked(false);
         rb4.setChecked(false);
         rb5.setChecked(false);
         rb6.setChecked(false);
+        rb7.setChecked(false);
+        rb8.setChecked(false);
+        rb9.setChecked(false);
         cb1.setChecked(false);
         cb2.setChecked(false);
         cb3.setChecked(false);
@@ -487,7 +499,7 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                 rb5.setVisibility(View.VISIBLE);
                 rb6.setVisibility(View.INVISIBLE);
             }
-            if (nametemp.length >= 6) {
+            if (nametemp.length == 6) {
                 rb1.setText(nametemp[0]);
                 rb2.setText(nametemp[1]);
                 rb3.setText(nametemp[2]);
@@ -502,6 +514,69 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                 rb4.setVisibility(View.VISIBLE);
                 rb5.setVisibility(View.VISIBLE);
                 rb6.setVisibility(View.VISIBLE);
+            }
+            if (nametemp.length == 7) {
+                rb1.setText(nametemp[0]);
+                rb2.setText(nametemp[1]);
+                rb3.setText(nametemp[2]);
+                rb4.setText(nametemp[3]);
+                rb5.setText(nametemp[4]);
+                rb6.setText(nametemp[5]);
+                rb7.setText(nametemp[6]);
+                ll3.setVisibility(View.VISIBLE);
+                ll4.setVisibility(View.VISIBLE);
+                ll6.setVisibility(View.VISIBLE);
+                rb1.setVisibility(View.VISIBLE);
+                rb2.setVisibility(View.VISIBLE);
+                rb3.setVisibility(View.VISIBLE);
+                rb4.setVisibility(View.VISIBLE);
+                rb5.setVisibility(View.VISIBLE);
+                rb6.setVisibility(View.VISIBLE);
+                rb7.setVisibility(View.VISIBLE);
+            }
+            if (nametemp.length == 8) {
+                rb1.setText(nametemp[0]);
+                rb2.setText(nametemp[1]);
+                rb3.setText(nametemp[2]);
+                rb4.setText(nametemp[3]);
+                rb5.setText(nametemp[4]);
+                rb6.setText(nametemp[5]);
+                rb7.setText(nametemp[6]);
+                rb8.setText(nametemp[7]);
+                ll3.setVisibility(View.VISIBLE);
+                ll4.setVisibility(View.VISIBLE);
+                ll6.setVisibility(View.VISIBLE);
+                rb1.setVisibility(View.VISIBLE);
+                rb2.setVisibility(View.VISIBLE);
+                rb3.setVisibility(View.VISIBLE);
+                rb4.setVisibility(View.VISIBLE);
+                rb5.setVisibility(View.VISIBLE);
+                rb6.setVisibility(View.VISIBLE);
+                rb7.setVisibility(View.VISIBLE);
+                rb8.setVisibility(View.VISIBLE);
+            }
+            if (nametemp.length == 9) {
+                rb1.setText(nametemp[0]);
+                rb2.setText(nametemp[1]);
+                rb3.setText(nametemp[2]);
+                rb4.setText(nametemp[3]);
+                rb5.setText(nametemp[4]);
+                rb6.setText(nametemp[5]);
+                rb7.setText(nametemp[6]);
+                rb8.setText(nametemp[7]);
+                rb9.setText(nametemp[7]);
+                ll3.setVisibility(View.VISIBLE);
+                ll4.setVisibility(View.VISIBLE);
+                ll6.setVisibility(View.VISIBLE);
+                rb1.setVisibility(View.VISIBLE);
+                rb2.setVisibility(View.VISIBLE);
+                rb3.setVisibility(View.VISIBLE);
+                rb4.setVisibility(View.VISIBLE);
+                rb5.setVisibility(View.VISIBLE);
+                rb6.setVisibility(View.VISIBLE);
+                rb7.setVisibility(View.VISIBLE);
+                rb8.setVisibility(View.VISIBLE);
+                rb9.setVisibility(View.VISIBLE);
             }
         }
 
@@ -518,6 +593,8 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
             if (bigNametemp.length == 2) {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -527,6 +604,9 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                 cb1.setText(bigNametemp[0]);
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
                 cb2.setVisibility(View.VISIBLE);
@@ -537,6 +617,10 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                 cb2.setText(bigNametemp[1]);
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -552,6 +636,11 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                 cb3.setText(bigNametemp[2]);
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -568,6 +657,12 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                 cb4.setText(bigNametemp[3]);
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 cb1.setVisibility(View.VISIBLE);
@@ -585,6 +680,13 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                 cb5.setText(bigNametemp[4]);
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
+                cb7.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -605,6 +707,14 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                 cb6.setText(bigNametemp[5]);
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
+                cb7.setChecked(true);
+                cb8.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -627,6 +737,15 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                 cb7.setText(bigNametemp[6]);
                 cb8.setText(bigNametemp[7]);
                 cb9.setText(bigNametemp[8]);
+                cb1.setChecked(true);
+                cb2.setChecked(true);
+                cb3.setChecked(true);
+                cb4.setChecked(true);
+                cb5.setChecked(true);
+                cb6.setChecked(true);
+                cb7.setChecked(true);
+                cb8.setChecked(true);
+                cb9.setChecked(true);
                 ll1.setVisibility(View.VISIBLE);
                 ll2.setVisibility(View.VISIBLE);
                 ll5.setVisibility(View.VISIBLE);
@@ -1008,6 +1127,21 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                         bigResultList1.add(s);
                     }
                 }
+                if (!rb9.isChecked()) {
+                    if (resultList.size() >= 9) {
+                        resultList.remove(8);
+                    }
+                }
+                if (!rb8.isChecked()) {
+                    if (resultList.size() >= 8) {
+                        resultList.remove(7);
+                    }
+                }
+                if (!rb7.isChecked()) {
+                    if (resultList.size() >= 7) {
+                        resultList.remove(6);
+                    }
+                }
                 if (!rb6.isChecked()) {
                     if (resultList.size() >= 6) {
                         resultList.remove(5);
@@ -1222,7 +1356,7 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                         } else {
                             etLeader4.setHint(word4);
                         }
-                    }else {
+                    } else {
                         llLeader4.setVisibility(View.GONE);
                     }
 
@@ -1245,7 +1379,7 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                         } else {
                             etLeader3.setHint(word3);
                         }
-                    }else {
+                    } else {
                         llLeader3.setVisibility(View.GONE);
                     }
 
@@ -1268,7 +1402,7 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                         } else {
                             etLeader2.setHint(word2);
                         }
-                    }else {
+                    } else {
                         llLeader2.setVisibility(View.GONE);
                     }
 
@@ -1291,7 +1425,7 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                         } else {
                             etLeader1.setHint(word1);
                         }
-                    }else {
+                    } else {
                         llLeader1.setVisibility(View.GONE);
                     }
 
@@ -1314,7 +1448,7 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                         } else {
                             etLeader.setHint(word);
                         }
-                    }else {
+                    } else {
                         llLeader.setVisibility(View.GONE);
                     }
                     String formRights = bean.getFormRights();
@@ -1423,12 +1557,21 @@ public class FlowCompMessageWillDetailActivity extends BaseActivity {
                             userName = bean1.getData().get(1).getUserCodes();
                             nametemp = userName.split(",");
                             codetemp = userCode.split(",");
+                        } else if (bean1.getData().size() == 1) {
+                            if (bean1.getData().get(0).getRole().equals("办结安排") || bean1.getData().get(0).getRole().equals("承办部门")) {
+                                role = bean1.getData().get(0).getRole();
+                                userCode = bean1.getData().get(0).getUserNames();
+                                userName = bean1.getData().get(0).getUserCodes();
+                                nametemp = userName.split(",");
+                                codetemp = userCode.split(",");
+                            } else {
+                                leader = bean1.getData().get(0).getRole();
+                                leaderCode = bean1.getData().get(0).getUserNames();
+                                leaderName = bean1.getData().get(0).getUserCodes();
+                                bigNametemp = leaderName.split(",");
+                                bigCodetemp = leaderCode.split(",");
+                            }
                         }
-                        leader = bean1.getData().get(0).getRole();
-                        leaderCode = bean1.getData().get(0).getUserNames();
-                        leaderName = bean1.getData().get(0).getUserCodes();
-                        bigNametemp = leaderName.split(",");
-                        bigCodetemp = leaderCode.split(",");
                     }
                     setCbRbVer();
                     break;

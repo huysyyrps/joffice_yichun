@@ -428,7 +428,6 @@
                             android:layout_weight="1"
                             android:visibility="gone" />
                     </LinearLayout>
-
                     <LinearLayout
                         android:id="@+id/ll4"
                         android:layout_width="match_parent"
@@ -453,6 +452,151 @@
 
                         <CheckBox
                             android:id="@+id/rb6"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll10"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/rb7"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/rb8"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/rb9"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll11"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/rb10"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/rb11"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/rb12"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll13"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/rb13"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/rb14"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/rb15"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll14"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/rb16"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/rb17"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/rb18"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll15"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/rb19"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/rb20"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/rb21"
                             android:layout_width="0dp"
                             android:layout_height="45dp"
                             android:layout_weight="1"

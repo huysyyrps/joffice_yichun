@@ -20,6 +20,7 @@ import com.hy.powerplatform.my_utils.base.Constant;
 import com.hy.powerplatform.my_utils.myViews.Header;
 import com.hy.powerplatform.my_utils.utils.ProgressDialogUtil;
 import com.hy.powerplatform.my_utils.utils.time_select.CustomDatePickerDay;
+import com.hy.powerplatform.oa_flow.activity.newgoodpurchase.FlowPurchaseDetailActivity;
 import com.hy.powerplatform.oa_flow.adapter.MyFlowListAdapter;
 import com.hy.powerplatform.oa_flow.bean.MyLeave;
 
@@ -166,6 +167,10 @@ public class MyFlowListActivity extends BaseActivity implements MyFlowListAdapte
         Intent intent = null;
         if (beanList.get(position).getFormDefId().equals(Constant.EMAINTAIN)) {
             intent = new Intent(this, FlowEMaintainDetailActivity.class);
+            intent.putExtra("bean", beanList.get(position).getRunId());
+            startActivity(intent);
+        }else if (beanList.get(position).getFormDefId().equals(Constant.NEWGOODPUECHASE)) {
+            intent = new Intent(this, FlowPurchaseDetailActivity.class);
             intent.putExtra("bean", beanList.get(position).getRunId());
             startActivity(intent);
         } else if (beanList.get(position).getFormDefId().equals(Constant.ZGSFLOW)) {
