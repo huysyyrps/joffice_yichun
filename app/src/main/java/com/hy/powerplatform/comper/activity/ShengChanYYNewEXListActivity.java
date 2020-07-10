@@ -88,7 +88,7 @@ public class ShengChanYYNewEXListActivity extends BaseActivity {
         if (tag.equals("1")){
             mUrl = "http://58.17.74.135:6775/erph5/#/pages/comprehensive-query/operationnew-index/operationnew-index";
         }else if (tag.equals("2")){
-            mUrl = "http://58.17.74.135:6775/erph5/#/pages/comprehensive-query/time-list/time-list";
+            mUrl = "http://58.17.74.135:6775/erph5/#/pages/comprehensive-query/move-table/move-table";
         }else if (tag.equals("3")){
             mUrl = "http://58.17.74.135:6775/erph5/#/pages/comprehensive-query/move-table/move-table";
         }

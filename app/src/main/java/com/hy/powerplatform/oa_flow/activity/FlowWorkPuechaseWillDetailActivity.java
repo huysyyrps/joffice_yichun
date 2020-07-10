@@ -1481,26 +1481,52 @@ public class FlowWorkPuechaseWillDetailActivity extends BaseActivity {
                     FlowContractPerson bean1 = gson1.fromJson(qianzhiData, FlowContractPerson.class);
                     if (bean1.getData() != null) {
                         if (bean1.getData().size() > 1) {
-                            role = bean1.getData().get(1).getRole();
-                            userCode = bean1.getData().get(1).getUserNames();
-                            userName = bean1.getData().get(1).getUserCodes();
-                            nametemp = userName.split(",");
-                            codetemp = userCode.split(",");
-                        } else if (bean1.getData().size() == 1) {
-                            if (bean1.getData().get(0).getRole().equals("办结安排")) {
-                                role = bean1.getData().get(0).getRole();
-                                userCode = bean1.getData().get(0).getUserNames();
-                                userName = bean1.getData().get(0).getUserCodes();
-                                nametemp = userName.split(",");
-                                codetemp = userCode.split(",");
-                            } else {
-                                leader = bean1.getData().get(0).getRole();
-                                leaderCode = bean1.getData().get(0).getUserNames();
-                                leaderName = bean1.getData().get(0).getUserCodes();
-                                bigNametemp = leaderName.split(",");
-                                bigCodetemp = leaderCode.split(",");
-                            }
+//                            role = bean1.getData().get(1).getRole();
+//                            userCode = bean1.getData().get(1).getUserNames();
+//                            userName = bean1.getData().get(1).getUserCodes();
+//                            nametemp = userName.split(",");
+//                            codetemp = userCode.split(",");
+//                            leader = bean1.getData().get(0).getRole();
+//                            leaderCode = bean1.getData().get(0).getUserNames();
+//                            leaderName = bean1.getData().get(0).getUserCodes();
+//                            bigNametemp = leaderName.split(",");
+//                            bigCodetemp = leaderCode.split(",");
+                            leader = bean1.getData().get(1).getRole();
+                            leaderCode = bean1.getData().get(1).getUserNames();
+                            leaderName = bean1.getData().get(1).getUserCodes();
+                            bigNametemp = leaderName.split(",");
+                            bigCodetemp = leaderCode.split(",");
+//                        } else if (bean1.getData().size() == 2) {
+//                            if (bean1.getData().get(0).getRole().equals("办结安排")) {
+//                                role = bean1.getData().get(0).getRole();
+//                                userCode = bean1.getData().get(0).getUserNames();
+//                                userName = bean1.getData().get(0).getUserCodes();
+//                                nametemp = userName.split(",");
+//                                codetemp = userCode.split(",");
+//                            } else {
+//                                leader = bean1.getData().get(0).getRole();
+//                                leaderCode = bean1.getData().get(0).getUserNames();
+//                                leaderName = bean1.getData().get(0).getUserCodes();
+//                                bigNametemp = leaderName.split(",");
+//                                bigCodetemp = leaderCode.split(",");
+//                            }
+//                            role = bean1.getData().get(1).getRole();
+//                            userCode = bean1.getData().get(1).getUserNames();
+//                            userName = bean1.getData().get(1).getUserCodes();
+//                            nametemp = userName.split(",");
+//                            codetemp = userCode.split(",");
+
                         }
+//                        leader = bean1.getData().get(0).getRole();
+//                        leaderCode = bean1.getData().get(0).getUserNames();
+//                        leaderName = bean1.getData().get(0).getUserCodes();
+//                        bigNametemp = leaderName.split(",");
+//                        bigCodetemp = leaderCode.split(",");
+                        role = bean1.getData().get(0).getRole();
+                        userCode = bean1.getData().get(0).getUserNames();
+                        userName = bean1.getData().get(0).getUserCodes();
+                        nametemp = userName.split(",");
+                        codetemp = userCode.split(",");
                     }
                     setCbRbVer();
                     break;

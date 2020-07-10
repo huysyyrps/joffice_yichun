@@ -59,7 +59,7 @@ public class MainWorkActivity extends BaseActivity {
         String appCachePath = this.getApplication().getCacheDir().getAbsolutePath();
         webSettings.setAppCachePath(appCachePath);
         webSettings.setDatabaseEnabled(true);
-
+       webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
 
 
 //        webSettings.setAppCacheEnabled(true);
@@ -86,11 +86,11 @@ public class MainWorkActivity extends BaseActivity {
         });
         String mUrl = "";
         if (tag.equals("1")){
-            mUrl = "http://192.168.3.130:8080/erph5/#/pages/cooperative-office/task-distribution/task-list/task-list?userId=" + userId + "&depId="+depId;
+            mUrl = "http://58.17.74.135:6775/erph5/#/pages/cooperative-office/task-distribution/task-list/task-list?userId=" + userId + "&depId="+depId;
         }else if (tag.equals("2")){
-            mUrl = "http://192.168.3.130:8080/erph5/#/pages/cooperative-office/task-distribution/task-list/oper-list?userId=" + userId + "&depId="+depId;
+            mUrl = "http://58.17.74.135:6775/erph5/#/pages/cooperative-office/task-distribution/task-list/oper-list?userId=" + userId + "&depId="+depId;
         }else if (tag.equals("3")){
-            mUrl = "http://192.168.3.130:8080/erph5/#/pages/cooperative-office/task-distribution/task-add/task-add?superviseWorkId=" + id + "&depId="+depId;
+            mUrl = "http://58.17.74.135:6775/erph5/#/pages/cooperative-office/task-distribution/task-add/task-add?superviseWorkId=" + id + "&depId="+depId;
         }
         Log.e("mUrl", mUrl);
         syncCookie(Constant. BASE_URL2);

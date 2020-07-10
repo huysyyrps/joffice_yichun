@@ -376,13 +376,17 @@ public class OAFlowListActivity extends BaseActivity {
                     holder.setVisitiomV(R.id.tvRolese);
                     holder.setText(R.id.tvRolese, String.valueOf(numdb));
                 }
-                if (itemBean.getName().equals(getResources().getString(R.string.oaflow_rb6)) &&Integer.valueOf(numdb)!=0){
+                if (itemBean.getName().equals(getResources().getString(R.string.oaflow_rb6)) &&Integer.valueOf(rwXF)!=0){
                     holder.setVisitiomV(R.id.tvRolese);
-                    holder.setText(R.id.tvRolese, String.valueOf(rwXF));
+                    if (!String.valueOf(rwXF).equals("0")){
+                        holder.setText(R.id.tvRolese, String.valueOf(rwXF));
+                    }
                 }
-                if (itemBean.getName().equals(getResources().getString(R.string.oaflow_rb7)) &&Integer.valueOf(numdb)!=0){
+                if (itemBean.getName().equals(getResources().getString(R.string.oaflow_rb7)) &&Integer.valueOf(rwZX)!=0){
                     holder.setVisitiomV(R.id.tvRolese);
-                    holder.setText(R.id.tvRolese, String.valueOf(rwZX));
+                    if (!String.valueOf(rwZX).equals("0")){
+                        holder.setText(R.id.tvRolese, String.valueOf(rwZX));
+                    }
                 }
                 holder.setText(R.id.textView, itemBean.getName());
                 holder.setImageResource(R.id.imageView, itemBean.getAddress());

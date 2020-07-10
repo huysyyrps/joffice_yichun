@@ -310,6 +310,7 @@ public class XingZengActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.llRepair:
                 intent = new Intent(this, FlowRepairActivity.class);
+                intent.putExtra("defId",Constant.REPAIRDIFID);
                 startActivity(intent);
                 break;
             case R.id.llEMaintain:

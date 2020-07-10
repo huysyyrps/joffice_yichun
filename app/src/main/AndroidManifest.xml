@@ -1012,7 +1012,8 @@
         <activity android:name=".oa_flow.activity.newgoodpurchase.NewGoodPurchaseWillDetailActivity" />
         <activity android:name=".comper.activity.ShengChanYYDetailActivity" />
         <activity android:name=".comper.activity.ShengChanYYDetailActivity1" />
-        <activity android:name=".oa_flow.MainWorkActivity"></activity>
+        <activity android:name=".oa_flow.MainWorkActivity" />
+        <activity android:name=".oa_flow.flow_web.FlowWebActivity"></activity>
     </application>
 
 </manifest>

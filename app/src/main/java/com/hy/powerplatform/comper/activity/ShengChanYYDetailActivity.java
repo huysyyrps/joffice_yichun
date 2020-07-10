@@ -128,16 +128,22 @@ public class ShengChanYYDetailActivity extends BaseActivity {
                             holder.setText(R.id.tvTq, resultBean.getTqnum());
                             if (!resultBean.getBhnum().equals("增减")){
                                 if (Double.parseDouble(resultBean.getBhnum())<0){
-                                    holder.setColor1(R.id.tvZj, "1");
-                                    holder.setText(R.id.tvZj, resultBean.getBhnum());
+                                    holder.setColor1(R.id.tvZJ, "4");
+                                    holder.setImageViewVisitiomGone(R.id.ivDown);
+                                    holder.setImageViewVisitiomGone(R.id.ivUp);
+                                    holder.setText(R.id.tvZJ, resultBean.getBhnum());
+                                    holder.setImageViewVisitiom(R.id.ivDown);
                                 }else if (Double.parseDouble(resultBean.getBhnum())>0){
-                                    holder.setColor1(R.id.tvZj, "4");
-                                    holder.setText(R.id.tvZj, resultBean.getBhnum());
+                                    holder.setColor1(R.id.tvZJ, "1");
+                                    holder.setImageViewVisitiomGone(R.id.ivDown);
+                                    holder.setImageViewVisitiomGone(R.id.ivUp);
+                                    holder.setText(R.id.tvZJ, resultBean.getBhnum());
+                                    holder.setImageViewVisitiom(R.id.ivUp);
                                 }else {
-                                    holder.setText(R.id.tvZj, resultBean.getBhnum());
+                                    holder.setText(R.id.tvZJ, resultBean.getBhnum());
                                 }
                             }else {
-                                holder.setText(R.id.tvZj, resultBean.getBhnum());
+                                holder.setText(R.id.tvZJ, resultBean.getBhnum());
                             }
                             if (i%2==0){
                                 holder.setColor(R.id.llConstant);

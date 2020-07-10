@@ -71,6 +71,24 @@ public class BaseViewHolderPosition extends RecyclerView.ViewHolder {
         tv.setVisibility(View.GONE);
         return this;
     }
+
+    /**
+     * 给ImageView设置
+     */
+    public BaseViewHolderPosition setImageViewVisitiom(int viewId) {
+        ImageView iv = getView(viewId);
+        iv.setVisibility(View.VISIBLE);
+        return this;
+    }
+
+    /**
+     * 给ImageView设置
+     */
+    public BaseViewHolderPosition setImageViewVisitiomGone(int viewId) {
+        ImageView iv = getView(viewId);
+        iv.setVisibility(View.GONE);
+        return this;
+    }
     /**
      * 给Button设置
      */
@@ -110,7 +128,7 @@ public class BaseViewHolderPosition extends RecyclerView.ViewHolder {
             tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.pinchar3));//通过获得资源文件进行设置。
         }
         else if (text.equals("4")){
-            tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.pinchar4));//通过获得资源文件进行设置。
+            tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.color_bg_selected));//通过获得资源文件进行设置。
         }
         else if (text.equals("5")){
             tv.setTextColor(MyApplication.getContextObject().getResources().getColor(R.color.pinchar5));//通过获得资源文件进行设置。

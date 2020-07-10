@@ -1552,19 +1552,19 @@ public class FlowEMainatinWillDetailActivity extends BaseActivity {
                             nametemp = userName.split(",");
                             codetemp = userCode.split(",");
                         } else if (bean1.getData().size() == 1) {
-                            if (bean1.getData().get(0).getRole().equals("办结安排")) {
-                                role = bean1.getData().get(0).getRole();
-                                userCode = bean1.getData().get(0).getUserNames();
-                                userName = bean1.getData().get(0).getUserCodes();
-                                nametemp = userName.split(",");
-                                codetemp = userCode.split(",");
-                            } else {
+//                            if (bean1.getData().get(0).getRole().equals("办结安排")) {
+//                                role = bean1.getData().get(0).getRole();
+//                                userCode = bean1.getData().get(0).getUserNames();
+//                                userName = bean1.getData().get(0).getUserCodes();
+//                                nametemp = userName.split(",");
+//                                codetemp = userCode.split(",");
+//                            } else {
                                 leader = bean1.getData().get(0).getRole();
                                 leaderCode = bean1.getData().get(0).getUserNames();
                                 leaderName = bean1.getData().get(0).getUserCodes();
                                 bigNametemp = leaderName.split(",");
                                 bigCodetemp = leaderCode.split(",");
-                            }
+//                            }
                         }
                     }
                     setCbRbVer();

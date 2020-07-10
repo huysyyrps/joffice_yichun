@@ -51,7 +51,23 @@
         <TextView
             style="@style/TextView"
             android:text="营运指标"
+            android:layout_width="wrap_content"
             android:paddingLeft="15dp"/>
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text="本期"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text="同期"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:text="增减"
+            android:gravity="center"/>
     </LinearLayout>
     <View
         style="@style/HourLine"/>
@@ -69,10 +85,55 @@
             android:layout_gravity="center_vertical"
             android:src="@drawable/ic_rb1" />
         <TextView
+            android:id="@+id/textView5"
             style="@style/TextView"
-            android:text="职工人数"
-            android:paddingLeft="15dp"/>
+            android:paddingLeft="15dp"
+            android:text="职工人数" />
+        <TextView
+            android:id="@+id/tvBQ1"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/tvTQ1"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tvZJ1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="" />
+
+                <ImageView
+                    android:id="@+id/ivUp1"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_up"
+                    android:visibility="gone"/>
+                <ImageView
+                    android:id="@+id/ivDown1"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_down"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </LinearLayout>
         <ImageView
+            android:visibility="gone"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
@@ -87,7 +148,7 @@
         android:layout_height="45dp"
         android:orientation="horizontal"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginRight="10dp">
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -97,7 +158,51 @@
             style="@style/TextView"
             android:text="营运车辆"
             android:paddingLeft="15dp"/>
+        <TextView
+            android:id="@+id/tvBQ2"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/tvTQ2"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tvZJ2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="" />
+
+                <ImageView
+                    android:id="@+id/ivUp2"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_up"
+                    android:visibility="gone"/>
+                <ImageView
+                    android:id="@+id/ivDown2"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_down"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </LinearLayout>
         <ImageView
+            android:visibility="gone"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
@@ -122,9 +227,53 @@
             style="@style/TextView"
             android:text="车辆车龄"
             android:paddingLeft="15dp"/>
+        <TextView
+            android:id="@+id/tvBQ3"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/tvTQ3"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tvZJ3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="" />
+
+                <ImageView
+                    android:id="@+id/ivUp3"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_up"
+                    android:visibility="gone"/>
+                <ImageView
+                    android:id="@+id/ivDown3"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_down"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </LinearLayout>
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:visibility="gone"
             android:layout_gravity="center_vertical"
             android:src="@drawable/go"
             android:padding="8dp"/>
@@ -147,7 +296,51 @@
             style="@style/TextView"
             android:text="公务车"
             android:paddingLeft="15dp"/>
+        <TextView
+            android:id="@+id/tvBQ4"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/tvTQ4"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tvZJ4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="" />
+
+                <ImageView
+                    android:id="@+id/ivUp4"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_up"
+                    android:visibility="gone"/>
+                <ImageView
+                    android:id="@+id/ivDown4"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_down"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </LinearLayout>
         <ImageView
+            android:visibility="gone"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
@@ -175,8 +368,52 @@
             style="@style/TextView"
             android:paddingLeft="15dp"
             android:text="线路情况" />
+        <TextView
+            android:id="@+id/tvBQ5"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/tvTQ5"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tvZJ5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="" />
+
+                <ImageView
+                    android:id="@+id/ivUp5"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_up"
+                    android:visibility="gone"/>
+                <ImageView
+                    android:id="@+id/ivDown5"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_down"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </LinearLayout>
 
         <ImageView
+            android:visibility="gone"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
@@ -202,7 +439,51 @@
             style="@style/TextView"
             android:text="交通事故"
             android:paddingLeft="15dp"/>
+        <TextView
+            android:id="@+id/tvBQ6"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/tvTQ6"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tvZJ6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="" />
+
+                <ImageView
+                    android:id="@+id/ivUp6"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_up"
+                    android:visibility="gone"/>
+                <ImageView
+                    android:id="@+id/ivDown6"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_down"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </LinearLayout>
         <ImageView
+            android:visibility="gone"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
@@ -227,7 +508,51 @@
             style="@style/TextView"
             android:text="服务指标"
             android:paddingLeft="15dp"/>
+        <TextView
+            android:id="@+id/tvBQ7"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/tvTQ7"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tvZJ7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="" />
+
+                <ImageView
+                    android:id="@+id/ivUp7"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_up"
+                    android:visibility="gone"/>
+                <ImageView
+                    android:id="@+id/ivDown7"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_down"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </LinearLayout>
         <ImageView
+            android:visibility="gone"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
@@ -252,7 +577,51 @@
             style="@style/TextView"
             android:text="党员情况"
             android:paddingLeft="15dp"/>
+        <TextView
+            android:id="@+id/tvBQ8"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/tvTQ8"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:gravity="center" />
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tvZJ8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="" />
+
+                <ImageView
+                    android:id="@+id/ivUp8"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_up"
+                    android:visibility="gone"/>
+                <ImageView
+                    android:id="@+id/ivDown8"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_down"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </LinearLayout>
         <ImageView
+            android:visibility="gone"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
@@ -297,6 +666,7 @@
             android:text="经营情况"
             android:paddingLeft="15dp"/>
         <ImageView
+            android:visibility="gone"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
@@ -322,6 +692,7 @@
             android:text="资产"
             android:paddingLeft="15dp"/>
         <ImageView
+            android:visibility="gone"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
